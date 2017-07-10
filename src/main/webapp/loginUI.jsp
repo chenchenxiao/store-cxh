@@ -6,14 +6,24 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>登录</title>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/public.css" />
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/page.css" />
+    <link href="${pageContext.request.contextPath}/resources/css/messenger/messenger.css" rel="stylesheet" type="text/css" />
+    <link href="${pageContext.request.contextPath}/resources/css/messenger/messenger-theme-future.css" rel="stylesheet" type="text/css" />
+    <link href="${pageContext.request.contextPath}/resources/css/messenger/messenger-theme-flat.css" rel="stylesheet" type="text/css" />
+    <link href="${pageContext.request.contextPath}/resources/css/messenger/messenger-theme-air.css" rel="stylesheet" type="text/css" />
+
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery.min.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/public.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/js/messenger/messenger.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/js/messenger/messenger-theme-future.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/js/messenger/messenger.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/js/jquery.validate.js"></script>
 </head>
 <body>
 
@@ -31,36 +41,64 @@
         <div class="logD logDtip">
             <p class="p1">登录</p>
             <a href="#" class="p2"> 忘记密码</a>
-            <a href="userRegist.jsp" class="p2"> 免费注册&nbsp;&nbsp;&nbsp;</a>
+            <a href="${pageContext.request.contextPath}/userRegist.jsp" class="p2"> 免费注册&nbsp;&nbsp;&nbsp;</a>
 
         </div>
         <!-- 输入框 -->
+    <form action="${pageContext.request.contextPath}/admin/user/login" method="post" id="user_form">
         <div class="lgD">
             <img class="img1" src="${pageContext.request.contextPath}/resources/img/logName.png" />
-            <input type="text"  placeholder="输入用户名" />
+            <input type="text" name="name" id="username" placeholder="输入用户名" />
         </div>
         <div class="lgD">
             <img class="img1" src="${pageContext.request.contextPath}/resources/img/logPwd.png" />
-            <input type="text"  placeholder="输入用户密码" />
+            <input type="text" name="password" id="password"  placeholder="输入用户密码" />
         </div>
-        <%--<div class="lgD logD2">--%>
-            <%--<input class="getYZM" type="text" />--%>
-            <%--<div class="logYZM">--%>
-                <%--<img class="yzm" src="${pageContext.request.contextPath}/resources/img/logYZM.png" />--%>
-            <%--</div>--%>
-        <%--</div>--%>
         <div class="logC">
-            <button>登 录</button>
+            <button type="submit">登录</button>
         </div>
+    </form>
     </div>
 </div>
-<!-- 登录body  end -->
-
-<!-- 登录页面底部 -->
-<%--<div class="logFoot">--%>
-    <%--<p class="p1">版权所有：南京设易网络科技有限公司</p>--%>
-    <%--<p class="p2">南京设易网络科技有限公司 登记序号：苏ICP备11003578号-2</p>--%>
-<%--</div>--%>
-<!-- 登录页面底部end -->
 </body>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#user_form").validate({
+            rules: {
+                name: {
+                    required:true,
+                },
+                password: "required",
+            },
+            messages: {
+                name: {
+                    required: " 请填写你的姓名",
+                },
+                password: " 请填写您的密码",
+            }
+        });
+    });
+</script>
+<c:if test="${result!=null}">
+    <script>
+        $().ready(function(){
+            var success=${result.success};
+            var msg='${result.msg}';
+            var type="error";
+            if(success=true){
+                type="success"
+            }
+            Messenger.options = {
+                extraClasses: 'messenger-fixed messenger-on-top messenger-on-right',
+                theme: 'future'
+            }
+            $.globalMessenger().post({
+                message:"提示："+ msg,
+                type: type,
+                showCloseButton: true
+            })
+        })
+    </script>
+</c:if>
+
 </html>

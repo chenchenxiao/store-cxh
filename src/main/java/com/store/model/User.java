@@ -1,8 +1,11 @@
 package com.store.model;
 
+import org.hibernate.validator.constraints.Length;
+
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Pattern;
 
 /**
  * Created by 陈晓海 on 2017/7/6.
@@ -11,12 +14,16 @@ import javax.persistence.Table;
 public class User {
     public User() {
     }
-
     @Id
-
     private Integer id;
+
+    @Length(min = 4,max = 20)
     private String name;
+
+    @Length(min = 6,max = 20)
     private String password;
+
+    @Pattern(regexp = "^(((13[0-9]{1})|(14[0-9]{1})|(15[0-9]{1})|(17[0-9]{1})|(18[0-9]{1}))+\\d{8})$")
     private String phoneNumber;
 
     public Integer getId() {

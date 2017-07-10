@@ -9,4 +9,5 @@ import tk.mybatis.mapper.common.BaseMapper;
  */
 public interface UserMapper extends BaseMapper<User>{
     User selectById(Integer id);
+
 }

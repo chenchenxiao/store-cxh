@@ -7,4 +7,8 @@ import com.store.model.User;
  */
 public interface UserService {
         Integer checkName(User user);
+
+        void addUser(User user);
+
+        User login(User user);
 }

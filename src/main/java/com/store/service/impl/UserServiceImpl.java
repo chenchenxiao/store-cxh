@@ -13,7 +13,16 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl implements UserService{
     @Autowired
     UserMapper userMapper;
+
     public Integer checkName(User user) {
         return userMapper.selectCount(user);
+    }
+
+    public void addUser(User user) {
+        userMapper.insert(user);
+    }
+
+    public User login(User user){
+        return userMapper.selectOne(user);
     }
 }
