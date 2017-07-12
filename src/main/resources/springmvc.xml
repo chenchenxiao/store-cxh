@@ -36,7 +36,26 @@
         <property name="fileEncodings" value="utf-8"></property>
         <property name="cacheSeconds" value="120"></property>
     </bean>
+    <!--登录拦截器 -->
+    <mvc:interceptors>
+        <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor"/>
+    </mvc:interceptors>
 
+    <!--管理员端session验证地址 -->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/admin/**" />
+            <bean class="com.store.interceptors.LoginInteceptor">
+                <property name="excludeUrls">
+                    <list>
+                        <!--不需要拦截的 -->
+                        <value>/admin/user/login</value>
+                        <value>/admin/user/regist</value>
+                    </list>
+                </property>
+            </bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
     <!-- 配置sprigmvc视图解析器：解析逻辑试图 后台返回逻辑试图：index 视图解析器解析出真正物理视图：前缀+逻辑试图+后缀====/WEB-INF/jsps/index.jsp -->
     <bean
             class="org.springframework.web.servlet.view.InternalResourceViewResolver">

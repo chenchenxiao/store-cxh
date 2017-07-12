@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>约见管理-有点</title>
+<title>行家-有点</title>
 <link rel="stylesheet" type="text/css" href="css/css.css" />
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <!-- <script type="text/javascript" src="js/page.js" ></script> -->
@@ -23,19 +23,19 @@
 				<div class="conform">
 					<form>
 						<div class="cfD">
-							时间段：<input class="vinput" type="text" />&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;
-							<input class="vinput vpr" type="text" /> 审核状态：<label><input
-								type="radio" checked="checked" name="styleshoice1" />&nbsp;未审核</label> <label><input
-								type="radio" name="styleshoice1" />&nbsp;待审核</label> <label><input
-								type="radio" name="styleshoice1" />&nbsp;待约见</label> <label><input
-								type="radio" name="styleshoice1" />&nbsp;已完成</label> <label class="lar"><input
-								type="radio" name="styleshoice1" />&nbsp;已作废</label> 推荐状态：<label><input
-								type="radio" checked="checked" name="styleshoice2" />&nbsp;未付款</label> <label><input
-								type="radio" name="styleshoice2" />&nbsp;已付款</label>
+							工作年限：<select>
+							<option>1年以内</option>
+						</select> 审核状态：<label><input
+								type="radio" checked="checked" name="styleshoice1"/>&nbsp;未审核</label> <label><input
+								type="radio" name="styleshoice1"/>&nbsp;已通过</label> <label class="lar"><input
+								type="radio" name="styleshoice1"/>&nbsp;不通过</label> 推荐状态：<label><input
+								type="radio" checked="checked" name="styleshoice2"/>&nbsp;是</label><label><input
+								type="radio" name="styleshoice2"/>&nbsp;否</label>
 						</div>
 						<div class="cfD">
 							<input class="addUser" type="text" placeholder="输入用户名/ID/手机号/城市" />
 							<button class="button">搜索</button>
+							<a class="addA addA1" href="connoisseuradd.html">添加行家+</a>
 						</div>
 					</form>
 				</div>
@@ -44,28 +44,52 @@
 					<table border="1" cellspacing="0" cellpadding="0">
 						<tr>
 							<td width="66px" class="tdColor tdC">序号</td>
-							<td width="355px" class="tdColor">头像</td>
-							<td width="260px" class="tdColor">行家名称</td>
-							<td width="275px" class="tdColor">订单状态</td>
-							<td width="290px" class="tdColor">付款状态</td>
-							<td width="290px" class="tdColor">下单时间</td>
+							<td width="170px" class="tdColor">头像</td>
+							<td width="135px" class="tdColor">姓名</td>
+							<td width="145px" class="tdColor">手机号码</td>
+							<td width="140px" class="tdColor">所在城市</td>
+							<td width="140px" class="tdColor">任职机构</td>
+							<td width="145px" class="tdColor">行家头衔</td>
+							<td width="150px" class="tdColor">本周预约次数</td>
+							<td width="140px" class="tdColor">可约时段</td>
+							<td width="140px" class="tdColor">审核状态</td>
+							<td width="150px" class="tdColor">是否推荐</td>
 							<td width="130px" class="tdColor">操作</td>
 						</tr>
 						<tr>
 							<td>1</td>
-							<td>
-								<div class="onsImg onsInmA">
-									<img src="img/userPICS.png">
-								</div> <a class="tpapA" href="#"><p class="topicP">
-										某某话题<img class="topicImg" src="img/topic.png">
-									</p></a>
-							</td>
+							<td><div class="onsImg">
+									<img src="img/banimg.png">
+								</div></td>
 							<td>山下就只</td>
+							<td>13312345678</td>
+							<td>南京市</td>
+							<td>南京设疑网络科技公司哈哈哈</td>
+							<td>总监</td>
+							<td>3次</td>
+							<td>周一周二周三</td>
 							<td>未审核</td>
-							<td>未付款</td>
-							<td>2015-25-36 12:12</td>
+							<td>否</td>
 							<td><a href="connoisseuradd.html"><img class="operation"
-									src="img/update.png"></a> <img class="operation delban"
+                                                                   src="img/update.png"></a> <img class="operation delban"
+								src="img/delete.png"></td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td><div class="onsImg">
+									<img src="img/banimg.png">
+								</div></td>
+							<td>山下就只</td>
+							<td>13312345678</td>
+							<td>南京市</td>
+							<td>南京设疑网络科技公司哈哈哈</td>
+							<td>总监</td>
+							<td>3次</td>
+							<td>周一周二周三</td>
+							<td>未审核</td>
+							<td>否</td>
+							<td><a href="connoisseuradd.html"><img class="operation"
+                                                                   src="img/update.png"></a> <img class="operation delban"
 								src="img/delete.png"></td>
 						</tr>
 					</table>

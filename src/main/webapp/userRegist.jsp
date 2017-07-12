@@ -30,7 +30,7 @@
     <div class="desc">欢迎注册</div>
     <div class="have-account" style="float: right;margin-top: 55px;font-size: 16px;color: #999">
         已有账号？
-        <a href="${pageContext.request.contextPath}/loginUI.jsp">请登录</a>
+        <a href="${pageContext.request.contextPath}/admin/user/loginUI.jsp">请登录</a>
     </div>
 </header>
 <section>

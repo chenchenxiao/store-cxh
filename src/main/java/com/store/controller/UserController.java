@@ -4,15 +4,12 @@ import com.store.been.AjaxResult;
 import com.store.model.User;
 import com.store.service.UserService;
 import com.store.util.CheckNumberUtil;
-import com.store.util.SendPhoneMsgUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.io.IOException;
@@ -23,7 +20,7 @@ import java.io.PrintWriter;
  */
 @Controller
 @RequestMapping("admin/user")
-public class UserController {
+public class UserController extends BaseAdminController<User,Long>{
     @Autowired
     UserService userService;
 
@@ -59,11 +56,11 @@ public class UserController {
             return "userRegist";
         }else if(userService.checkRepeat(user) > 0) {       //防止表单重复提交
             model.addAttribute("result",new AjaxResult(false,"该用户已被注册！"));
-            return "loginUI";
+            return "admin/user/loginUI";
         }else{
             userService.addUser(user);
             model.addAttribute("result",new AjaxResult(true,"注册成功,请登录"));
-            return "loginUI";
+            return "admin/user/loginUI";
         }
     }
 
@@ -78,12 +75,12 @@ public class UserController {
             } else {
                 model.addAttribute("result", new AjaxResult(false, "用户名和密码匹配失败"));
                 System.out.println("登录失败");
-                return "loginUI";
+                return "admin/user/loginUI";
             }
         }catch (Exception e){
             e.printStackTrace();
             model.addAttribute("result",new AjaxResult(false,"发生错误了"));
-            return "loginUI";
+            return "admin/user/loginUI";
         }
     }
     @RequestMapping("logout")
@@ -91,6 +88,13 @@ public class UserController {
         session.removeAttribute("loginUser");
         return "show";
     }
+
+    //跳转到用户后台管理页面
+    @RequestMapping("show")
+    public String show(){
+        return TEMPLATE_PATH + "show" ;
+    }
+
     @RequestMapping("test")
     public void test(){
         System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
