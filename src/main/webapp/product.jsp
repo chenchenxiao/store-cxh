@@ -53,7 +53,7 @@
 </head>
 <body>
 <!--页面顶部 -->
-<%@include file="all.jsp"%>
+<%@include file="header.jsp"%>
 <div class="container">
     <div class="products">
         <h2 class=" products-in">PRODUCTS</h2>

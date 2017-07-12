@@ -48,13 +48,14 @@
     <form action="${pageContext.request.contextPath}/admin/user/login" method="post" id="user_form">
         <div class="lgD">
             <img class="img1" src="${pageContext.request.contextPath}/resources/img/logName.png" />
-            <input type="text" name="name" id="username" placeholder="输入用户名" />
+            <input type="text" name="account" id="account" placeholder="输入用户名" />
         </div>
         <div class="lgD">
             <img class="img1" src="${pageContext.request.contextPath}/resources/img/logPwd.png" />
-            <input type="text" name="password" id="password"  placeholder="输入用户密码" />
+            <input type="password" name="password" id="password"  placeholder="输入用户密码" style="width: 100%;height: 42px" />
         </div>
-        <div class="logC">
+
+            <div class="logC">
             <button type="submit">登录</button>
         </div>
     </form>
@@ -65,13 +66,13 @@
     $(document).ready(function() {
         $("#user_form").validate({
             rules: {
-                name: {
+                account: {
                     required:true,
                 },
                 password: "required",
             },
             messages: {
-                name: {
+                account: {
                     required: " 请填写你的姓名",
                 },
                 password: " 请填写您的密码",

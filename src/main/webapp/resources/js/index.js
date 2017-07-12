@@ -1,53 +1,59 @@
 $(function(){
     var stuList = getStuList();//设置传送信息：学生的集合
     var checkResult;
-    var nameResult;
+    var accountResult;
     var passwordResult;
     var configResult;
     var phoneResult;
     var codeResult;
     var numberResult;
+    var nameResult;
     //聚焦失焦input
-    $('input').eq(0).focus(function(){
+    $("#account").eq(0).focus(function(){
         if($(this).val().length==0){
             $(this).parent().next("div").text("支持中文，字母，数字，'-'，'_'的多种组合");
         }
     })
-    $('input').eq(1).focus(function(){
+    $("#name").focus(function(){
+        if($(this).val().length==0){
+            $(this).parent().next("div").text("支持中文，英文的组合");
+        }
+    })
+    $("#password").focus(function(){
         if($(this).val().length==0){
             $(this).parent().next("div").text("建议使用字母、数字和符号两种以上的组合，6-20个字符");
         }
     })
-    $('input').eq(2).focus(function(){
+    $("#configPassword").focus(function(){
         if($(this).val().length==0){
             $(this).parent().next("div").text("请再次输入密码");
         }
     })
-    $('input').eq(3).focus(function(){
+    $("#phoneNumber").focus(function(){
         if($(this).val().length==0){
             $(this).parent().next("div").text("验证完后，你可以使用该手机登陆和找回密码");
         }
     })
-    $('input').eq(4).focus(function(){
+    $("#checkCode").focus(function(){
         if($(this).val().length==0){
             $(this).parent().next().next("div").text("看不清？点击图片更换验证码");
         }
     })
     //input各种判断
     //用户名：
-    $('input').eq(0).blur(function(){
+    $("#account").blur(function(){
         if($(this).val().length==0){
             $(this).parent().next("div").text("");
             $(this).parent().next("div").css("color",'#ccc');
-            nameResult = false;
+            accountResult = false;
         }else if($(this).val().length>0 && $(this).val().length<4){
             $(this).parent().next("div").text("长度只能在4-20个字符之间");
             $(this).parent().next("div").css("color",'red');
-            nameResult = false;
+            accountResult = false;
         }else if($(this).val().length>=4&& !isNaN($(this).val())){
             $(this).parent().next("div").text("用户名不能为纯数字");
             $(this).parent().next("div").css("color",'red');
-            nameResult = false;
+            accountResult = false;
         }else{
             // for(var m=0;m<stuList.length;m++){
             //     if($(this).val()==stuList[m].name){
@@ -59,23 +65,38 @@ $(function(){
             // $(this).parent().next("div").text("");
             $.ajax({
                 "url":"admin/user/checkRepeat",
-                "data":{"name":$('#name').val()},
+                "data":{"account":$('#account').val()},
                 "type":"POST",
                 "success":function(data){
                     if(data.result){
-                        $("#name").parent().next("div").text("");
+                        $("#account").parent().next("div").text("");
                         // $("#name").parent().next("div").css("color",'white');
-                        nameResult = true;
+                        accountResult = true;
                         return;
                     }else{
-                        $("#name").parent().next("div").text("该用户名已被注册");
-                        $("#name").parent().next("div").css("color",'red');
-                        nameResult = false;
+                        $("#account").parent().next("div").text("该用户名已被注册");
+                        $("#account").parent().next("div").css("color",'red');
+                        accountResult = false;
                         return;
                     }
                 },
                 "dataType":"json"
             });
+        }
+    })
+    //姓名
+    $("#name").blur(function () {
+        if($(this).val().length==0){
+            $(this).parent().next("div").text("");
+            $(this).parent().next("div").css("color",'#ccc');
+            nameResult = false;
+        }else if(!/^[\u4e00-\u9fa5]+$/.test($(this).val())||$(this).val().length < 2){
+            $(this).parent().next("div").text("姓名只能是2个以上的中文字符");
+            $(this).parent().next("div").css("color",'red');
+            nameResult = false;
+        }else{
+            $(this).parent().next("div").text("");
+            nameResult = true;
         }
     })
     //ajax验证用户名是否可用
@@ -99,7 +120,7 @@ $(function(){
     //     });
     // })
     //密码
-    $('input').eq(1).blur(function(){
+    $("#password").blur(function(){
         if($(this).val().length==0){
             $(this).parent().next("div").text("");
             $(this).parent().next("div").css("color",'#ccc');
@@ -114,12 +135,12 @@ $(function(){
         }
     })
 //	确认密码
-    $('input').eq(2).blur(function(){
+    $("#configPassword").blur(function(){
         if($(this).val().length==0){
             $(this).parent().next("div").text("");
             $(this).parent().next("div").css("color",'#ccc');
             configResult = false;
-        }else if($(this).val()!=$('input').eq(1).val()){
+        }else if($(this).val()!=$("#password").val()){
             $(this).parent().next("div").text("两次密码不匹配");
             $(this).parent().next("div").css("color",'red');
             configResult = false;
@@ -129,7 +150,7 @@ $(function(){
         }
     })
 //	手机号
-    $('input').eq(3).blur(function(){
+    $("#phoneNumber").blur(function(){
         if($(this).val().length==0){
             $(this).parent().next("div").text("");
             $(this).parent().next("div").css("color",'#ccc');
@@ -174,7 +195,7 @@ $(function(){
     code();
     $("#code").click(code);
 //	验证码验证
-    $('input').eq(4).blur(function(){
+    $("#checkCode").blur(function(){
         if($(this).val().length==0){
             $(this).parent().next().next("div").text("");
             $(this).parent().next().next("div").css("color",'#ccc');
@@ -236,7 +257,8 @@ $(function(){
     })
 //	提交按钮
     $("#submit_btn").click(function(e){
-        for(var j=0 ;j<5;j++){
+        alert(!(accountResult && passwordResult && configResult && phoneResult && codeResult && numberResult))
+        for(var j=0 ;j<6;j++){
             if($('input').eq(j).val().length==0){
                 $('input').eq(j).focus();
                 if(j==4){
@@ -257,7 +279,7 @@ $(function(){
             return;
         }
             // 验证码输入不正确
-        if($('input').eq(4).val().toUpperCase()!=$("#code").text().toUpperCase()){
+        if($("#checkCode").val().toUpperCase()!=$("#code").text().toUpperCase()){
             return;
         }
         // //手机验证码输入不正确
@@ -266,7 +288,7 @@ $(function(){
         //         $(".check").css("color",'red');
         //     return;
         // }
-        if(!(nameResult && passwordResult && configResult && phoneResult && codeResult && numberResult)){
+        if(!(accountResult && passwordResult && configResult && phoneResult && codeResult && numberResult && nameResult)){
             return;
         }
             // stuList.push(new Student($('input').eq(0).val(),$('input').eq(1).val(),$('input').eq(3).val(),stuList.length+1));

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: ${陈晓海}
@@ -67,7 +68,7 @@
 </head>
 <body>
 <!--页面顶部 -->
-<%@include file="all.jsp"%>
+<%@include file="header.jsp"%>
 <div class="copyrights">Collect from <a href="http://www.cssmoban.com/"  title="网站模板">网站模板</a></div>
 <div class="banner-mat">
     <div class="container">

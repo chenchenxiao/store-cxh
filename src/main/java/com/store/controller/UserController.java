@@ -30,8 +30,8 @@ public class UserController {
     //校验用户名或手机号是否已被注册
     @RequestMapping("checkRepeat")
     public void checkName(User user,PrintWriter outs){
-        System.out.println(user.getName());
-        if(userService.checkName(user) > 0){
+        System.out.println(user.getAccount());
+        if(userService.checkRepeat(user) > 0){
             System.out.println("boolean-->" + false);
             outs.print("{\"result\":"+false+"}");
         }else{
@@ -57,6 +57,9 @@ public class UserController {
             model.addAttribute("result",new AjaxResult(true,"格式填写错误"));
             System.out.println("格式填写错误");
             return "userRegist";
+        }else if(userService.checkRepeat(user) > 0) {       //防止表单重复提交
+            model.addAttribute("result",new AjaxResult(false,"该用户已被注册！"));
+            return "loginUI";
         }else{
             userService.addUser(user);
             model.addAttribute("result",new AjaxResult(true,"注册成功,请登录"));
@@ -83,7 +86,11 @@ public class UserController {
             return "loginUI";
         }
     }
-
+    @RequestMapping("logout")
+    public String logout(HttpSession session){
+        session.removeAttribute("loginUser");
+        return "show";
+    }
     @RequestMapping("test")
     public void test(){
         System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");

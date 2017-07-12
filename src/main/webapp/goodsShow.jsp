@@ -55,7 +55,7 @@
 </head>
 <body>
 <!--header-->
-<%@include file="all.jsp"%>
+<%@include file="header.jsp"%>
 <!---->
 <div class="container">
     <div class="single">

@@ -1,5 +1,6 @@
 package com.store.model;
 
+import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.Column;
@@ -17,7 +18,7 @@ public class User {
     @Id
     private Integer id;
 
-    @Length(min = 4,max = 20)
+    @Length(min = 2,max = 20)
     private String name;
 
     @Length(min = 6,max = 20)
@@ -25,6 +26,28 @@ public class User {
 
     @Pattern(regexp = "^(((13[0-9]{1})|(14[0-9]{1})|(15[0-9]{1})|(17[0-9]{1})|(18[0-9]{1}))+\\d{8})$")
     private String phoneNumber;
+
+    @Length(min = 4,max = 20)
+    private String account;
+
+    @Email
+    private String email;
+
+    public String getAccount() {
+        return account;
+    }
+
+    public void setAccount(String account) {
+        this.account = account;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public Integer getId() {
         return id;

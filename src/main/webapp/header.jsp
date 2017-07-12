@@ -7,14 +7,18 @@
             <div class="header-top-in">
                 <div class="logo">
                     <%--<a href="index.html"><img src="${pageContext.request.contextPath}/resources/images/logo.png" alt=" " ></a>--%>
-
                 </div>
                 <div class="header-in">
-
                     <ul class="icon1 sub-icon1" >
+                        <c:if test="${sessionScope.loginUser == null}">
+                            <li  ><a href="${pageContext.request.contextPath}/loginUI.jsp">你好，请先登录</a></li>|
+                            <li  ><a href="${pageContext.request.contextPath}/userRegist.jsp">免费注册</a></li>|
+                        </c:if>
+                        <c:if test="${sessionScope.loginUser != null}">
+                            <li  ><a href="#">欢迎您，${sessionScope.loginUser.name}</a></li>|
+                            <li  ><a href="${pageContext.request.contextPath}/admin/user/logout">退出</a></li>|
+                        </c:if>
                         <li  ><a href="${pageContext.request.contextPath}/user/index.jsp">我的商城</a></li>
-                        <li  ><a href="wishlist.html">购物车</a> </li>
-                        <li ><a href="#" >收藏夹</a></li>
                         <li><div class="cart">
                             <a href="#" class="cart-in"> </a>
                             <span> 0</span>

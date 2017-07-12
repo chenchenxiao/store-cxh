@@ -22,6 +22,7 @@
     <script src="${pageContext.request.contextPath}/resources/js/messenger/messenger.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/messenger/messenger-theme-future.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/messenger/messenger.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/js/jquery.validate.js"></script>
 </head>
 <body>
 <header class="header">
@@ -36,6 +37,14 @@
     <form action="${pageContext.request.contextPath}/admin/user/regist" method="post" class="add_form">
         <div class="register-box">
             <label for="username" class="username_label">用 户 名
+                <input maxlength="20" type="text" name="account" placeholder="您的用户名和登录名" id="account"/>
+            </label>
+            <div class="tips">
+
+            </div>
+        </div>
+        <div class="register-box">
+            <label for="username" class="username_label">姓 名
                 <input maxlength="20" type="text" name="name" placeholder="您的用户名和登录名" id="name"/>
             </label>
             <div class="tips">
@@ -44,7 +53,7 @@
         </div>
         <div class="register-box">
             <label for="password" class="other_label">设 置 密 码
-                <input maxlength="20" name="password" type="password" placeholder="建议至少使用两种字符组合"/>
+                <input maxlength="20" name="password" type="password" placeholder="建议至少使用两种字符组合" id="password"/>
             </label>
             <div class="tips">
 
@@ -52,7 +61,7 @@
         </div>
         <div class="register-box">
             <label for="passwordConfig" class="other_label">确 认 密 码
-                <input maxlength="20" type="password" placeholder="请再次输入密码"/>
+                <input maxlength="20" type="password" placeholder="请再次输入密码" id="configPassword"/>
             </label>
             <div class="tips">
 
@@ -61,7 +70,7 @@
         <div class="register-box">
             <label for="phoneNumber" class="other_label">
                 <span>中国 0086∨</span>
-                <input class="phone" id="phoneNumber" name="phoneNumber" maxlength="20" type="text" placeholder="建议使用常用手机"/>
+                <input class="phone" id="phoneNumber" name="phoneNumber" maxlength="20" type="text" placeholder="建议使用常用手机" />
             </label>
             <div class="tips">
 
@@ -69,7 +78,7 @@
         </div>
         <div class="register-box">
             <label for="username" class="other_label">验 证 码
-                <input maxlength="20" type="text" placeholder="请输入验证码"/>
+                <input maxlength="20" type="text" placeholder="请输入验证码" id="checkCode"/>
             </label>
             <span id="code"></span>
             <div class="tips">
@@ -98,6 +107,23 @@
     </form>
 </section>
 </body>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#user_form").validate({
+            rules: {
+                name: {
+                    required: true,
+                    isChinese: true
+                },
+            messages: {
+                name: {
+                    required:"请填写你的姓名",
+                    isChinese:"请正确填写你的姓名"
+                },
+            }
+        });
+    });
+</script>
 <c:if test="${result!=null}">
     <script>
         $().ready(function(){
