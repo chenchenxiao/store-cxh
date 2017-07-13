@@ -2,6 +2,7 @@ package com.store.interceptors;
 
 import com.store.been.AjaxResult;
 import com.store.model.User;
+import com.store.util.FileUploadUtil;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -32,11 +33,16 @@ public class LoginInteceptor implements HandlerInterceptor {
         String requestUrl = request.getRequestURI();
         String contextPath = request.getContextPath();
         String url = requestUrl.substring(contextPath.length());
+        String filePath = request.getSession().getServletContext()+ FileUploadUtil.USER_PATH;
+        System.out.println(filePath);
         if(excludeUrls.contains(url)){
+            System.out.println(url);
             System.out.println("通过了拦截器");
             return true;
         }else {
-            User loginUser = (User) request.getSession().getAttribute("loginAdmin");
+            User loginUser = (User) request.getSession().getAttribute("loginUser");
+            System.out.println(url);
+            System.out.println("user-->" + loginUser);
             if (loginUser != null && loginUser.getName() != null && !loginUser.getName().equals("")) {
                 return true;
             } else {

@@ -227,7 +227,14 @@ $(function(){
 
 //  获取手机验证码
     $("#btn-phoneCheck").click(function(){
-//        function checkPhone(){
+        // var countdown = 60;
+        // setTimeout(function() {
+        //         alert("!!!!!");
+        //         $("#btn-phoneCheck").text("重新发送(" + countdown + ")");
+        //         countdown--;  }
+        //     ,1000)
+// //        function checkPhone(){
+//         time();
         var result;
         alert("成功发送信息")
         $.ajax({

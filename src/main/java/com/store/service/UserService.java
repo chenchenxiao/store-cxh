@@ -11,4 +11,10 @@ public interface UserService {
         void addUser(User user);
 
         User login(User user);
+
+        User findUpdateUser(Integer id);
+
+        Integer checkAccount(String account);
+
+        void update(User user);
 }

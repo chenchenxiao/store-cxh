@@ -18,9 +18,11 @@ public class BaseMapperTest {
 //        userMapper.selectOne(new User(1,"1",null,null));
 //        userMapper.selectById(1);
 //        userMapper.selectByPrimaryKey(1);
-        PageHelper.startPage(1,5);
-        userMapper.selectAll();
-
+//        PageHelper.startPage(1,5);
+//        userMapper.selectAll();
+//          int i = userMapper.selectCountByExample("test");
+//        System.out.println(i);
+        userMapper.selectByPrimaryKey(1);
     }
 
 }

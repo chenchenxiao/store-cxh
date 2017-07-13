@@ -33,6 +33,16 @@ public class User {
     @Email
     private String email;
 
+    private String photo;
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
+
     public String getAccount() {
         return account;
     }
