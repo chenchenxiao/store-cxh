@@ -55,14 +55,6 @@ $(function(){
             $(this).parent().next("div").css("color",'red');
             accountResult = false;
         }else{
-            // for(var m=0;m<stuList.length;m++){
-            //     if($(this).val()==stuList[m].name){
-            //         $(this).parent().next("div").text("该用户名已被注册");
-            //         $(this).parent().next("div").css("color",'red');
-            //         return;
-            //     }
-            // }
-            // $(this).parent().next("div").text("");
             $.ajax({
                 "url":"admin/user/checkRepeat",
                 "data":{"account":$('#account').val()},
@@ -99,26 +91,7 @@ $(function(){
             nameResult = true;
         }
     })
-    //ajax验证用户名是否可用
-    // $("#username").change(function () {
-    //     $.ajax({
-    //         "url":"${pageContext.request.contextPath }/admin/user/checkName",
-    //         "data":{"username":$('#username').val()},
-    //         "type":"POST",
-    //         "success":function(data){
-    //             if(data.result){
-    //                 $(this).parent().next("div").text("该用户名已被注册");
-    //                 $(this).parent().next("div").css("color",'red');
-    //                 return;
-    //             }else if(data.result==2&&$('#username').val().length>6){
-    //                 $(this).parent().next("div").text("该用户名可用使用");
-    //                 $(this).parent().next("div").css("color",'red');
-    //                 return;
-    //             }
-    //         },
-    //         "dataType":"json"
-    //     });
-    // })
+
     //密码
     $("#password").blur(function(){
         if($(this).val().length==0){
@@ -213,17 +186,17 @@ $(function(){
         checkResult = result;
     }
 
-    $("#checkNumber").blur(function () {
-        if($(this).val() != checkResult){
-            $(".check").text("验证码不正确或已超时，请重新获取");
-            $(".check").css("color",'red');
-            numberResult = false;
-        }else{
-             $(".check").text("");
-            numberResult = true;
-    }
+    // $("#checkNumber").blur(function () {
+    //     if($(this).val() != checkResult){
+    //         $(".check").text("验证码不正确或已超时，请重新获取");
+    //         $(".check").css("color",'red');
+    //         numberResult = false;
+    //     }else{
+    //          $(".check").text("");
+    //         numberResult = true;
+    // }
 
-    })
+    // })
 
 //  获取手机验证码
     $("#btn-phoneCheck").click(function(){
@@ -289,13 +262,20 @@ $(function(){
         if($("#checkCode").val().toUpperCase()!=$("#code").text().toUpperCase()){
             return;
         }
+        if($("#checkNumber").val() != checkResult){
+            $(".check").text("验证码不正确或已超时，请重新获取");
+            $(".check").css("color",'red');
+            return;
+        }else{
+            $(".check").css("color",'red');
+        }
         // //手机验证码输入不正确
         // if(checkResult != $("#checkNumber").val()){
         //         $(".check").text("验证码不正确或已超时，请重新获取");
         //         $(".check").css("color",'red');
         //     return;
         // }
-        if(!(accountResult && passwordResult && configResult && phoneResult && codeResult && numberResult && nameResult)){
+        if(!(accountResult && passwordResult && configResult && phoneResult && codeResult && nameResult)){
             return;
         }
             // stuList.push(new Student($('input').eq(0).val(),$('input').eq(1).val(),$('input').eq(3).val(),stuList.length+1));

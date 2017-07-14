@@ -1,36 +1,35 @@
 $(function(){
-    var accountResult;
-    $("#account").blur(function () {
-        if($("#oldAccount").val() == $("#account").val()){
-            $(".tips").text("");
-            accountResult = true;
-            return;
-        }
+    var checkResult;
+    var numberResult;
+    function getcheckVal(result){
+        checkResult = result;
+    }
+    $("#btn-phoneCheck").click(function(){
+        var result;
+        alert("成功发送信息")
         $.ajax({
-            "url":"${pageContext.request.contextPath}/admin/user/checkRepeat",
-            "data":{"account":$('#account').val()},
+            "url":"admin/user/checkPhone",
+            "data":{"phoneNumber":$('#phoneNumber').val()},
             "type":"POST",
             "success":function(data){
-                if(data.result){
-                    $(".tips").text("");
-                    // $("#name").parent().next("div").css("color",'white');
-                    accountResult = true;
-                }else{
-                    $(".tips").text("该用户名已被注册");
-                    $(".tips").css("color",'red');
-                    accountResult = false;
-                }
+                alert(data.result)
+                // $("#RealCheckNumber").val(data.result)
+                getcheckVal(data.result)
             },
             "dataType":"json"
         });
+        // }
     })
 
-    $("#submit_").click(function () {
-        alert(accountResult)
-        if(accountResult){
-            $("#user-form").submit()
+    $("#checkNumber").blur(function () {
+        if($(this).val() != checkResult){
+            $(".check").text("验证码不正确或已超时，请重新获取");
+            $(".check").css("color",'red');
+            numberResult = false;
         }else{
-            return;
+            $(".check").text("");
+            numberResult = true;
         }
+
     })
 })

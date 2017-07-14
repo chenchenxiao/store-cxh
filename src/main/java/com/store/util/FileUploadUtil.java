@@ -98,7 +98,28 @@ public class FileUploadUtil {
 			
 		}
 	}
-
+    /**
+     * 上传人物头像
+     */
+    public static String uploadUserPhoto(MultipartFile pictures,String path) {
+        RequestAttributes ar = RequestContextHolder.getRequestAttributes();
+        HttpServletRequest request = ((ServletRequestAttributes) ar).getRequest();
+        String filePath = request.getSession().getServletContext().getRealPath("") + path;
+        String photoName = UUID.randomUUID().toString() + "." + FileUploadUtil.getFileExt(pictures.getOriginalFilename());
+        if (pictures != null) {     //判断照片是否为空，为空就直接修改用户资料
+            File file = new File(filePath);
+            if (!file.exists()) {
+                file.mkdirs();
+            }
+            //存照片到webapp下
+            try {
+                pictures.transferTo(new File(file, photoName));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return photoName;
+    }
 	/**
 	 * 获取文件的后缀名
 	 * @param fileName 原文件名

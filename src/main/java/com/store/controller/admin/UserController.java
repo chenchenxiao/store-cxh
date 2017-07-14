@@ -114,34 +114,32 @@ public class UserController extends BaseAdminController<User,Long> {
     //用户修改资料
     @RequestMapping("update")
     public String update(User user,String oldAccount,HttpServletRequest request, RedirectAttributes redirectAttributes,HttpSession session,MultipartFile pictures){
-        System.out.println(pictures.getOriginalFilename());
-        String filePath = request.getSession().getServletContext().getRealPath("") + FileUploadUtil.USER_PATH;
+        System.out.println("picName" + pictures.getOriginalFilename());
+        System.out.println("pic" + pictures);
+        //图片的保存路径
         try{
-            if(oldAccount.equals(user.getAccount())){
-                if(!photoExt.contains(FileUploadUtil.getFileExt(pictures.getOriginalFilename()))){
+            if(oldAccount.equals(user.getAccount())){  //判断用户名是否与修改之前相同
+                if(!photoExt.contains(FileUploadUtil.getFileExt(pictures.getOriginalFilename()))){      //判断上传的照片的类型是否符合要求
                     redirectAttributes.addFlashAttribute("result",new AjaxResult(false,"头像只能是照片格式的文件"));
                     return  "redirect:/admin/user/updateUI/" + user.getId();
-                }else{
-                    String photoName =  UUID.randomUUID().toString() + "." + FileUploadUtil.getFileExt(pictures.getOriginalFilename());
-                    if(pictures!=null){
-                        File file = new File(filePath);
-                        if(!file.exists()){
-                            file.mkdirs();
-                        }
-                        //存照片到webapp下
-                        pictures.transferTo(new File(file,photoName));
+                }else{      //修改照片的名字
+                    if(pictures.getOriginalFilename().length() > 0){     //判断照片是否为空，为空就直接修改用户资料
+                       user.setPhoto(FileUploadUtil.uploadUserPhoto(pictures,FileUploadUtil.USER_PATH));
                     }
-                    user.setPhoto(photoName);
                     userService.update(user);
                     redirectAttributes.addFlashAttribute("result",new AjaxResult(true,"操作成功"));
                     return  "redirect:/admin/user/index";
                 }
-            }else if(userService.checkAccount(user.getAccount()) > 0){
+            }else if(userService.checkAccount(user.getAccount()) > 0){      //判断用户名是否重复注册
                 redirectAttributes.addFlashAttribute("result",new AjaxResult(false,"该账户已被使用，请重新注册"));
                 return  "redirect:/admin/user/updateUI/" + user.getId();
-            }else{
+            }else{          //成功修改
                 redirectAttributes.addFlashAttribute("result",new AjaxResult(true,"操作成功"));
                 session.setAttribute("loginUser",user);
+                if(pictures.getOriginalFilename().length() > 0){
+                    System.out.println("picctureName" + pictures.getOriginalFilename());
+                    user.setPhoto(FileUploadUtil.uploadUserPhoto(pictures,FileUploadUtil.USER_PATH));
+                }
                 userService.update(user);
                 return "redirect:/admin/user/index";
             }
@@ -158,45 +156,22 @@ public class UserController extends BaseAdminController<User,Long> {
         System.out.println(FileUploadUtil.getFileExt(pictures.getOriginalFilename()));
         System.out.println(!photoExt.contains(FileUploadUtil.getFileExt(pictures.getOriginalFilename())));
         if(!photoExt.contains(FileUploadUtil.getFileExt(pictures.getOriginalFilename()))){
-            System.out.println("!!!!!!!!!false");
             outs.print("{\"showResult\":"+false+"}");
             outs.close();
         }
-        String filePath = request.getSession().getServletContext().getRealPath("") + FileUploadUtil.USER_PATH;
-        String photoName =  UUID.randomUUID().toString() + "." + FileUploadUtil.getFileExt(pictures.getOriginalFilename());
-        if(pictures!=null){
-            File file = new File(filePath);
-            if(!file.exists()){
-                file.mkdirs();
-            }
-            //存照片到webapp下的images里
-           pictures.transferTo(new File(file,photoName));
-            //返回图片的名字
-            outs.print("{\"showResult\":\""+photoName+"\"}");
-            outs.close();
-        }
-//        String photoName = FileUploadUtil.uploadFile(pictures);
-//        outs.print("{\"showResult\":\""+photoName+"\"}");
-//        outs.close();
-//        String uploadPath = request.getSession().getServletContext().getRealPath("")+ "photo";
-//        try {
-//            if(pictures!=null){
-//                System.out.println("photo!=null");
-//                File file = new File(uploadPath);
-//                if(!file.exists()){
-//                    file.mkdirs();
-//                }
-//                //照片的名称
-//                String photoName = UUID.randomUUID().toString() + "." + FileUploadUtil.getFileExt(pictures.getOriginalFilename());
-//                //存照片到webApp下的images里
-//                pictures.transferTo(new File(file,photoName));
-//                //返回图片的名字
-//                outs.print("{\"showResult\":\""+photoName+"\"}");
-//                outs.close();
+//        String filePath = request.getSession().getServletContext().getRealPath("") + FileUploadUtil.USER_PATH;
+//        String photoName =  UUID.randomUUID().toString() + "." + FileUploadUtil.getFileExt(pictures.getOriginalFilename());
+//        if(pictures!=null){
+//            File file = new File(filePath);
+//            if(!file.exists()){
+//                file.mkdirs();
 //            }
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
+//            //存照片到webapp下的images里
+//           pictures.transferTo(new File(file,photoName));
+//            //返回图片的名字
+        String photoName = FileUploadUtil.uploadUserPhoto(pictures,FileUploadUtil.USER_PATH);
+        outs.print("{\"showResult\":\""+ photoName +"\"}");
+        outs.close();
     }
 
     @RequestMapping("test")

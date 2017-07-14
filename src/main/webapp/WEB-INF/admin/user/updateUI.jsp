@@ -44,6 +44,9 @@
                                     </a>
                                     <input type="file" name="pictures"  id="pictures" >
                                     <div class="photoTip">
+                                        <c:if test="${user.photo == null}">
+                                            你还有选择头像
+                                        </c:if>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -59,20 +62,19 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="password">密码</label>
-                                    <input class="form-control" id="password" name="password" type="password" >
+                                    <input class="form-control" id="password" name="password" type="password"  >
                                 </div>
                                 <div class="form-group">
                                     <label for="confirm_password">确认密码</label>
                                     <input class="form-control" id="confirm_password" name="confirm_password" type="password">
                                 </div>
-                                <%--<div class="form-group">--%>
-                                    <%--<label for="phoneNumber">手机号码</label>--%>
-                                    <%--<input class="form-control" id="phoneNumber" name="phoneNumber" type="text" value="${user.phoneNumber}">--%>
-                                <%--</div>--%>
-                                <%--<div class="form-group">--%>
-                                    <%--<label for="email">邮箱</label>--%>
-                                    <%--<input class="form-control" id="email" name="email" type="email" value="${user.email}">--%>
-                                <%--</div>--%>
+                                <div class="form-group">
+                                    <label for="confirm_password">手机验证码
+                                        <input maxlength="20" class="form-control" id="checkCode" name="checkCode" type="text">
+                                    </label>
+                                    <button id="btn-phoneCheck" type="button" style="width: 85px;height:46px;border: none;background:#f2f2f2;color:#333; padding:0">获取验证码</button>
+                                    <div class="tip"></div>
+                                </div>
                             </div>
                         </div>
                         <br>
@@ -109,6 +111,7 @@
                     minlength: 6,
                     equalTo: "#password"
                 },
+                checkCode:"required"
 //                email: {
 //                    email: true
 //                }
@@ -128,6 +131,7 @@
                     minlength: "密码长度不能小于6位",
                     equalTo: "两次密码不一致"
                 },
+                checkCode: "请填写验证码",
 //                phoneNumber: '请输入正确的手机号码',
 //                email: "请填写正确的邮箱地址"
             }
@@ -136,6 +140,7 @@
 </script>
 <script type="text/javascript">
     var accountResult = true;
+    var numberResult = true;
     $("#account").blur(function () {
         if($("#oldAccount").val() == $("#account").val()){
             $(".tips").text("");
@@ -160,11 +165,17 @@
             "dataType":"json"
         });
     })
-
+    if($("#checkCode").val().length == 0){
+        numberResult == false;
+    }
     $("#submit_").click(function () {
-//        $("#user-form").submit()
         alert(accountResult)
-        if(accountResult){
+        if(accountResult && numberResult){
+            if($("#checkCode").val() != checkResult){
+                $(".tip").text("验证码不正确或已超时，请重新获取");
+                $(".tip").css("color",'red');
+                return;
+            }
             $("#user-form").submit()
         }else{
             return;
@@ -192,39 +203,46 @@
                 alert("data.showResult-->" + data.showResult )
                 var path = "${pageContext.request.contextPath }/resources/file/user/"+data.showResult;
                 alert("path" + path)
+                $(".photoTip").text("");
                 $("#photo").attr("src",path);
             },
         };
         $("#user-form").ajaxSubmit(option);
     })
-</script>
 
-<script type="text/javascript">
-    function showPhoto() {
-        alert("showPhoto")
-        var option={
-            //$.ajax({
-            type:'POST',
-            url:'${pageContext.request.contextPath }/admin/user/showPhoto',
-            dataType:'json',
-            //data:$('#regist_form').serialize(),
-            success:function(data){
-                //把json格式的字符串转换成json对象
-                //var jsonObj = $.parseJSON(data);
-                //返回服务器图片路径，把图片路径设置给img标签
-                alert("data.showreslut-->" + data.showresult )
-                var path = "/project2/images/"+data.showresult;
-                $("#photo").attr("src",path);
-            }
-        };
-        //});
-        $("#password").val(${sessionScope.loginUser.password})
-        $("#configPassword").val(${sessionScope.loginUser.password})
-        $("#user-form").ajaxSubmit(option);
-//    })
+    var checkResult;
+    var numberResult;
+    function getcheckVal(result){
+        checkResult = result;
     }
-//    $("#photo").change(function () {
+    $("#btn-phoneCheck").click(function(){
+        var result;
+        alert("成功发送信息")
+        $.ajax({
+            "url":"${pageContext.request.contextPath}/admin/user/checkPhone",
+            "data":{"phoneNumber":$('#phoneNumber').val()},
+            "type":"POST",
+            "success":function(data){
+                alert(data.result)
+                // $("#RealCheckNumber").val(data.result)
+                getcheckVal(data.result)
+            },
+            "dataType":"json"
+        });
+        // }
+    })
 
+//    $("#checkCode").blur(function () {
+//        if($(this).val() != checkResult){
+//            $(".check").text("???测试测试");
+//            $(".check").css("color",'red');
+//            numberResult = false;
+//        }else{
+//            $(".check").text("");
+//            numberResult = true;
+//        }
+//
+//    })
 </script>
 
 </body>
