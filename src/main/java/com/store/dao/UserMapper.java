@@ -10,4 +10,6 @@ import tk.mybatis.mapper.common.Mapper;
  */
 public interface UserMapper extends BaseMapper<User>{
     Integer checkAccount(String account);
+
+    User checkUser(String condition);
 }

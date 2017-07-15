@@ -7,4 +7,10 @@
         FROM store_user
         where account = #{account}
     </select>
+
+    <select id="checkUser" parameterType="String" resultType="com.store.model.User">
+        select * FROM
+        store_user
+        where account = #{condition} or email = #{condition} or phone_number = #{condition}
+    </select>
 </mapper>

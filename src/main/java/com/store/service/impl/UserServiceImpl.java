@@ -50,4 +50,8 @@ public class UserServiceImpl implements UserService{
         }
         userMapper.updateByPrimaryKeySelective(user);
     }
+
+    public User checkUser(String condition) {
+        return userMapper.checkUser(condition);
+    }
 }

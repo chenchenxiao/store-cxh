@@ -27,7 +27,7 @@ html,body{
 .logo{
 	width: 160px;
     height:50px;
-    background: url(../img/icon.png) no-repeat;
+    /*background: url(../img/icon.png) no-repeat;*/
     position: absolute;
     top:20px;
     left:20px;
@@ -136,3 +136,12 @@ form{
     font-size: 16px;
     font-family: "Microsoft YaHei","Hiragino Sans GB";
 }
+.findPassword_btn button{
+     width: 35%;
+     height: 40px;
+     color: #fff;
+     background: #e22;
+     border: 0;
+     font-size: 16px;
+     font-family: "Microsoft YaHei","Hiragino Sans GB";
+ }

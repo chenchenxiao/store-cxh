@@ -2,26 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="16eb459e-2a9b-44da-87fc-4ffc62eba7af" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__com_sun_mail_javax_mail_1_5_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_apache_commons_commons_email_1_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/model/Mail.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/test/EmailTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/util/MailUtils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/user/securityUI.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/user/updateEmailUI.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/user/updatePhoneUI.jsp" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/util/MyAuthenticator.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/.idea/artifacts/store_cxh_war_exploded.xml" afterPath="$PROJECT_DIR$/../store-cxh/.idea/artifacts/store_cxh_war_exploded.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/webapp/admin/user/findPassword.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../store-cxh/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/pom.xml" afterPath="$PROJECT_DIR$/../store-cxh/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/controller/admin/UserController.java" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/controller/admin/UserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/model/User.java" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/model/User.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/UserMapper.java" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/UserMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/UserMapper.xml" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/UserMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/UserService.java" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/UserService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/impl/UserServiceImpl.java" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/impl/UserServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/test/PathTest.java" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/test/PathTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/user/updateUI.jsp" afterPath="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/user/updateUI.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/webapp/inc/left.jsp" afterPath="$PROJECT_DIR$/../store-cxh/src/main/webapp/inc/left.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/webapp/resources/js/update.js" afterPath="$PROJECT_DIR$/../store-cxh/src/main/webapp/resources/js/update.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/store-cxh.iml" afterPath="$PROJECT_DIR$/../store-cxh/store-cxh.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/resources/springmvc.xml" afterPath="$PROJECT_DIR$/../store-cxh/src/main/resources/springmvc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/webapp/admin/user/loginUI.jsp" afterPath="$PROJECT_DIR$/../store-cxh/src/main/webapp/admin/user/loginUI.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/webapp/resources/css/index.css" afterPath="$PROJECT_DIR$/../store-cxh/src/main/webapp/resources/css/index.css" />
     </list>
     <ignored path="$PROJECT_DIR$/../store-cxh/out/" />
     <ignored path="$PROJECT_DIR$/../store-cxh/target/" />
@@ -38,38 +28,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/controller/admin/UserController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="101">
+              <caret line="225" column="33" lean-forward="true" selection-start-line="225" selection-start-column="33" selection-end-line="225" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="MailUtils.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/util/MailUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="21" column="18" lean-forward="false" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="114">
+              <caret line="27" column="25" lean-forward="true" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EmailTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/test/EmailTest.java">
+      <file leaf-file-name="UserService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/UserService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="827">
-              <caret line="71" column="5" lean-forward="true" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/controller/admin/UserController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="135" column="40" lean-forward="false" selection-start-line="135" selection-start-column="40" selection-end-line="135" selection-end-column="40" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="396">
+              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -77,8 +63,30 @@
       <file leaf-file-name="loginUI.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/admin/user/loginUI.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-321">
-              <caret line="82" column="0" lean-forward="false" selection-start-line="82" selection-start-column="0" selection-end-line="102" selection-end-column="7" />
+            <state relative-caret-position="920">
+              <caret line="42" column="83" lean-forward="false" selection-start-line="42" selection-start-column="83" selection-end-line="42" selection-end-column="83" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="findPassword.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/admin/user/findPassword.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="230">
+              <caret line="283" column="19" lean-forward="false" selection-start-line="283" selection-start-column="19" selection-end-line="283" selection-end-column="19" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="updateEmailUI.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/user/updateEmailUI.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="41">
+              <caret line="180" column="0" lean-forward="true" selection-start-line="180" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -87,50 +95,44 @@
       <file leaf-file-name="securityUI.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/user/securityUI.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1260">
-              <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+            <state relative-caret-position="-1050">
+              <caret line="16" column="30" lean-forward="false" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="updateEmailUI.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/user/updateEmailUI.jsp">
+      <file leaf-file-name="UserServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/impl/UserServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="489">
-              <caret line="147" column="9" lean-forward="true" selection-start-line="147" selection-start-column="9" selection-end-line="147" selection-end-column="9" />
+            <state relative-caret-position="330">
+              <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
               <folding>
-                <element signature="n#style#0;n#button#0;n#div#2;n#div#0;n#div#0;n#fieldset#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#1402#1403#0" expanded="true" />
+                <element signature="e#1456#1457#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="updatePhoneUI.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/user/updatePhoneUI.jsp">
+      <file leaf-file-name="UserMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/UserMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="187" column="50" lean-forward="true" selection-start-line="187" selection-start-column="50" selection-end-line="187" selection-end-column="50" />
-              <folding />
+            <state relative-caret-position="270">
+              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <folding>
+                <marker date="1500098859075" expanded="true" signature="278:353" ph="select count... store_user" />
+                <marker date="1500098859075" expanded="true" signature="462:586" ph="select * FRO... store_user" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/model/User.java">
+      <file leaf-file-name="springmvc.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/resources/springmvc.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="393">
-              <caret line="31" column="25" lean-forward="false" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="header.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/header.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="16" column="43" lean-forward="true" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
+            <state relative-caret-position="380">
+              <caret line="55" column="55" lean-forward="false" selection-start-line="55" selection-start-column="55" selection-end-line="55" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -161,6 +163,15 @@
       <find>phone</find>
       <find>emailResult</find>
       <find>model.addAttribute</find>
+      <find>submit_btn</find>
+      <find>img</find>
+      <find>email</find>
+      <find>photo</find>
+      <find>phoneTip</find>
+      <find>findPassword_btn</find>
+      <find>#findPassword_btn</find>
+      <find>alert</find>
+      <find>checkPhone</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -179,13 +190,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/been/Sort.java" />
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/util/MyAuthenticator.java" />
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/controller/TestController.java" />
         <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/util/SendPhoneMsgUtil.java" />
         <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/test/JustTest.java" />
         <option value="$PROJECT_DIR$/../store-cxh/src/main/webapp/show.jsp" />
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/webapp/userRegist.jsp" />
         <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/util/Md5Util.java" />
         <option value="$PROJECT_DIR$/../store-cxh/src/main/webapp/resources/css/page.css" />
         <option value="$PROJECT_DIR$/../store-cxh/src/main/webapp/loginUI.jsp" />
@@ -197,12 +204,8 @@
         <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/controller/ShowController.java" />
         <option value="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/user/show.jsp" />
         <option value="$PROJECT_DIR$/../store-cxh/src/main/webapp/user/show.jsp" />
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/resources/springmvc.xml" />
         <option value="$PROJECT_DIR$/../store-cxh/src/main/webapp/resources/js/updateCheck.js" />
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/UserService.java" />
         <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/test/BaseMapperTest.java" />
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/UserMapper.java" />
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/UserMapper.xml" />
         <option value="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/alcss.jsp" />
         <option value="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/aljs.jsp" />
         <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/controller/admin/BaseAdminController.java" />
@@ -214,7 +217,6 @@
         <option value="$PROJECT_DIR$/../store-cxh/src/main/webapp/inc/left.jsp" />
         <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/test/PathTest.java" />
         <option value="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/user/updatePhone.jsp" />
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/user/updateUI.jsp" />
         <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/util/SimpleMailSender.java" />
         <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/util/MailUtil.java" />
@@ -229,7 +231,16 @@
         <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/test/EmailTest.java" />
         <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/util/MailUtils.java" />
         <option value="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/user/updateEmailUI.jsp" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/webapp/resources/css/index.css" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/impl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/UserMapper.java" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/UserMapper.xml" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/webapp/userRegist.jsp" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/UserService.java" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/resources/springmvc.xml" />
         <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/controller/admin/UserController.java" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/webapp/admin/user/loginUI.jsp" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/webapp/admin/user/findPassword.jsp" />
       </list>
     </option>
   </component>
@@ -247,10 +258,10 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1" />
-    <option name="y" value="1" />
-    <option name="width" value="1918" />
-    <option name="height" value="1038" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -415,6 +426,62 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="store-cxh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="store-cxh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="store-cxh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="store-cxh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -530,6 +597,44 @@
               <option name="myItemId" value="store" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="store-cxh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="store-cxh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="store" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="impl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -586,10 +691,6 @@
               <option name="myItemId" value="store" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -617,11 +718,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
+              <option name="myItemId" value="dao" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1336,7 +1433,7 @@
       <option name="presentableId" value="Default" />
       <updated>1499606491412</updated>
       <workItem from="1499606497474" duration="39900000" />
-      <workItem from="1499847108066" duration="89102000" />
+      <workItem from="1499847108066" duration="106310000" />
     </task>
     <task id="LOCAL-00001" summary="项目搭好环境，前台改了一点，登录注册页面的模板初步修改好了">
       <created>1499617418865</created>
@@ -1380,7 +1477,14 @@
       <option name="project" value="LOCAL" />
       <updated>1499998862662</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="实现了邮箱验证，前台写的东西比较多，考虑的情况有多种，所以花的时间比较长，用户模块初步完成，有待补充和改善">
+      <created>1500082970810</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1500082970810</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1416,17 +1520,17 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="129002000" />
+    <option name="totallyTimeSpent" value="146210000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="1" width="1918" height="1038" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289183" sideWeight="0.49784714" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33112583" sideWeight="0.7992465" order="7" side_tool="true" content_ui="tabs" x="22" y="401" width="1876" height="237" />
+      <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40584415" sideWeight="0.8118337" order="7" side_tool="true" content_ui="tabs" x="22" y="401" width="1876" height="237" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1436,7 +1540,7 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33112583" sideWeight="0.2007535" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40584415" sideWeight="0.1881663" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1446,7 +1550,7 @@
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel remote servers log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47510824" sideWeight="0.4936034" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25511304" sideWeight="0.4940476" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25266525" sideWeight="0.4940476" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1473,11 +1577,12 @@
     <MESSAGE value="实现了用户登录的拦截" />
     <MESSAGE value="实现了上传头像和预览图片的功能，时间主要都花在前台了，一开始出了bug是因为js文件没引入，后面是因为在显示图片的时候出现了问题" />
     <MESSAGE value="解决了上传图片时存在的一点问题，补充了修改图片时的短信验证" />
-    <option name="LAST_COMMIT_MESSAGE" value="解决了上传图片时存在的一点问题，补充了修改图片时的短信验证" />
+    <MESSAGE value="实现了邮箱验证，前台写的东西比较多，考虑的情况有多种，所以花的时间比较长，用户模块初步完成，有待补充和改善" />
+    <option name="LAST_COMMIT_MESSAGE" value="实现了邮箱验证，前台写的东西比较多，考虑的情况有多种，所以花的时间比较长，用户模块初步完成，有待补充和改善" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1486,42 +1591,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/tk/mybatis/mapper/3.3.4/mapper-3.3.4-sources.jar!/tk/mybatis/mapper/common/base/BaseUpdateMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="37" column="23" lean-forward="false" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/test/BaseMapperTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="14" column="27" lean-forward="false" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/UserMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding>
-            <marker date="1499909583383" expanded="true" signature="278:353" ph="select count... store_user" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/resources/img/coin111.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/resources/img/coin222.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/resources/img/coin19.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1572,14 +1641,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/UserMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/controller/admin/BaseAdminController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -1592,14 +1653,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="553" column="10" lean-forward="false" selection-start-line="553" selection-start-column="10" selection-end-line="553" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/alcss.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="20" column="90" lean-forward="false" selection-start-line="20" selection-start-column="90" selection-end-line="20" selection-end-column="90" />
           <folding />
         </state>
       </provider>
@@ -1660,22 +1713,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="12" column="30" lean-forward="true" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/impl/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="50" column="29" lean-forward="true" selection-start-line="50" selection-start-column="29" selection-end-line="50" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/test/PathTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="301">
@@ -1683,14 +1720,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/resources/js/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="277" column="64" lean-forward="false" selection-start-line="277" selection-start-column="64" selection-end-line="277" selection-end-column="64" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1722,14 +1751,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="27" column="13" lean-forward="false" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/resources/springmvc.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1824,14 +1845,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/user/updateUI.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="135" column="37" lean-forward="true" selection-start-line="135" selection-start-column="16" selection-end-line="135" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/java/io/PrintWriter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="77">
@@ -1840,34 +1853,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/userRegist.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="108" column="7" lean-forward="true" selection-start-line="108" selection-start-column="7" selection-end-line="108" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/user/securityUI.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1260">
-          <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/model/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="393">
           <caret line="31" column="25" lean-forward="false" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/admin/user/loginUI.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-321">
-          <caret line="82" column="0" lean-forward="false" selection-start-line="82" selection-start-column="0" selection-end-line="102" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -1888,13 +1877,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/util/MailUtils.java">
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/header.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="21" column="18" lean-forward="false" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="120">
+          <caret line="16" column="43" lean-forward="true" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1908,30 +1895,156 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/user/updateEmailUI.jsp">
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/UserMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="147" column="9" lean-forward="true" selection-start-line="147" selection-start-column="9" selection-end-line="147" selection-end-column="9" />
+        <state relative-caret-position="300">
+          <caret line="13" column="18" lean-forward="false" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/resources/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="1732" column="1" lean-forward="false" selection-start-line="1732" selection-start-column="1" selection-end-line="1732" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/alcss.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="36" column="80" lean-forward="false" selection-start-line="36" selection-start-column="80" selection-end-line="36" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/resources/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="30" column="23" lean-forward="true" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/user/updateUI.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-557">
+          <caret line="155" column="40" lean-forward="true" selection-start-line="155" selection-start-column="40" selection-end-line="155" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/resources/admin/javascripts/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="707" column="14" lean-forward="false" selection-start-line="707" selection-start-column="14" selection-end-line="707" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/userRegist.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="62" column="38" lean-forward="false" selection-start-line="62" selection-start-column="24" selection-end-line="62" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/resources/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="11" column="29" lean-forward="false" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/user/securityUI.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1050">
+          <caret line="16" column="30" lean-forward="false" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/UserMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding>
-            <element signature="n#style#0;n#button#0;n#div#2;n#div#0;n#div#0;n#fieldset#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1500098859075" expanded="true" signature="278:353" ph="select count... store_user" />
+            <marker date="1500098859075" expanded="true" signature="462:586" ph="select * FRO... store_user" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/header.jsp">
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/resources/springmvc.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="16" column="43" lean-forward="true" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
+        <state relative-caret-position="380">
+          <caret line="55" column="55" lean-forward="false" selection-start-line="55" selection-start-column="55" selection-end-line="55" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+          <folding>
+            <element signature="e#1402#1403#0" expanded="true" />
+            <element signature="e#1456#1457#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/user/updateEmailUI.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="41">
+          <caret line="180" column="0" lean-forward="true" selection-start-line="180" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/admin/user/loginUI.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="920">
+          <caret line="42" column="83" lean-forward="false" selection-start-line="42" selection-start-column="83" selection-end-line="42" selection-end-column="83" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/controller/admin/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="135" column="40" lean-forward="false" selection-start-line="135" selection-start-column="40" selection-end-line="135" selection-end-column="40" />
+        <state relative-caret-position="101">
+          <caret line="225" column="33" lean-forward="true" selection-start-line="225" selection-start-column="33" selection-end-line="225" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/util/MailUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="27" column="25" lean-forward="true" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/admin/user/findPassword.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="283" column="19" lean-forward="false" selection-start-line="283" selection-start-column="19" selection-end-line="283" selection-end-column="19" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

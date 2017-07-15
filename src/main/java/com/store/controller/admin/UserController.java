@@ -228,6 +228,27 @@ public class UserController extends BaseAdminController<User,Long> {
         outs.print("{\"result\":\""+ checkNumber +"\"}");
     }
 
+    //用户找回密码时校验身份
+    @RequestMapping("checkUser")
+    public void checkUser(String condition,PrintWriter outs){
+        User user = userService.checkUser(condition);
+        System.out.println("user" + user);
+        if(user == null){
+            outs.print("{\"result\":"+false+"}");
+            System.out.println("false");
+        }else{
+            outs.print("{\"email\":\""+ user.getEmail() +"\",\"phoneNumber\":\"" + user.getPhoneNumber() + "\",\"id\":\"" + user.getId() + "\"}");
+        }
+    }
+
+    //用户找回密码，重置密码
+    @RequestMapping("findPassword")
+    public String findPassword(User user,Model model){
+        model.addAttribute("result",new AjaxResult(true,"找回密码成功"));
+        userService.update(user);
+        return "admin/user/loginUI";
+    }
+
     @RequestMapping("test")
     public void test(){
         System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");

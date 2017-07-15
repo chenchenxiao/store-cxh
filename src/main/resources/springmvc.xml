@@ -51,6 +51,9 @@
                         <!--不需要拦截的 -->
                         <value>/admin/user/checkRepeat</value>
                         <value>/admin/user/checkPhone</value>
+                        <value>/admin/user/checkEmail</value>
+                        <value>/admin/user/checkUser</value>
+                        <value>/admin/user/findPassword</value>
                         <value>/admin/user/login</value>
                         <value>/admin/user/regist</value>
                     </list>

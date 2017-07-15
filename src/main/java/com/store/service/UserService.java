@@ -17,4 +17,8 @@ public interface UserService {
         Integer checkAccount(String account);
 
         void update(User user);
+
+        User checkUser(String condition);
+
+
 }
