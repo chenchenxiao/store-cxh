@@ -1,10 +1,12 @@
 package com.store.controller.admin;
 
 import com.store.been.AjaxResult;
+import com.store.model.Mail;
 import com.store.model.User;
 import com.store.service.UserService;
 import com.store.util.CheckNumberUtil;
 import com.store.util.FileUploadUtil;
+import com.store.util.MailUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
@@ -21,7 +23,7 @@ import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.io.*;
 import java.util.UUID;
-
+import org.apache.commons.mail.EmailException;
 /**
  * Created by 陈晓海 on 2017/7/8.
  */
@@ -33,8 +35,8 @@ public class UserController extends BaseAdminController<User,Long> {
 
     //校验用户名或手机号是否已被注册
     @RequestMapping("checkRepeat")
-    public void checkName(User user,PrintWriter outs){
-        System.out.println(user.getAccount());
+    public void checkRepeat(User user,PrintWriter outs){
+        System.out.println("user-___->" + user);
         if(userService.checkRepeat(user) > 0){
             System.out.println("boolean-->" + false);
             outs.print("{\"result\":"+false+"}");
@@ -114,8 +116,6 @@ public class UserController extends BaseAdminController<User,Long> {
     //用户修改资料
     @RequestMapping("update")
     public String update(User user,String oldAccount,HttpServletRequest request, RedirectAttributes redirectAttributes,HttpSession session,MultipartFile pictures){
-        System.out.println("picName" + pictures.getOriginalFilename());
-        System.out.println("pic" + pictures);
         //图片的保存路径
         try{
             if(oldAccount.equals(user.getAccount())){  //判断用户名是否与修改之前相同
@@ -127,21 +127,22 @@ public class UserController extends BaseAdminController<User,Long> {
                        user.setPhoto(FileUploadUtil.uploadUserPhoto(pictures,FileUploadUtil.USER_PATH));
                     }
                     userService.update(user);
+                    session.setAttribute("loginUser",user);
                     redirectAttributes.addFlashAttribute("result",new AjaxResult(true,"操作成功"));
                     return  "redirect:/admin/user/index";
                 }
-            }else if(userService.checkAccount(user.getAccount()) > 0){      //判断用户名是否重复注册
-                redirectAttributes.addFlashAttribute("result",new AjaxResult(false,"该账户已被使用，请重新注册"));
-                return  "redirect:/admin/user/updateUI/" + user.getId();
+            }else if(user.getAccount()!=null && userService.checkAccount(user.getAccount()) > 0 ){      //判断用户名是否重复注册
+                     redirectAttributes.addFlashAttribute("result",new AjaxResult(false,"该账户已被使用，请重新注册"));
+                    return  "redirect:/admin/user/updateUI/" + user.getId();
             }else{          //成功修改
-                redirectAttributes.addFlashAttribute("result",new AjaxResult(true,"操作成功"));
-                session.setAttribute("loginUser",user);
-                if(pictures.getOriginalFilename().length() > 0){
-                    System.out.println("picctureName" + pictures.getOriginalFilename());
-                    user.setPhoto(FileUploadUtil.uploadUserPhoto(pictures,FileUploadUtil.USER_PATH));
-                }
-                userService.update(user);
-                return "redirect:/admin/user/index";
+                    redirectAttributes.addFlashAttribute("result",new AjaxResult(true,"操作成功"));
+                    session.setAttribute("loginUser",user);
+                    if(pictures.getOriginalFilename().length() > 0){
+                        System.out.println("picctureName" + pictures.getOriginalFilename());
+                        user.setPhoto(FileUploadUtil.uploadUserPhoto(pictures,FileUploadUtil.USER_PATH));
+                    }
+                    userService.update(user);
+                    return "redirect:/admin/user/index";
             }
         }catch (Exception e){
             e.printStackTrace();
@@ -172,6 +173,59 @@ public class UserController extends BaseAdminController<User,Long> {
         String photoName = FileUploadUtil.uploadUserPhoto(pictures,FileUploadUtil.USER_PATH);
         outs.print("{\"showResult\":\""+ photoName +"\"}");
         outs.close();
+    }
+
+    //跳转到用户查看安全设置页面
+    @RequestMapping("securityUI/{id}")
+    public String securityUI(@PathVariable("id") Integer id, Model model){
+        User user = userService.findUpdateUser(id);
+        //把手机号码中间的4位换成*号
+        String phone = user.getPhoneNumber().replace(user.getPhoneNumber().substring(3,7),"****");
+        String email = user.getEmail().replace(user.getEmail().substring(3,7),"****");
+        model.addAttribute("user",user);
+        model.addAttribute("email",email);
+        model.addAttribute("phone",phone);
+        return TEMPLATE_PATH + "securityUI";
+    }
+    //跳转到用户修改手机页面
+    @RequestMapping("updatePhoneUI/{id}")
+    public String updatePhoneUI(@PathVariable("id") Integer id, Model model){
+        model.addAttribute("user",userService.findUpdateUser(id));
+        return TEMPLATE_PATH + "updatePhoneUI";
+    }
+
+    //用户修改邮箱或手机
+    @RequestMapping("securityUpdate")
+    public String securityUpdate(User user,RedirectAttributes redirectAttributes){
+        System.out.println("user-___->" + user.toString());
+        System.out.println("num" + userService.checkRepeat(user));
+        Integer id = user.getId();
+        user.setId(null);
+        if(userService.checkRepeat(user) > 0){
+            if(user.getPhoneNumber() != null){
+                redirectAttributes.addFlashAttribute("result",new AjaxResult(false,"该手机号已被使用，请重新注册"));
+                return  "redirect:/admin/user/updatePhoneUI/"+id;
+            }else{
+                redirectAttributes.addFlashAttribute("result",new AjaxResult(true,"该邮箱已被使用，请重新注册"));
+                return  "redirect:/admin/user/updateEmailUI/"+id;
+            }
+        }
+        userService.update(user);
+        return "redirect:/admin/user/index";
+    }
+
+    //跳转到绑定邮箱页面
+    @RequestMapping("updateEmailUI/{id}")
+    public String updateEmailUI(@PathVariable("id") Integer id, Model model){
+       model.addAttribute("user",userService.findUpdateUser(id));
+       return TEMPLATE_PATH + "updateEmailUI";
+    }
+    //用户绑定，校验邮箱
+    @RequestMapping("checkEmail")
+    public void checkEmail(String email,PrintWriter outs){
+        String checkNumber = MailUtils.send(email);
+        System.out.println("email-->" + email);
+        outs.print("{\"result\":\""+ checkNumber +"\"}");
     }
 
     @RequestMapping("test")

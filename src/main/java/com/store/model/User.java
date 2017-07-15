@@ -21,6 +21,19 @@ public class User {
     @Length(min = 2,max = 20)
     private String name;
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", password='" + password + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", account='" + account + '\'' +
+                ", email='" + email + '\'' +
+                ", photo='" + photo + '\'' +
+                '}';
+    }
+
     @Length(min = 6,max = 20)
     private String password;
 

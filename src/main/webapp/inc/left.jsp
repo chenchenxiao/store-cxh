@@ -149,13 +149,6 @@
             </dt>
             <dd>
                 <img class="coin11" src="${pageContext.request.contextPath}/resources/img/coin111.png" />
-                <img class="coin22" src="${pageContext.request.contextPath}/resources/img/coin222.png" />
-                <img class="icon3" src="${pageContext.request.contextPath}/resources/img/coin19.png" />
-                <a href="${pageContext.request.contextPath}/admin/user/updateUI/${sessionScope.loginUser.id}"  target="main" class="cks">设置</a>
-                <img class="icon4" src="${pageContext.request.contextPath}/resources/img/coin20.png" />
-            </dd>
-            <dd>
-                <img class="coin11" src="${pageContext.request.contextPath}/resources/img/coin111.png" />
                 <img class="coin22"src="${pageContext.request.contextPath}/resources/img/coin222.png" />
                 <a href="${pageContext.request.contextPath}/admin/user/updateUI/${sessionScope.loginUser.id}"  target="main" class="cks">个人资料</a>
                 <img class="icon5" src="${pageContext.request.contextPath}/resources/img/coin21.png" />
@@ -163,7 +156,7 @@
             <dd>
                 <img class="coin11" src="${pageContext.request.contextPath}/resources/img/coin111.png" />
                 <img class="coin22"src="${pageContext.request.contextPath}/resources/img/coin222.png" />
-                <a href="${pageContext.request.contextPath}/admin/user/updateUI/${sessionScope.loginUser.id}"  target="main" class="cks">安全设置</a>
+                <a href="${pageContext.request.contextPath}/admin/user/securityUI/${sessionScope.loginUser.id}"  target="main" class="cks">安全设置</a>
                 <img class="icon5" src="${pageContext.request.contextPath}/resources/img/coin21.png" />
             </dd>
             <dd>

@@ -11,6 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 public class PathTest {
     @Test
     public void test(){
-        HttpServletRequest request;
+        String phone = "13414057676";
+        String sub = phone.substring(3,7);
+        String real = phone.replace(sub,"****");
+        System.out.println(real);
     }
 }

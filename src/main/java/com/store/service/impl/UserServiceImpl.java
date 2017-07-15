@@ -45,7 +45,9 @@ public class UserServiceImpl implements UserService{
 
     //用户修改资料
     public void update(User user){
-        user.setPassword(Md5Util.convertMD5(user.getPassword()));
+        if(user.getPassword() != null){
+            user.setPassword(Md5Util.convertMD5(user.getPassword()));
+        }
         userMapper.updateByPrimaryKeySelective(user);
     }
 }

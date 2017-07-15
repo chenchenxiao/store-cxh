@@ -15,8 +15,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>添加管理员</title>
     <%@ include file="../alcss.jsp" %>
-    <script src="${pageContext.request.contextPath}/resources/js/jquery.validate.js"></script>
     <%@ include file="../aljs.jsp" %>
+    <script src="${pageContext.request.contextPath}/resources/js/jquery.validate.js"></script>
     <%--<script src="${pageContext.request.contextPath}/resources/js/update.js"></script>--%>
 </head>
 <body>
@@ -51,26 +51,26 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="account">登录账户</label>
-                                    <input class="form-control" id="account" name="account" type="text" value="${user.account}">
+                                    <input class="form-control" placeholder="账户" id="account" name="account" type="text" value="${user.account}">
                                     <div class="tips">
                                     </div>
                                 </div>
                                 <input type="hidden" name="oldAccount" id="oldAccount" value="${user.account}">
                                 <div class="form-group">
                                     <label for="name">姓名</label>
-                                    <input class="form-control" id="name" name="name" type="text" value="${user.name}">
+                                    <input class="form-control" placeholder="姓名" id="name" name="name" type="text" value="${user.name}">
                                 </div>
                                 <div class="form-group">
                                     <label for="password">密码</label>
-                                    <input class="form-control" id="password" name="password" type="password"  >
+                                    <input class="form-control" placeholder="密码" id="password" name="password" type="password"  >
                                 </div>
                                 <div class="form-group">
                                     <label for="confirm_password">确认密码</label>
-                                    <input class="form-control" id="confirm_password" name="confirm_password" type="password">
+                                    <input class="form-control" placeholder="确认密码" id="confirm_password" name="confirm_password" type="password">
                                 </div>
                                 <div class="form-group">
                                     <label for="confirm_password">手机验证码
-                                        <input maxlength="20" class="form-control" id="checkCode" name="checkCode" type="text">
+                                        <input maxlength="20" placeholder="验证码" class="form-control" id="checkCode" name="checkCode" type="text">
                                     </label>
                                     <button id="btn-phoneCheck" type="button" style="width: 85px;height:46px;border: none;background:#f2f2f2;color:#333; padding:0">获取验证码</button>
                                     <div class="tip"></div>
@@ -231,7 +231,9 @@
         });
         // }
     })
-
+    $("#checkCode").click(function () {
+        $(".tip").text("");
+    })
 //    $("#checkCode").blur(function () {
 //        if($(this).val() != checkResult){
 //            $(".check").text("???测试测试");
