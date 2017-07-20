@@ -6,6 +6,9 @@ import com.store.model.Items;
 import com.store.model.User;
 import com.store.service.impl.ItemsService;
 import com.store.util.FileUploadUtil;
+
+import java.io.UnsupportedEncodingException;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,7 +19,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.io.IOException;
@@ -35,8 +40,6 @@ public class ItemsController extends BaseAdminController<Items,Long>{
     //用户点击我的商品查看已上架的商品
     @RequestMapping("itemsList")
     public String itemsList(Model model, PageBean pageBean,HttpSession httpSession,String preDate,String lastDate) throws ParseException {
-        System.out.println("preDate-->" + preDate);
-        System.out.println("lastDate-->" + lastDate.length());
         model.addAttribute("preDate",preDate);
         model.addAttribute("lastDate",lastDate);
         //获取用户的信息，因为在用户点击我的商品时是没法直接获取id的，所以只能通过取session域的对象来取值
@@ -118,4 +121,22 @@ public class ItemsController extends BaseAdminController<Items,Long>{
         itemsService.deleteOne(id);
         return REDIRECT_URL + "itemsList";
     }
+
+    //用户导出商品信息
+    @RequestMapping("exportExcel")
+    public void exportExcel(HttpServletResponse response,HttpSession session) throws Exception {
+        User user = (User) session.getAttribute("loginUser");
+        List<Items> list = itemsService.itemList(user.getId());
+        System.out.println("date-->" + list.get(2).getAddDate());
+        response.setContentType("application/x-excel");
+        response.setHeader("Content-Disposition", "attachment;filename=" + new String("商品列表.xls".getBytes(), "ISO-8859-1"));
+        ServletOutputStream outputStream = response.getOutputStream();
+        itemsService.exportExcel(list,outputStream);
+        if(outputStream != null){
+            outputStream.close();
+        }
+    }
+
+
+
 }

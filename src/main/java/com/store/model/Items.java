@@ -21,6 +21,8 @@ public class Items {
     private Integer uid;        //商品用户的id
     @NotNull
     private String  name;       //商品的名称
+    @NotNull
+    private String type;        //商品的类型
     @Length(min=2,max=11)
     private String title;       //商品的标题
     @NotNull
@@ -131,6 +133,22 @@ public class Items {
         this.type = type;
     }
 
-    @NotNull
-    private String type;        //商品的类型
+    @Override
+    public String toString() {
+        return "Items{" +
+                "id=" + id +
+                ", uid=" + uid +
+                ", name='" + name + '\'' +
+                ", title='" + title + '\'' +
+                ", details='" + details + '\'' +
+                ", price=" + price +
+                ", number=" + number +
+                ", photo='" + photo + '\'' +
+                ", addDate=" + addDate +
+                ", updateDate=" + updateDate +
+                ", type='" + type + '\'' +
+                '}';
+    }
+
+
 }

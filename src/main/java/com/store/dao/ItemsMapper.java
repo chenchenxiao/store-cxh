@@ -11,4 +11,5 @@ public interface ItemsMapper extends BaseMapper<Items> {
     void deleteByIds( @Param("ids") List<Integer> ids);
 
     List<Items> selectItemsList(@Param("uid") Integer uid,@Param("preDate") String preDate,@Param("lastDate") String lastDate);
+
 }

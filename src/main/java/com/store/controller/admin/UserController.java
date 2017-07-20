@@ -86,6 +86,11 @@ public class UserController extends BaseAdminController<User,Long> {
     public String login(User user, Model model, HttpSession session){
         //根据密码和用户名查找对应的用户信息
         User loginUser = userService.login(user);
+        User preUser = (User) session.getAttribute("loginUser");
+        if(preUser!=null){
+            model.addAttribute("result", new AjaxResult(false, "您已登录，请不要重复登录"));
+            return "admin/user/loginUI";
+        }
         //如果找到了就把信息保存到session域，找不到就给出提示
         try {
             if (loginUser != null) {

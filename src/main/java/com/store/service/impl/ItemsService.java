@@ -2,8 +2,9 @@ package com.store.service.impl;
 
 import com.store.been.PageBean;
 import com.store.model.Items;
+import org.springframework.web.multipart.MultipartFile;
 
-import javax.servlet.http.HttpSession;
+import javax.servlet.ServletOutputStream;
 import java.text.ParseException;
 import java.util.*;
 
@@ -22,4 +23,10 @@ public interface ItemsService {
     void delete(Integer[] ids);
 
     void deleteOne(Integer id);
+
+    void exportExcel(List<Items> itemsList, ServletOutputStream outputStream);
+
+    List<Items> itemList(Integer id);
+
+//    List<Items> importExcel(MultipartFile file);
 }

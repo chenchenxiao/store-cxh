@@ -44,7 +44,10 @@
             <dd>
                 <img class="coin11" src="${pageContext.request.contextPath}/resources/img/coin111.png"/>
                 <img class="coin22" src="${pageContext.request.contextPath}/resources/img/coin222.png"/>
-                <a class="cks" href="${pageContext.request.contextPath}/admin/items/itemsList" target="main">
+                <a class="cks" href="${pageContext.request.contextPath}/admin/items/itemsList"
+                        <c:if test="${sessionScope.loginUser != null}"> target="main"</c:if>
+                        <c:if test="${sessionScope.loginUser == null}"> target="_top"</c:if>
+                >
                     我的商品
                 </a>
                 <img class="icon5" src="${pageContext.request.contextPath}/resources/img/coin21.png"/>

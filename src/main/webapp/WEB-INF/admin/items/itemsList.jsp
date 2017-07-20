@@ -37,13 +37,16 @@
         <!-- user页面样式 -->
         <div class="connoisseur">
             <div class="conform">
-                <form action="${pageContext.request.contextPath}/admin/items/itemsList" class="list_form">
+                <form action="${pageContext.request.contextPath}/admin/items/itemsList" class="list_form" method="post" enctype="multipart/form-data">
                     <input type="hidden" id="pageNum" name="page" value="1">
                     <input type="hidden" name="uid" value="${sessionScope.loginUser.id}"/>
                     <div class="cfD">
                         <a class="btn btn-sm btn-primary-outline pull-right" href="${pageContext.request.contextPath}/admin/items/saveUI" >
                             <i class="icon-plus"></i>添加
                         </a>
+                        <a href="javascript:void(0)" class="checkbox-row btn btn-sm btn-primary-outline pull-right" id="excelImport">导入</a>
+                        <a href="javascript:void(0)" class="checkbox-row btn btn-sm btn-primary-outline pull-right" id="excelExport">导出</a>
+                        <input type="file" name="itemsFile" class=" checkbox-row btn btn-sm btn-primary-outline pull-right"/>
                     </div>
                     <div>
                         时间段：
@@ -114,6 +117,7 @@
                         <a href="javascript:void(0)" class="checkbox-row btn btn-sm btn-primary-outline pull-left" id="cancelAll" name="checkAll">全不选</a>
                         <a href="javascript:void(0)" class="checkbox-row btn btn-sm btn-primary-outline pull-left" id="checkAll" name="checkAll">全选</a>
                         <a href="javascript:void(0)" class="checkbox-row btn btn-sm btn-primary-outline pull-left" id="deleteByIds">批量删除</a>
+
 
                     </div>
                     <!--分页 -->
@@ -239,6 +243,14 @@
         $(".list_form").submit();
     })
     $("#lastDate").blur(function () {
+        $(".list_form").submit();
+    })
+    $("#excelExport").click(function () {
+        $(".list_form").attr("action","${pageContext.request.contextPath}/admin/items/exportExcel");
+        $(".list_form").submit();
+    })
+    $("#excelImport").click(function () {
+        $(".list_form").attr("action","${pageContext.request.contextPath}/excelImort");
         $(".list_form").submit();
     })
 </script>

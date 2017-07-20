@@ -21,6 +21,11 @@
     <img onclick="WdatePicker({el:'testDate'})" src="${pageContext.request.contextPath}/resources/My97DatePicker/skin/datePicker.gif" width="16" height="22" align="absmiddle">
     <input type="submit" value="submit">
 </form>
+
+<form action="${pageContext.request.contextPath}/testExcel" enctype="multipart/form-data">
+    <input type="file" name="excelFile">
+    <input type="submit" value="SUBMIT">
+</form>
 </body>
 <script type="text/javascript">
     $("#bton").click(function () {
