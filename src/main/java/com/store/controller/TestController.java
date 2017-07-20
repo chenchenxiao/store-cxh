@@ -28,4 +28,10 @@ public class TestController {
         System.out.println("testUeditor-->" + testUeditor);
         return "/ueditorTest";
     }
+
+    @RequestMapping("getDate")
+    public String getDate(String date){
+        System.out.println("date-->" + date );
+        return "test";
+    }
 }

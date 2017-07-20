@@ -30,6 +30,7 @@
 <link href="${pageContext.request.contextPath}/resources/admin/stylesheets/color/magenta.css" media="all" rel="alternate stylesheet" title="magenta-theme" type="text/css" />
 <link href="${pageContext.request.contextPath}/resources/admin/stylesheets/color/gray.css" media="all" rel="alternate stylesheet" title="gray-theme" type="text/css" />
 
+
 <%--<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/admin/Wopop_files/style_log.css" >--%>
 <%--<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/admin/Wopop_files/style.css">--%>
 <%--<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/admin/Wopop_files/userpanel.css">--%>

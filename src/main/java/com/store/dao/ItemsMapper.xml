@@ -30,5 +30,12 @@
         select * FROM
         store_items
         WHERE uid = #{uid}
+        <if test="preDate != null">
+            AND add_date &gt;= #{preDate}
+        </if>
+        <if test="lastDate != null">
+            AND add_date &lt;= #{lastDate}
+        </if>
+
     </select>
 </mapper>

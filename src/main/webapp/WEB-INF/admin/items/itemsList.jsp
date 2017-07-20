@@ -16,7 +16,9 @@
     <title>我的商品</title>
     <%@ include file="../alcss.jsp" %>
     <link href="${pageContext.request.contextPath}/resources/css/messenger/messenger-theme-air.css" rel="stylesheet" type="text/css" />
+    <link href="${pageContext.request.contextPath}/resources/css/manhuaDate.1.0.css" type="text/css" />
     <%@ include file="../aljs.jsp" %>
+    <script src="${pageContext.request.contextPath}/resources/My97DatePicker/WdatePicker.js"></script>
     <!-- <script type="text/javascript" src="js/page.js" ></script> -->
 </head>
 
@@ -37,10 +39,19 @@
             <div class="conform">
                 <form action="${pageContext.request.contextPath}/admin/items/itemsList" class="list_form">
                     <input type="hidden" id="pageNum" name="page" value="1">
+                    <input type="hidden" name="uid" value="${sessionScope.loginUser.id}"/>
                     <div class="cfD">
                         <a class="btn btn-sm btn-primary-outline pull-right" href="${pageContext.request.contextPath}/admin/items/saveUI" >
                             <i class="icon-plus"></i>添加
                         </a>
+                    </div>
+                    <div>
+                        时间段：
+                        <input name="preDate" value="${preDate}" class="vinput mh_date" id="preDate" type="text"  style="width: 150 px;height: 20px;line-height: 20px;border:2px #AA9FFF solid;cursor:pointer " />
+                        <img onclick="WdatePicker({el:'preDate'})" src="${pageContext.request.contextPath}/resources/My97DatePicker/skin/datePicker.gif" width="16" height="22" align="absmiddle">&nbsp;&nbsp;至 &nbsp;&nbsp;
+                        <input  name="lastDate" value="${lastDate}" class="vinput mh_date" id="lastDate"  type="text"  style="width: 150 px;height: 20px;line-height: 20px;border:2px #AA9FFF solid;cursor:pointer " />
+                        <img onclick="WdatePicker({el:'lastDate'})" src="${pageContext.request.contextPath}/resources/My97DatePicker/skin/datePicker.gif" width="16" height="22" align="absmiddle">
+
                     </div>
                     <div>
                         显示<select name="size" id="showSize">
@@ -223,5 +234,12 @@
         $("#realId").val(itemsId)
         $("#deleteOne_form").submit();
     }
+
+    $("#preDate").blur(function () {
+        $(".list_form").submit();
+    })
+    $("#lastDate").blur(function () {
+        $(".list_form").submit();
+    })
 </script>
 </html>

@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <script src="${pageContext.request.contextPath}/resources/js/jquery-1.7.2.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/My97DatePicker/WdatePicker.js"></script>
 <html>
 <head>
     <title>Title</title>
@@ -15,7 +16,11 @@
     <a href="${pageContext.request.contextPath}/testRep">测试一下</a>
 
 <input id="bton" type="button" value="ajax">
-
+<form action="${pageContext.request.contextPath}/getDate" method="post">
+    <input type="text" id="testDate" name="date" onclick="WdatePicker()" >
+    <img onclick="WdatePicker({el:'testDate'})" src="${pageContext.request.contextPath}/resources/My97DatePicker/skin/datePicker.gif" width="16" height="22" align="absmiddle">
+    <input type="submit" value="submit">
+</form>
 </body>
 <script type="text/javascript">
     $("#bton").click(function () {

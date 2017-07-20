@@ -21,6 +21,7 @@ import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.ParseException;
 
 /**
  * Created by 陈晓海 on 2017/7/17.
@@ -33,9 +34,14 @@ public class ItemsController extends BaseAdminController<Items,Long>{
 
     //用户点击我的商品查看已上架的商品
     @RequestMapping("itemsList")
-    public String itemsList(Model model, PageBean pageBean,HttpSession session){
-        User user = (User) session.getAttribute("loginUser");
-        model.addAttribute("PageBean",itemsService.showItems(pageBean,user.getId()));
+    public String itemsList(Model model, PageBean pageBean,HttpSession httpSession,String preDate,String lastDate) throws ParseException {
+        System.out.println("preDate-->" + preDate);
+        System.out.println("lastDate-->" + lastDate.length());
+        model.addAttribute("preDate",preDate);
+        model.addAttribute("lastDate",lastDate);
+        //获取用户的信息，因为在用户点击我的商品时是没法直接获取id的，所以只能通过取session域的对象来取值
+        User user = (User) httpSession.getAttribute("loginUser");
+        model.addAttribute("PageBean",itemsService.showItems(pageBean,user.getId(),preDate,lastDate));
         return TEMPLATE_PATH + "itemsList";
     }
 
@@ -82,7 +88,7 @@ public class ItemsController extends BaseAdminController<Items,Long>{
         if(picture.getOriginalFilename().length() > 0){
             items.setPhoto(FileUploadUtil.uploadUserPhoto(picture,FileUploadUtil.ITEMS_PATH));
         }
-//        items.setUser(user);
+        //判断前台是否取得到商品的id值，如果取不到，就是增添操作，如果取得到，就是修改操作
         if(items.getId() == null){
             itemsService.save(items);
         }

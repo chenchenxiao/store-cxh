@@ -10,5 +10,5 @@ import java.util.List;
 public interface ItemsMapper extends BaseMapper<Items> {
     void deleteByIds( @Param("ids") List<Integer> ids);
 
-    List<Items> selectItemsList(@Param("uid") Integer uid);
+    List<Items> selectItemsList(@Param("uid") Integer uid,@Param("preDate") String preDate,@Param("lastDate") String lastDate);
 }
