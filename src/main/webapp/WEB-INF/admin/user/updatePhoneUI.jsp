@@ -107,7 +107,7 @@
     }
     function getCode() {
         $.ajax({
-            "url":"${pageContext.request.contextPath}/admin/user/checkEmail",
+            "url":"${pageContext.request.contextPath}/admin/user/checkPhone",
             "data":{"phoneNumber":$('#oldPhoneNumber').val()},
             "type":"POST",
             "success":function(data){

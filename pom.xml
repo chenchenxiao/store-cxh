@@ -340,6 +340,14 @@
       <version>1.4</version>
     </dependency>
     <!-- end -->
+
+    <!--时间操作组件 -->
+    <dependency>
+      <groupId>joda-time</groupId>
+      <artifactId>joda-time</artifactId>
+      <version>2.9.9</version>
+    </dependency>
+    <!-- end -->
   </dependencies>
   <build>
     <resources>

@@ -141,6 +141,7 @@
 <script type="text/javascript">
     var accountResult = true;
     var numberResult = true;
+    var photoResult = true;
     $("#account").blur(function () {
         if($("#oldAccount").val() == $("#account").val()){
             $(".tips").text("");
@@ -169,8 +170,7 @@
         numberResult == false;
     }
     $("#submit_").click(function () {
-        alert(accountResult)
-        if(accountResult && numberResult){
+        if(accountResult && numberResult && photoResult){
             if($("#checkCode").val() != checkResult){
                 $(".tip").text("验证码不正确或已超时，请重新获取");
                 $(".tip").css("color",'red');
@@ -198,6 +198,8 @@
                 if(!data.showResult){
                     $(".photoTip").text("头像只能是照片格式的文件");
                     $(".photoTip").css("color",'red');
+                    $("#photo").attr("src","");
+                    photoResult = false;
                     return;
                 }
                 alert("data.showResult-->" + data.showResult )
@@ -205,6 +207,7 @@
                 alert("path" + path)
                 $(".photoTip").text("");
                 $("#photo").attr("src",path);
+                photoResult = true;
             },
         };
         $("#user-form").ajaxSubmit(option);

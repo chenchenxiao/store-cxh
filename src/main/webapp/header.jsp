@@ -84,7 +84,7 @@
                     <li><a href="product.jsp" >美食</a></li>
                     <li><a href="product.jsp" >家居</a></li>
                     <li><a href="product.jsp" >运动</a></li>
-                    <li><a href="product.jsp" >汽车用品 </a></li>
+                    <li><a href="product.jsp" >其他 </a></li>
 
                 </ul>
                 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/nav.js"></script>

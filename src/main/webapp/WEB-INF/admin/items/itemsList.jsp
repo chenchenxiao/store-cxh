@@ -1,0 +1,227 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%--
+  Created by IntelliJ IDEA.
+  User: ${陈晓海}
+  Date: 2017/6/13
+  Time: 14:04
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/css.css" />
+    <title>我的商品</title>
+    <%@ include file="../alcss.jsp" %>
+    <link href="${pageContext.request.contextPath}/resources/css/messenger/messenger-theme-air.css" rel="stylesheet" type="text/css" />
+    <%@ include file="../aljs.jsp" %>
+    <!-- <script type="text/javascript" src="js/page.js" ></script> -->
+</head>
+
+<body>
+<div id="pageAll">
+    <div class="pageTop">
+        <div class="page">
+            <img src="${pageContext.request.contextPath}/resources/img/coin02.png" />
+            <span><a href="show.jsp">首页</a>&nbsp;-&nbsp;-</span>&nbsp;我的商品
+        </div>
+    </div>
+    <form action="${pageContext.request.contextPath}/admin/items/deleteOne" method="post" id="deleteOne_form">
+        <input type="hidden" id="realId" name="id">
+    </form>
+    <div class="page">
+        <!-- user页面样式 -->
+        <div class="connoisseur">
+            <div class="conform">
+                <form action="${pageContext.request.contextPath}/admin/items/itemsList" class="list_form">
+                    <input type="hidden" id="pageNum" name="page" value="1">
+                    <div class="cfD">
+                        <a class="btn btn-sm btn-primary-outline pull-right" href="${pageContext.request.contextPath}/admin/items/saveUI" >
+                            <i class="icon-plus"></i>添加
+                        </a>
+                    </div>
+                    <div>
+                        显示<select name="size" id="showSize">
+                        <option value="5" <c:if test="${PageBean.size == 5}" >selected = selected</c:if>>5</option>
+                        <option value="10"  <c:if test="${PageBean.size == 10}" >selected = selected</c:if>>10</option>
+                        <option value="15"  <c:if test="${PageBean.size == 15}" >selected = selected</c:if>>15</option>
+                        <option value="20"  <c:if test="${PageBean.size == 20}" >selected = selected</c:if>>20</option>
+                    </select>条
+                    </div>
+                </form>
+            </div>
+            <!-- user 表格 显示 -->
+            <form action="${pageContext.request.contextPath}/admin/items/deleteByIds" method="post" class="deleteIds_form">
+                <div class="conShow">
+                    <table border="1" cellspacing="0" cellpadding="0">
+                        <tr>
+
+                            <td width="150px" class="tdColor tdC">商品名称</td>
+                            <td width="130px" class="tdColor">商品价格</td>
+                            <td width="130px" class="tdColor">商品库存量</td>
+                            <td width="130px" class="tdColor">商品类型</td>
+                            <td width="200px" class="tdColor">添加时间</td>
+                            <td width="200px" class="tdColor">修改时间</td>
+                            <td width="200px" class="tdColor">商品标题</td>
+                            <td width="100" class="tdColor">操作</td>
+                        </tr>
+                        <c:forEach items="${PageBean.recordList}" var="item" varStatus="status">
+                            <input type="hidden" value="${item.id}" id="itemId">
+                            <tr height="40px">
+                                <td>
+                                    <label>
+                                        <input  name="ids" id="checkBox" type="checkbox" value="${item.id}" ><span></span>
+                                    </label>
+                                    ${item.name}
+                                </td>
+                                <td>${item.price}</td>
+                                <td>${item.number}</td>
+                                <td>${item.type}</td>
+                                <td>
+                                    <fmt:formatDate
+                                        type="date"
+                                        value="${item.addDate}"
+                                        dateStyle="default"/>
+                                </td>
+                                <td><fmt:formatDate
+                                        type="date"
+                                        value="${item.updateDate}"
+                                        dateStyle="default"/>
+                                </td>
+                                <td>${item.title}</td>
+                                <td><a href="${pageContext.request.contextPath}/admin/items/updateUI/${item.id}">
+                                        <img class="operation" src="${pageContext.request.contextPath}/resources/img/update.png">
+                                    </a>
+                                    <img class="operation delban"   src="${pageContext.request.contextPath}/resources/img/delete.png">
+                                </td>
+                            </tr>
+                        </c:forEach>
+                    </table>
+                    <div class="btn-toolbar" role="toolbar">
+                        <a href="javascript:void(0)" class="checkbox-row btn btn-sm btn-primary-outline pull-left" id="cancelAll" name="checkAll">全不选</a>
+                        <a href="javascript:void(0)" class="checkbox-row btn btn-sm btn-primary-outline pull-left" id="checkAll" name="checkAll">全选</a>
+                        <a href="javascript:void(0)" class="checkbox-row btn btn-sm btn-primary-outline pull-left" id="deleteByIds">批量删除</a>
+
+                    </div>
+                    <!--分页 -->
+                    <div class="paging">
+                    <span>
+                        <c:if test="${PageBean.page > 1}">
+                            <a href="javascript:void(0)" onclick="showPage(1)">[首页]</a>&nbsp;&nbsp;
+                            <a href="javascript:void(0)" onclick="showPage(${PageBean.page - 1})">[上一页]</a>&nbsp;&nbsp;
+                        </c:if>
+                    <%--动态显示条 --%>
+                        <c:forEach begin = "${PageBean.beginPageIndex}" end = "${PageBean.endPageIndex}" var="num">
+                            <a href="javascript:void(0)" onclick="showPage(${num})">
+                                    ${num}</a>&nbsp;&nbsp;
+                        </c:forEach>
+                        <c:if test = "${PageBean.page < PageBean.pageCount}">
+                            <a href="javascript:void(0)" onclick="showPage(${PageBean.page+1})">[下一页]</a>&nbsp;&nbsp;
+                            <a href="javascript:void(0)" onclick="showPage(${PageBean.pageCount})">[尾页]</a>&nbsp;&nbsp;
+                        </c:if>
+                    </span
+                        <span>第${PageBean.page}/
+                            ${pageBean.pageCount}页
+                    </span>
+                    </div>
+                </div>
+            </form>
+            <!-- user 表格 显示 end-->
+        </div>
+        <!-- user页面样式end -->
+    </div>
+
+</div>
+
+
+<!-- 删除弹出框 -->
+<div class="banDel">
+    <div class="delete">
+        <div class="close">
+            <a><img src="img/shanchu.png" /></a>
+        </div>
+        <p class="delP1">你确定要删除此条记录吗？</p>
+        <p class="delP2">
+            <a href="javascript:void(0)" class="ok no"  onclick="deleteById()">确定</a><a class="ok no">取消</a>
+        </p>
+    </div>
+</div>
+<!-- 删除弹出框  end-->
+</body>
+
+<c:if test="${result!=null}">
+    <script>
+        $().ready(function(){
+            var success=${result.success};
+            var msg='${result.msg}';
+            var type="error";
+            if(success=true){
+                type="success"
+            }
+            Messenger.options = {
+                extraClasses: 'messenger-fixed messenger-on-top messenger-on-right',
+                theme: 'future'
+            }
+            $.globalMessenger().post({
+                message:"提示："+ msg,
+                type: type,
+                showCloseButton: true
+            })
+        })
+    </script>
+</c:if>
+
+<script type="text/javascript">
+    // 广告弹出框
+    $(".delban").click(function(){
+        $(".banDel").show();
+    });
+    $(".close").click(function(){
+        $(".banDel").hide();
+    });
+    $(".no").click(function(){
+        $(".banDel").hide();
+    });
+    // 广告弹出框 end
+</script>
+
+<script type="text/javascript">
+    $("#cancelAll").hide()
+    function showPage(num){
+        //1 修改隐藏域的值
+        document.getElementById("pageNum").value = num;
+        //2 提交表单
+        $(".list_form").submit();
+    }
+
+    $("#showSize").change(function () {
+        $(".list_form").submit();
+    })
+
+    $("#checkAll").click(function () {
+        $('input:checkbox').each(function() {
+            $(this).prop('checked', true);
+        });
+        $("#cancelAll").show()
+        $(this).hide()
+    })
+
+    $("#cancelAll").click(function () {
+        $('input:checkbox').each(function() {
+            $(this).prop('checked', false);
+        });
+        $("#checkAll").show()
+        $(this).hide()
+    })
+    $("#deleteByIds").click(function () {
+        $(".deleteIds_form").submit();
+    })
+    function deleteById(){
+        var itemsId = $("#itemId").val();
+        $("#realId").val(itemsId)
+        $("#deleteOne_form").submit();
+    }
+</script>
+</html>

@@ -57,7 +57,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="newEmail">
-                                        请输入新的邮箱：
+                                        请输入邮箱：
                                         <input maxlength="20" class="form-control" id="newEmail" name="email" type="text" placeholder="邮箱">
                                     </label>
                                     <div class="newEmailTip"></div>
@@ -183,8 +183,8 @@
     $("#newSubmit").click(function () {
 
         if($("#newEmail").val().length == 0){
-            $(".newEmailTip").text("请填写验证码");
-            $(".newEmailTip ").css("color",'red');
+            $(".newCheckCodeTip").text("请填写验证码");
+            $(".newCheckCodeTip ").css("color",'red');
             return;
         }
         if($("#newCheckCode").val() != checkResult){

@@ -69,7 +69,7 @@
                     <div class="top-content">
                         <h5><a href="single.html">Popular belief</a></h5>
                         <div class="white">
-                            <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">加入购物车</a>
+                            <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">查看详情</a>
                             <p class="dollar"><span class="in-dollar">$</span><span>2</span><span>0</span></p>
                             <div class="clearfix"></div>
                         </div>
@@ -87,7 +87,7 @@
                     <div class="top-content">
                         <h5><a href="single.html" >Simply random</a></h5>
                         <div class="white">
-                            <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">加入购物车</a>
+                            <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">查看详情</a>
                             <p class="dollar"><span class="in-dollar">$</span><span>6</span><span>0</span></p>
                             <div class="clearfix"></div>
                         </div>
@@ -105,7 +105,7 @@
                     <div class="top-content">
                         <h5> <a href="single.html">Classical Latin</a></h5>
                         <div class="white">
-                            <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">加入购物车</a>
+                            <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">查看详情</a>
                             <p class="dollar"><span class="in-dollar">$</span><span>1</span><span>5</span></p>
                             <div class="clearfix"></div>
                         </div>
@@ -123,7 +123,7 @@
                     <div class="top-content">
                         <h5><a href="single.html">Standard chunk</a></h5>
                         <div class="white">
-                            <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">加入购物车</a>
+                            <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">查看详情</a>
                             <p class="dollar"><span class="in-dollar">$</span><span>4</span><span>0</span></p>
                             <div class="clearfix"></div>
                         </div>
@@ -144,7 +144,7 @@
                     <div class="top-content">
                         <h5><a href="single.html">Simply random</a></h5>
                         <div class="white">
-                            <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">加入购物车</a>
+                            <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">查看详情</a>
                             <p class="dollar"><span class="in-dollar">$</span><span>2</span><span>5</span></p>
                             <div class="clearfix"></div>
                         </div>
@@ -162,7 +162,7 @@
                     <div class="top-content">
                         <h5><a href="single.html">Popular belief</a></h5>
                         <div class="white">
-                            <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">加入购物车</a>
+                            <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">查看详情</a>
                             <p class="dollar"><span class="in-dollar">$</span><span>5</span><span>5</span></p>
                             <div class="clearfix"></div>
                         </div>
@@ -180,7 +180,7 @@
                     <div class="top-content">
                         <h5> <a href="single.html">Classical Latin</a></h5>
                         <div class="white">
-                            <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">加入购物车</a>
+                            <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">查看详情</a>
                             <p class="dollar"><span class="in-dollar">$</span><span>3</span><span>0</span></p>
                             <div class="clearfix"></div>
                         </div>
@@ -198,7 +198,7 @@
                     <div class="top-content">
                         <h5><a href="single.html">Standard chunk</a></h5>
                         <div class="white">
-                            <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">加入购物车</a>
+                            <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">查看详情</a>
                             <p class="dollar"><span class="in-dollar">$</span><span>6</span><span>0</span></p>
                             <div class="clearfix"></div>
                         </div>
@@ -219,7 +219,7 @@
                     <div class="top-content">
                         <h5> <a href="single.html">Classical Latin</a></h5>
                         <div class="white">
-                            <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">加入购物车</a>
+                            <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">查看详情</a>
                             <p class="dollar"><span class="in-dollar">$</span><span>2</span><span>0</span></p>
                             <div class="clearfix"></div>
                         </div>
@@ -237,7 +237,7 @@
                     <div class="top-content">
                         <h5><a href="single.html">Standard chunk</a></h5>
                         <div class="white">
-                            <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">加入购物车</a>
+                            <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">查看详情</a>
                             <p class="dollar"><span class="in-dollar">$</span><span>1</span><span>5</span></p>
                             <div class="clearfix"></div>
                         </div>
@@ -255,7 +255,7 @@
                     <div class="top-content">
                         <h5><a href="single.html">Simply random</a></h5>
                         <div class="white">
-                            <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">加入购物车</a>
+                            <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">查看详情</a>
                             <p class="dollar"><span class="in-dollar">$</span><span>4</span><span>0</span></p>
                             <div class="clearfix"></div>
                         </div>
@@ -273,7 +273,7 @@
                     <div class="top-content">
                         <h5><a href="single.html">Popular belief</a></h5>
                         <div class="white">
-                            <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">加入购物车</a>
+                            <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">查看详情</a>
                             <p class="dollar"><span class="in-dollar">$</span><span>2</span><span>9</span></p>
                             <div class="clearfix"></div>
                         </div>

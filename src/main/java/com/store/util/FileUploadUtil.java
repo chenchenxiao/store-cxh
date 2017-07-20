@@ -31,6 +31,10 @@ public class FileUploadUtil {
     public final static String USER_PATH = "/resources/file/user/";
 
 
+    /**
+     * 商品图片的保存位置
+     */
+    public final static String ITEMS_PATH = "/resources/file/items/";
 
 /*    *//**
      * 上传App
@@ -105,6 +109,8 @@ public class FileUploadUtil {
         RequestAttributes ar = RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = ((ServletRequestAttributes) ar).getRequest();
         String filePath = request.getSession().getServletContext().getRealPath("") + path;
+        System.out.println(request.getSession().getServletContext().getRealPath("/resources/file/user/"));
+        System.out.println("filePath-->" + filePath);
         String photoName = UUID.randomUUID().toString() + "." + FileUploadUtil.getFileExt(pictures.getOriginalFilename());
         if (pictures != null) {     //判断照片是否为空，为空就直接修改用户资料
             File file = new File(filePath);

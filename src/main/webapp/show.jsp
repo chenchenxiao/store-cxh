@@ -114,7 +114,7 @@
                         <div class="top-content">
                             <h5><a href="single.html">Mascot Kitty - White</a></h5>
                             <div class="white">
-                                <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 ">加入购物车</a>
+                                <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 ">查看详情</a>
                                 <p class="dollar"><span class="in-dollar">$</span><span>2</span><span>0</span></p>
                                 <div class="clearfix"></div>
                             </div>
@@ -128,7 +128,7 @@
                         <div class="top-content">
                             <h5><a href="single.html">Bite Me</a></h5>
                             <div class="white">
-                                <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">加入购物车</a>
+                                <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">查看详情</a>
                                 <p class="dollar"><span class="in-dollar">$</span><span>3</span><span>0</span></p>
                                 <div class="clearfix"></div>
                             </div>
@@ -141,7 +141,7 @@
                         <div class="top-content">
                             <h5><a href="single.html">Little Fella</a></h5>
                             <div class="white">
-                                <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">加入购物车</a>
+                                <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">查看详情</a>
                                 <p class="dollar"><span class="in-dollar">$</span><span>5</span><span>0</span></p>
                                 <div class="clearfix"></div>
                             </div>
@@ -154,7 +154,7 @@
                         <div class="top-content">
                             <h5><a href="single.html">Astral Cruise</a></h5>
                             <div class="white">
-                                <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">加入购物车</a>
+                                <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">查看详情</a>
                                 <p class="dollar"><span class="in-dollar">$</span><span>4</span><span>5</span></p>
                                 <div class="clearfix"></div>
                             </div>
@@ -220,7 +220,7 @@
                         <div class="top-content bag">
                             <h5><a href="single.html">Symbolic Bag</a></h5>
                             <div class="white">
-                                <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">加入购物车</a>
+                                <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">查看详情</a>
                                 <p class="dollar"><span class="in-dollar">$</span><span>4</span><span>0</span></p>
                                 <div class="clearfix"></div>
                             </div>
@@ -235,7 +235,7 @@
                         <div class="top-content bag">
                             <h5><a href="single.html">Interesting Read</a></h5>
                             <div class="white">
-                                <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">加入购物车</a>
+                                <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">查看详情</a>
                                 <p class="dollar"><span class="in-dollar">$</span><span>2</span><span>5</span></p>
                                 <div class="clearfix"></div>
                             </div>
@@ -250,7 +250,7 @@
                         <div class="top-content bag">
                             <h5><a href="single.html">The Carter</a></h5>
                             <div class="white">
-                                <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">加入购物车</a>
+                                <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">查看详情</a>
                                 <p class="dollar"><span class="in-dollar">$</span><span>1</span><span>0</span></p>
                                 <div class="clearfix"></div>
                             </div>
@@ -265,7 +265,7 @@
                         <div class="top-content bag">
                             <h5><a href="single.html">Onesie</a></h5>
                             <div class="white">
-                                <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">加入购物车</a>
+                                <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">查看详情</a>
                                 <p class="dollar"><span class="in-dollar">$</span><span>6</span><span>0</span></p>
                                 <div class="clearfix"></div>
                             </div>

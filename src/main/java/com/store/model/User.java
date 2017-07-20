@@ -1,5 +1,6 @@
 package com.store.model;
 
+import java.util.List;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
 
@@ -10,6 +11,7 @@ import javax.validation.constraints.Pattern;
 
 /**
  * Created by 陈晓海 on 2017/7/6.
+ * 用户实体类
  */
 @Table(name = "store_user")
 public class User {
@@ -47,6 +49,16 @@ public class User {
     private String email;
 
     private String photo;
+
+//    private List<Items> itemsList;
+//
+//    public List<Items> getItemsList() {
+//        return itemsList;
+//    }
+//
+//    public void setItemsList(List<Items> itemsList) {
+//        this.itemsList = itemsList;
+//    }
 
     public String getPhoto() {
         return photo;

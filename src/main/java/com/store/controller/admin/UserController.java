@@ -37,12 +37,15 @@ public class UserController extends BaseAdminController<User,Long> {
     @RequestMapping("checkRepeat")
     public void checkRepeat(User user,PrintWriter outs){
         System.out.println("user-___->" + user);
+        //如果已被注册就返回false，否则返回true；
         if(userService.checkRepeat(user) > 0){
             System.out.println("boolean-->" + false);
             outs.print("{\"result\":"+false+"}");
+            outs.close();
         }else{
             System.out.println("boolean-->" + true);
             outs.print("{\"result\":"+true+"}");
+            outs.close();
         }
     }
 
@@ -50,15 +53,20 @@ public class UserController extends BaseAdminController<User,Long> {
     @RequestMapping("checkPhone")
     public void phoneCheck(String phoneNumber,PrintWriter outs) throws IOException {
         System.out.println("phoneNumber-->" + phoneNumber);
+        //获取验证码
         String checkNumber = CheckNumberUtil.getCheckNumber();
+        //发送手机短信
 //        SendPhoneMsgUtil.sendMsg(phoneNumber,checkNumber);
         System.out.println("发送完短信了");
+        //返回验证码
         outs.print("{\"result\":"+checkNumber+"}");
+        outs.close();
     }
 
     //注册用户
     @RequestMapping("regist")
     public String regist(@Valid User user,BindingResult bindingResult, Model model){
+        //判断注册格式是否正确，不正确就给出提示，否则进行用户名校验，如果前两步都没问题就注册成功
         if(bindingResult.hasErrors()){
             model.addAttribute("result",new AjaxResult(true,"格式填写错误"));
             System.out.println("格式填写错误");
@@ -76,7 +84,9 @@ public class UserController extends BaseAdminController<User,Long> {
     //用户登录
     @RequestMapping("login")
     public String login(User user, Model model, HttpSession session){
+        //根据密码和用户名查找对应的用户信息
         User loginUser = userService.login(user);
+        //如果找到了就把信息保存到session域，找不到就给出提示
         try {
             if (loginUser != null) {
                 session.setAttribute("loginUser",loginUser);
@@ -96,6 +106,7 @@ public class UserController extends BaseAdminController<User,Long> {
     //用户退出
     @RequestMapping("logout")
     public String logout(HttpSession session){
+        //移除指定的session的值
         session.removeAttribute("loginUser");
         return "show";
     }
@@ -109,6 +120,7 @@ public class UserController extends BaseAdminController<User,Long> {
     //跳转到用户修改资料页面
     @RequestMapping("updateUI/{id}")
     public String updateUI(@PathVariable("id") Integer id, Model model){
+        //根据ID找到对应的用户信息，显示到前台修改页面
         model.addAttribute("user",userService.findUpdateUser(id));
         return TEMPLATE_PATH + "updateUI";
     }
@@ -116,31 +128,36 @@ public class UserController extends BaseAdminController<User,Long> {
     //用户修改资料
     @RequestMapping("update")
     public String update(User user,String oldAccount,HttpServletRequest request, RedirectAttributes redirectAttributes,HttpSession session,MultipartFile pictures){
-        //图片的保存路径
-        try{
+        //判断是否上传了图片
+        if(pictures.getOriginalFilename().length() > 0){
+            //判断上传的照片的类型是否符合要求
+            if(!photoExt.contains(FileUploadUtil.getFileExt(pictures.getOriginalFilename()))) {
+                redirectAttributes.addFlashAttribute("result", new AjaxResult(false, "头像只能是照片格式的文件"));
+                return "redirect:/admin/user/updateUI/" + user.getId();
+            }
+        }
+        try{            //此处为后台校验
             if(oldAccount.equals(user.getAccount())){  //判断用户名是否与修改之前相同
-                if(!photoExt.contains(FileUploadUtil.getFileExt(pictures.getOriginalFilename()))){      //判断上传的照片的类型是否符合要求
-                    redirectAttributes.addFlashAttribute("result",new AjaxResult(false,"头像只能是照片格式的文件"));
-                    return  "redirect:/admin/user/updateUI/" + user.getId();
-                }else{      //修改照片的名字
                     if(pictures.getOriginalFilename().length() > 0){     //判断照片是否为空，为空就直接修改用户资料
-                       user.setPhoto(FileUploadUtil.uploadUserPhoto(pictures,FileUploadUtil.USER_PATH));
+                         user.setPhoto(FileUploadUtil.uploadUserPhoto(pictures,FileUploadUtil.USER_PATH));
                     }
                     userService.update(user);
-                    session.setAttribute("loginUser",user);
+                    session.setAttribute("loginUser",user);     //重新给session域的loginUser赋值
                     redirectAttributes.addFlashAttribute("result",new AjaxResult(true,"操作成功"));
                     return  "redirect:/admin/user/index";
-                }
+
             }else if(user.getAccount()!=null && userService.checkAccount(user.getAccount()) > 0 ){      //判断用户名是否重复注册
                      redirectAttributes.addFlashAttribute("result",new AjaxResult(false,"该账户已被使用，请重新注册"));
                     return  "redirect:/admin/user/updateUI/" + user.getId();
             }else{          //成功修改
                     redirectAttributes.addFlashAttribute("result",new AjaxResult(true,"操作成功"));
-                    session.setAttribute("loginUser",user);
+                    session.setAttribute("loginUser",user);     //重新给session域的loginUser赋值
                     if(pictures.getOriginalFilename().length() > 0){
                         System.out.println("picctureName" + pictures.getOriginalFilename());
+                        //上传图片，并且把图片的名称set进user对象里
                         user.setPhoto(FileUploadUtil.uploadUserPhoto(pictures,FileUploadUtil.USER_PATH));
                     }
+                    //修改信息
                     userService.update(user);
                     return "redirect:/admin/user/index";
             }
@@ -156,20 +173,12 @@ public class UserController extends BaseAdminController<User,Long> {
     public void showPhoto(PrintWriter outs, MultipartFile pictures, HttpServletRequest request) throws IOException {
         System.out.println(FileUploadUtil.getFileExt(pictures.getOriginalFilename()));
         System.out.println(!photoExt.contains(FileUploadUtil.getFileExt(pictures.getOriginalFilename())));
+        //判断上传的图片格式是否正确，正确就返回图片的名称，可以在前台进行预览
         if(!photoExt.contains(FileUploadUtil.getFileExt(pictures.getOriginalFilename()))){
             outs.print("{\"showResult\":"+false+"}");
             outs.close();
         }
-//        String filePath = request.getSession().getServletContext().getRealPath("") + FileUploadUtil.USER_PATH;
-//        String photoName =  UUID.randomUUID().toString() + "." + FileUploadUtil.getFileExt(pictures.getOriginalFilename());
-//        if(pictures!=null){
-//            File file = new File(filePath);
-//            if(!file.exists()){
-//                file.mkdirs();
-//            }
-//            //存照片到webapp下的images里
-//           pictures.transferTo(new File(file,photoName));
-//            //返回图片的名字
+        //查看的图片的名称
         String photoName = FileUploadUtil.uploadUserPhoto(pictures,FileUploadUtil.USER_PATH);
         outs.print("{\"showResult\":\""+ photoName +"\"}");
         outs.close();
@@ -178,12 +187,18 @@ public class UserController extends BaseAdminController<User,Long> {
     //跳转到用户查看安全设置页面
     @RequestMapping("securityUI/{id}")
     public String securityUI(@PathVariable("id") Integer id, Model model){
+        System.out.println("id-->" + id);
+        //根据id查找对应用户的信息
         User user = userService.findUpdateUser(id);
         //把手机号码中间的4位换成*号
         String phone = user.getPhoneNumber().replace(user.getPhoneNumber().substring(3,7),"****");
-        String email = user.getEmail().replace(user.getEmail().substring(3,7),"****");
+        //判断该用户是否已经绑定了邮箱，如果已绑定就把邮箱号中间的4位改为****
+        if(user.getEmail() != null) {
+            String email = user.getEmail().replace(user.getEmail().substring(3, 7), "****");
+            model.addAttribute("email",email);
+        }
+        //保存邮箱和手机号，在修改页面时发生校验码要用到
         model.addAttribute("user",user);
-        model.addAttribute("email",email);
         model.addAttribute("phone",phone);
         return TEMPLATE_PATH + "securityUI";
     }
@@ -199,8 +214,12 @@ public class UserController extends BaseAdminController<User,Long> {
     public String securityUpdate(User user,RedirectAttributes redirectAttributes){
         System.out.println("user-___->" + user.toString());
         System.out.println("num" + userService.checkRepeat(user));
+        //获取用户id
         Integer id = user.getId();
+        //先把ID设为空，后台校验手机号或邮箱是否被注册过，若果不这样做的话检查是否被使用时会把ID一起查询，即根据ID和手机或邮箱查询
+        //这样做校验的就是当前用户的信息
         user.setId(null);
+        //判断用户手机或邮箱是否被注册
         if(userService.checkRepeat(user) > 0){
             if(user.getPhoneNumber() != null){
                 redirectAttributes.addFlashAttribute("result",new AjaxResult(false,"该手机号已被使用，请重新注册"));
@@ -210,6 +229,8 @@ public class UserController extends BaseAdminController<User,Long> {
                 return  "redirect:/admin/user/updateEmailUI/"+id;
             }
         }
+        //若没被注册过就重新把ID值set进去，再修改
+        user.setId(id);
         userService.update(user);
         return "redirect:/admin/user/index";
     }
@@ -220,33 +241,43 @@ public class UserController extends BaseAdminController<User,Long> {
        model.addAttribute("user",userService.findUpdateUser(id));
        return TEMPLATE_PATH + "updateEmailUI";
     }
-    //用户绑定，校验邮箱
+    //用户绑定邮箱，发送校验码
     @RequestMapping("checkEmail")
     public void checkEmail(String email,PrintWriter outs){
         String checkNumber = MailUtils.send(email);
         System.out.println("email-->" + email);
         outs.print("{\"result\":\""+ checkNumber +"\"}");
+        outs.close();
     }
 
-    //用户找回密码时校验身份
+    //用户找回密码时校验身份，根据用户名或邮箱或手机号进行校验
     @RequestMapping("checkUser")
     public void checkUser(String condition,PrintWriter outs){
+        //根据condition校验是否存在符合条件的用户
         User user = userService.checkUser(condition);
-        System.out.println("user" + user);
+        //r如果不存在就返回false，存在就把邮箱和手机号和id已json的格式返回，前台发送校验信息时需要用到
         if(user == null){
-            outs.print("{\"result\":"+false+"}");
             System.out.println("false");
+            outs.print("{\"result\":"+false+"}");
+            outs.close();
         }else{
             outs.print("{\"email\":\""+ user.getEmail() +"\",\"phoneNumber\":\"" + user.getPhoneNumber() + "\",\"id\":\"" + user.getId() + "\"}");
+            outs.close();
         }
     }
 
-    //用户找回密码，重置密码
+    //用户找回密码通过校验后，重置密码
     @RequestMapping("findPassword")
     public String findPassword(User user,Model model){
         model.addAttribute("result",new AjaxResult(true,"找回密码成功"));
         userService.update(user);
         return "admin/user/loginUI";
+    }
+
+    //用户登录后展示左边的功能列表
+    @RequestMapping("showLeft")
+    public String showLeft(){
+        return TEMPLATE_PATH + "left";
     }
 
     @RequestMapping("test")
