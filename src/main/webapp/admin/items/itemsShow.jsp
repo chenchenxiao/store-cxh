@@ -7,6 +7,7 @@
 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -55,7 +56,7 @@
 </head>
 <body>
 <!--header-->
-<%@include file="header.jsp"%>
+<%@include file="/header.jsp"%>
 <!---->
 <div class="container">
     <div class="single">
@@ -66,7 +67,7 @@
                     <!-- FlexSlider -->
                     <script src="${pageContext.request.contextPath}/resources/js/imagezoom.js"></script>
                     <script defer src="${pageContext.request.contextPath}/resources/js/jquery.flexslider.js"></script>
-                    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+                    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/flexslider.css" type="text/css" media="screen" />
 
                     <script>
                         // Can also be used with $(document).ready()
@@ -80,17 +81,8 @@
                     <!-- //FlexSlider-->
 
                     <ul class="slides">
-                        <li data-thumb="${pageContext.request.contextPath}/images/si1.jpg">
-                            <div class="thumb-image"> <img src="${pageContext.request.contextPath}/resources/images/si1.jpg" data-imagezoom="true" class="img-responsive"> </div>
-                        </li>
-                        <li data-thumb="images/si2.jpg">
-                            <div class="thumb-image"> <img src="${pageContext.request.contextPath}/resources/images/si2.jpg" data-imagezoom="true" class="img-responsive"> </div>
-                        </li>
-                        <li data-thumb="images/si.jpg">
-                            <div class="thumb-image"> <img src="${pageContext.request.contextPath}/resources/images/si.jpg" data-imagezoom="true" class="img-responsive"> </div>
-                        </li>
-                        <li data-thumb="images/si1.jpg">
-                            <div class="thumb-image"> <img src="${pageContext.request.contextPath}/resources/images/si1.jpg" data-imagezoom="true" class="img-responsive"> </div>
+                        <li data-thumb="${pageContext.request.contextPath}/resources/file/items/${items.photo}">
+                            <div class="thumb-image"> <img src="${pageContext.request.contextPath}/resources/file/items/${items.photo}" data-imagezoom="true" class="img-responsive"> </div>
                         </li>
                     </ul>
                     <div class="clearfix"></div>
@@ -99,41 +91,17 @@
             </div>
             <div class="col-md-7 single-top-in">
                 <div class="single-para">
-                    <h4>xxx商品</h4>
+                    <div><h4>商品名称 &nbsp;&nbsp;&nbsp;&nbsp;${items.name}</h4></div>
                     <div class="para-grid">
-                        <span  class="add-to">$32.8</span>
+                        <div>
+                            <div><h5>商品价格</h5></div>
+                            <span  class="add-to">￥${items.price}</span>
+                        </div>
                         <a href="#" class="hvr-shutter-in-vertical cart-to">加入购物车</a>
                         <div class="clearfix"></div>
                     </div>
-                    <h5>还有100件库存哦</h5>
-                    <%--<div class="available">--%>
-                        <%--<h6>Available Options :</h6>--%>
-                        <%--<ul>--%>
-                            <%--<li>Color:--%>
-                                <%--<select>--%>
-                                    <%--<option>Silver</option>--%>
-                                    <%--<option>Black</option>--%>
-                                    <%--<option>Dark Black</option>--%>
-                                    <%--<option>Red</option>--%>
-                                <%--</select></li>--%>
-                            <%--<li>Size:<select>--%>
-                                <%--<option>Large</option>--%>
-                                <%--<option>Medium</option>--%>
-                                <%--<option>small</option>--%>
-                                <%--<option>Large</option>--%>
-                                <%--<option>small</option>--%>
-                            <%--</select></li>--%>
-                            <%--<li>Quality:<select>--%>
-                                <%--<option>1</option>--%>
-                                <%--<option>2</option>--%>
-                                <%--<option>3</option>--%>
-                                <%--<option>4</option>--%>
-                                <%--<option>5</option>--%>
-                            <%--</select></li>--%>
-                        <%--</ul>--%>
-                    <%--</div>--%>
-                    <p>xxxxx贼棒
-                    <a href="#" class="hvr-shutter-in-vertical ">More details</a>
+                    <h5>库存量&nbsp;&nbsp;&nbsp;&nbsp;${items.number}</h5>
+                    <h5><div>商品详情</div>${items.details}</h5>
 
                 </div>
             </div>

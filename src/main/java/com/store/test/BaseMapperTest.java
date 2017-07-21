@@ -1,6 +1,7 @@
 package com.store.test;
 
 import com.github.pagehelper.PageHelper;
+import com.store.dao.ItemsMapper;
 import com.store.dao.UserMapper;
 import com.store.model.User;
 import org.junit.Test;
@@ -22,7 +23,9 @@ public class BaseMapperTest {
 //        userMapper.selectAll();
 //          int i = userMapper.selectCountByExample("test");
 //        System.out.println(i);
-        userMapper.selectByPrimaryKey(1);
+//        userMapper.selectByPrimaryKey(1);
+        ItemsMapper itemsMapper = application.getBean(ItemsMapper.class);
+        System.out.println(itemsMapper.showTypeItems("服装"));
     }
 
 }

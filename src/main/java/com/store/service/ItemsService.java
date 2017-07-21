@@ -1,4 +1,4 @@
-package com.store.service.impl;
+package com.store.service;
 
 import com.store.been.PageBean;
 import com.store.model.Items;
@@ -29,4 +29,6 @@ public interface ItemsService {
     List<Items> itemList(Integer id);
 
     void importExcel(MultipartFile file,Integer id);
+
+    PageBean showTypeItems(String type,PageBean pageBean);
 }

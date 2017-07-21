@@ -58,7 +58,7 @@
                     </div>
                     <div>
                         显示<select name="size" id="showSize">
-                        <option value="5" <c:if test="${PageBean.size == 5}" >selected = selected</c:if>>5</option>
+                        <option value="8" <c:if test="${PageBean.size == 8}" >selected = selected</c:if>>8</option>
                         <option value="10"  <c:if test="${PageBean.size == 10}" >selected = selected</c:if>>10</option>
                         <option value="15"  <c:if test="${PageBean.size == 15}" >selected = selected</c:if>>15</option>
                         <option value="20"  <c:if test="${PageBean.size == 20}" >selected = selected</c:if>>20</option>

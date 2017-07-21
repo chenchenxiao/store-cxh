@@ -12,7 +12,7 @@ public class PageBean {
 
 	// 指定的或是页面参数
 	private int page=1; // 当前页
-	private int size=5; // 每页显示多少条
+	private int size=8; // 每页显示多少条
 
     private String  searchText;//搜索的文本
 

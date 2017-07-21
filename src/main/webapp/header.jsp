@@ -1,6 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
+
 <!--header-->
+<script type="text/javascript">
+    function go(){
+        window.open("${pageContext.request.contextPath}/admin/user/show");
+    }
+</script>
 <div class="header">
     <div class="header-top">
         <div class="container">
@@ -18,7 +24,7 @@
                             <li  ><a href="#">欢迎您，${sessionScope.loginUser.name}</a></li>|
                             <li  ><a href="${pageContext.request.contextPath}/admin/user/logout">退出</a></li>|
                         </c:if>
-                        <li  ><a href="${pageContext.request.contextPath}/admin/user/show">我的商城</a></li>
+                        <li><a href="#" onclick="go()">我的商城</a></li>
                         <li><div class="cart">
                             <a href="#" class="cart-in"> </a>
                             <span> 0</span>
@@ -69,23 +75,13 @@
             <div class="h_menu4">
                 <a class="toggleMenu" href="#">Menu</a>
                 <ul class="nav">
-                    <li class="active"><a href="show.jsp"><i> </i>首页</a></li>
-                    <li ><a href="#" >笔记本</a>
-                        <ul class="drop">
-                            <li><a href="product.jsp">索尼</a></li>
-                            <li><a href="product.jsp">安卓</a></li>
-                            <li><a href="product.jsp">苹果</a></li>
-                            <li><a href="product.jsp">Acer(53)</a></li>
-                            <li><a href="product.jsp">HP(78)</a></li>
-                            <li><a href="product.jsp">Intel(5)</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="product.jsp" >服装</a></li>
-                    <li><a href="product.jsp" >美食</a></li>
-                    <li><a href="product.jsp" >家居</a></li>
-                    <li><a href="product.jsp" >运动</a></li>
-                    <li><a href="product.jsp" >其他 </a></li>
-
+                    <li class="active"><a href="${pageContext.request.contextPath}/show.jsp"><i> </i>首页</a></li>
+                    <li><a href="${pageContext.request.contextPath}/admin/items/showTypeItems?type=笔记本" >笔记本</a></li>
+                    <li><a href="${pageContext.request.contextPath}/admin/items/showTypeItems?type=服装" >服装</a></li>
+                    <li><a href="${pageContext.request.contextPath}/admin/items/showTypeItems?type=美食" >美食</a></li>
+                    <li><a href="${pageContext.request.contextPath}/admin/items/showTypeItems?type=家居" >家居</a></li>
+                    <li><a href="${pageContext.request.contextPath}/admin/items/showTypeItems?type=运动" >运动</a></li>
+                    <li><a href="${pageContext.request.contextPath}/admin/items/showTypeItems?type=其他" >其他</a></li>
                 </ul>
                 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/nav.js"></script>
             </div>
@@ -98,7 +94,7 @@
                 <div class="header-can">
                     <div class="search">
                         <form>
-                            <input type="text" value="" placeholder="搜索" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '';}" >
+                            <input type="text" value=""  placeholder="搜索" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '';}" >
                             <input type="submit" value="">
                         </form>
                     </div>

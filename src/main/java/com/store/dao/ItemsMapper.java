@@ -12,4 +12,7 @@ public interface ItemsMapper extends BaseMapper<Items> {
 
     List<Items> selectItemsList(@Param("uid") Integer uid,@Param("preDate") String preDate,@Param("lastDate") String lastDate);
 
+    List<Items> showTypeItems(@Param("type") String type);
+
+    List<Items> test(@Param("id") Integer id);
 }

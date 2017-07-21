@@ -50,15 +50,15 @@ public class User {
 
     private String photo;
 
-//    private List<Items> itemsList;
-//
-//    public List<Items> getItemsList() {
-//        return itemsList;
-//    }
-//
-//    public void setItemsList(List<Items> itemsList) {
-//        this.itemsList = itemsList;
-//    }
+    private List<Items> itemsList;
+
+    public List<Items> getItemsList() {
+        return itemsList;
+    }
+
+    public void setItemsList(List<Items> itemsList) {
+        this.itemsList = itemsList;
+    }
 
     public String getPhoto() {
         return photo;

@@ -56,6 +56,8 @@
                         <value>/admin/user/findPassword</value>
                         <value>/admin/user/login</value>
                         <value>/admin/user/regist</value>
+                        <value>/admin/items/showTypeItems</value>
+                        <value>/admin/items/viewItems</value>
                     </list>
                 </property>
             </bean>

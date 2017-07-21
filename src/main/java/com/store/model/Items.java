@@ -33,6 +33,7 @@ public class Items {
     private Integer number;     //商品的库存量
 
     private String photo;
+    @Column(name = "add_date")
     private Date addDate;      //商品的添加时间
 
     public Date getAddDate() {
@@ -50,16 +51,17 @@ public class Items {
     public void setUpdateDate(Date updateDate) {
         this.updateDate = updateDate;
     }
+    @Column(name = "update_date")
     private Date updateDate;     //商品的修改时间
-//    private User user;
+    private User user;
 
-//    public User getUser() {
-//        return user;
-//    }
-//
-//    public void setUser(User user) {
-//        this.user = user;
-//    }
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     public String getPhoto() {
         return photo;

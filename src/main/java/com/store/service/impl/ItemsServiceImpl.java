@@ -6,6 +6,7 @@ import com.store.been.PageBean;
 import com.store.dao.ItemsMapper;
 import com.store.model.Items;
 import com.store.model.User;
+import com.store.service.ItemsService;
 import com.store.util.ExcelUtil;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
@@ -18,10 +19,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.ServletOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.InputStream;
-import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -160,5 +158,17 @@ public class ItemsServiceImpl implements ItemsService {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public PageBean showTypeItems(String type,PageBean pageBean) {
+        PageHelper.startPage(pageBean.getPage(),pageBean.getSize());
+        List list = itemsMappers.showTypeItems(type);
+        //把分页出来的数据放入pageBean
+        System.out.println("list-->" + list.size());
+        pageBean.setRecordList(list);
+        //取分页信息
+        PageInfo<User> pageInfo = new PageInfo<User>(list);
+        pageBean.init((int) pageInfo.getTotal(),list);
+        return pageBean;
     }
 }

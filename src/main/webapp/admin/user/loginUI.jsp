@@ -58,6 +58,9 @@
             <div class="logC">
             <button type="submit">登录</button>
         </div>
+        <div class="logD logDtip">
+            <a href="${pageContext.request.contextPath}/show.jsp" class="p2">商城首页</a>
+        </div>
     </form>
     </div>
 </div>

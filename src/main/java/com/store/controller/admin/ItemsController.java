@@ -4,10 +4,9 @@ import com.store.been.AjaxResult;
 import com.store.been.PageBean;
 import com.store.model.Items;
 import com.store.model.User;
-import com.store.service.impl.ItemsService;
+import com.store.service.ItemsService;
 import com.store.util.FileUploadUtil;
 
-import java.io.UnsupportedEncodingException;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,7 +14,6 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -79,7 +77,7 @@ public class ItemsController extends BaseAdminController<Items,Long>{
             //判断上传的照片的类型是否符合要求
             if(!photoExt.contains(FileUploadUtil.getFileExt(picture.getOriginalFilename()))) {
                 redirectAttributes.addFlashAttribute("result", new AjaxResult(false, "头像只能是照片格式的文件"));
-                return REDIRECT_URL + "saveUI";
+                return REDIRECT_URL + "updateUI/" + items.getId();
             }
         }
         //检查商品的信息格式是否正确
@@ -168,4 +166,21 @@ public class ItemsController extends BaseAdminController<Items,Long>{
         }
     }
 
+    //用户查看指定类型的商品
+    @RequestMapping("showTypeItems")
+    public String showTypeItems(String type,Model model,PageBean pageBean) throws Exception {
+//        String realType = new String(type.getBytes("ISO-8859-1"), "utf-8");
+        System.out.println("type-->" + type);
+//        System.out.println("reatype-->" + realType);
+        model.addAttribute("PageBean",itemsService.showTypeItems(type,pageBean));
+        model.addAttribute("type",type);        //把type的值传到前台，这里不在前台用pagebean取是因为如果在前台取的话将是取到一个数组，而不是字符串
+        return "admin/items/product";
+    }
+
+    //用户查看商品详情
+    @RequestMapping("viewItems")
+    public String viewItems(Integer id,Model model){
+        model.addAttribute("items",itemsService.showOneItems(id));
+        return "admin/items/itemsShow";
+    }
 }

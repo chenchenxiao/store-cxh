@@ -100,7 +100,7 @@
                         </div>
                         <br>
                         <div class="col-md-offset-5 col-md-2">
-                            <input class="btn btn-primary " id="items_submit" type="submit" value="确定">
+                            <input class="btn btn-primary " id="items_submit" type="button" value="确定">
                         </div>
                     </fieldset>
                 </form>
@@ -150,26 +150,25 @@
 </script>
 
 <script type="text/javascript">
-    var photoResult;
+    var photoResult = true;
+    function getcheckVal(result){
+        photoResult = result;
+    }
     $("#picture").change(function () {
-        alert("session" )
         var option={
             type:'POST',
             url:'${pageContext.request.contextPath }/admin/items/showPhoto',
             dataType:'json',
             success:function(data){
-                alert("!!" + data.showResult)
                 //返回服务器图片名称，把图片名称设置给img标签
                 if(!data.showResult){
-                    $(".photoTip").text("头像只能是照片格式的文件");
+                    $(".photoTip").text("只能上传图片格式的文件");
                     $(".photoTip").css("color",'red');
                     $("#photo").attr("src","");
-                    photoResult = false;
+                    getcheckVal(data.showResult);
                     return;
                 }
-                alert("data.showResult-->" + data.showResult )
                 var path = "${pageContext.request.contextPath }/resources/file/items/"+data.showResult;
-                alert("path" + path)
                 $(".photoTip").text("");
                 $("#photo").attr("src",path);
                 photoResult = true;
@@ -177,12 +176,12 @@
         };
         $("#items-form").ajaxSubmit(option);
     })
-
     $("#items_submit").click(function () {
         if(photoResult){
             $("#items-form").submit()
+            return;
         }else{
-            return
+             return;
         }
 
     })

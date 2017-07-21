@@ -132,7 +132,12 @@ public class UserController extends BaseAdminController<User,Long> {
 
     //用户修改资料
     @RequestMapping("update")
-    public String update(User user,String oldAccount,HttpServletRequest request, RedirectAttributes redirectAttributes,HttpSession session,MultipartFile pictures){
+    public String update(@Valid User user,BindingResult bindingResult,String oldAccount,HttpServletRequest request, RedirectAttributes redirectAttributes,HttpSession session,MultipartFile pictures){
+        //后台校验用户的注册信息
+        if(bindingResult.hasErrors()){
+            redirectAttributes.addFlashAttribute("result", new AjaxResult(false, "格式填写错误！"));
+            return "redirect:/admin/user/updateUI/" + user.getId();
+        }
         //判断是否上传了图片
         if(pictures.getOriginalFilename().length() > 0){
             //判断上传的照片的类型是否符合要求
