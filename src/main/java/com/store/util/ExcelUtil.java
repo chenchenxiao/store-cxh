@@ -19,10 +19,7 @@ import org.apache.poi.hssf.usermodel.HSSFFont;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.util.CellRangeAddress;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -64,7 +61,7 @@ public class ExcelUtil {
 			
 			//3.2、创建列标题行；并且设置列标题
 			HSSFRow row2 = sheet.createRow(1);
-			String[] titles = {"id","卖家id","名称","类型","标题","细节","价格", "库存量", "图片名称", "增添时间","修改时间"};
+			String[] titles = {"名称","类型","标题","细节","价格", "库存量", "图片名称", "增添时间","修改时间"};
 			for(int i = 0; i < titles.length; i++){
 				HSSFCell cell2 = row2.createCell(i);
 				//加载单元格样式
@@ -77,27 +74,25 @@ public class ExcelUtil {
 				for(int j = 0; j < itemsList.size(); j++){
 					HSSFRow row = sheet.createRow(j+2);
 					HSSFCell cell11 = row.createCell(0);
-					cell11.setCellValue(itemsList.get(j).getId());
+					cell11.setCellValue(itemsList.get(j).getName());
 					HSSFCell cell12 = row.createCell(1);
-					cell12.setCellValue(itemsList.get(j).getUid());
+					cell12.setCellValue(itemsList.get(j).getType());
 					HSSFCell cell13 = row.createCell(2);
-					cell13.setCellValue(itemsList.get(j).getName());
+					cell13.setCellValue(itemsList.get(j).getTitle());
 					HSSFCell cell14 = row.createCell(3);
-					cell14.setCellValue(itemsList.get(j).getType());
+					cell14.setCellValue(itemsList.get(j).getDetails());
 					HSSFCell cell15 = row.createCell(4);
-					cell15.setCellValue(itemsList.get(j).getTitle());
+					cell15.setCellValue(itemsList.get(j).getPrice());
 					HSSFCell cell16 = row.createCell(5);
-					cell16.setCellValue(itemsList.get(j).getDetails());
+					cell16.setCellValue(itemsList.get(j).getNumber());
 					HSSFCell cell17 = row.createCell(6);
-					cell17.setCellValue(itemsList.get(j).getPrice());
+					cell17.setCellValue(itemsList.get(j).getPhoto());
 					HSSFCell cell18 = row.createCell(7);
-					cell18.setCellValue(itemsList.get(j).getNumber());
+					String preTime = formatter.format(itemsList.get(j).getAddDate());
+					cell18.setCellValue(preTime);
 					HSSFCell cell19 = row.createCell(8);
-					cell19.setCellValue(itemsList.get(j).getPhoto());
-					HSSFCell cell110 = row.createCell(9);
-					cell110.setCellValue(itemsList.get(j).getAddDate().toString());
-					HSSFCell cell111 = row.createCell(10);
-					cell111.setCellValue(itemsList.get(j).getAddDate().toString());
+					String lastTime = formatter.format(itemsList.get(j).getUpdateDate());
+					cell19.setCellValue(lastTime);
 				}
 			}
 			//5、输出
@@ -129,6 +124,7 @@ public class ExcelUtil {
 
 	public static List<Object> ExcelForList(MultipartFile file, Class<?>  beanclazz, Boolean titleExist) {
 		List<Object> list = new ArrayList<Object>();
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 		try {
 			// IO流读取文件
 			InputStream input = file.getInputStream();
@@ -151,7 +147,7 @@ public class ExcelUtil {
 				Object object = beanclazz.newInstance();
 
 				Field[] fields = beanclazz.getDeclaredFields();
-				int j = 0;
+				int j = 0;		////////
 				for (Field field : fields) {
 					String fieldName = field.getName();
 					PropertyDescriptor pd = new PropertyDescriptor(fieldName, beanclazz);
@@ -160,7 +156,9 @@ public class ExcelUtil {
 					try{
 						int type = cell.getCellType();
 						if(fieldName.equals("addDate") || fieldName.equals("updateDate")){
-							getMethod.invoke(object, cell.getDateCellValue());
+							System.out.println("number-->" + cell.getNumericCellValue());
+							System.out.println("boolean-->" + DateUtil.isCellDateFormatted(cell));
+							getMethod.invoke(object,cell.getStringCellValue());
 						}
 						if (type == cell.CELL_TYPE_BOOLEAN) {
 							// 返回布尔类型的值

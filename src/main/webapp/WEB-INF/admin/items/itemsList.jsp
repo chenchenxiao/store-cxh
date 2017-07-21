@@ -46,7 +46,7 @@
                         </a>
                         <a href="javascript:void(0)" class="checkbox-row btn btn-sm btn-primary-outline pull-right" id="excelImport">导入</a>
                         <a href="javascript:void(0)" class="checkbox-row btn btn-sm btn-primary-outline pull-right" id="excelExport">导出</a>
-                        <input type="file" name="itemsFile" class=" checkbox-row btn btn-sm btn-primary-outline pull-right"/>
+                        <input type="file" id="itemsFile" name="itemsFile" class=" checkbox-rowbtn btn-sm btn-primary-outline pull-right"/>
                     </div>
                     <div>
                         时间段：
@@ -64,6 +64,7 @@
                         <option value="20"  <c:if test="${PageBean.size == 20}" >selected = selected</c:if>>20</option>
                     </select>条
                     </div>
+                    <div id="checkTip" class="pull-right" style="margin-right:220px"></div>
                 </form>
             </div>
             <!-- user 表格 显示 -->
@@ -203,6 +204,7 @@
 </script>
 
 <script type="text/javascript">
+    var checkResult = true;
     $("#cancelAll").hide()
     function showPage(num){
         //1 修改隐藏域的值
@@ -249,9 +251,33 @@
         $(".list_form").attr("action","${pageContext.request.contextPath}/admin/items/exportExcel");
         $(".list_form").submit();
     })
+
+    $("#itemsFile").change(function () {
+        var option={
+            type:'POST',
+            url:'${pageContext.request.contextPath }/admin/items/checkExcel',
+            dataType:'json',
+            success:function(data){
+                if(!data.checkResult){
+                    $("#checkTip").text("只能导入excel格式的文件");
+                    $("#checkTip").css("color",'red');
+                    checkResult = false;
+                    return;
+                }
+                $("#checkTip").text("");
+                checkResult = true;
+            },
+        };
+        $(".list_form").ajaxSubmit(option);
+    })
+
     $("#excelImport").click(function () {
-        $(".list_form").attr("action","${pageContext.request.contextPath}/excelImort");
-        $(".list_form").submit();
+        $(".list_form").attr("action","${pageContext.request.contextPath}/admin/items/importExcel");
+        if(checkResult){
+            $(".list_form").submit();
+        }else{
+            return;
+        }
     })
 </script>
 </html>

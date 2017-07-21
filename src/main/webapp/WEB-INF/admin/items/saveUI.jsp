@@ -159,9 +159,7 @@
             dataType:'json',
             success:function(data){
                 alert("!!" + data.showResult)
-                //把json格式的字符串转换成json对象
-                //var jsonObj = $.parseJSON(data);
-                //返回服务器图片路径，把图片路径设置给img标签
+                //返回服务器图片名称，把图片名称设置给img标签
                 if(!data.showResult){
                     $(".photoTip").text("头像只能是照片格式的文件");
                     $(".photoTip").css("color",'red');

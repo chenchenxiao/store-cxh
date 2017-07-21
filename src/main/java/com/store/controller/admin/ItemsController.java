@@ -137,6 +137,35 @@ public class ItemsController extends BaseAdminController<Items,Long>{
         }
     }
 
+    //导入商品信息
+    @RequestMapping("importExcel")
+    public String importExcel(MultipartFile itemsFile,HttpSession session,RedirectAttributes redirectAttributes){
+        String excelExt = "xls,xlsx";
+        //后台校验导入的文件是否为excel格式的文件
+        if(!excelExt.contains(FileUploadUtil.getFileExt(itemsFile.getOriginalFilename()))){
+            redirectAttributes.addFlashAttribute("result",new AjaxResult(false,"只能导入excel格式的文件"));
+            return REDIRECT_URL + "itemsList";
+        }
+        User user = (User) session.getAttribute("loginUser");
+        itemsService.importExcel(itemsFile,user.getId());
+        return REDIRECT_URL + "itemsList";
+    }
 
+    //校验用户选择导入的文件是否为excel文件
+    @RequestMapping("checkExcel")
+    public void checkExcel(PrintWriter outs, MultipartFile itemsFile) throws IOException {
+        System.out.println(FileUploadUtil.getFileExt(itemsFile.getOriginalFilename()));
+        System.out.println(!photoExt.contains(FileUploadUtil.getFileExt(itemsFile.getOriginalFilename())));
+        //excel文件的后缀名
+        String excelExt = "xls,xlsx";
+        //判断要导入的excel文件的格式是否正确
+        if(!excelExt.contains(FileUploadUtil.getFileExt(itemsFile.getOriginalFilename()))){
+            outs.print("{\"checkResult\":"+false+"}");
+            outs.close();
+        }else{
+            outs.print("{\"checkResult\":"+true+"}");
+            outs.close();
+        }
+    }
 
 }
