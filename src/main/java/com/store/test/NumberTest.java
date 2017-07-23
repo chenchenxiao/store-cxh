@@ -1,5 +1,6 @@
 package com.store.test;
 
+import com.store.util.IDUtils;
 import org.junit.Test;
 
 import java.util.Random;
@@ -17,7 +18,9 @@ public class NumberTest {
         }
         System.out.println("charValue-->" + charValue);
     }
-
+    public void idTest(){
+        System.out.println(IDUtils.genItemId());
+    }
     private int randomInt(int from, int to) {
         Random r = new Random();
         return from + r.nextInt(to - from);

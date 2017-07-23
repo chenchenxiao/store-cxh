@@ -5,6 +5,7 @@ import org.hibernate.validator.constraints.Length;
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
@@ -53,12 +54,12 @@ public class Items {
     }
     @Column(name = "update_date")
     private Date updateDate;     //商品的修改时间
+    @Transient
     private User user;
 
     public User getUser() {
         return user;
     }
-
     public void setUser(User user) {
         this.user = user;
     }

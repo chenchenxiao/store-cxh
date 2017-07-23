@@ -7,6 +7,7 @@ import org.hibernate.validator.constraints.Length;
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.Pattern;
 
 /**
@@ -22,6 +23,16 @@ public class User {
 
     @Length(min = 2,max = 20)
     private String name;
+    @Transient
+    private List<Items> itemsList;
+
+    public List<Items> getItemsList() {
+        return itemsList;
+    }
+
+    public void setItemsList(List<Items> itemsList) {
+        this.itemsList = itemsList;
+    }
 
     @Override
     public String toString() {
@@ -50,15 +61,7 @@ public class User {
 
     private String photo;
 
-    private List<Items> itemsList;
 
-    public List<Items> getItemsList() {
-        return itemsList;
-    }
-
-    public void setItemsList(List<Items> itemsList) {
-        this.itemsList = itemsList;
-    }
 
     public String getPhoto() {
         return photo;

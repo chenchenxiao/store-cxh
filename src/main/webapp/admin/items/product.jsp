@@ -52,6 +52,17 @@
         });
     });
     </script>
+
+    <script type="text/javascript">
+        function viewItems(id){
+            window.open("${pageContext.request.contextPath}/admin/items/viewItems?id="+id);
+        }
+        function addCart(id){
+            $(".list_form").attr("action","${pageContext.request.contextPath}/admin/orders/addToCart?itemsId="+id)
+            <%--window.open("${pageContext.request.contextPath}/admin/orders/addToCart?itemsId="+id);--%>
+            $(".list_form").submit();
+        }
+    </script>
 </head>
 <body>
 <!--页面顶部 -->
@@ -70,16 +81,16 @@
                       <div class="col-md-3 md-col">
                         <div class="col-md">
                             <a href="#" class="compare-in">
-                                名称:&nbsp;&nbsp;&nbsp; ${items.name}
                                 <img height="207px" width="250px" src="${pageContext.request.contextPath}/resources/file/items/${items.photo}" alt="" />
                                 <div class="compare">
-                                    <span>加入购物车</span>
+                                    <span id="addCart" onclick="addCart(${items.id})">加入购物车</span>>
                                 </div>
                             </a>
                             <div class="top-content">
+                                名称:&nbsp;&nbsp;&nbsp; ${items.name}
                                 <h5>标题:&nbsp;&nbsp;&nbsp;<a href="${pageContext.request.contextPath}/admin/items/viewItems?id=${items.id}">${items.title}</a></h5>
                                 <div class="white">
-                                    <a href="${pageContext.request.contextPath}/admin/items/viewItems?id=${items.id}" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">查看详情</a>
+                                    <a href="#" onclick="viewItems(${items.id})" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">查看详情</a>
                                     <p class="dollar"><span class="in-dollar">$</span><span>${items.price}</span></p>
                                     <div class="clearfix"></div>
                                 </div>

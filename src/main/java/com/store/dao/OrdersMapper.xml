@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.store.dao.OrdersMapper">
+    <select id="showCart" parameterType="Integer">
+        select * FROM
+        store_orders o,
+        store_orderdetails d,
+        store_items i
+        where
+        o.user_id = #{id}
+        and
+        o.id = d.orders_id
+        and
+        d.items_id = i.id
+    </select>
+</mapper>

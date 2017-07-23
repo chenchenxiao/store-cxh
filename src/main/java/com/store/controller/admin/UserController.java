@@ -31,7 +31,7 @@ import org.apache.commons.mail.EmailException;
 @RequestMapping("admin/user")
 public class UserController extends BaseAdminController<User,Long> {
     @Autowired
-    UserService userService;
+    private UserService userService;
 
     //校验用户名或手机号是否已被注册
     @RequestMapping("checkRepeat")
