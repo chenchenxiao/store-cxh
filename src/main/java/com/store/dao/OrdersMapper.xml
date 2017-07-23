@@ -1,16 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.store.dao.OrdersMapper">
-    <select id="showCart" parameterType="Integer">
-        select * FROM
-        store_orders o,
-        store_orderdetails d,
-        store_items i
+    <resultMap id="showCartResultMap" type="com.store.model.Orders">
+        <id column="o_id" property="id" javaType="String"/>
+        <result column="user_id" property="userId"/>
+        <collection property="orderDetailsList" ofType="com.store.model.OrderDetails">
+            <id column="od_id" property="id"/>
+            <result column="orders_id" property="ordersId" javaType="String"/>
+            <result column="items_id" property="itemsId"/>
+            <result column="items_number" property="itemsNumber"/>
+            <association property="items" javaType="com.store.model.Items">
+                <id column="id" property="id"/>
+                <result column="uid" property="uid"/>
+                <result column="name" property="name"/>
+                <result column="type" property="type"/>
+                <result column="title" property="title"/>
+                <result column="photo" property="photo"/>
+                <result column="details" property="details"/>
+                <result column="price" property="price"/>
+                <result column="number" property="number"/>
+                <result column="add_date" property="addDate"/>
+                <result column="update_date" property="updateDate"/>
+            </association>
+        </collection>
+    </resultMap>
+
+    <select id="showCart" parameterType="Integer" resultMap="showCartResultMap">
+        select orders.*,details.*,items.* FROM
+        store_orders orders,
+        store_orderdetails details,
+        store_items items
         where
-        o.user_id = #{id}
+        orders.user_id = #{id}
         and
-        o.id = d.orders_id
+        orders.o_id = details.orders_id
         and
-        d.items_id = i.id
+        details.items_id = items.id
     </select>
 </mapper>

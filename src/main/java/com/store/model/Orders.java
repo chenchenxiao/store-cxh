@@ -2,6 +2,8 @@ package com.store.model;
 
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -10,6 +12,8 @@ import javax.persistence.Transient;
  */
 @Table(name = "store_orders")
 public class Orders {
+    @Id
+    @Column(name = "o_id")
    private String id;          //订单的ID
    private Integer userId;      //订单的用户id
     @Transient
@@ -26,6 +30,15 @@ public class Orders {
     public Orders(Integer userId){
        this.userId = userId;
    }
+
+    @Override
+    public String toString() {
+        return "Orders{" +
+                "id='" + id + '\'' +
+                ", userId=" + userId +
+                ", orderDetailsList=" + orderDetailsList.toString() +
+                '}';
+    }
 
     public Orders(String id, Integer userId) {
         this.id = id;

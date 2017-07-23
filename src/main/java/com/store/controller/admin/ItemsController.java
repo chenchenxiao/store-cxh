@@ -180,6 +180,7 @@ public class ItemsController extends BaseAdminController<Items,Long>{
     //用户查看商品详情
     @RequestMapping("viewItems")
     public String viewItems(Integer id,Model model){
+        System.out.println("id" + id);
         model.addAttribute("items",itemsService.showOneItems(id));
         return "admin/items/itemsShow";
     }

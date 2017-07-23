@@ -12,6 +12,7 @@
 <html>
 <head>
     <title>商品详情</title>
+
     <link href="${pageContext.request.contextPath}/resources/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="${pageContext.request.contextPath}/resources/js/jquery.min.js"></script>
@@ -19,15 +20,20 @@
     <!--theme-style-->
     <link href="${pageContext.request.contextPath}/resources/css/style.css" rel="stylesheet" type="text/css" media="all" />
     <!--//theme-style-->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="keywords" content="" />
-    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-    <!--fonts-->
+    <link href="${pageContext.request.contextPath}/resources/css/messenger/messenger.css" rel="stylesheet" type="text/css" />
+    <link href="${pageContext.request.contextPath}/resources/css/messenger/messenger-theme-future.css" rel="stylesheet" type="text/css" />
+    <link href="${pageContext.request.contextPath}/resources/css/messenger/messenger-theme-flat.css" rel="stylesheet" type="text/css" />
+    <link href="${pageContext.request.contextPath}/resources/css/messenger/messenger-theme-air.css" rel="stylesheet" type="text/css" />
     <link href='https://fonts.googleapis.com/css?family=Exo:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
     <!--//fonts-->
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!--fonts-->
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/move-top.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/easing.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/js/messenger/messenger.min.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/js/messenger/messenger-theme-future.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/js/messenger/messenger.js"></script>
+
     <script type="text/javascript">
         jQuery(document).ready(function($) {
             $(".scroll").click(function(event){
@@ -53,6 +59,29 @@
         });
     });
     </script>
+    <c:if test="${result!=null}">
+        <script>
+            $().ready(function(){
+                alert("!!!")
+                alert(${result.msg})
+                var success=${result.success};
+                var msg='${result.msg}';
+                var type="error";
+                if(success=true){
+                    type="success"
+                }
+                Messenger.options = {
+                    extraClasses: 'messenger-fixed messenger-on-top messenger-on-right',
+                    theme: 'future'
+                }
+                $.globalMessenger().post({
+                    message:"提示："+ msg,
+                    type: type,
+                    showCloseButton: true
+                })
+            })
+        </script>
+    </c:if>
 </head>
 <body>
 <!--header-->
@@ -285,5 +314,6 @@
     <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 
 </div>
+
 </body>
-</html></html>
+</html>

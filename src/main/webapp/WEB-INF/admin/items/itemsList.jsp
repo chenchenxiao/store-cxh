@@ -20,6 +20,7 @@
     <%@ include file="../aljs.jsp" %>
     <script src="${pageContext.request.contextPath}/resources/My97DatePicker/WdatePicker.js"></script>
     <!-- <script type="text/javascript" src="js/page.js" ></script> -->
+
 </head>
 
 <body>

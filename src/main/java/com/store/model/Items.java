@@ -19,6 +19,7 @@ import java.util.Date;
 public class Items {
     @Id
     private Integer id;     //商品的id
+    @Column(name = "uid")
     private Integer uid;        //商品用户的id
     @NotNull
     private String  name;       //商品的名称

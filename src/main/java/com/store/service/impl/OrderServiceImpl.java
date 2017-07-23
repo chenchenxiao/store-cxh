@@ -1,5 +1,6 @@
 package com.store.service.impl;
 
+import com.store.been.PageBean;
 import com.store.dao.ItemsMapper;
 import com.store.dao.OrderDetailsMapper;
 import com.store.dao.OrdersMapper;
@@ -8,7 +9,10 @@ import com.store.model.OrderDetails;
 import com.store.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.interceptor.TransactionAspectSupport;
 
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -24,15 +28,18 @@ public class OrderServiceImpl implements OrderService {
     OrderDetailsMapper orderDetailsMapper;
 
     //用户加入商品到购物车，创建订单
-    public void addToCart(Integer itemsId,Integer userId) {
+    @Transactional(rollbackFor = Exception.class)
+    public Boolean addToCart(Integer itemsId,Integer userId)  {
         //先从数据库查找是否存在符合条件的对象
+        boolean flag = true;
         try {
             Orders orders = ordersMapper.selectOne(new Orders(userId));
-            OrderDetails orderDetails = orderDetailsMapper.selectOne(new OrderDetails(itemsId));
             //判断该用户的购物车是否已经存在商品，即是否已经创建过订单
             //如果已经创建过订单就不用创建订单
+            OrderDetails orderDetails;
             if (orders != null) {
                 //判断是否已经有该商品的订单明细单
+                 orderDetails = orderDetailsMapper.selectOne(new OrderDetails(orders.getId(),itemsId));
                 //如果订单明细单不为空则该商品则该商品数量加一，否则就创建新的订单明细单
                 if (orderDetails != null) {
                     orderDetails.setItemsNumber(orderDetails.getItemsNumber() + 1);
@@ -53,10 +60,18 @@ public class OrderServiceImpl implements OrderService {
                 orderDetails = new OrderDetails(ordersId,itemsId,1);
                 //保存订单和明细单到数据库
                 ordersMapper.insertSelective(orders);
-                orderDetailsMapper.insertSelective(orderDetails);
+                orderDetailsMapper.insertSelective(null);
             }
         } catch (Exception e) {
             e.printStackTrace();
+            //由于加了trycatch，所以必须加上下面的代码事务才会回滚，如果不加trycatch则会自动回滚
+            TransactionAspectSupport.currentTransactionStatus().setRollbackOnly() ;
         }
+        return flag;
+    }
+    @Transactional
+    //展示购物车的商品
+    public Orders showCart(Integer id){
+        return ordersMapper.showCart(id);
     }
 }
