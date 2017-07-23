@@ -14,9 +14,38 @@ public class OrderDetails {
     @Id
     @Column(name = "od_id")
     private Integer id;             //订单明细的id
-    private String ordersId;       //订单的id
+    private String ordersId;        //订单的id
     private Integer itemsId;        //商品的id
     private Integer itemsNumber;    //加入的商品的数量
+
+    public OrderDetails(String ordersId, Integer itemsId, Integer itemsNumber, Float money, Float cost) {
+        this.ordersId = ordersId;
+        this.itemsId = itemsId;
+        this.itemsNumber = itemsNumber;
+        this.money = money;
+        this.cost = cost;
+    }
+
+    public Float getMoney() {
+
+        return money;
+    }
+
+    public void setMoney(Float money) {
+        this.money = money;
+    }
+
+    public Float getCost() {
+        return cost;
+    }
+
+    public void setCost(Float cost) {
+        this.cost = cost;
+    }
+
+    private Float money;          //商品的单价
+    private Float cost;
+
     @Transient
     private Orders orders;          //商品明细对应的订单
     @Transient
@@ -48,11 +77,7 @@ public class OrderDetails {
         this.itemsId = itemsId;
     }
 
-    public OrderDetails(String ordersId, Integer itemsId, Integer itemsNumber) {
-        this.ordersId = ordersId;
-        this.itemsId = itemsId;
-        this.itemsNumber = itemsNumber;
-    }
+
 
     public Integer getId() {
         return id;
@@ -84,5 +109,19 @@ public class OrderDetails {
 
     public void setItemsNumber(Integer itemsNumber) {
         this.itemsNumber = itemsNumber;
+    }
+
+    @Override
+    public String toString() {
+        return "OrderDetails{" +
+                "id=" + id +
+                ", ordersId='" + ordersId + '\'' +
+                ", itemsId=" + itemsId +
+                ", itemsNumber=" + itemsNumber +
+                ", money=" + money +
+                ", cost=" + cost +
+                ", orders=" + orders +
+                ", items=" + items +
+                '}';
     }
 }

@@ -14,10 +14,11 @@ import javax.persistence.Transient;
 public class Orders {
     @Id
     @Column(name = "o_id")
-   private String id;          //订单的ID
-   private Integer userId;      //订单的用户id
+    private String id;          //订单的ID
+    @Column(name = "user_id")
+    private Integer userId;      //订单的用户id
     @Transient
-   private List<OrderDetails> orderDetailsList;
+    private List<OrderDetails> orderDetailsList;
     @Transient
     public List<OrderDetails> getOrderDetailsList() {
         return orderDetailsList;

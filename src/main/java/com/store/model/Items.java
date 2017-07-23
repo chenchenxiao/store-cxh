@@ -38,6 +38,14 @@ public class Items {
     @Column(name = "add_date")
     private Date addDate;      //商品的添加时间
 
+    public Items(Integer id) {
+        this.id = id;
+    }
+
+    public Items() {
+
+    }
+
     public Date getAddDate() {
         return addDate;
     }

@@ -8,7 +8,9 @@ import java.util.List;
  */
 public interface OrderService {
 
-    Boolean addToCart(Integer itemsId,Integer userId);
+    void addToCart(Integer itemsId,Integer userId);
 
     Orders showCart(Integer id);
+
+
 }

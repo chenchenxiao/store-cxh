@@ -6,9 +6,6 @@ var TTCart = {
 		$(".increment").click(function(){//＋
 			var _thisInput = $(this).siblings("input");
 			_thisInput.val(eval(_thisInput.val()) + 1);
-			// $.post("/cart/add/"+_thisInput.attr("itemId") + ".html?num=1",function(data){
-			// 	TTCart.refreshTotalPrice();
-			// });
 		});
 		$(".decrement").click(function(){//-
 			var _thisInput = $(this).siblings("input");
@@ -16,16 +13,10 @@ var TTCart = {
 				return ;
 			}
 			_thisInput.val(eval(_thisInput.val()) - 1);
-			// $.post("/cart/add/"+_thisInput.attr("itemId") + ".html?num=-1",function(data){
-			// 	TTCart.refreshTotalPrice();
-			// });
 		});
 		$(".quantity-form .quantity-text").rnumber(1);//限制只能输入数字
 		$(".quantity-form .quantity-text").change(function(){
 			var _thisInput = $(this);
-			// $.post("/service/cart/update/num/"+_thisInput.attr("itemId")+"/"+_thisInput.val(),function(data){
-			// 	TTCart.refreshTotalPrice();
-			// });
 		});
 	},
 	refreshTotalPrice : function(){ //重新计算总价

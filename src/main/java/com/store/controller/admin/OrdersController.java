@@ -18,7 +18,7 @@ import javax.servlet.http.HttpSession;
  * Created by 陈晓海 on 2017/7/21.
  */
 @Controller
-@RequestMapping("admin/orders")
+@RequestMapping("/admin/orders")
 public class OrdersController extends BaseAdminController<Orders,Long>{
     @Autowired
     private OrderService orderService;
@@ -33,11 +33,13 @@ public class OrdersController extends BaseAdminController<Orders,Long>{
 
     }
     //购物车的商品
-    @RequestMapping("showCart/{id}")
+    @RequestMapping("/showCart/{id}")
     public String showCart(@PathVariable("id") Integer id, Model model){
         Orders orders = orderService.showCart(id);
-        System.out.println("orders-->" + orders.toString());
+        System.out.println("orders-->" + orders);
         model.addAttribute("orders",orders);
         return "cart";
     }
+
+
 }

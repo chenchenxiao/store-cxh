@@ -83,6 +83,10 @@
                             <td width="200px" class="tdColor">商品标题</td>
                             <td width="100" class="tdColor">操作</td>
                         </tr>
+                            <c:if test="${PageBean.recordList[0] == null}">
+                                <h3>你还没有添加商品</h3>
+                            </c:if>
+
                         <c:forEach items="${PageBean.recordList}" var="item" varStatus="status">
                             <input type="hidden" value="${item.id}" id="itemId">
                             <tr height="40px">
