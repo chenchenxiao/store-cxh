@@ -126,7 +126,9 @@
                             <div><h5>商品价格</h5></div>
                             <span  class="add-to">￥${items.price}</span>
                         </div>
-                        <a href="${pageContext.request.contextPath}/admin/orders/addToCart?itemsId=${items.id}" class="hvr-shutter-in-vertical cart-to">加入购物车</a>
+                        <c:if test="${sessionScope.loginUser.id != items.uid}">
+                            <a href="${pageContext.request.contextPath}/admin/orders/addToCart?itemsId=${items.id}" class="hvr-shutter-in-vertical cart-to">加入购物车</a>
+                        </c:if>
                         <div class="clearfix"></div>
                     </div>
                     <h5>库存量&nbsp;&nbsp;&nbsp;&nbsp;${items.number}</h5>

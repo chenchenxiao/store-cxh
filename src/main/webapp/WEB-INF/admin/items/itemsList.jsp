@@ -46,7 +46,6 @@
                             <i class="icon-plus"></i>添加
                         </a>
                         <a href="javascript:void(0)" class="checkbox-row btn btn-sm btn-primary-outline pull-right" id="excelImport">导入</a>
-                        <a href="javascript:void(0)" class="checkbox-row btn btn-sm btn-primary-outline pull-right" id="excelExport">导出</a>
                         <input type="file" id="itemsFile" name="itemsFile" class=" checkbox-rowbtn btn-sm btn-primary-outline pull-right"/>
                     </div>
                     <div>
@@ -65,7 +64,7 @@
                         <option value="20"  <c:if test="${PageBean.size == 20}" >selected = selected</c:if>>20</option>
                     </select>条
                     </div>
-                    <div id="checkTip" class="pull-right" style="margin-right:220px"></div>
+                    <div id="checkTip" class="pull-right" style="margin-right:180px"></div>
                 </form>
             </div>
             <!-- user 表格 显示 -->
@@ -122,10 +121,10 @@
                     <div class="btn-toolbar" role="toolbar">
                         <a href="javascript:void(0)" class="checkbox-row btn btn-sm btn-primary-outline pull-left" id="cancelAll" name="checkAll">全不选</a>
                         <a href="javascript:void(0)" class="checkbox-row btn btn-sm btn-primary-outline pull-left" id="checkAll" name="checkAll">全选</a>
-                        <a href="javascript:void(0)" class="checkbox-row btn btn-sm btn-primary-outline pull-left" id="deleteByIds">批量删除</a>
-
-
+                        <a href="javascript:void(0)" class="checkbox-row btn btn-sm btn-primary-outline pull-left" id="deleteByIds">删除</a>
+                        <a href="javascript:void(0)" class="checkbox-row btn btn-sm btn-primary-outline pull-left" id="excelExport">导出</a>
                     </div>
+                    <div class="expTip"></div>
                     <!--分页 -->
                     <div class="paging">
                     <span>
@@ -252,9 +251,18 @@
     $("#lastDate").blur(function () {
         $(".list_form").submit();
     })
+    var expResult = false;
     $("#excelExport").click(function () {
-        $(".list_form").attr("action","${pageContext.request.contextPath}/admin/items/exportExcel");
-        $(".list_form").submit();
+        var val = $("input:checkbox[name='ids']:checked").length > 0
+        if(!val){
+            $(".expTip").text("请选择要导出的商品信息");
+            $(".expTip").css("color",'red');
+            return;
+        }else{
+            $(".expTip").text("");
+        }
+        $(".deleteIds_form").attr("action","${pageContext.request.contextPath}/admin/items/exportExcel");
+        $(".deleteIds_form").submit();
     })
 
     $("#itemsFile").change(function () {

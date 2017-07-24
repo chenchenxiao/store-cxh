@@ -56,4 +56,13 @@
         store_items
         where uid = #{id}
     </select>
+
+    <select id="expList" parameterType="java.util.List" resultType="com.store.model.Items">
+        select *  FROM
+        store_items
+        WHERE id IN
+        <foreach collection="ids" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </select>
 </mapper>

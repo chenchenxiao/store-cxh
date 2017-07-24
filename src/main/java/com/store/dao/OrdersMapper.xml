@@ -4,6 +4,7 @@
     <resultMap id="showCartResultMap" type="com.store.model.Orders">
         <id column="o_id" property="id" javaType="String"/>
         <result column="user_id" property="userId" javaType="Integer"/>
+        <result column="payment" property="payment"/>
         <collection property="orderDetailsList" ofType="com.store.model.OrderDetails">
             <id column="od_id" property="id"/>
             <result column="orders_id" property="ordersId" javaType="String"/>
@@ -26,9 +27,22 @@
             </association>
         </collection>
     </resultMap>
+    <resultMap id="getDetailsResultMap" type="com.store.model.Orders">
+        <id column="o_id" property="id" javaType="String"/>
+        <result column="user_id" property="userId" javaType="Integer"/>
+        <result column="payment" property="payment"/>
+        <collection property="orderDetailsList" ofType="com.store.model.OrderDetails">
+            <result column="items_number" property="itemsNumber"/>
+            <result column="money" property="money"/>
+            <result column="cost" property="cost"/>
+        </collection>
+    </resultMap>
+
 
     <select id="showCart" parameterType="Integer" resultMap="showCartResultMap">
-        select orders.*,details.*,items.* FROM
+        select
+        orders.*,details.*,items.*
+        FROM
         store_orders orders,
         store_orderdetails details,
         store_items items
@@ -39,6 +53,21 @@
         and
         details.items_id = items.id
     </select>
+    <select id="getDetailsList" parameterType="String" resultMap="getDetailsResultMap">
+        select
+        orders.*,details.money,details.items_number,details.cost
+        FROM
+        store_orders orders,
+        store_orderdetails details
+        where
+        orders.o_id = #{id}
+        and
+        orders.o_id = details.orders_id
+    </select>
+
+    <update id="updatePayment" parameterType="String">
+        UPDATE store_orders SET payment = 0 WHERE  o_id = #{ordersId}
+    </update>
 
 
 </mapper>

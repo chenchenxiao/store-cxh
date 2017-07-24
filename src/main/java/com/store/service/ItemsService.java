@@ -31,4 +31,6 @@ public interface ItemsService {
     void importExcel(MultipartFile file,Integer id);
 
     PageBean showTypeItems(String type,PageBean pageBean);
+
+    List<Items> expList(Integer[] ids);
 }

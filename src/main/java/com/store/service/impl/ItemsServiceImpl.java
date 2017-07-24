@@ -4,7 +4,9 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.store.been.PageBean;
 import com.store.dao.ItemsMapper;
+import com.store.dao.OrderDetailsMapper;
 import com.store.model.Items;
+import com.store.model.OrderDetails;
 import com.store.model.User;
 import com.store.service.ItemsService;
 import com.store.util.ExcelUtil;
@@ -32,7 +34,8 @@ public class ItemsServiceImpl implements ItemsService {
 
     @Autowired
     private ItemsMapper itemsMappers;
-
+    @Autowired
+    private OrderDetailsMapper orderDetailsMapper;
     //用户增添商品
     public void save(Items items){
         items.setAddDate(new Date());
@@ -78,7 +81,14 @@ public class ItemsServiceImpl implements ItemsService {
 
     //用户修改商品信息
     public void update(Items items) {
+        //修改商品的修改日期
         items.setUpdateDate(new Date());
+        //修改明细单商品的单价
+        List<OrderDetails> list = orderDetailsMapper.select(new OrderDetails(items.getId()));
+        for(int i = 0;i < list.size();i++){
+            list.get(i).setMoney(items.getPrice());
+            orderDetailsMapper.updateByPrimaryKey(list.get(i));
+        }
         itemsMappers.updateByPrimaryKeySelective(items);
     }
 
@@ -170,5 +180,14 @@ public class ItemsServiceImpl implements ItemsService {
         PageInfo<User> pageInfo = new PageInfo<User>(list);
         pageBean.init((int) pageInfo.getTotal(),list);
         return pageBean;
+    }
+
+    public List<Items> expList(Integer[] ids) {
+        List<Integer> list = new ArrayList<Integer>();
+        //把数组的值通过循环赋给list，mapper传参list
+        for(int id:ids){
+            list.add(id);
+        }
+        return itemsMappers.expList(list);
     }
 }

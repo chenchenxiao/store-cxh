@@ -83,7 +83,17 @@
                             <a href="#" class="compare-in">
                                 <img height="207px" width="250px" src="${pageContext.request.contextPath}/resources/file/items/${items.photo}" alt="" />
                                 <div class="compare">
-                                    <span id="addCart" onclick="addCart(${items.id})">加入购物车</span>>
+                                        <c:if test="${sessionScope.loginUser.id != items.uid}">
+                                            <span id="addCart" onclick="addCart(${items.id})">
+                                                <%--<c:if test="${sessionScope.loginUser.id == items.uid}">你的商品</c:if>--%>
+                                                加入购物车
+                                            </span>
+                                        </c:if>
+                                        <c:if test="${sessionScope.loginUser.id == items.uid}">
+                                            <span id="addCart" onclick="viewItems(${items.id})">
+                                               你的商品
+                                            </span>
+                                       </c:if>
                                 </div>
                             </a>
                             <div class="top-content">

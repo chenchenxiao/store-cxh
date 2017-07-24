@@ -69,6 +69,9 @@ public class OrderServiceImpl implements OrderService {
                 ordersMapper.insertSelective(orders);
                 orderDetailsMapper.insertSelective(orderDetails);
             }
+            //修改订单的总金额,在原来的总金额上加上刚刚加入的商品的价格
+            orders.setPayment(orders.getPayment() + orderDetails.getMoney());
+            ordersMapper.updateByPrimaryKeySelective(orders);
         } catch (Exception e) {
             e.printStackTrace();
             //由于加了trycatch，所以必须加上下面的代码事务才会回滚，如果不加trycatch则会自动回滚
@@ -79,6 +82,10 @@ public class OrderServiceImpl implements OrderService {
     //展示购物车的商品
     public Orders showCart(Integer id){
         return ordersMapper.showCart(id);
+    }
+    //删除购物车商品时把订单的总金额改为0
+    public void updatePayment(String ordersId) {
+        ordersMapper.updatePayment(ordersId);
     }
 
 

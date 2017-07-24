@@ -15,8 +15,18 @@ public class Orders {
     @Id
     @Column(name = "o_id")
     private String id;          //订单的ID
+
+    public Float getPayment() {
+        return payment;
+    }
+
+    public void setPayment(Float payment) {
+        this.payment = payment;
+    }
+
     @Column(name = "user_id")
-    private Integer userId;      //订单的用户id
+    private Integer userId;     //订单的用户id
+    private Float payment;      //订单的总金额
     @Transient
     private List<OrderDetails> orderDetailsList;
     @Transient

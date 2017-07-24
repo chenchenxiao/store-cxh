@@ -11,8 +11,10 @@ import tk.mybatis.mapper.common.Mapper;
 /**
  * Created by 陈晓海 on 2017/7/22.
  */
-public interface OrdersMapper extends Mapper<Orders> {
+public interface OrdersMapper extends BaseMapper<Orders> {
     Orders showCart(@Param("id") Integer id);
 
+    Orders getDetailsList(@Param("id") String id);
 
+    void updatePayment(@Param("ordersId") String ordersId);
 }

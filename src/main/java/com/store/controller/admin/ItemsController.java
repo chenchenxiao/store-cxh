@@ -14,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -112,7 +113,6 @@ public class ItemsController extends BaseAdminController<Items,Long>{
         itemsService.delete(ids);
         return REDIRECT_URL + "itemsList";
     }
-
     //用户删除单个商品
     @RequestMapping("deleteOne")
     public String deleteOne(Integer id){
@@ -122,10 +122,10 @@ public class ItemsController extends BaseAdminController<Items,Long>{
 
     //用户导出商品信息
     @RequestMapping("exportExcel")
-    public void exportExcel(HttpServletResponse response,HttpSession session) throws Exception {
+    public void exportExcel( @RequestParam("ids") Integer[] ids,HttpServletResponse response, HttpSession session) throws Exception {
         User user = (User) session.getAttribute("loginUser");
-        List<Items> list = itemsService.itemList(user.getId());
-        System.out.println("date-->" + list.get(2).getAddDate());
+        System.out.println(ids);
+        List<Items> list = itemsService.expList(ids);
         response.setContentType("application/x-excel");
         response.setHeader("Content-Disposition", "attachment;filename=" + new String("商品列表.xls".getBytes(), "ISO-8859-1"));
         ServletOutputStream outputStream = response.getOutputStream();

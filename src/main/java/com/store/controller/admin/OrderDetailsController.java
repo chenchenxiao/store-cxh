@@ -1,6 +1,7 @@
 package com.store.controller.admin;
 
 import com.store.model.OrderDetails;
+import com.store.model.Orders;
 import com.store.model.User;
 import com.store.service.OrderDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,21 +23,19 @@ public class OrderDetailsController {
 
     //批量删除购物车商品
     @RequestMapping("/deleteByIds")
-    public String deleteByIds(Integer[] itemIds, HttpSession session){
+    public String deleteByIds(Integer[] itemIds,String ordersId, HttpSession session){
         User user = (User) session.getAttribute("loginUser");
         System.out.println("ids-->" + itemIds);
-        System.out.println("uid-->" );
-        orderDetailsService.deleteByIds(itemIds);
+        System.out.println("ordersId-->" +ordersId);
+        orderDetailsService.deleteByIds(itemIds,ordersId);
         return "redirect:/admin/orders/showCart/"+user.getId();
     }
 
     //修改商品的数量
     @RequestMapping("/updateItemsNumber")
     @ResponseBody
-    public Boolean updateItemsNumber(OrderDetails orderDetails){
-        System.out.println("???");
-        System.out.println(orderDetails.toString());
-        orderDetailsService.updateItemsNumber(orderDetails);
-        return true;
+    public Orders updateItemsNumber(OrderDetails orderDetails){
+        System.out.println("orderdetails-->" + orderDetails);
+        return orderDetailsService.updateItemsNumber(orderDetails);
     }
 }
