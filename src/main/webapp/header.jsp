@@ -26,7 +26,7 @@
                             <li  ><a href="${pageContext.request.contextPath}/admin/user/logout">退出</a></li>|
                         </c:if>
                         <li><a href="#" onclick="go()">我的商城</a></li>
-                        <li><a href="${pageContext.request.contextPath}/admin/orders/showCart/${sessionScope.loginUser.id}" target="_blank" >我的购物车</a></li>
+                        <li><a href="${pageContext.request.contextPath}/admin/cart/showCart/${sessionScope.loginUser.id}" target="_blank" >我的购物车</a></li>
                         <li><div class="cart">
                             <a href="#" class="cart-in"> </a>
                             <span> 0</span>

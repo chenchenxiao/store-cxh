@@ -127,7 +127,7 @@
                             <span  class="add-to">￥${items.price}</span>
                         </div>
                         <c:if test="${sessionScope.loginUser.id != items.uid}">
-                            <a href="${pageContext.request.contextPath}/admin/orders/addToCart?itemsId=${items.id}" class="hvr-shutter-in-vertical cart-to">加入购物车</a>
+                            <a href="${pageContext.request.contextPath}/admin/cart/addToCart?itemsId=${items.id}" class="hvr-shutter-in-vertical cart-to">加入购物车</a>
                         </c:if>
                         <div class="clearfix"></div>
                     </div>

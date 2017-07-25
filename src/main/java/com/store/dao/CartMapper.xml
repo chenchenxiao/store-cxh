@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.store.dao.CartMapper">
+    <resultMap id="showCartResultMap" type="com.store.model.Cart">
+        <id column="cart_id" property="id"/>
+        <result column="user_id" property="userId"/>
+        <result column="payment" property="payment"/>
+        <collection property="cartItemsList" ofType="com.store.model.CartItems">
+            <id column="cit_id" property="id"/>
+            <result column="cart_id" property="cartId"/>
+            <result column="items_id" property="itemsId"/>
+            <result column="money" property="money"/>
+            <result column="items_number" property="itemsNumber"/>
+            <result column="cost" property="cost"/>
+            <association property="items" javaType="com.store.model.Items">
+                <id column="id" property="id"/>
+                <result column="uid" property="uid"/>
+                <result column="name" property="name"/>
+                <result column="type" property="type"/>
+                <result column="title" property="title"/>
+                <result column="photo" property="photo"/>
+                <result column="details" property="details"/>
+                <result column="price" property="price"/>
+                <result column="number" property="number"/>
+                <result column="add_date" property="addDate"/>
+                <result column="update_date" property="updateDate"/>
+            </association>
+        </collection>
+    </resultMap>
+
+    <resultMap id="getCartItemsResultMap" type="com.store.model.Cart">
+        <id column="c_id" property="id" />
+        <result column="user_id" property="userId" />
+        <result column="payment" property="payment"/>
+        <collection property="cartItemsList" ofType="com.store.model.CartItems">
+            <result column="items_number" property="itemsNumber"/>
+            <result column="money" property="money"/>
+            <result column="cost" property="cost"/>
+        </collection>
+    </resultMap>
+
+    <insert id="addCart" parameterType="com.store.model.Cart" useGeneratedKeys="true" keyProperty="id">
+        insert into store_cart (user_id) values (#{userId})
+    </insert>
+
+    <select id="showCart" parameterType="Integer" resultMap="showCartResultMap">
+        select
+        cart.*,cartitems.*,items.*
+        FROM
+        store_cart cart,
+        store_cartitems cartitems,
+        store_items items
+        where
+        cart.user_id = #{id}
+        and
+        cart.c_id = cartitems.cart_id
+        and
+        cartitems.items_id = items.id
+    </select>
+
+    <select id="getCartById" parameterType="Integer" resultMap="getCartItemsResultMap">
+        select
+        cart.*,carItems.money,carItems.items_number,carItems.cost
+        FROM
+        store_cart cart,
+        store_cartitems carItems
+        where
+        cart.c_id = #{id}
+        and
+        cart.c_id = carItems.cart_id
+    </select>
+
+    <update id="updatePayment" parameterType="com.store.model.Cart">
+        update
+        store_cart
+        set
+        payment = #{payment}
+        where
+        c_id = #{id}
+    </update>
+</mapper>

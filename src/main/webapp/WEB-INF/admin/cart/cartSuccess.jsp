@@ -62,7 +62,7 @@
                     <span id="flashBuy" style="display: none">商品数量有限，请您尽快下单并付款！</span>
                 </div>
                 <span id="initCart_next_go">
-                    <a class="btn-1" href="${pageContext.request.contextPath}/admin/orders/showCart/${sessionScope.loginUser.id}"id="GotoShoppingCart">
+                    <a class="btn-1" href="${pageContext.request.contextPath}/admin/cart/showCart/${sessionScope.loginUser.id}"id="GotoShoppingCart">
                         去购物车结算
                     </a>
                     <span class="ml10">

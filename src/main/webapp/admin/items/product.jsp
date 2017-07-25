@@ -58,7 +58,7 @@
             window.open("${pageContext.request.contextPath}/admin/items/viewItems?id="+id);
         }
         function addCart(id){
-            $(".list_form").attr("action","${pageContext.request.contextPath}/admin/orders/addToCart?itemsId="+id)
+            $(".list_form").attr("action","${pageContext.request.contextPath}/admin/cart/addToCart?itemsId="+id)
             <%--window.open("${pageContext.request.contextPath}/admin/orders/addToCart?itemsId="+id);--%>
             $(".list_form").submit();
         }

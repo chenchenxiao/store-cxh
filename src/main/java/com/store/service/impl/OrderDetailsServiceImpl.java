@@ -34,20 +34,28 @@ public class OrderDetailsServiceImpl implements OrderDetailsService {
         orderDetailsMapper.deleteByIds(list);
         //根基明细单的订单id取得对应的订单
         Orders orders = ordersMapper.getDetailsList(ordersId);
-        //订单对应的明细单集合
-        List<OrderDetails> detailsList = orders.getOrderDetailsList();
-        //取得订单中所有明细单的总金额，相加就是订单的总金额
-        System.out.println(orders);
-        System.out.println(list.toString());
-        Float payment = Float.valueOf(0);
-        for(int i = 0;i < list.size();i++){
-            System.out.println(detailsList.get(i).getCost());
-            payment += detailsList.get(i).getCost();
+        System.out.println("-->" + orders);
+        //判断订单是否为空，即是否删除了购物车的所有商品，如果不为空就重新计算订单的总金额，如果为空就把订单的总金额改为0
+        if(orders != null){
+            //订单对应的明细单集合
+            List<OrderDetails> detailsList = orders.getOrderDetailsList();
+            //取得订单中所有明细单的总金额，相加就是订单的总金额
+            System.out.println(orders);
+            System.out.println(list.toString());
+            Float payment = Float.valueOf(0);
+            for(int i = 0;i < list.size();i++){
+                System.out.println(detailsList.get(i).getCost());
+                payment += detailsList.get(i).getCost();
+            }
+            //设置订单的总金额
+            orders.setPayment(payment);
+            //修改同步到数据库
+            ordersMapper.updateByPrimaryKeySelective(orders);
+        }else{
+            orders = ordersMapper.selectByPrimaryKey(ordersId);
+            orders.setPayment((float) 0);
+            ordersMapper.updateByPrimaryKeySelective(orders);
         }
-        //设置订单的总金额
-        orders.setPayment(payment);
-        //修改同步到数据库
-        ordersMapper.updateByPrimaryKeySelective(orders);
     }
     //修改商品的数量
     public Orders updateItemsNumber(OrderDetails orderDetails) {

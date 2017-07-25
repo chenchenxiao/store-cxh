@@ -60,8 +60,8 @@
                 <div class="column t-goods">商品</div>
                 <div class="column t-price">单价</div>
                 <div class="column t-promotion"></div>
-                <div class="column t-inventory">库存</div>
                 <div class="column t-quantity">数量</div>
+                <div class="column t-inventory">全额</div>
                 <div class="column t-action">操作</div>
             </div>
             <div id="product-list" class="cart-tbody">
@@ -94,10 +94,6 @@
                             <div class="cell p-price"><span class="price">¥<fmt:formatNumber groupingUsed="false" value="${details.items.price }" maxFractionDigits="2" minFractionDigits="2"/> </span></div>
                             <div class="cell p-promotion">
                             </div>
-                            <div class="cell p-inventory stock-11345721">
-                                <c:if test="${details.items.number >= 1}">有货</c:if>
-                                <c:if test="${details.items.number <= 0}">没货</c:if>
-                            </div>
                             <div class="cell p-quantity" for-stock="for-stock-11345721">
 
                                 <div class="quantity-form" data-bind="">
@@ -110,6 +106,9 @@
                                  <input type="hidden" name="number" class="number" value="${details.items.number}"/>
                                  <input type="hidden" name="money" class="money" value="${details.money}"/>
 
+                            </div>
+                            <div class="cell p-inventory stock-11345721" style="color: red">
+                                ￥${details.cost}
                             </div>
                             <div class="cell p-remove"><a id="remove-11345721-1" data-more="removed-87.20-1" clstag="clickcart|keycount|xincart|btndel318558" class="cart-remove" href="${pageContext.request.contextPath}/admin/orderDetails/deleteByIds?itemIds=${details.items.id}&ordersId=${orders.id}">删除</a>
                             </div>
@@ -141,7 +140,7 @@
                     <span class="shopping">
                   <b>
                   </b>
-                  <a href="${pageContext.request.contextPath}/show.jsp"  clstag="clickcart|keycount|xincart|coudanlink" id="continue">继续购物</a>
+                  <a href="${pageContext.request.contextPath}/show.jsp" clstag="clickcart|keycount|xincart|coudanlink" id="continue">继续购物</a>
               </span>
                 </div>
                 <div class="cart-total-2014">
@@ -163,8 +162,10 @@
                         </span>
                     </div>
                 </div>
-            </div></div>
+              </div>
+            </div>
         </div><!-- cart-inner结束 -->
+        <div class="removeTips" style="margin-left:50px" ></div>
     </div>
 
 </div>
@@ -203,6 +204,8 @@
             else{
                 $(this).parent().next("div").text("");
             }
+            var cost = parseInt(itemsNumber) * parseInt(money)
+            $(this).parent().parent().next("div").text("￥"+cost)
             $.ajax({
                 "url":"${pageContext.request.contextPath}/admin/orderDetails/updateItemsNumber",
                 "data":{"id":id,"itemsNumber":itemsNumber,"money":money,"ordersId":ordersId},
@@ -226,6 +229,7 @@
         var id =  $(this).parent().next().next().val();
         var number = $(this).parent().next().next().next().val();
         var money = $(this).parent().next().next().next().next().val();
+
         var r = /^\+?[1-9][0-9]*$/;　　//判断是否为正整数
         if(!r.test(itemsNumber)){
             $(this).parent().next("div").text("只能输入正整数");
@@ -241,6 +245,8 @@
             else{
                 $(this).parent().next("div").text("");
             }
+            var cost = parseInt(itemsNumber) * parseInt(money)
+            $(this).parent().parent().next("div").text("￥"+cost)
             $.ajax({
                 "url":"${pageContext.request.contextPath}/admin/orderDetails/updateItemsNumber",
                 "data":{"id":id,"itemsNumber":itemsNumber,"money":money,"ordersId":ordersId},
@@ -258,6 +264,7 @@
        var id =  $(this).parent().next().next().val();
        var number = $(this).parent().next().next().next().val();
        var money = $(this).parent().next().next().next().next().val();
+
        var r = /^\+?[1-9][0-9]*$/;　　//判断是否为正整数
        if(!r.test($(this).val())){
            $(this).parent().next("div").text("只能输入正整数");
@@ -273,6 +280,8 @@
            else{
                $(this).parent().next("div").text("");
            }
+           var cost = parseInt(itemsNumber) * parseInt(money)
+           $(this).parent().parent().next("div").text("￥"+cost)
            $.ajax({
                "url":"${pageContext.request.contextPath}/admin/orderDetails/updateItemsNumber",
                "data":{"id":id,"itemsNumber":itemsNumber,"money":money,"ordersId":ordersId},
@@ -304,8 +313,16 @@ $("#cancelAll").click(function () {
 })
 
 $("#remove-batch").click(function () {
-    $(".list_form").attr("action","${pageContext.request.contextPath}/admin/orderDetails/deleteByIds")
-    $(".list_form").submit();
+    var val = $("input:checkbox[name='itemIds']:checked").length > 0
+    if(!val){
+        $(".removeTips").text("请选择宝贝")
+        $(".removeTips").css("color","red")
+        return;
+    }else{
+        $(".removeTips").text("")
+    }
+         $(".list_form").attr("action","${pageContext.request.contextPath}/admin/orderDetails/deleteByIds")
+        $(".list_form").submit();
 })
 
 </script>
