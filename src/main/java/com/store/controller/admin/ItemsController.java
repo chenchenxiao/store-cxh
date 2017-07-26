@@ -88,7 +88,8 @@ public class ItemsController extends BaseAdminController<Items,Long>{
         }
 
         if(picture.getOriginalFilename().length() > 0){
-            items.setPhoto(FileUploadUtil.uploadUserPhoto(picture,FileUploadUtil.ITEMS_PATH));
+            String photoName = FileUploadUtil.uploadUserPhoto(picture,FileUploadUtil.ITEMS_PATH);
+            items.setPhoto(photoName);
         }
         //判断前台是否取得到商品的id值，如果取不到，就是增添操作，如果取得到，就是修改操作
         if(items.getId() == null){

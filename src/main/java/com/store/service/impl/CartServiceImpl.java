@@ -35,13 +35,13 @@ public class CartServiceImpl implements CartService{
             if (cartItems != null) {
                 cartItems.setItemsNumber(cartItems.getItemsNumber() + 1);
                 cartItems.setCost(cartItems.getMoney() * cartItems.getItemsNumber());
-                //修改该商品的信息
+                //修改该商品的信息b03e559c1331.png
                 cartItemsMapper.updateByPrimaryKeySelective(cartItems);
             } else {
                 //先取得商品的信息
                 Items items = itemsMapper.selectOne(new Items(itemsId));
                 //在购物车添加该商品
-                cartItems = new CartItems(itemsId,cart.getId(),1,items.getPrice(),items.getPrice());
+                cartItems = new CartItems(itemsId,cart.getId(),1,items.getPrice(),items.getPrice(),items.getPhoto(),items.getTitle());
                 //保存
                 cartItemsMapper.insertSelective(cartItems);
             }

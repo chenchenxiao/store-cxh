@@ -75,18 +75,18 @@
                     <div id="product_11345721" data-bind="rowid:1" class="item item_selected ">
                         <div class="item_form clearfix">
                             <div class="cell p-checkbox">
-                                <input data-bind="cbid:1" class="checkbox" type="checkbox" name="itemIds"  onclick="switchState()" value="${cartItems.items.id}">
+                                <input data-bind="cbid:1" class="checkbox" type="checkbox" name="itemIds"  onclick="switchState()" value="${cartItems.itemsId}">
                             </div>
                             <div class="cell p-goods">
                                 <div class="p-img">
                                     <a href="${pageContext.request.contextPath}/admin/items/viewItems?id=${cartItems.items.id}" target="_blank">
-                                        <img clstag="clickcart|keycount|xincart|p-imglistcart" src="${pageContext.request.contextPath}/resources/file/items/${cartItems.items.photo}" alt="${cartItems.items.title}" width="52" height="52">
+                                        <img clstag="clickcart|keycount|xincart|p-imglistcart" src="${pageContext.request.contextPath}/resources/file/items/${cartItems.photo}" alt="${cartItems.title}" width="52" height="52">
                                     </a>
                                 </div>
                                 <div class="p-name">
                                     <a style="text-decoration: none" href="${pageContext.request.contextPath}/admin/items/viewItems?id=${cartItems.items.id}"  clstag="clickcart|keycount|xincart|productnamelink" target="_blank">
                                         标题&nbsp;&nbsp;&nbsp;&nbsp;
-                                        ${cartItems.items.title}测试测试测试
+                                        ${cartItems.title}测试测试测试
                                     </a>
                                     <span class="promise411 promise411_11345721" id="promise411_11345721"></span>
                                 </div>
@@ -333,7 +333,7 @@ $("#toSettlement").click(function () {
     }else{
         $(".removeTips").text("")
     }
-    $(".list_form").attr("action","${pageContext.request.contextPath}/admin/orders/creatOrders")
+    $(".list_form").attr("action","${pageContext.request.contextPath}/admin/orders/affirmOrder")
     $(".list_form").submit();
 })
 

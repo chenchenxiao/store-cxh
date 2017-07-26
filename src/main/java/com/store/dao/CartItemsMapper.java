@@ -14,11 +14,8 @@ import java.util.List;
 public interface CartItemsMapper extends BaseMapper<CartItems> {
     //根据id集合删除购物车商品
     void deleteByIds(@Param("ids") List<Integer> list);
-//    Cart getList(@Param("id") Integer id);
 //    //修改商品的总金额
     void updateCost(CartItems cartItems);
-    //根据商品的id和购物车id取得对应的购物车商品集合
-//    List<CartItems> select(CartItems cartItems);
 
     //根据商品的id和购物车id取得对应的购物车商品集合
     List<CartItems> getCartItemsList(@Param("ids") List<Integer> ids, @Param("cartId") Integer cartId);

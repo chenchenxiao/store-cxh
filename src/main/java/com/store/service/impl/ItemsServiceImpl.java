@@ -95,6 +95,12 @@ public class ItemsServiceImpl implements ItemsService {
             list.get(i).setMoney(items.getPrice());
             //重新设置商品的全额
             list.get(i).setCost(cost);
+            //重新设置商品标题
+            list.get(i).setTitle(items.getTitle());
+            //如果商品照片不为空说明重新上传了图片，所以购物车商品也要修改图片
+            if(items.getPhoto() != null){
+                list.get(i).setPhoto(items.getPhoto());
+            }
             cartItemsMapper.updateByPrimaryKey(list.get(i));
         }
         itemsMappers.updateByPrimaryKeySelective(items);

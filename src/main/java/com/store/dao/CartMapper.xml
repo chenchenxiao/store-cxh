@@ -12,6 +12,8 @@
             <result column="money" property="money"/>
             <result column="items_number" property="itemsNumber"/>
             <result column="cost" property="cost"/>
+            <result column="photo" property="photo"/>
+            <result column="title" property="title"/>
             <association property="items" javaType="com.store.model.Items">
                 <id column="id" property="id"/>
                 <result column="uid" property="uid"/>
@@ -34,8 +36,10 @@
         <result column="payment" property="payment"/>
         <collection property="cartItemsList" ofType="com.store.model.CartItems">
             <result column="items_number" property="itemsNumber"/>
+            <result column="title" property="title"/>
             <result column="money" property="money"/>
             <result column="cost" property="cost"/>
+            <result column="photo" property="photo"/>
         </collection>
     </resultMap>
 
@@ -60,7 +64,7 @@
 
     <select id="getCartById" parameterType="Integer" resultMap="getCartItemsResultMap">
         select
-        cart.*,carItems.money,carItems.items_number,carItems.cost
+        cart.*,carItems.money,carItems.items_number,carItems.cost,carItems.photo
         FROM
         store_cart cart,
         store_cartitems carItems
@@ -71,7 +75,7 @@
     </select>
     <select id="getCartByUserId" parameterType="Integer" resultMap="getCartItemsResultMap">
         select
-        cart.*,carItems.money,carItems.items_number,carItems.cost
+        cart.*,carItems.*
         FROM
         store_cart cart,
         store_cartitems carItems

@@ -1,19 +1,15 @@
 package com.store.service.impl;
 
-import com.store.been.PageBean;
 import com.store.dao.CartItemsMapper;
 import com.store.dao.ItemsMapper;
 import com.store.dao.OrderDetailsMapper;
 import com.store.dao.OrdersMapper;
 import com.store.model.CartItems;
-import com.store.model.Items;
 import com.store.model.Orders;
 import com.store.model.OrderDetails;
 import com.store.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-import org.springframework.transaction.interceptor.TransactionAspectSupport;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,8 +28,8 @@ public class OrderServiceImpl implements OrderService {
     OrderDetailsMapper orderDetailsMapper;
     @Autowired
     CartItemsMapper cartItemsMapper;
-
-    public void creatOrders(Integer[] itemIds, Integer userId,Integer cartId) {
+    //创建订单，返回订单号
+    public String creatOrders(Integer[] itemIds, Integer userId, Integer cartId) {
         //保存商品id的集合
         List<Integer> list = new ArrayList<Integer>();
         //把数组的值通过循环赋给list
@@ -64,7 +60,22 @@ public class OrderServiceImpl implements OrderService {
         ordersMapper.insertSelective(new Orders(ordersId,userId,payment));
         //把订单明细表保存到数据库
         orderDetailsMapper.insertList(orderDetailsList);
-        //删除购物车中加入订单的商品
-        cartItemsMapper.deleteByCartId(list,cartId);
+        //删除购物车中对应的商品
+        cartItemsMapper.deleteByIds(list);
+        return ordersId;
     }
+
+    //用户确认订单
+    public List<CartItems > showCartItems(Integer[] itemIds,Integer cartId){
+        //保存商品id的集合
+        List<Integer> list = new ArrayList<Integer>();
+        //把数组的值通过循环赋给list
+        for(int id:itemIds){
+            list.add(id);
+        }
+        //取得购物车所选择的商品
+        List<CartItems> cartItemsList = cartItemsMapper.getCartItemsList(list,cartId);
+        return cartItemsList;
+    }
+
 }

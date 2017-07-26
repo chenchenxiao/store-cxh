@@ -18,6 +18,16 @@ public class CartItems {
     private Integer id;             //购物车商品明细id
     private Integer itemsId;        //购物车商品对应的id
     private Integer cartId;         //购物车明细对应的购物车id
+    private String photo;           //购物车商品的图片
+    private String title;           //购物车商品的标题
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
     public CartItems(Integer itemsId, Integer cartId) {
         this.itemsId = itemsId;
@@ -50,12 +60,14 @@ public class CartItems {
     public CartItems(){
 
     }
-    public CartItems(Integer itemsId, Integer cartId, Integer itemsNumber, Float money, Float cost) {
+    public CartItems(Integer itemsId, Integer cartId, Integer itemsNumber, Float money, Float cost,String photo,String title) {
         this.itemsId = itemsId;
         this.cartId = cartId;
         this.itemsNumber = itemsNumber;
         this.money = money;
         this.cost = cost;
+        this.photo = photo;
+        this.title = title;
     }
 
     public Items getItems() {
@@ -117,5 +129,13 @@ public class CartItems {
 
     public void setCartId(Integer cartId) {
         this.cartId = cartId;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 }
