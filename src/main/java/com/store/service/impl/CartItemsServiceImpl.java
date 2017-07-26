@@ -31,7 +31,7 @@ public class CartItemsServiceImpl implements CartItemsService {
                 list.add(id);
             }
             cartItemsMapper.deleteByIds(list);
-            //根基明细单的订单id取得对应的订单
+            //根基购物车id取得对应的购物车
             Cart cart = cartMapper.getCartById(cartId);
             System.out.println("-->" + cart);
             //判断购物车是否为空，即是否删除了购物车的所有商品，如果不为空就重新计算购物车商品的总金额，如果为空就把购物车商品的总金额改为0
@@ -50,12 +50,15 @@ public class CartItemsServiceImpl implements CartItemsService {
                 //修改同步到数据库
                 cartMapper.updatePayment(cart);
             }else{
+                //取得购物车信息
                 cart = cartMapper.selectByPrimaryKey(cartId);
+                //把购物车的金额改为0
                 cart.setPayment((float) 0);
                 cartMapper.updatePayment(cart);
             }
         }
 
+    //购物车商品数量变化时修改商品的数量
     public Cart updateItemsNumber(CartItems cartItems) {
         //给商品设置全额
         cartItems.setCost(cartItems.getMoney() * cartItems.getItemsNumber());

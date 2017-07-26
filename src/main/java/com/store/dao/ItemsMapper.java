@@ -1,8 +1,8 @@
 package com.store.dao;
 
 import com.store.model.Items;
+import com.store.util.BaseMapper;
 import org.apache.ibatis.annotations.Param;
-import tk.mybatis.mapper.common.BaseMapper;
 import java.util.List;
 /**
  * Created by 陈晓海 on 2017/7/19.
@@ -16,5 +16,5 @@ public interface ItemsMapper extends BaseMapper<Items> {
 
     List<Items> test(@Param("id") Integer id);
 
-    List<Items> expList(@Param("ids" ) List<Integer> list);
+    List<Items> list(@Param("ids" ) List<Integer> list);
 }

@@ -51,9 +51,10 @@ public class Orders {
                 '}';
     }
 
-    public Orders(String id, Integer userId) {
+    public Orders(String id, Integer userId,Float payment) {
         this.id = id;
         this.userId = userId;
+        this.payment = payment;
     }
 
     public Orders() {

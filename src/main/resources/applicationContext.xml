@@ -65,17 +65,18 @@
        * 映射文件namespace名字必须是接口的全类路径名
        *　接口的方法名必须和映射Statement的ｉｄ一致
     -->
-    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.gw.dao"></property>
-        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
-    </bean>
+    <!--<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">-->
+        <!--<property name="basePackage" value="com.gw.dao"></property>-->
+        <!--<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>-->
+    <!--</bean>-->
 
-    <!--配置通用Mapper -->
+    <!--配置通用Mapper //mapper改成了basemapper-->
     <bean class="tk.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.store.dao"/>
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
         <property name="properties">
             <value>
-                mappers=tk.mybatis.mapper.common.Mapper
+                mappers=com.store.util.BaseMapper
             </value>
         </property>
     </bean>

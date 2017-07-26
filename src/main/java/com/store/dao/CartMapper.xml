@@ -69,7 +69,17 @@
         and
         cart.c_id = carItems.cart_id
     </select>
-
+    <select id="getCartByUserId" parameterType="Integer" resultMap="getCartItemsResultMap">
+        select
+        cart.*,carItems.money,carItems.items_number,carItems.cost
+        FROM
+        store_cart cart,
+        store_cartitems carItems
+        where
+        cart.user_id = #{id}
+        and
+        cart.c_id = carItems.cart_id
+    </select>
     <update id="updatePayment" parameterType="com.store.model.Cart">
         update
         store_cart

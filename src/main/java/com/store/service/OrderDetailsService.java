@@ -8,7 +8,5 @@ import com.store.model.Orders;
  */
 public interface OrderDetailsService {
 
-    void deleteByIds(Integer[] id,String ordersId);
 
-    Orders updateItemsNumber(OrderDetails orderDetails);
 }

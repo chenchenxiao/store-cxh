@@ -119,7 +119,7 @@
             </div><!-- product-list结束 -->
             <div class="cart-toolbar clearfix">
                 <c:if test="${cart == null}">
-                    <h3><a href="${pageContext.request.contextPath}/show.jsp">你的购物车还没有东西，快去逛逛吧</a></h3>
+                    <h3><a href="${pageContext.request.contextPath}/show.jsp">你的购物车空空如也，快去逛逛吧</a></h3>
                 </c:if>
                 <c:if test="${cart != null}">
 
@@ -146,7 +146,7 @@
                 <div class="cart-total-2014">
                     <div class="cart-button">
                   <span class="check-comm-btns" id="checkout-jd">
-                      <a class="checkout" href="${pageContext.request.contextPath}/admin/cart/showCart?id=53" clstag="clickcart|keycount|xincart|gotoOrderInfo" id="toSettlement">去结算<b></b></a>
+                      <a class="checkout" href="javascript:void(0);" clstag="clickcart|keycount|xincart|gotoOrderInfo" id="toSettlement">去结算<b></b></a>
                   </span>
                         <span class="combine-btns" style="display:none">
                         <span class="fore1" style="display: none;">
@@ -324,6 +324,19 @@ $("#remove-batch").click(function () {
          $(".list_form").attr("action","${pageContext.request.contextPath}/admin/cartItems/deleteByIds")
         $(".list_form").submit();
 })
+$("#toSettlement").click(function () {
+    var val = $("input:checkbox[name='itemIds']:checked").length > 0
+    if(!val){
+        $(".removeTips").text("请选择宝贝")
+        $(".removeTips").css("color","red")
+        return;
+    }else{
+        $(".removeTips").text("")
+    }
+    $(".list_form").attr("action","${pageContext.request.contextPath}/admin/orders/creatOrders")
+    $(".list_form").submit();
+})
+
 
 </script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery.price_format.2.0.min.js"></script>

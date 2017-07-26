@@ -1,9 +1,9 @@
 package com.store.dao;
 
 import com.store.model.OrderDetails;
+import com.store.util.BaseMapper;
 import org.apache.ibatis.annotations.Param;
-import tk.mybatis.mapper.common.BaseMapper;
-import tk.mybatis.mapper.common.condition.UpdateByConditionSelectiveMapper;
+
 
 import java.util.List;
 

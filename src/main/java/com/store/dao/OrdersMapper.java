@@ -4,9 +4,9 @@ import com.store.been.PageBean;
 import com.store.model.Orders;
 import java.util.List;
 
+import com.store.util.BaseMapper;
 import org.apache.ibatis.annotations.Param;
-import tk.mybatis.mapper.common.BaseMapper;
-import tk.mybatis.mapper.common.Mapper;
+
 
 /**
  * Created by 陈晓海 on 2017/7/22.

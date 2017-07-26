@@ -263,7 +263,7 @@ public class UserController extends BaseAdminController<User,Long> {
     //用户找回密码时校验身份，根据用户名或邮箱或手机号进行校验
     @RequestMapping("checkUser")
     public void checkUser(String condition,PrintWriter outs){
-        //根据condition校验是否存在符合条件的用户
+        //根据用户名校验是否存在符合条件的用户
         User user = userService.checkUser(condition);
         //r如果不存在就返回false，存在就把邮箱和手机号和id已json的格式返回，前台发送校验信息时需要用到
         if(user == null){

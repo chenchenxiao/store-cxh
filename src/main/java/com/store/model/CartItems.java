@@ -24,6 +24,10 @@ public class CartItems {
         this.cartId = cartId;
     }
 
+    public CartItems(Integer itemsId) {
+        this.itemsId = itemsId;
+    }
+
     private Integer itemsNumber;    //加入的商品的数量
     private Float money;          //商品的单价
     private Float cost;           //商品的总价

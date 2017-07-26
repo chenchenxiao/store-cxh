@@ -20,24 +20,13 @@ import javax.servlet.http.HttpSession;
 public class OrdersController extends BaseAdminController<Orders,Long>{
     @Autowired
     private OrderService orderService;
-    //用户加入物品到购物车
-    @RequestMapping("addToCart")
-    public String addSuccess(Integer itemsId, HttpSession session, RedirectAttributes redirectAttributes) throws Exception {
-        //先取得用户信息
-        User user = (User) session.getAttribute("loginUser");
-        //把用户的ID传过去
-        orderService.addToCart(itemsId,user.getId());
-        return TEMPLATE_PATH + "cartSuccess";
 
+    @RequestMapping("creatOrders")
+    public String creatOrders(Integer userId,Integer[] itemIds,Integer cartId,Model model){
+        orderService.creatOrders(itemIds,userId,cartId);
+        return null;
     }
-    //购物车的商品
-    @RequestMapping("/showCart/{id}")
-    public String showCart(@PathVariable("id") Integer id, Model model){
-        Orders orders = orderService.showCart(id);
-        System.out.println("orders-->" + orders);
-        model.addAttribute("orders",orders);
-        return TEMPLATE_PATH + "cart";
-    }
+
 
 
 }

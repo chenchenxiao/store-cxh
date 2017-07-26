@@ -17,13 +17,13 @@ public class OrderDetails {
     private String ordersId;        //订单的id
     private Integer itemsId;        //商品的id
     private Integer itemsNumber;    //加入的商品的数量
+    private Float money;          //商品的单价
 
-    public OrderDetails(String ordersId, Integer itemsId, Integer itemsNumber, Float money, Float cost) {
+    public OrderDetails(String ordersId, Integer itemsId, Integer itemsNumber, Float money) {
         this.ordersId = ordersId;
         this.itemsId = itemsId;
         this.itemsNumber = itemsNumber;
         this.money = money;
-        this.cost = cost;
     }
 
     public Float getMoney() {
@@ -35,21 +35,13 @@ public class OrderDetails {
         this.money = money;
     }
 
-    public Float getCost() {
-        return cost;
-    }
 
-    public void setCost(Float cost) {
-        this.cost = cost;
-    }
 
-    private Float money;          //商品的单价
-    private Float cost;
 
     @Transient
     private Orders orders;          //商品明细对应的订单
     @Transient
-    private Items items;            //商品明细对应的商品
+    private Items items;            //商品明细对应的商品x
 
     public Orders getOrders() {
         return orders;
@@ -119,7 +111,6 @@ public class OrderDetails {
                 ", itemsId=" + itemsId +
                 ", itemsNumber=" + itemsNumber +
                 ", money=" + money +
-                ", cost=" + cost +
                 ", orders=" + orders +
                 ", items=" + items +
                 '}';

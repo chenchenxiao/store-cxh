@@ -18,4 +18,24 @@
         where
         cit_id = #{id}
     </update>
+
+    <select id="getCartItemsList"  resultType="com.store.model.CartItems">
+        select *  FROM
+        store_cartitems
+        WHERE items_id IN
+        <foreach collection="ids" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+        AND cart_id = #{cartId}
+    </select>
+
+    <delete id="deleteByCartId" >
+        delete FROM
+        store_cartitems
+        WHERE items_id IN
+        <foreach collection="ids" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+        AND cart_id = #{cartId}
+    </delete>
 </mapper>

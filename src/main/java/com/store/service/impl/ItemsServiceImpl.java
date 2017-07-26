@@ -3,11 +3,11 @@ package com.store.service.impl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.store.been.PageBean;
+import com.store.dao.CartItemsMapper;
+import com.store.dao.CartMapper;
 import com.store.dao.ItemsMapper;
 import com.store.dao.OrderDetailsMapper;
-import com.store.model.Items;
-import com.store.model.OrderDetails;
-import com.store.model.User;
+import com.store.model.*;
 import com.store.service.ItemsService;
 import com.store.util.ExcelUtil;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
@@ -35,7 +35,9 @@ public class ItemsServiceImpl implements ItemsService {
     @Autowired
     private ItemsMapper itemsMappers;
     @Autowired
-    private OrderDetailsMapper orderDetailsMapper;
+    private CartItemsMapper cartItemsMapper;
+    @Autowired
+    private CartMapper cartMapper;
     //用户增添商品
     public void save(Items items){
         items.setAddDate(new Date());
@@ -83,11 +85,17 @@ public class ItemsServiceImpl implements ItemsService {
     public void update(Items items) {
         //修改商品的修改日期
         items.setUpdateDate(new Date());
-        //修改明细单商品的单价
-        List<OrderDetails> list = orderDetailsMapper.select(new OrderDetails(items.getId()));
+        //修改购物车对应商品的价格,购物车的总金额在展示购物车的时候修改，如果在这里修改会比较麻烦
+        List<CartItems> list = cartItemsMapper.select(new CartItems(items.getId()));
+        Float cost = Float.valueOf(0);
         for(int i = 0;i < list.size();i++){
+            //商品的全额
+            cost = items.getPrice() * list.get(i).getItemsNumber();
+            //重新设置商品的单价
             list.get(i).setMoney(items.getPrice());
-            orderDetailsMapper.updateByPrimaryKey(list.get(i));
+            //重新设置商品的全额
+            list.get(i).setCost(cost);
+            cartItemsMapper.updateByPrimaryKey(list.get(i));
         }
         itemsMappers.updateByPrimaryKeySelective(items);
     }
@@ -116,11 +124,12 @@ public class ItemsServiceImpl implements ItemsService {
     public void exportExcel(List<Items> itemsList, ServletOutputStream outputStream) {
         ExcelUtil.exportUserExcel(itemsList,outputStream);
     }
+
     //取得该用户的商品信息
     public List<Items> itemList(Integer id) {
         return itemsMappers.selectItemsList(id,null,null);
     }
-
+    //导入商品信息
     public void importExcel(MultipartFile file,Integer id) {
         try {
             InputStream inputStream = file.getInputStream();
@@ -169,7 +178,7 @@ public class ItemsServiceImpl implements ItemsService {
             e.printStackTrace();
         }
     }
-
+    //取得指定类型的商品信息
     public PageBean showTypeItems(String type,PageBean pageBean) {
         PageHelper.startPage(pageBean.getPage(),pageBean.getSize());
         List list = itemsMappers.showTypeItems(type);
@@ -181,13 +190,13 @@ public class ItemsServiceImpl implements ItemsService {
         pageBean.init((int) pageInfo.getTotal(),list);
         return pageBean;
     }
-
+    //取得指定导出的商品集合
     public List<Items> expList(Integer[] ids) {
         List<Integer> list = new ArrayList<Integer>();
         //把数组的值通过循环赋给list，mapper传参list
         for(int id:ids){
             list.add(id);
         }
-        return itemsMappers.expList(list);
+        return itemsMappers.list(list);
     }
 }

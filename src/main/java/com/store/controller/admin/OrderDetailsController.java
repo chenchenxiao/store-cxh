@@ -21,21 +21,5 @@ public class OrderDetailsController {
     @Autowired
     private OrderDetailsService orderDetailsService;
 
-    //批量删除购物车商品
-    @RequestMapping("/deleteByIds")
-    public String deleteByIds(Integer[] itemIds,String ordersId, HttpSession session){
-        User user = (User) session.getAttribute("loginUser");
-        System.out.println("ids-->" + itemIds);
-        System.out.println("ordersId-->" +ordersId);
-        orderDetailsService.deleteByIds(itemIds,ordersId);
-        return "redirect:/admin/orders/showCart/"+user.getId();
-    }
 
-    //修改商品的数量
-    @RequestMapping("/updateItemsNumber")
-    @ResponseBody
-    public Orders updateItemsNumber(OrderDetails orderDetails){
-        System.out.println("orderdetails-->" + orderDetails);
-        return orderDetailsService.updateItemsNumber(orderDetails);
-    }
 }

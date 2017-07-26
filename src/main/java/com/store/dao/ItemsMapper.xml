@@ -57,7 +57,7 @@
         where uid = #{id}
     </select>
 
-    <select id="expList" parameterType="java.util.List" resultType="com.store.model.Items">
+    <select id="list" parameterType="java.util.List" resultType="com.store.model.Items">
         select *  FROM
         store_items
         WHERE id IN

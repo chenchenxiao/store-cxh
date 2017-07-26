@@ -37,11 +37,6 @@ public class BaseMapperTest {
 //         OrderDetails orderDetails = orderDetailsMapper.selectByPrimaryKey(1);
 //         orderDetailsMapper.updateByConditionSelective(orderDetails, 20);
 //          Orders orders = orderMapper.getDetailsList("a712a586-282e-4858-98c0-5fc4f0050401");
-        Integer[] ids = new Integer[1];
-        System.out.println(ids.length);
-        ids[0] = 22;
-        OrderDetailsServiceImpl orderDetailsService = new OrderDetailsServiceImpl();
-        orderDetailsService.deleteByIds(ids,"c69a3bba-998a-45f7-8934-794f90850e4f");
     }
 
 }
