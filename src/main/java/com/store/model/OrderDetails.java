@@ -18,12 +18,22 @@ public class OrderDetails {
     private Integer itemsId;        //商品的id
     private Integer itemsNumber;    //加入的商品的数量
     private Float money;          //商品的单价
+    private Float cost;
 
-    public OrderDetails(String ordersId, Integer itemsId, Integer itemsNumber, Float money) {
+    public Float getCost() {
+        return cost;
+    }
+
+    public void setCost(Float cost) {
+        this.cost = cost;
+    }
+
+    public OrderDetails(String ordersId, Integer itemsId, Integer itemsNumber, Float money,Float cost) {
         this.ordersId = ordersId;
         this.itemsId = itemsId;
         this.itemsNumber = itemsNumber;
         this.money = money;
+        this.cost = cost;
     }
 
     public Float getMoney() {

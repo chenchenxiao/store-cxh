@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 
 /**
  * Created by 陈晓海 on 2017/7/23.
+ * 订单明细controller
  */
 @Controller
 @RequestMapping("/admin/orderDetails")

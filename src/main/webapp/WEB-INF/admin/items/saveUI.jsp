@@ -52,6 +52,7 @@
                                 <div class="form-group">
                                     <label for="name">商品图片</label>
                                     <a href="#">
+                                        <div class="bbDImg">+</div>
                                         <img id="photo" src="${pageContext.request.contextPath}/resources/file/items/${item.photo}" height="100" width="100">
                                     </a>
                                     <input type="file" name="picture"  id="picture" >

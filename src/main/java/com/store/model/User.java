@@ -25,6 +25,16 @@ public class User {
     private String name;
     @Transient
     private List<Items> itemsList;
+    @Transient
+    private List<Orders> ordersList;
+
+    public List<Orders> getOrdersList() {
+        return ordersList;
+    }
+
+    public void setOrdersList(List<Orders> ordersList) {
+        this.ordersList = ordersList;
+    }
 
     public List<Items> getItemsList() {
         return itemsList;

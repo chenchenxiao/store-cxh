@@ -18,7 +18,7 @@ public interface CartItemsMapper extends BaseMapper<CartItems> {
     void updateCost(CartItems cartItems);
 
     //根据商品的id和购物车id取得对应的购物车商品集合
-    List<CartItems> getCartItemsList(@Param("ids") List<Integer> ids, @Param("cartId") Integer cartId);
+    List<CartItems> selectCartitemsList(@Param("ids") List<Integer> ids, @Param("cartId") Integer cartId);
 
     //根据商品的id和购物车id删除对应购物车商品
     void deleteByCartId(@Param("ids") List<Integer> ids,@Param("cartId") Integer cartId);

@@ -34,6 +34,13 @@
         select <include refid="select"/> FROM
         store_items
         WHERE uid = #{uid}
+        <if test="searchText != null">
+            AND name LIKE #{searchText}
+            OR type LIKE #{searchText}
+            OR title LIKE #{searchText}
+            OR price LIKE #{searchText}
+            OR number LIKE #{searchText}
+        </if>
         <if test="preDate != null">
             AND add_date &gt;= #{preDate}
         </if>
@@ -43,21 +50,14 @@
 
     </select>
 
-    <select id="showTypeItems" resultType="com.store.model.Items">
+    <select id="selectTypeItems" resultType="com.store.model.Items">
         select <include refid="select"/>
         FROM
         store_items
         where type = #{type}
     </select>
 
-    <select id="test" resultType="com.store.model.Items">
-        select <include refid="select"/>
-        from
-        store_items
-        where uid = #{id}
-    </select>
-
-    <select id="list" parameterType="java.util.List" resultType="com.store.model.Items">
+    <select id="selectListByIds" parameterType="java.util.List" resultType="com.store.model.Items">
         select *  FROM
         store_items
         WHERE id IN

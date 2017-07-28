@@ -26,6 +26,7 @@ import java.util.UUID;
 import org.apache.commons.mail.EmailException;
 /**
  * Created by 陈晓海 on 2017/7/8.
+ * 用户controller
  */
 @Controller
 @RequestMapping("admin/user")

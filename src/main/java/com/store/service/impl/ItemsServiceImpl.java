@@ -72,7 +72,7 @@ public class ItemsServiceImpl implements ItemsService {
             }
         }
         PageHelper.startPage(pageBean.getPage(),pageBean.getSize());
-        List list = itemsMappers.selectItemsList(id,preDate,lastDate);
+        List list = itemsMappers.selectItemsList(id,pageBean.getSearchText(),preDate,lastDate);
         //把分页出来的数据放入pageBean
         pageBean.setRecordList(list);
         //取分页信息
@@ -133,7 +133,7 @@ public class ItemsServiceImpl implements ItemsService {
 
     //取得该用户的商品信息
     public List<Items> itemList(Integer id) {
-        return itemsMappers.selectItemsList(id,null,null);
+        return itemsMappers.selectItemsList(id,null,null,null);
     }
     //导入商品信息
     public void importExcel(MultipartFile file,Integer id) {
@@ -187,7 +187,7 @@ public class ItemsServiceImpl implements ItemsService {
     //取得指定类型的商品信息
     public PageBean showTypeItems(String type,PageBean pageBean) {
         PageHelper.startPage(pageBean.getPage(),pageBean.getSize());
-        List list = itemsMappers.showTypeItems(type);
+        List list = itemsMappers.selectTypeItems(type);
         //把分页出来的数据放入pageBean
         System.out.println("list-->" + list.size());
         pageBean.setRecordList(list);
@@ -203,6 +203,6 @@ public class ItemsServiceImpl implements ItemsService {
         for(int id:ids){
             list.add(id);
         }
-        return itemsMappers.list(list);
+        return itemsMappers.selectListByIds(list);
     }
 }

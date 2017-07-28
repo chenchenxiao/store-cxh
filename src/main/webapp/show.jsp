@@ -106,7 +106,7 @@
 <div class="container">
     <div class="content">
         <div class="content-top">
-            <h3 class="future">FEATURED</h3>
+            <h3 class="future">热销</h3>
             <div class="content-top-in">
                 <div class="col-md-3 md-col">
                     <div class="col-md">
@@ -166,13 +166,14 @@
         </div>
         <!---->
         <div class="content-middle">
-            <h3 class="future">BRANDS</h3>
+            <h3 class="future">类型</h3>
             <div class="content-middle-in">
                 <ul id="flexiselDemo1">
-                    <li><img src="${pageContext.request.contextPath}/resources/images/ap.png"/></li>
-                    <li><img src="${pageContext.request.contextPath}/resources/images/ap1.png"/></li>
-                    <li><img src="${pageContext.request.contextPath}/resources/images/ap2.png"/></li>
-                    <li><img src="${pageContext.request.contextPath}/resources/images/ap3.png"/></li>
+                    <li><img src="${pageContext.request.contextPath}/resources/images/homeFurnishing.jpg"/></li>
+                    <li><img src="${pageContext.request.contextPath}/resources/images/clothes.jpg"/></li>
+                    <li><img src="${pageContext.request.contextPath}/resources/images/food.jpg"/></li>
+                    <li><img src="${pageContext.request.contextPath}/resources/images/notebook.png"/></li>
+                    <li><img src="${pageContext.request.contextPath}/resources/images/sport.jpg"/></li>
 
                 </ul>
                 <script type="text/javascript">
@@ -208,7 +209,7 @@
         </div>
         <!---->
         <div class="content-bottom">
-            <h3 class="future">LATEST</h3>
+            <h3 class="future">推荐</h3>
             <div class="content-bottom-in">
                 <ul id="flexiselDemo2">
                     <li><div class="col-md men">

@@ -36,16 +36,32 @@
         <property name="fileEncodings" value="utf-8"></property>
         <property name="cacheSeconds" value="120"></property>
     </bean>
-    <!--登录拦截器 -->
-    <mvc:interceptors>
-        <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor"/>
-    </mvc:interceptors>
 
-    <!--管理员端session验证地址 -->
+    <!--<mvc:interceptors>-->
+        <!--<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor"/>-->
+    <!--</mvc:interceptors>-->
     <mvc:interceptors>
+        <!--管理员端拦截器 -->
+        <mvc:interceptor>
+            <mvc:mapping path="/admin/admin/*" />
+            <bean class="com.store.interceptors.AdminInterceptor">
+                <property name="excludeUrls">
+                    <list>
+                        <!--不需要拦截的 -->
+                        <value>/admin/admin/loginUI</value>
+                        <value>/admin/admin/login</value>
+                    </list>
+                </property>
+            </bean>
+        </mvc:interceptor>
+        <!--用户登录拦截器 -->
         <mvc:interceptor>
             <mvc:mapping path="/admin/**" />
-            <bean class="com.store.interceptors.LoginInteceptor">
+            <bean class="com.store.interceptors.LoginInterceptor">
+                <!--管理员的地址前缀-->
+                <property name="adminPrefix">
+                    <value>/admin/admin</value>
+                </property>
                 <property name="excludeUrls">
                     <list>
                         <!--不需要拦截的 -->
@@ -63,6 +79,7 @@
             </bean>
         </mvc:interceptor>
     </mvc:interceptors>
+
     <!-- 配置sprigmvc视图解析器：解析逻辑试图 后台返回逻辑试图：index 视图解析器解析出真正物理视图：前缀+逻辑试图+后缀====/WEB-INF/jshow.jsp.jsp -->
     <bean
             class="org.springframework.web.servlet.view.InternalResourceViewResolver">

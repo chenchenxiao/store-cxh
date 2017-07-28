@@ -66,9 +66,9 @@
         select
         cart.*,carItems.money,carItems.items_number,carItems.cost,carItems.photo
         FROM
-        store_cart cart,
+        store_cart cart JOIN
         store_cartitems carItems
-        where
+        ON
         cart.c_id = #{id}
         and
         cart.c_id = carItems.cart_id
@@ -77,9 +77,9 @@
         select
         cart.*,carItems.*
         FROM
-        store_cart cart,
+        store_cart cart join
         store_cartitems carItems
-        where
+        on
         cart.user_id = #{id}
         and
         cart.c_id = carItems.cart_id

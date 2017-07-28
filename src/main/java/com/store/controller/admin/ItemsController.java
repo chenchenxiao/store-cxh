@@ -29,6 +29,7 @@ import java.text.ParseException;
 
 /**
  * Created by 陈晓海 on 2017/7/17.
+ * 商品controller
  */
 @Controller
 @RequestMapping("admin/items")

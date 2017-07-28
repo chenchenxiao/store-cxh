@@ -140,7 +140,7 @@
                     <span class="shopping">
                   <b>
                   </b>
-                  <a href="${pageContext.request.contextPath}/show.jsp" clstag="clickcart|keycount|xincart|coudanlink" id="continue">继续购物</a>
+                  <a href="${pageContext.request.contextPath}/show.jsp" clstag="clickcart|keycount|xincart|coudanlink" id="continue" target="_top">继续购物</a>
               </span>
                 </div>
                 <div class="cart-total-2014">
@@ -314,7 +314,7 @@ $("#cancelAll").click(function () {
 
 $("#remove-batch").click(function () {
     var val = $("input:checkbox[name='itemIds']:checked").length > 0
-    if(!val){
+   if(!val){
         $(".removeTips").text("请选择宝贝")
         $(".removeTips").css("color","red")
         return;

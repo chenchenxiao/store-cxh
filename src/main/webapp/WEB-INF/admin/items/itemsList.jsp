@@ -57,6 +57,9 @@
 
                     </div>
                     <div>
+                        <input class="userinput" type="text" name="searchText" placeholder="输入查询条件" value="${PageBean.searchText}"/>&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;
+                        <button class="btn btn-sm btn-primary-outline" id="search">查询</button>  </div>
+                    <div>
                         显示<select name="size" id="showSize">
                         <option value="8" <c:if test="${PageBean.size == 8}" >selected = selected</c:if>>8</option>
                         <option value="10"  <c:if test="${PageBean.size == 10}" >selected = selected</c:if>>10</option>

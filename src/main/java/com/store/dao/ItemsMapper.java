@@ -10,11 +10,10 @@ import java.util.List;
 public interface ItemsMapper extends BaseMapper<Items> {
     void deleteByIds(@Param("ids" ) List<Integer> ids);
 
-    List<Items> selectItemsList(@Param("uid") Integer uid,@Param("preDate") String preDate,@Param("lastDate") String lastDate);
+    List<Items> selectItemsList(@Param("uid") Integer uid,@Param("searchText") String searchText,@Param("preDate") String preDate,@Param("lastDate") String lastDate);
 
-    List<Items> showTypeItems(@Param("type") String type);
+    List<Items> selectTypeItems(@Param("type") String type);
 
-    List<Items> test(@Param("id") Integer id);
 
-    List<Items> list(@Param("ids" ) List<Integer> list);
+    List<Items> selectListByIds(@Param("ids" ) List<Integer> list);
 }

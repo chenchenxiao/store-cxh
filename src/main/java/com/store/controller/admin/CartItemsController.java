@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 
 /**
  * Created by 陈晓海 on 2017/7/25.
+ * 购物车商品controller
  */
 @Controller
 @RequestMapping("/admin/cartItems")

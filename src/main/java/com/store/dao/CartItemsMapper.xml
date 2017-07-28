@@ -19,7 +19,7 @@
         cit_id = #{id}
     </update>
 
-    <select id="getCartItemsList"  resultType="com.store.model.CartItems">
+    <select id="selectCartitemsList"  resultType="com.store.model.CartItems">
         select *  FROM
         store_cartitems
         WHERE items_id IN

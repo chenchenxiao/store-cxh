@@ -37,7 +37,7 @@ public class OrderServiceImpl implements OrderService {
              list.add(id);
         }
         //取得购物车所选择的商品
-        List<CartItems> cartItemsList = cartItemsMapper.getCartItemsList(list,cartId);
+        List<CartItems> cartItemsList = cartItemsMapper.selectCartitemsList(list,cartId);
          //保存订单明细的集合
         List<OrderDetails> orderDetailsList = new ArrayList<OrderDetails>();
         //订单明细表对象
@@ -53,6 +53,7 @@ public class OrderServiceImpl implements OrderService {
             orderDetails.setMoney(cartItemsList.get(i).getMoney());
             orderDetails.setOrdersId(ordersId);
             orderDetails.setItemsId(cartItemsList.get(i).getItemsId());
+            orderDetails.setCost(cartItemsList.get(i).getCost());
             orderDetailsList.add(orderDetails);
             payment += cartItemsList.get(i).getCost();
         }
@@ -74,7 +75,7 @@ public class OrderServiceImpl implements OrderService {
             list.add(id);
         }
         //取得购物车所选择的商品
-        List<CartItems> cartItemsList = cartItemsMapper.getCartItemsList(list,cartId);
+        List<CartItems> cartItemsList = cartItemsMapper.selectCartitemsList(list,cartId);
         return cartItemsList;
     }
 
