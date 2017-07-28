@@ -71,7 +71,13 @@ public class ItemsServiceImpl implements ItemsService {
                 lastDate = null;
             }
         }
+        if("".equals(pageBean.getSearchText())){
+            pageBean.setSearchText(null);
+        }
         PageHelper.startPage(pageBean.getPage(),pageBean.getSize());
+        if(pageBean.getSearchText() != null && pageBean.getSearchText() != ""){
+            pageBean.setSearchText("%" + pageBean.getSearchText() + "%");
+        }
         List list = itemsMappers.selectItemsList(id,pageBean.getSearchText(),preDate,lastDate);
         //把分页出来的数据放入pageBean
         pageBean.setRecordList(list);
@@ -205,4 +211,10 @@ public class ItemsServiceImpl implements ItemsService {
         }
         return itemsMappers.selectListByIds(list);
     }
+
+    public List<Items> showAllItems(Integer id){
+        Items items = itemsMappers.selectByPrimaryKey(id);
+        return  itemsMappers.select(items);
+    }
+
 }

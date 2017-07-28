@@ -33,6 +33,9 @@ public class AdminServiceImpl implements AdminService {
             pageBean.setSearchText(null);
         }
         PageHelper.startPage(pageBean.getPage(),pageBean.getSize());
+        if(pageBean.getSearchText() != null && pageBean.getSearchText() != ""){
+            pageBean.setSearchText("%" + pageBean.getSearchText() + "%");
+        }
         List list = adminMapper.userList(pageBean.getSearchText());
         //把分页出来的数据放入pageBean
         pageBean.setRecordList(list);

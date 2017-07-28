@@ -76,7 +76,8 @@
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
         <property name="properties">
             <value>
-                mappers=com.store.util.BaseMapper
+                <!--mappers=com.store.util.BaseMapper-->
+
             </value>
         </property>
     </bean>

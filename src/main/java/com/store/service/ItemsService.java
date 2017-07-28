@@ -35,4 +35,7 @@ public interface ItemsService {
     PageBean showTypeItems(String type,PageBean pageBean);
     //取得要导出的商品信息的集合
     List<Items> expList(Integer[] ids);
+    //查询用户的所有商品
+    List<Items> showAllItems(Integer id);
+
 }

@@ -48,7 +48,7 @@ public class ItemsController extends BaseAdminController<Items,Long>{
         return TEMPLATE_PATH + "itemsList";
     }
 
-    //用户跳转到修改或添加商品的页面
+    //用户跳转到添加商品的页面
     @RequestMapping("saveUI")
     public String saveUI(){
         return TEMPLATE_PATH + "saveUI";
@@ -57,7 +57,7 @@ public class ItemsController extends BaseAdminController<Items,Long>{
     //商品图片的预览功能
     //上传头像时用ajax实现图片预览功能
     @RequestMapping("showPhoto")
-    public void showPhoto(PrintWriter outs, MultipartFile picture, HttpServletRequest request) throws IOException {
+    public void showPhoto(PrintWriter outs, MultipartFile picture, HttpServletRequest request,Integer id) throws IOException {
         System.out.println(FileUploadUtil.getFileExt(picture.getOriginalFilename()));
         System.out.println(!photoExt.contains(FileUploadUtil.getFileExt(picture.getOriginalFilename())));
         //判断上传的图片格式是否正确，正确就返回图片的名称，可以在前台进行预览
@@ -65,8 +65,7 @@ public class ItemsController extends BaseAdminController<Items,Long>{
             outs.print("{\"showResult\":"+false+"}");
             outs.close();
         }
-        //查看的图片的名称
-        String photoName = FileUploadUtil.uploadUserPhoto(picture,FileUploadUtil.ITEMS_PATH);
+        String photoName = FileUploadUtil.uploadUserPhoto(picture, FileUploadUtil.ITEMS_PATH);
         outs.print("{\"showResult\":\""+ photoName +"\"}");
         outs.close();
     }
@@ -186,4 +185,7 @@ public class ItemsController extends BaseAdminController<Items,Long>{
         model.addAttribute("items",itemsService.showOneItems(id));
         return "admin/items/itemsShow";
     }
+
+
+
 }

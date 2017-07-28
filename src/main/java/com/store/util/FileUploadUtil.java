@@ -36,6 +36,11 @@ public class FileUploadUtil {
      */
     public final static String ITEMS_PATH = "/resources/file/items/";
 
+    /**
+     * 首页广告图片的保存位置
+     */
+    public final static String ADVERTISEMENT_PATH = "/resources/file/advertisement/";
+
 /*    *//**
      * 上传App
      * @param uploadFile

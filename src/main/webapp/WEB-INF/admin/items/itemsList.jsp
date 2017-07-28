@@ -57,7 +57,7 @@
 
                     </div>
                     <div>
-                        <input class="userinput" type="text" name="searchText" placeholder="输入查询条件" value="${PageBean.searchText}"/>&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;
+                        <input class="userinput" type="text" name="searchText" placeholder="输入查询条件" value=""/>&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;
                         <button class="btn btn-sm btn-primary-outline" id="search">查询</button>  </div>
                     <div>
                         显示<select name="size" id="showSize">
@@ -85,9 +85,7 @@
                             <td width="200px" class="tdColor">商品标题</td>
                             <td width="100" class="tdColor">操作</td>
                         </tr>
-                            <c:if test="${PageBean.recordList[0] == null}">
-                                <h3>你还没有添加商品</h3>
-                            </c:if>
+
 
                         <c:forEach items="${PageBean.recordList}" var="item" varStatus="status">
                             <input type="hidden" value="${item.id}" id="itemId">

@@ -32,7 +32,7 @@ public class AdminController extends BaseAdminController<Admin,Long>{
         System.out.println(adminService);
         session.setAttribute("loginAdmin",admin);
         adminService.login(admin);
-        return null;
+        return TEMPLATE_PATH + "show";
     }
 
     //跳转到用户管理页
@@ -47,5 +47,23 @@ public class AdminController extends BaseAdminController<Admin,Long>{
     public String showOrders(Model model,@PathVariable("id") Integer userId){
         model.addAttribute("ordersList",adminService.showOrder(userId));
         return TEMPLATE_PATH + "ordersList";
+    }
+    //跳转到管理员后台管理页面
+    @RequestMapping("show")
+    public String show(){
+        return TEMPLATE_PATH + "show" ;
+    }
+
+    //显示左侧菜单栏
+    @RequestMapping("showLeft")
+    public String showLeft(){
+        return TEMPLATE_PATH + "left";
+    }
+
+    //管理员注销
+    @RequestMapping("logout")
+    public String logout(HttpSession session){
+        session.removeAttribute("loginAdmin");
+        return "/show";
     }
 }

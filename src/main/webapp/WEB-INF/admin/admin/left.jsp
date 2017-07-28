@@ -13,7 +13,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>我的商城</title>
+    <title>管理员</title>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/public.css"/>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery.min.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/public.js"></script>
@@ -77,14 +77,14 @@
             <dt>
                 <img class="icon1" src="${pageContext.request.contextPath}/resources/img/coin07.png"/>
                 <img class="icon2" src="${pageContext.request.contextPath}/resources/img/coin08.png"/>
-                会员管理
+                用户管理
                 <img class="icon3" src="${pageContext.request.contextPath}/resources/img/coin19.png"/>
                 <img class="icon4" src="${pageContext.request.contextPath}/resources/img/coin20.png"/>
             </dt>
             <dd>
                 <img class="coin11" src="${pageContext.request.contextPath}/resources/img/coin111.png"/>
                 <img class="coin22" src="${pageContext.request.contextPath}/resources/img/coin222.png"/>
-                <a href="../vip.html" target="main" class="cks">会员管理</a>
+                <a href="${pageContext.request.contextPath}/admin/admin/userList" target="main" class="cks">用户管理</a>
                 <img class="icon5" src="${pageContext.request.contextPath}/resources/img/coin21.png"/>
             </dd>
         </dl>
@@ -107,17 +107,14 @@
             <dt>
                 <img class="icon1" src="${pageContext.request.contextPath}/resources/img/coin11.png"/>
                 <img class="icon2" src="${pageContext.request.contextPath}/resources/img/coin12.png"/>
-                我的广告
+                话题管理
                 <img class="icon3" src="${pageContext.request.contextPath}/resources/img/coin19.png"/>
                 <img class="icon4" src="${pageContext.request.contextPath}/resources/img/coin20.png"/>
             </dt>
             <dd>
                 <img class="coin11" src="${pageContext.request.contextPath}/resources/img/coin111.png"/>
                 <img class="coin22" src="${pageContext.request.contextPath}/resources/img/coin222.png"/>
-                <a href="${pageContext.request.contextPath}/admin/advertisement/showAdvertisement"
-                        <c:if test="${sessionScope.loginUser != null}"> target="main"</c:if>
-                        <c:if test="${sessionScope.loginUser == null}"> target="_top"</c:if>
-                    class="cks">我的广告</a>
+                <a href="../topic.html" target="main" class="cks">话题管理</a>
                 <img class="icon5" src="${pageContext.request.contextPath}/resources/img/coin21.png"/>
             </dd>
         </dl>
@@ -190,7 +187,7 @@
             <dd>
                 <img class="coin11" src="${pageContext.request.contextPath}/resources/img/coin111.png"/>
                 <img class="coin22" src="${pageContext.request.contextPath}/resources/img/coin222.png"/>
-                <a href="${pageContext.request.contextPath}/admin/user/logout" class="cks" target="_top">退出</a>
+                <a href="${pageContext.request.contextPath}/admin/admin/logout" class="cks" target="_top">退出</a>
                 <img class="icon5" src="${pageContext.request.contextPath}/resources/img/coin21.png"/>
             </dd>
         </dl>

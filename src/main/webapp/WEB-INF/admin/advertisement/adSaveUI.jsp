@@ -29,73 +29,46 @@
 </head>
 <body>
 <div id="pageAll">
-    <div class="pageTop">
-        <div class="page">
-            <img src="${pageContext.request.contextPath}/resources/img/coin02.png" /><span><a href="${pageContext.request.contextPath}/admin/user/index">首页</a>&nbsp;-&nbsp;<a
-                href="${pageContext.request.contextPath}/admin/items/itemsList">我的商品</a>&nbsp;-</span>&nbsp;
-
-
-        </div>
-    </div>
     <div class="col-md-12">
         <div class="widget-container">
             <div class="widget-content padded">
-                <form action="${pageContext.request.contextPath}/admin/items/save" id="items-form" method="post" enctype="multipart/form-data">
+                <form action="${pageContext.request.contextPath}/admin/advertisement/saveAd" id="items-form" method="post" enctype="multipart/form-data">
                     <fieldset>
                         <div class="row">
                             <div class="col-md-6 col-md-offset-3">
                                 <%--<div class="hidden">--%>
                                 <%--<input name="uid" type="hidden" value="${user.uid}"/>--%>
                                 <%--</div>--%>
-                                <input type="hidden" name="id" value="${item.id}">
+                                <input type="hidden" name="id" value="${ad.id}">
                                 <input type="hidden" name="uid" value="${sessionScope.loginUser.id}"/>
                                 <div class="form-group">
-                                    <label for="name">商品图片</label>
+                                    <label for="photo">广告图片</label>
                                     <a href="#">
-                                        <img id="photo" src="${pageContext.request.contextPath}/resources/file/items/${item.photo}" height="100" width="100">
+                                        <img id="photo" src="${pageContext.request.contextPath}/resources/file/advertisement/${ad.photo}" height="100" width="100">
                                     </a>
                                     <input type="file" name="picture"  id="picture" >
                                     <div class="photoTip">
-                                        <c:if test="${item.photo == null}">
-                                            你还有选择头像
+                                        <c:if test="${ad.photo == null}">
+                                            你还有选择图片
                                         </c:if>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="name">商品名称</label>
-                                    <input class="form-control" id="name" name="name" type="text" value="${item.name}">
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label">商品类型</label>
+                                    <label class="control-label">广告的商品</label>
                                     <div class="">
-                                        <select class="form-control" id="type" name="type" >
-                                            <option <c:if test="${item.type eq '笔记本'}">selected="selected"</c:if>>笔记本</option>
-                                            <option <c:if test="${item.type eq '服装'}">selected="selected"</c:if>>服装</option>
-                                            <option <c:if test="${item.type eq '美食'}">selected="selected"</c:if>>美食</option>
-                                            <option <c:if test="${item.type eq '家居'}">selected="selected"</c:if>>家居</option>
-                                            <option <c:if test="${item.type eq '运动'}">selected="selected"</c:if>>运动</option>
-                                            <option <c:if test="${item.type eq '其他'}">selected="selected"</c:if>>其他</option>
+                                        <select class="form-control" id="type" name="itemsId" >
+                                            <c:forEach items="${itemsList}" var="item" varStatus="status">
+                                                <option value="${item.id}">${item.name}</option>
+                                            </c:forEach>
                                         </select>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="price">商品价格</label>
-                                    <input class="form-control" id="price" name="price" type="text" value="${item.price}">
+                                 <div >
+                                     <label for="description">商品介绍</label>
                                 </div>
-                                <div class="form-group">
-                                    <label for="number">商品库存</label>
-                                    <input class="form-control" id="number" name="number" type="text" value="${item.number}">
+                                <div>
+                                    <textarea id="description" name="description" cols="15" rows="3">${ad.description}</textarea>
                                 </div>
-                                <div class="form-group">
-                                    <label for="title">商品标题</label>
-                                    <input class="form-control" id="title" name="title" type="text" value="${item.title}">
-                                </div>
-
-                                <div >
-                                    <textarea id="editor" name="details">${item.details}</textarea>
-                                    <label for="editor">商品详情</label>
-                                </div>
-
                             </div>
                         </div>
                         <br>
@@ -114,35 +87,20 @@
             rules: {
                 name: "required",
                 type: "required",
-                price: {
+                description: {
                     required:true,
-                    number: true
+                    minlength: 3,
+                    maxlength: 8,
                 },
-                number:{
-                    required:true,
-                    number: true
-                },
-                title: {
-                    required:true,
-                    minlength: 2,
-                    maxlength: 11,
-                },
+
             },
             messages: {
                 name: "请填写商品的名称",
                 type: "请选择商品的类型",
-                price: {
+                description: {
                     required:'请填写商品的价格',
-                    number:'只能输入数字'
-                },
-                number: {
-                    required:'请填写商品的库存量',
-                    number:'只能输入数字'
-                },
-                title: {
-                    required:'请填写商品的标题',
-                    minlength: "标题的最小长度为2",
-                    maxlength: "标题的最大长度为2"
+                    minlength:'长度不能小于3',
+                    maxlength:'长度不能大于8',
                 },
             }
         });
@@ -157,7 +115,8 @@
     $("#picture").change(function () {
         var option={
             type:'POST',
-            url:'${pageContext.request.contextPath }/admin/items/showPhoto',
+            data:{"id":1},
+            url:'${pageContext.request.contextPath }/admin/advertisement/showPhoto',
             dataType:'json',
             success:function(data){
                 //返回服务器图片名称，把图片名称设置给img标签
@@ -168,7 +127,7 @@
                     getcheckVal(data.showResult);
                     return;
                 }
-                var path = "${pageContext.request.contextPath }/resources/file/items/"+data.showResult;
+                var path = "${pageContext.request.contextPath }/resources/file/advertisement/"+data.showResult;
                 $(".photoTip").text("");
                 $("#photo").attr("src",path);
                 photoResult = true;
@@ -181,7 +140,7 @@
             $("#items-form").submit()
             return;
         }else{
-             return;
+            return;
         }
 
     })

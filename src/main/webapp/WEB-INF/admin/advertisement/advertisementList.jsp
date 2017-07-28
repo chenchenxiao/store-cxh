@@ -13,7 +13,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/css.css" />
-    <title>用户列表</title>
+    <title>我的广告</title>
     <%@ include file="../alcss.jsp" %>
     <link href="${pageContext.request.contextPath}/resources/css/messenger/messenger-theme-air.css" rel="stylesheet" type="text/css" />
     <link href="${pageContext.request.contextPath}/resources/css/manhuaDate.1.0.css" type="text/css" />
@@ -28,7 +28,7 @@
     <div class="pageTop">
         <div class="page">
             <img src="${pageContext.request.contextPath}/resources/img/coin02.png" />
-            <span></span>&nbsp;用户管理
+            <span><a href="show.jsp">首页</a>&nbsp;-&nbsp;-</span>&nbsp;用户订单列表
         </div>
     </div>
     <form action="${pageContext.request.contextPath}/admin/items/deleteOne" method="post" id="deleteOne_form">
@@ -38,9 +38,14 @@
         <!-- user页面样式 -->
         <div class="connoisseur">
             <div class="conform">
-                <form action="${pageContext.request.contextPath}/admin/admin/userList" class="list_form" method="post" enctype="multipart/form-data">
+                <form action="${pageContext.request.contextPath}/admin/advertisement/showAdvertisement" class="list_form" method="post" enctype="multipart/form-data">
                     <input type="hidden" id="pageNum" name="page" value="1">
                     <input type="hidden" name="uid" value="${sessionScope.loginUser.id}"/>
+                    <div class="cfD">
+                        <a class="btn btn-sm btn-primary-outline pull-right" href="${pageContext.request.contextPath}/admin/advertisement/adSaveUI/" >
+                            <i class="icon-plus"></i>添加
+                        </a>
+                    </div>
                     <div>
                         <input class="userinput" type="text" name="searchText" placeholder="输入查询条件" value=" "/>&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;
                         <button class="btn btn-sm btn-primary-outline" id="search">查询</button>  </div>
@@ -55,61 +60,94 @@
                     <div id="checkTip" class="pull-right" style="margin-right:180px"></div>
                 </form>
             </div>
-            <!-- user 表格 显示 -->
-            <form action="#" method="post" class="deleteIds_form">
+                <!-- user 表格 显示 -->
                 <div class="conShow">
                     <div style="color: dodgerblue">
-                        点击用户查看用户的订单详情
+
                     </div>
                     <table border="1" cellspacing="0" cellpadding="0">
                         <tr>
-                            <td width="200px" class="tdColor tdC">姓名</td>
-                            <td width="200px" class="tdColor">用户名</td>
-                            <td width="200px" class="tdColor">邮箱</td>
-                            <td width="200px" class="tdColor">手机号码</td>
+                            <td width="200px" class="tdColor tdC">广告图片</td>
+                            <td width="200px" class="tdColor tdC">商品名称</td>
+                            <td width="200px" class="tdColor tdC">商品介绍</td>
+                            <td width="200px" class="tdColor">是否已显示</td>
+                            <td width="100px" class="tdColor">操作</td>
+
                         </tr>
-                        <c:forEach items="${PageBean.recordList}" var="user" varStatus="status">
-                            <input type="hidden" value="${user.id}" id="userId">
-                            <tr height="40px">
-                                <td><a href="${pageContext.request.contextPath}/admin/admin/showOrders/${user.id}">${user.name}</a></td>
-                                <td>${user.account}</td>
-                                <td>${user.email}</td>
-                                <td>${user.phoneNumber}</td>
-                            </tr>
-                        </c:forEach>
+                        <form action="${pageContext.request.contextPath}/admin/advertisement/deleteByIds" class="delete_form" method="post">
+                            <input type="hidden" value="" id="advesId">
+                            <c:forEach items="${PageBean.recordList}" var="ad" varStatus="status">
+                                <tr height="40px">
+                                    <td>
+                                        <label>
+                                            <input  name="ids" id="checkBox" type="checkbox" value="${ad.id}" ><span></span>
+                                        </label>
+                                        <img width="52" height="52" src="${pageContext.request.contextPath}/resources/file/advertisement/${ad.photo}"/>
+                                    </td>
+                                    <td>${ad.itemsName}</td>
+                                    <td>${ad.description}</td>
+                                    <td>${ad.status == 0 ? '否':'是'}</td>
+                                    <td><a href="${pageContext.request.contextPath}/admin/items/updateUI/${ad.id}">
+                                        修改
+                                    </a>
+                                        <a href="${pageContext.request.contextPath}/admin/advertisement/deleteOneAd/${ad.id}" >
+                                            删除
+                                        </a>
+                                    </td>
+                                </tr>
+                            </c:forEach>
+                        </form>
                     </table>
+                    <div class="btn-toolbar" role="toolbar">
+                        <a href="javascript:void(0)" class="checkbox-row btn btn-sm btn-primary-outline pull-left" id="cancelAll" name="checkAll">全不选</a>
+                        <a href="javascript:void(0)" class="checkbox-row btn btn-sm btn-primary-outline pull-left" id="checkAll" name="checkAll">全选</a>
+                        <a href="javascript:void(0)" class="checkbox-row btn btn-sm btn-primary-outline pull-left" id="deleteByIds">删除</a>
+                    </div>
                     <div class="expTip"></div>
                     <!--分页 -->
-                    <div class="paging">
-                    <span>
+                    <c:if test="${PageBean.pageCount > 0}">
+                        <div class="paging">
+                        <span>
                         <c:if test="${PageBean.page > 1}">
                             <a href="javascript:void(0)" onclick="showPage(1)">[首页]</a>&nbsp;&nbsp;
                             <a href="javascript:void(0)" onclick="showPage(${PageBean.page - 1})">[上一页]</a>&nbsp;&nbsp;
                         </c:if>
-                    <%--动态显示条 --%>
+                        <%--动态显示条 --%>
                         <c:forEach begin = "${PageBean.beginPageIndex}" end = "${PageBean.endPageIndex}" var="num">
                             <a href="javascript:void(0)" onclick="showPage(${num})">
-                                    ${num}</a>&nbsp;&nbsp;
+                            ${num}</a>&nbsp;&nbsp;
                         </c:forEach>
                         <c:if test = "${PageBean.page < PageBean.pageCount}">
                             <a href="javascript:void(0)" onclick="showPage(${PageBean.page+1})">[下一页]</a>&nbsp;&nbsp;
                             <a href="javascript:void(0)" onclick="showPage(${PageBean.pageCount})">[尾页]</a>&nbsp;&nbsp;
                         </c:if>
-                    </span
-                        <span>第${PageBean.page}/
-                            ${pageBean.pageCount}页
-                    </span>
-                    </div>
+                        </span>
+                        <span>
+                                第${PageBean.page}/${pageBean.pageCount}页
+                        </span>
+                        </div>
+                        </div>
+                  </c:if>
+                    <!-- user 表格 显示 end-->
                 </div>
-            </form>
-            <!-- user 表格 显示 end-->
+            <!-- user页面样式end -->
         </div>
-        <!-- user页面样式end -->
+
     </div>
 
+<!-- 删除弹出框 -->
+<div class="banDel">
+    <div class="delete">
+        <div class="close">
+            <a><img src="img/shanchu.png" /></a>
+        </div>
+        <p class="delP1">你确定要删除此条记录吗？</p>
+        <p class="delP2">
+            <a href="javascript:void(0)" class="ok no"  onclick="deleteById()">确定</a><a class="ok no">取消</a>
+        </p>
+    </div>
 </div>
-
-
+<!-- 删除弹出框  end-->
 </body>
 
 <c:if test="${result!=null}">
@@ -144,6 +182,27 @@
 
     $("#showSize").change(function () {
         $(".list_form").submit();
+    })
+
+    $("#deleteByIds").click(function () {
+        $(".delete_form").submit();
+    })
+
+    $("#cancelAll").hide()
+    $("#checkAll").click(function () {
+        $('input:checkbox').each(function() {
+            $(this).prop('checked', true);
+        });
+        $("#cancelAll").show()
+        $(this).hide()
+    })
+
+    $("#cancelAll").click(function () {
+        $('input:checkbox').each(function() {
+            $(this).prop('checked', false);
+        });
+        $("#checkAll").show()
+        $(this).hide()
     })
 </script>
 </html>
