@@ -71,6 +71,7 @@
           <element id="library" level="project" name="Maven: net.coobird:thumbnailator:0.4.8" />
           <element id="library" level="project" name="Maven: tk.mybatis:mapper:3.3.4" />
           <element id="library" level="project" name="Maven: javax.persistence:persistence-api:1.0" />
+          <element id="library" level="project" name="Maven: com.github.abel533:mapper:2.3.4" />
           <element id="library" level="project" name="Maven: javax.mail:mail:1.4" />
           <element id="library" level="project" name="Maven: javax.activation:activation:1.1" />
           <element id="library" level="project" name="Maven: org.apache.commons:commons-email:1.4" />
@@ -83,7 +84,6 @@
           <element id="library" level="project" name="Maven: org.apache.poi:poi-scratchpad:3.9" />
           <element id="library" level="project" name="Maven: org.apache.xmlbeans:xmlbeans:2.6.0" />
           <element id="library" level="project" name="Maven: stax:stax-api:1.0.1" />
-          <element id="library" level="project" name="Maven: org.apache.catalina:com.springsource.org.apache.catalina:6.0.16" />
         </element>
       </element>
       <element id="directory" name="META-INF">

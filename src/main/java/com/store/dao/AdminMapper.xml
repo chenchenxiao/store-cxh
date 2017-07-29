@@ -30,6 +30,15 @@
             OR phone_number LIKE #{searchText}
         </if>
     </select>
+    <select id="adList" resultType="com.store.model.Advertisement">
+        select * FROM
+        store_advertisement
+        <if test="searchText != null">
+            where
+            items_name like #{searchText}
+            OR description like #{searchText}
+        </if>
+    </select>
 
     <select id="selectOrders" resultMap="selectOrdersResultMap">
         select o.user_id,o.o_id,od.items_id,od.items_number,od.money,od.cost,i.title,i.name ,i.photo
@@ -44,4 +53,6 @@
         and
         od.items_id = i.id
     </select>
+
+
 </mapper>

@@ -24,7 +24,7 @@
 <div class="container">
 
     <div class="leftsidebar_box">
-        <a href="${pageContext.request.contextPath}/show.jsp" target="_top">
+        <a href="${pageContext.request.contextPath}/admin/advertisement/indexAd" target="_top">
             <div class="line">
                 <img src="${pageContext.request.contextPath}/resources/img/coin01.png"/>&nbsp;&nbsp;首页
             </div>
@@ -107,14 +107,14 @@
             <dt>
                 <img class="icon1" src="${pageContext.request.contextPath}/resources/img/coin11.png"/>
                 <img class="icon2" src="${pageContext.request.contextPath}/resources/img/coin12.png"/>
-                话题管理
+                广告管理
                 <img class="icon3" src="${pageContext.request.contextPath}/resources/img/coin19.png"/>
                 <img class="icon4" src="${pageContext.request.contextPath}/resources/img/coin20.png"/>
             </dt>
             <dd>
                 <img class="coin11" src="${pageContext.request.contextPath}/resources/img/coin111.png"/>
                 <img class="coin22" src="${pageContext.request.contextPath}/resources/img/coin222.png"/>
-                <a href="../topic.html" target="main" class="cks">话题管理</a>
+                <a href="${pageContext.request.contextPath}/admin/admin/showAd" target="main" class="cks">广告管理</a>
                 <img class="icon5" src="${pageContext.request.contextPath}/resources/img/coin21.png"/>
             </dd>
         </dl>

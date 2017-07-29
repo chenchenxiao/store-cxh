@@ -11,10 +11,13 @@ import org.apache.ibatis.annotations.Param;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Component;
 
 /**
  * Created by 陈晓海 on 2017/7/8.
  */
+@Component
 public class BaseMapperTest {
     @Test
     public void baseMapperTest(){
@@ -42,5 +45,7 @@ public class BaseMapperTest {
         String str = "/admin/admin/userList";
         System.out.println(str.substring(str.indexOf("/"),str.lastIndexOf("/")));
     }
-
+    public void testQuart(){
+        System.out.println("aaa");
+    }
 }

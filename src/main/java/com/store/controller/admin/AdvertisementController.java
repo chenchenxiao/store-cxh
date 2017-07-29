@@ -8,6 +8,7 @@ import com.store.model.User;
 import com.store.service.AdvertisementService;
 import com.store.util.FileUploadUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -106,5 +107,38 @@ public class AdvertisementController extends BaseAdminController<Advertisement,L
     public String deleteByIds(Integer[] ids){
         advertisementService.deleteByIds(ids);
         return REDIRECT_URL + "showAdvertisement";
+    }
+    //跳转到修改广告信息
+    @RequestMapping("updateUI/{id}")
+    public String updateUI(@PathVariable("id") Integer id,Model model,HttpSession session){
+        //从session从取得登录用户的信息
+        User user = (User) session.getAttribute("loginUser");
+        //根据用户id取得对应的商品集合
+        List<Items> itemsList = advertisementService.showAllItems(user.getId());
+        model.addAttribute("itemsList",itemsList);
+        Advertisement advertisement = advertisementService.selectById(id);
+        model.addAttribute("ad",advertisement);
+        return TEMPLATE_PATH + "adSaveUI";
+    }
+
+    //商城首页显示广告
+    @RequestMapping("indexAd")
+    public String indexAd(Model model){
+        List<Advertisement> advertisementList = advertisementService.selectByStatus();
+        model.addAttribute("adList",advertisementList);
+        return "/show";
+    }
+
+    private int page;       //定时更新时开始分页的页数
+
+    //定时更新数据库的广告数据，即更新显示状态
+    @Scheduled(cron = "0/20 * * * * ?")
+    public void quartzUpdate(){
+        page++;
+        Long aLong = advertisementService.comparePage(page);
+        if(aLong < page){
+            this.page = 1;
+        }
+        advertisementService.quartzUpdate(page);
     }
 }

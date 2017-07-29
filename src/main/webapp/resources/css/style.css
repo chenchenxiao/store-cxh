@@ -650,7 +650,7 @@ a.toggleMenu{
   }
 .rslides img {
   display: block;
-  height: auto;
+  height: 350px;
   float: left;
   width: 100%;
   border: 0;

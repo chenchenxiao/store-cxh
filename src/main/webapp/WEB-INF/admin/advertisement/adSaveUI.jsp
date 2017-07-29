@@ -57,8 +57,8 @@
                                     <label class="control-label">广告的商品</label>
                                     <div class="">
                                         <select class="form-control" id="type" name="itemsId" >
-                                            <c:forEach items="${itemsList}" var="item" varStatus="status">
-                                                <option value="${item.id}">${item.name}</option>
+                                            <c:forEach  items="${itemsList}" var="item" varStatus="status">
+                                                <option value="${item.id}" <c:if test="${ad.itemsId == items.id}"></c:if>>${item.name}</option>
                                             </c:forEach>
                                         </select>
                                     </div>

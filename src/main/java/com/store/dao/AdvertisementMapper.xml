@@ -27,4 +27,61 @@
         store_advertisement
         where id = #{id}
     </delete>
+
+    <select id="selectById" parameterType="Integer" resultType="com.store.model.Advertisement">
+        select * FROM
+        store_advertisement
+        where
+        id = #{id}
+    </select>
+
+    <update id="updateAd" parameterType="com.store.model.Advertisement">
+        update store_advertisement
+        <set>
+            <if test="itemsName != null">
+                items_name = #{itemsName},
+            </if>
+            <if test="photo != null">
+                photo = #{photo},
+            </if>
+            <if test="description != null">
+                description = #{description},
+            </if>
+            <if test="itemsId != null">
+                items_id = #{itemsId},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <select id="selectByStatus" resultType="com.store.model.Advertisement">
+        select * FROM
+        store_advertisement
+       <if test="status != null">
+           where status = #{status}
+       </if>
+    </select>
+
+
+    <update id="adPass" parameterType="java.util.List">
+        UPDATE store_advertisement
+        SET
+        status = 1
+        WHERE id IN
+        <foreach collection="ids" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </update>
+
+    <update id="notPass" parameterType="java.util.List">
+        UPDATE store_advertisement
+        SET
+        status = 0
+        WHERE id IN
+        <foreach collection="ids" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </update>
+
+
 </mapper>

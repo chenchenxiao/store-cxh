@@ -14,7 +14,7 @@ public class PageBean {
 	private int page=1; // 当前页
 	private int size=8; // 每页显示多少条
 
-    private String  searchText;//搜索的文本
+    private String searchText;//搜索的文本
 
 
     private int pageOffset;	//当前位置

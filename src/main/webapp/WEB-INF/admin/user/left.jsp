@@ -24,7 +24,7 @@
 <div class="container">
 
     <div class="leftsidebar_box">
-        <a href="${pageContext.request.contextPath}/show.jsp" target="_top">
+        <a href="${pageContext.request.contextPath}/admin/advertisement/indexAd" target="_top">
             <div class="line">
                 <img src="${pageContext.request.contextPath}/resources/img/coin01.png"/>&nbsp;&nbsp;首页
             </div>

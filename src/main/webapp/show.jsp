@@ -1,6 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--<%--%>
+    <%--//页面每隔30秒自动刷新一遍--%>
+    <%--response.setHeader("refresh" , "30" );--%>
+
+<%--%>--%>
 <%--
   Created by IntelliJ IDEA.
   User: ${陈晓海}
@@ -47,6 +52,13 @@
                 pager: true,
             });
         });
+        $(function () {
+            $("#desc").responsiveSlides({
+                auto: true,
+                speed: 500,
+                namespace: "callbacks",
+            });
+        });
     </script>
     <!--//slider-script-->
     <script>$(document).ready(function(c) {
@@ -74,27 +86,32 @@
     <div class="container">
         <div class="banner">
 
-            <!-- Slideshow 4 -->
+            <!-- Slideshow 4  style="overflow: hidden;width: 100%;list-style: none;padding: 0;margin: 0"-->
             <div class="slider">
                 <ul class="rslides" id="slider1">
-                    <li><img src="${pageContext.request.contextPath}/resources/images/banner.jpg" alt="">
-                    </li>
-                    <li><img src="${pageContext.request.contextPath}/resources/images/banner1.jpg" alt="">
-                    </li>
-                    <li><img src="${pageContext.request.contextPath}/resources/images/banner.jpg" alt="">
-                    </li>
-                    <li><img src="${pageContext.request.contextPath}/resources/images/banner2.jpg" alt="">
-                    </li>
+                    <c:forEach items="${adList}" var="ad" varStatus="sta">
+                        <li><img src="${pageContext.request.contextPath}/resources/file/advertisement/${ad.photo}" alt="">
+                        </li>
+                    </c:forEach>
+                    <%--<li><img src="${pageContext.request.contextPath}/resources/images/test.png" alt="">--%>
+                    <%--</li>--%>
+                    <%--<li><img src="${pageContext.request.contextPath}/resources/images/test2.jpg" alt="">--%>
+                    <%--</li>--%>
+                    <%--<li><img  src="${pageContext.request.contextPath}/resources/images/banner.jpg" alt="">--%>
+                    <%--</li>--%>
+                    <%--<li><img src="${pageContext.request.contextPath}/resources/images/banner2.jpg" alt="">--%>
+                    <%--</li>--%>
                 </ul>
             </div>
 
             <div class="banner-bottom">
-                <div class="banner-matter">
-                    <p>Childish Gambino - Camp Now Available for just $9.99</p>
-                    <a href="single.html" class="hvr-shutter-in-vertical ">Purchase</a>
-                </div>
-                <div class="purchase">
-                    <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 ">Purchase</a>
+                <div class="banner-matter" id="desc" style="float:right;">
+                    <c:forEach items="${adList}" var="ad" varStatus="sta">
+                        <div>
+                            <p style="color: black">${ad.description}</p>
+                            <a href="${pageContext.request.contextPath}/admin/items/viewItems?id=${ad.itemsId}" class="hvr-shutter-in-vertical ">查看详情</a>
+                        </div>
+                    </c:forEach>
                 </div>
                 <div class="clearfix"></div>
             </div>

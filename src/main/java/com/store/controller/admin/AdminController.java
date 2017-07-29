@@ -66,4 +66,25 @@ public class AdminController extends BaseAdminController<Admin,Long>{
         session.removeAttribute("loginAdmin");
         return "/show";
     }
+
+    //显示所有的广告信息
+    @RequestMapping("showAd")
+    public String showAd(Model model,PageBean pageBean){
+        model.addAttribute("PageBean",adminService.showAllAd(pageBean));
+        return TEMPLATE_PATH + "adList";
+    }
+
+    //让广告显示
+    @RequestMapping("adPass")
+    public String adPass(Integer[] ids){
+        adminService.adPass(ids);
+        return REDIRECT_URL + "showAd";
+    }
+
+    //不让广告显示
+    @RequestMapping("adNotPass")
+    public String notPass(Integer[] ids){
+        adminService.notPass(ids);
+        return REDIRECT_URL + "showAd";
+    }
 }

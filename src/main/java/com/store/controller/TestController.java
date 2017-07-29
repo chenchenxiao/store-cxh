@@ -3,6 +3,8 @@ package com.store.controller;
 import com.store.model.Items;
 import com.store.model.User;
 import com.store.util.ExcelUtil;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -13,11 +15,15 @@ import java.util.List;
 /**
  * Created by 陈晓海 on 2017/7/9.
  */
+@Component
 @Controller
 public class TestController {
+    private int i;
+//    @Scheduled(cron = "0/5 * * * * ?")
     @RequestMapping("test")
     public void test(){
-        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!");
+       i++;
+        System.out.println(i);
     }
 
     @ResponseBody

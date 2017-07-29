@@ -74,6 +74,7 @@
                         <value>/admin/user/regist</value>
                         <value>/admin/items/showTypeItems</value>
                         <value>/admin/items/viewItems</value>
+                        <value>/admin/advertisement/indexAd</value>
                     </list>
                 </property>
             </bean>

@@ -38,7 +38,7 @@
         <!-- user页面样式 -->
         <div class="connoisseur">
             <div class="conform">
-                <form action="${pageContext.request.contextPath}/admin/advertisement/showAdvertisement" class="list_form" method="post" enctype="multipart/form-data">
+                <form action="${pageContext.request.contextPath}/admin/admin/showAllAd" class="list_form" method="post" enctype="multipart/form-data">
                     <input type="hidden" id="pageNum" name="page" value="1">
                     <input type="hidden" name="uid" value="${sessionScope.loginUser.id}"/>
                     <div class="cfD">
@@ -60,53 +60,46 @@
                     <div id="checkTip" class="pull-right" style="margin-right:180px"></div>
                 </form>
             </div>
-                <!-- user 表格 显示 -->
-                <div class="conShow">
-                    <div style="color: dodgerblue">
+            <!-- user 表格 显示 -->
+            <div class="conShow">
+                <div style="color: dodgerblue">
 
-                    </div>
-                    <table border="1" cellspacing="0" cellpadding="0">
-                        <tr>
-                            <td width="200px" class="tdColor tdC">广告图片</td>
-                            <td width="200px" class="tdColor tdC">商品名称</td>
-                            <td width="200px" class="tdColor tdC">商品介绍</td>
-                            <td width="200px" class="tdColor">是否已显示</td>
-                            <td width="100px" class="tdColor">操作</td>
+                </div>
+                <table border="1" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td width="200px" class="tdColor tdC">广告图片</td>
+                        <td width="200px" class="tdColor tdC">商品名称</td>
+                        <td width="200px" class="tdColor tdC">商品介绍</td>
+                        <td width="200px" class="tdColor">是否显示</td>
+                    </tr>
+                    <form action="#" class="ad_form" method="post">
+                        <input type="hidden" value="" id="advesId">
+                        <c:forEach items="${PageBean.recordList}" var="ad" varStatus="status">
+                            <tr height="40px">
+                                <td>
+                                    <label>
+                                        <input  name="ids" id="checkBox" type="checkbox" value="${ad.id}" ><span></span>
+                                    </label>
+                                    <img width="52" height="52" src="${pageContext.request.contextPath}/resources/file/advertisement/${ad.photo}"/>
+                                </td>
+                                <td>${ad.itemsName}</td>
+                                <td>${ad.description}</td>
+                                <td>${ad.status == 0 ? '否':'是'}</td>
+                            </tr>
+                        </c:forEach>
+                    </form>
+                </table>
+                <div class="btn-toolbar" role="toolbar">
+                    <a href="javascript:void(0)" class="checkbox-row btn btn-sm btn-primary-outline pull-left" id="cancelAll" name="checkAll">全不选</a>
+                    <a href="javascript:void(0)" class="checkbox-row btn btn-sm btn-primary-outline pull-left" id="checkAll" name="checkAll">全选</a>
+                    <a href="javascript:void(0)" class="checkbox-row btn btn-sm btn-primary-outline pull-left" id="show">显示</a>
+                    <a href="javascript:void(0)" class="checkbox-row btn btn-sm btn-primary-outline pull-left" id="notShow">不显示</a>
 
-                        </tr>
-                        <form action="${pageContext.request.contextPath}/admin/advertisement/deleteByIds" class="delete_form" method="post">
-                            <input type="hidden" value="" id="advesId">
-                            <c:forEach items="${PageBean.recordList}" var="ad" varStatus="status">
-                                <tr height="40px">
-                                    <td>
-                                        <label>
-                                            <input  name="ids" id="checkBox" type="checkbox" value="${ad.id}" ><span></span>
-                                        </label>
-                                        <img width="52" height="52" src="${pageContext.request.contextPath}/resources/file/advertisement/${ad.photo}"/>
-                                    </td>
-                                    <td>${ad.itemsName}</td>
-                                    <td>${ad.description}</td>
-                                    <td>${ad.status == 0 ? '否':'是'}</td>
-                                    <td><a href="${pageContext.request.contextPath}/admin/advertisement/updateUI/${ad.id}">
-                                        修改
-                                    </a>
-                                        <a href="${pageContext.request.contextPath}/admin/advertisement/deleteOneAd/${ad.id}" >
-                                            删除
-                                        </a>
-                                    </td>
-                                </tr>
-                            </c:forEach>
-                        </form>
-                    </table>
-                    <div class="btn-toolbar" role="toolbar">
-                        <a href="javascript:void(0)" class="checkbox-row btn btn-sm btn-primary-outline pull-left" id="cancelAll" name="checkAll">全不选</a>
-                        <a href="javascript:void(0)" class="checkbox-row btn btn-sm btn-primary-outline pull-left" id="checkAll" name="checkAll">全选</a>
-                        <a href="javascript:void(0)" class="checkbox-row btn btn-sm btn-primary-outline pull-left" id="deleteByIds">删除</a>
-                    </div>
-                    <div class="expTip"></div>
-                    <!--分页 -->
-                    <c:if test="${PageBean.pageCount > 0}">
-                        <div class="paging">
+                </div>
+                <div class="expTip"></div>
+                <!--分页 -->
+                <c:if test="${PageBean.pageCount > 0}">
+                <div class="paging">
                         <span>
                         <c:if test="${PageBean.page > 1}">
                             <a href="javascript:void(0)" onclick="showPage(1)">[首页]</a>&nbsp;&nbsp;
@@ -115,25 +108,25 @@
                         <%--动态显示条 --%>
                         <c:forEach begin = "${PageBean.beginPageIndex}" end = "${PageBean.endPageIndex}" var="num">
                             <a href="javascript:void(0)" onclick="showPage(${num})">
-                            ${num}</a>&nbsp;&nbsp;
+                                    ${num}</a>&nbsp;&nbsp;
                         </c:forEach>
                         <c:if test = "${PageBean.page < PageBean.pageCount}">
                             <a href="javascript:void(0)" onclick="showPage(${PageBean.page+1})">[下一页]</a>&nbsp;&nbsp;
                             <a href="javascript:void(0)" onclick="showPage(${PageBean.pageCount})">[尾页]</a>&nbsp;&nbsp;
                         </c:if>
                         </span>
-                        <span>
+                    <span>
                                 第${PageBean.page}/${pageBean.pageCount}页
                         </span>
-                        </div>
-                        </div>
-                  </c:if>
-                    <!-- user 表格 显示 end-->
                 </div>
-            <!-- user页面样式end -->
+            </div>
+            </c:if>
+            <!-- user 表格 显示 end-->
         </div>
-
+        <!-- user页面样式end -->
     </div>
+
+</div>
 
 <!-- 删除弹出框 -->
 <div class="banDel">
@@ -184,8 +177,13 @@
         $(".list_form").submit();
     })
 
-    $("#deleteByIds").click(function () {
-        $(".delete_form").submit();
+    $("#show").click(function () {
+        $(".ad_form").attr("action","${pageContext.request.contextPath}/admin/admin/adPass");
+        $(".ad_form").submit();
+    })
+    $("#notShow").click(function () {
+        $(".ad_form").attr("action","${pageContext.request.contextPath}/admin/admin/adNotPass");
+        $(".ad_form").submit();
     })
 
     $("#cancelAll").hide()

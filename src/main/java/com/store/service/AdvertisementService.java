@@ -21,4 +21,13 @@ public interface AdvertisementService {
     void deleteOne(Integer id);
 
     void deleteByIds(Integer[] ids);
+
+    Advertisement selectById(Integer id);
+
+    List<Advertisement> selectByStatus();
+
+    void quartzUpdate(Integer page);
+
+    Long comparePage(Integer page);
+
 }

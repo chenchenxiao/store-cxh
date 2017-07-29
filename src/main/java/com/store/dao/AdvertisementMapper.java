@@ -16,4 +16,16 @@ public interface AdvertisementMapper extends BaseMapper<Advertisement>{
     void deleteByIds(@Param("ids") List<Integer> list);
 
     void deleteById(@Param("id") Integer id);
+
+    Advertisement selectById(@Param("id") Integer id);
+
+    void updateAd(Advertisement advertisement);
+
+    List<Advertisement> selectByStatus(@Param("status") Integer id);
+
+    void adPass(@Param("ids") List<Integer> ids);
+
+    void notPass(@Param("ids") List<Integer> ids);
+
+
 }

@@ -96,7 +96,7 @@ public class UserController extends BaseAdminController<User,Long> {
         try {
             if (loginUser != null) {
                 session.setAttribute("loginUser",loginUser);
-                return "show";
+                return "redirect:/admin/advertisement/indexAd";
             } else {
                 model.addAttribute("result", new AjaxResult(false, "用户名和密码匹配失败"));
                 System.out.println("登录失败");

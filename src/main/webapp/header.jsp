@@ -77,7 +77,7 @@
             <div class="h_menu4">
                 <a class="toggleMenu" href="#">Menu</a>
                 <ul class="nav">
-                    <li class="active"><a href="${pageContext.request.contextPath}/show.jsp"><i> </i>首页</a></li>
+                    <li class="active"><a href="${pageContext.request.contextPath}/admin/advertisement/indexAd"><i> </i>首页</a></li>
                     <li><a href="${pageContext.request.contextPath}/admin/items/showTypeItems?type=笔记本" >笔记本</a></li>
                     <li><a href="${pageContext.request.contextPath}/admin/items/showTypeItems?type=服装" >服装</a></li>
                     <li><a href="${pageContext.request.contextPath}/admin/items/showTypeItems?type=美食" >美食</a></li>

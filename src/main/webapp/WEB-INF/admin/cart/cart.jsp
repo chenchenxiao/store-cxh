@@ -140,7 +140,7 @@
                     <span class="shopping">
                   <b>
                   </b>
-                  <a href="${pageContext.request.contextPath}/show.jsp" clstag="clickcart|keycount|xincart|coudanlink" id="continue" target="_top">继续购物</a>
+                  <a href="${pageContext.request.contextPath}/admin/advertisement/indexAd" clstag="clickcart|keycount|xincart|coudanlink" id="continue" target="_top">继续购物</a>
               </span>
                 </div>
                 <div class="cart-total-2014">
