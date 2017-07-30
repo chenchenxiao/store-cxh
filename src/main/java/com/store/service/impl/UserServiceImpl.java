@@ -55,6 +55,7 @@ public class UserServiceImpl implements UserService{
         userMapper.updateByPrimaryKeySelective(user);
     }
 
+    //根据用户名校验是否存在对应的用户
     public User checkUser(String condition) {
         return userMapper.checkUser(condition);
     }

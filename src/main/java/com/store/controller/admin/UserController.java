@@ -26,7 +26,7 @@ import java.util.UUID;
 import org.apache.commons.mail.EmailException;
 /**
  * Created by 陈晓海 on 2017/7/8.
- * 用户controller
+ * 用户控制器
  */
 @Controller
 @RequestMapping("admin/user")
@@ -114,7 +114,7 @@ public class UserController extends BaseAdminController<User,Long> {
     public String logout(HttpSession session){
         //移除指定的session的值
         session.removeAttribute("loginUser");
-        return "show";
+        return "redirect:/admin/advertisement/indexAd";
     }
 
     //跳转到用户后台管理页面
@@ -223,8 +223,6 @@ public class UserController extends BaseAdminController<User,Long> {
     //用户修改邮箱或手机
     @RequestMapping("securityUpdate")
     public String securityUpdate(User user,RedirectAttributes redirectAttributes){
-        System.out.println("user-___->" + user.toString());
-        System.out.println("num" + userService.checkRepeat(user));
         //获取用户id
         Integer id = user.getId();
         //先把ID设为空，后台校验手机号或邮箱是否被注册过，若果不这样做的话检查是否被使用时会把ID一起查询，即根据ID和手机或邮箱查询
@@ -256,7 +254,6 @@ public class UserController extends BaseAdminController<User,Long> {
     @RequestMapping("checkEmail")
     public void checkEmail(String email,PrintWriter outs){
         String checkNumber = MailUtils.send(email);
-        System.out.println("email-->" + email);
         outs.print("{\"result\":\""+ checkNumber +"\"}");
         outs.close();
     }
@@ -291,8 +288,4 @@ public class UserController extends BaseAdminController<User,Long> {
         return TEMPLATE_PATH + "left";
     }
 
-    @RequestMapping("test")
-    public void test(){
-        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-    }
 }

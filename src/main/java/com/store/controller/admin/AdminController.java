@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 
 /**
  * Created by 陈晓海 on 2017/7/27.
- * 管理员controller
+ * 管理员控制器
  */
 @Controller
 @RequestMapping("/admin/admin")
@@ -29,7 +29,6 @@ public class AdminController extends BaseAdminController<Admin,Long>{
     //管理员登录
     @RequestMapping("/login")
     public String login(Admin admin, HttpSession session){
-        System.out.println(adminService);
         session.setAttribute("loginAdmin",admin);
         adminService.login(admin);
         return TEMPLATE_PATH + "show";

@@ -29,11 +29,9 @@ public class OrdersController extends BaseAdminController<Orders,Long>{
     @RequestMapping("creatOrders")
     public String creatOrders(Integer[] itemIds,Integer cartId,Model model,HttpSession session){
         User user = (User) session.getAttribute("loginUser");
-        //创建订单，返回订单号
+        //创建订单
         String ordersId = orderService.creatOrders(itemIds,user.getId(),cartId);
-        //根据返回的订单号取得订单信息
-
-        return null;
+        return "redirect:/admin/cart/showCart/" + user.getId();
     }
 
     @RequestMapping("affirmOrder")

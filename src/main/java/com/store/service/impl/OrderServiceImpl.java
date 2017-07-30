@@ -1,9 +1,7 @@
 package com.store.service.impl;
 
-import com.store.dao.CartItemsMapper;
-import com.store.dao.ItemsMapper;
-import com.store.dao.OrderDetailsMapper;
-import com.store.dao.OrdersMapper;
+import com.store.dao.*;
+import com.store.model.Cart;
 import com.store.model.CartItems;
 import com.store.model.Orders;
 import com.store.model.OrderDetails;
@@ -28,6 +26,8 @@ public class OrderServiceImpl implements OrderService {
     OrderDetailsMapper orderDetailsMapper;
     @Autowired
     CartItemsMapper cartItemsMapper;
+    @Autowired
+    CartMapper cartMapper;
     //创建订单，返回订单号
     public String creatOrders(Integer[] itemIds, Integer userId, Integer cartId) {
         //保存商品id的集合
@@ -63,6 +63,12 @@ public class OrderServiceImpl implements OrderService {
         orderDetailsMapper.insertList(orderDetailsList);
         //删除购物车中对应的商品
         cartItemsMapper.deleteByIds(list);
+        //清空购物车商品的总价
+        Cart cart = cartMapper.selectById(cartId);
+        cart.setPayment(0f);
+        cart.setId(cartId);
+        System.out.println("cartId---》" + cart);
+        cartMapper.updatePayment(cart);
         return ordersId;
     }
 

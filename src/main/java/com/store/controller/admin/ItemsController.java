@@ -29,7 +29,7 @@ import java.text.ParseException;
 
 /**
  * Created by 陈晓海 on 2017/7/17.
- * 商品controller
+ * 商品控制器
  */
 @Controller
 @RequestMapping("admin/items")
@@ -37,7 +37,7 @@ public class ItemsController extends BaseAdminController<Items,Long>{
     @Autowired
     private ItemsService itemsService;
 
-    //用户点击我的商品查看已上架的商品
+    //用户查看自己的商品
     @RequestMapping("itemsList")
     public String itemsList(Model model, PageBean pageBean,HttpSession httpSession,String preDate,String lastDate) throws ParseException {
         model.addAttribute("preDate",preDate);
@@ -58,13 +58,12 @@ public class ItemsController extends BaseAdminController<Items,Long>{
     //上传头像时用ajax实现图片预览功能
     @RequestMapping("showPhoto")
     public void showPhoto(PrintWriter outs, MultipartFile picture, HttpServletRequest request,Integer id) throws IOException {
-        System.out.println(FileUploadUtil.getFileExt(picture.getOriginalFilename()));
-        System.out.println(!photoExt.contains(FileUploadUtil.getFileExt(picture.getOriginalFilename())));
         //判断上传的图片格式是否正确，正确就返回图片的名称，可以在前台进行预览
         if(!photoExt.contains(FileUploadUtil.getFileExt(picture.getOriginalFilename()))){
             outs.print("{\"showResult\":"+false+"}");
             outs.close();
         }
+        //获取图片名称，返回后显示
         String photoName = FileUploadUtil.uploadUserPhoto(picture, FileUploadUtil.ITEMS_PATH);
         outs.print("{\"showResult\":\""+ photoName +"\"}");
         outs.close();
@@ -72,8 +71,7 @@ public class ItemsController extends BaseAdminController<Items,Long>{
 
     //用户增添商品
     @RequestMapping("save")
-    public String save(@Valid Items items, BindingResult bindingResult, RedirectAttributes redirectAttributes, MultipartFile picture,HttpSession session){
-//        User user = (User) session.getAttribute("loginUser");
+    public String save(@Valid Items items, BindingResult bindingResult, RedirectAttributes redirectAttributes, MultipartFile picture){
         if(picture.getOriginalFilename().length() > 0){
             //判断上传的照片的类型是否符合要求
             if(!photoExt.contains(FileUploadUtil.getFileExt(picture.getOriginalFilename()))) {
@@ -86,7 +84,7 @@ public class ItemsController extends BaseAdminController<Items,Long>{
             redirectAttributes.addFlashAttribute("result",new AjaxResult(false,"格式填写错误!"));
             return REDIRECT_URL+ "saveUI";
         }
-
+        //判断是否上传了图片，如果有就设置图片名称
         if(picture.getOriginalFilename().length() > 0){
             String photoName = FileUploadUtil.uploadUserPhoto(picture,FileUploadUtil.ITEMS_PATH);
             items.setPhoto(photoName);

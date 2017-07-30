@@ -32,6 +32,7 @@ public class AdminServiceImpl implements AdminService {
         return adminMapper.selectOne(admin);
     }
 
+    //查询所有的用户
     public PageBean userList(PageBean pageBean) {
         //防止为空串
         if("".equals(pageBean.getSearchText())){
@@ -50,14 +51,14 @@ public class AdminServiceImpl implements AdminService {
         return pageBean;
     }
 
-
+    //根据id查询用户订单所有订单
     public List<Orders> showOrder(Integer userId) {
         User user = adminMapper.selectOrders(userId);
         //返回用户的订单集合
         return user.getOrdersList();
     }
 
-
+    //查询所有的广告
     public PageBean showAllAd(PageBean pageBean) {
         if("".equals(pageBean.getSearchText())){
             pageBean.setSearchText(null);
@@ -75,19 +76,20 @@ public class AdminServiceImpl implements AdminService {
         return pageBean;
     }
 
+    //修改广告状态
     public void adPass(Integer[] ids) {
         List<Integer> list = new ArrayList<Integer>();
         for(Integer id:ids){
             list.add(id);
         }
-        advertisementMapper.adPass(list);
+        advertisementMapper.updateStatus(list,1);
     }
-
+    //修改广告状态
     public void notPass(Integer[] ids) {
         List<Integer> list = new ArrayList<Integer>();
         for(Integer id:ids){
             list.add(id);
         }
-        advertisementMapper.notPass(list);
+        advertisementMapper.updateStatus(list,0);
     }
 }

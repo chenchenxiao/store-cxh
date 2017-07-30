@@ -24,6 +24,7 @@ public class CartServiceImpl implements CartService{
     @Autowired
     private ItemsMapper itemsMapper;
 
+    //添加到购物车
     public void addToCart(Integer itemsId,Integer userId)  {
         //先从数据库查找是否存在符合条件的对象
         try {

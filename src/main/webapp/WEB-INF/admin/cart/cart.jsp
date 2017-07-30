@@ -156,10 +156,12 @@
                     </div>
                     <div class="total fr">
                         总计（不含运费）：
-                        <span class="totalSkuPrice">¥<fmt:formatNumber value="${cart.payment }" maxFractionDigits="2" minFractionDigits="2" groupingUsed="true"/></span>
-                        <span class="ml10">
-                            <a class="ftx-05" href="javascript:history.back();">返回</a>
-                        </span>
+                        <c:if test="${cart.payment > 0}">
+                            <span class="totalSkuPrice">¥<fmt:formatNumber value="${cart.payment }" maxFractionDigits="2" minFractionDigits="2" groupingUsed="true"/></span>
+                        </c:if>
+                        <c:if test="${cart == null}">
+                            <span class="totalSkuPrice">¥<fmt:formatNumber value="0" maxFractionDigits="2" minFractionDigits="2" groupingUsed="true"/></span>
+                        </c:if>
                     </div>
                 </div>
               </div>

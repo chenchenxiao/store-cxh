@@ -211,10 +211,4 @@ public class ItemsServiceImpl implements ItemsService {
         }
         return itemsMappers.selectListByIds(list);
     }
-
-    public List<Items> showAllItems(Integer id){
-        Items items = itemsMappers.selectByPrimaryKey(id);
-        return  itemsMappers.select(items);
-    }
-
 }

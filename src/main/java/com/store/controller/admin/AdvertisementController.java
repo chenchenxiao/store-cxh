@@ -36,13 +36,12 @@ public class AdvertisementController extends BaseAdminController<Advertisement,L
     //上传广告图片时的图片预览功能
     @RequestMapping("showPhoto")
     public void showPhoto(PrintWriter outs, MultipartFile picture, HttpServletRequest request, Integer id) throws IOException {
-        System.out.println(FileUploadUtil.getFileExt(picture.getOriginalFilename()));
-        System.out.println(!photoExt.contains(FileUploadUtil.getFileExt(picture.getOriginalFilename())));
         //判断上传的图片格式是否正确，正确就返回图片的名称，可以在前台进行预览
         if(!photoExt.contains(FileUploadUtil.getFileExt(picture.getOriginalFilename()))){
             outs.print("{\"showResult\":"+false+"}");
             outs.close();
         }
+        //获取图片名称，返回后显示
         String photoName = FileUploadUtil.uploadUserPhoto(picture, FileUploadUtil.ADVERTISEMENT_PATH);
         outs.print("{\"showResult\":\""+ photoName +"\"}");
         outs.close();
@@ -79,15 +78,17 @@ public class AdvertisementController extends BaseAdminController<Advertisement,L
                 return REDIRECT_URL + "adSaveUI" ;
             }
         }
+        //判断填写的信息格式是否正确
         if(bindingResult.hasErrors()){
             redirectAttributes.addFlashAttribute("result",new AjaxResult(false,"商品介绍长度在3到8个字符串之间！"));
             return REDIRECT_URL + "adSaveUI";
         }
+        //判断是否上传了图片，如果有就设置图片的名称
         if(picture.getOriginalFilename().length() > 0){
             String photoName = FileUploadUtil.uploadUserPhoto(picture,FileUploadUtil.ADVERTISEMENT_PATH);
             advertisement.setPhoto(photoName);
         }
-        System.out.println(advertisement.getId());
+        //根据广告是否有id选择增添或修改方法
         if(advertisement.getId() != null){
            advertisementService.update(advertisement);
         }else{
@@ -126,16 +127,26 @@ public class AdvertisementController extends BaseAdminController<Advertisement,L
     public String indexAd(Model model){
         List<Advertisement> advertisementList = advertisementService.selectByStatus();
         model.addAttribute("adList",advertisementList);
+        //热销商品
+        model.addAttribute("hotSellList",advertisementService.selectHotSell(null));
+        //推荐商品
+        model.addAttribute("clothes",advertisementService.selectHotSell("服装").get(0));
+        model.addAttribute("food",advertisementService.selectHotSell("美食").get(0));
+        model.addAttribute("notebook",advertisementService.selectHotSell("笔记本").get(0));
+        model.addAttribute("sports",advertisementService.selectHotSell("运动").get(0));
+        model.addAttribute("home",advertisementService.selectHotSell("家居").get(0));
         return "/show";
     }
 
     private int page;       //定时更新时开始分页的页数
 
     //定时更新数据库的广告数据，即更新显示状态
-    @Scheduled(cron = "0/20 * * * * ?")
+    @Scheduled(cron = "0 0 */1 * * ?")
     public void quartzUpdate(){
         page++;
+        //获得总分页数
         Long aLong = advertisementService.comparePage(page,5);
+        //比较总分页数是否小于page，如果是就让page为1，重头开始刷新数据
         if(aLong < page){
             this.page = 1;
         }

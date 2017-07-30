@@ -92,4 +92,9 @@
         where
         c_id = #{id}
     </update>
+    <select id="selectById" resultType="com.store.model.Cart">
+        SELECT *  FROM
+        store_cart
+        where c_id = #{id}
+    </select>
 </mapper>

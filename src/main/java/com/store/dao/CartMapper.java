@@ -18,4 +18,6 @@ public interface CartMapper extends BaseMapper<Cart> {
     Cart getCartByUserId(@Param("id") Integer id);
 
     void updatePayment(Cart cart);
+
+    Cart selectById(@Param("id") Integer id);
 }

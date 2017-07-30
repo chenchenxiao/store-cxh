@@ -30,6 +30,7 @@ public class Cart {
 
     @Column(name = "c_id")
     private Integer id;         //购物车的id
+
     private Integer userId;     //购物车对应的用户id
     private Float payment;
 

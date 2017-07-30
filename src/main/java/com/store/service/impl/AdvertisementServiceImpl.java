@@ -107,6 +107,7 @@ public class AdvertisementServiceImpl implements AdvertisementService {
         return (pageInfo.getTotal() + size - 1) / size;
     }
 
+
     //定时更新广告信息，0表示未显示，1表示显示。存在问题，例如
     //最开始显示的是0110 0101 0000，第一次修改让广告显示后是1111 1111 0000，修改让广告不显示后是0000 1111 0000
     //这样就会导致刚刚显示的广告又马上不让显示了，目前没找到解决方法
@@ -128,7 +129,7 @@ public class AdvertisementServiceImpl implements AdvertisementService {
         //判断广告id的集合长度是否大于0，即是否分页取到了数据，如果有数据，就进行修改
         if (passIntegerList.size() > 0) {
             System.out.println("adPass-------------------------");
-            advertisementMapper.adPass(passIntegerList);
+            advertisementMapper.updateStatus(passIntegerList,1);
         }
         //修改显示过的广告
         List<Advertisement> notPassList = new ArrayList<Advertisement>();
@@ -165,8 +166,13 @@ public class AdvertisementServiceImpl implements AdvertisementService {
         //判断广告id的集合是否为空，即是否分页取到了数据，如果有数据，就进行修改
         if (notPassIntegerList.size() > 0) {
             System.out.println("Notpass---------------------");
-            advertisementMapper.notPass(notPassIntegerList);
+            advertisementMapper.updateStatus(notPassIntegerList,0);
         }
+    }
+
+    //查询热销商品
+    public List<Items> selectHotSell(String type) {
+        return advertisementMapper.selectHotSell(type);
     }
 }
 

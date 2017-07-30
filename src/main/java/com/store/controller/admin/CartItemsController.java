@@ -11,7 +11,7 @@ import javax.servlet.http.HttpSession;
 
 /**
  * Created by 陈晓海 on 2017/7/25.
- * 购物车商品controller
+ * 购物车商品控制器
  */
 @Controller
 @RequestMapping("/admin/cartItems")
@@ -23,8 +23,6 @@ public class CartItemsController {
     @RequestMapping("/deleteByIds")
     public String deleteByIds(Integer[] itemIds,Integer cartId, HttpSession session){
         User user = (User) session.getAttribute("loginUser");
-        System.out.println("ids-->" + itemIds);
-        System.out.println("cartId-->" +cartId);
         cartItemsService.deleteByIds(itemIds,cartId);
         return "redirect:/admin/cart/showCart/"+user.getId();
     }
@@ -33,7 +31,6 @@ public class CartItemsController {
     @RequestMapping("/updateItemsNumber")
     @ResponseBody
     public Cart updateItemsNumber(CartItems cartItems){
-        System.out.println("cartItems-->" + cartItems);
         return cartItemsService.updateItemsNumber(cartItems);
     }
 }

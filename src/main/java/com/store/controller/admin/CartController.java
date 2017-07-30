@@ -14,7 +14,7 @@ import javax.servlet.http.HttpSession;
 
 /**
  * Created by 陈晓海 on 2017/7/25.
- * 购物车controller
+ * 购物车控制器
  */
 @Controller
 @RequestMapping("/admin/cart")
@@ -32,11 +32,10 @@ public class CartController extends BaseAdminController<Cart,Long>{
         return TEMPLATE_PATH + "cartSuccess";
     }
 
-    //展示购物车
+    //根据用户id展示用户的购物车
     @RequestMapping("/showCart/{id}")
     public String showCart(@PathVariable("id") Integer id, Model model){
         Cart cart = cartService.showCart(id);
-        System.out.println("cart-->" + cart);
         model.addAttribute("cart",cart);
         return TEMPLATE_PATH + "cart";
     }

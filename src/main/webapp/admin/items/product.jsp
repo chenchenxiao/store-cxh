@@ -101,7 +101,7 @@
                                 <h5>标题:&nbsp;&nbsp;&nbsp;<a href="${pageContext.request.contextPath}/admin/items/viewItems?id=${items.id}">${items.title}</a></h5>
                                 <div class="white">
                                     <a href="#" onclick="viewItems(${items.id})" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">查看详情</a>
-                                    <p class="dollar"><span class="in-dollar">$</span><span>${items.price}</span></p>
+                                    <p class="dollar"><span class="in-dollar">￥</span><span>${items.price}</span></p>
                                     <div class="clearfix"></div>
                                 </div>
                             </div>

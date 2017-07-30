@@ -69,5 +69,4 @@
         UPDATE store_orders SET payment = 0 WHERE  o_id = #{ordersId}
     </update>
 
-
 </mapper>

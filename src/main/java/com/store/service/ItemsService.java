@@ -26,16 +26,12 @@ public interface ItemsService {
     void deleteOne(Integer id);
     //以excel表的格式导出商品信息
     void exportExcel(List<Items> itemsList, ServletOutputStream outputStream);
-
-    List<Items> itemList(Integer id);
-
     //以excel表的格式导入商品信息
     void importExcel(MultipartFile file,Integer id);
     //取得指定类型的商品信息
     PageBean showTypeItems(String type,PageBean pageBean);
     //取得要导出的商品信息的集合
     List<Items> expList(Integer[] ids);
-    //查询用户的所有商品
-    List<Items> showAllItems(Integer id);
+
 
 }
