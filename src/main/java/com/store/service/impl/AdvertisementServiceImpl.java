@@ -98,48 +98,70 @@ public class AdvertisementServiceImpl implements AdvertisementService {
     }
 
     //比较定时更新时分页的页数是否大于总页数
-    public Long comparePage(Integer page) {
-        PageHelper.startPage(page, 5);
+    public Long comparePage(Integer page,Integer size) {
+        PageHelper.startPage(page, size);
         List<Advertisement> list = advertisementMapper.selectByStatus(null);
         //取分页信息
         PageInfo<Advertisement> pageInfo = new PageInfo<Advertisement>(list);
-        System.out.println("compare-------------------" + (pageInfo.getTotal() + 5 - 1) / 5);
-        return (pageInfo.getTotal() + 5 - 1) / 5;
+        System.out.println("compare-------------------" + (pageInfo.getTotal() + size - 1) / size);
+        return (pageInfo.getTotal() + size - 1) / size;
     }
 
-    //定时更新广告信息
-    public void quartzUpdate(Integer page) {
-        //修改未显示的广告后也要修改已经显示的广告
+    //定时更新广告信息，0表示未显示，1表示显示。存在问题，例如
+    //最开始显示的是0110 0101 0000，第一次修改让广告显示后是1111 1111 0000，修改让广告不显示后是0000 1111 0000
+    //这样就会导致刚刚显示的广告又马上不让显示了，目前没找到解决方法
+    //修改未显示的广告后同时修改已经显示的广告
+    public void quartzUpdate(Integer page,Integer size) {
         ////比较定时更新时分页的页数是否大于总页数
         System.out.println("page-->" + page);
         //先通过分页取得要修改的广告信息集合
         List<Advertisement> passList = new ArrayList<Advertisement>();
-        PageHelper.startPage(1, 5);
+        //从page - 1页开始分页，这么写是因为
+        //例如第2次执行完程序后是  000 111 000，第3次从page - 1开始修改完才是000 111 111
+        PageHelper.startPage(page - 1, size);
         passList = advertisementMapper.selectByStatus(0);
         //通过遍历取得广告的id
         List<Integer> passIntegerList = new ArrayList<Integer>();
         for (Advertisement ad : passList) {
             passIntegerList.add(ad.getId());
         }
-        //判断广告id的集合是否为空，即是否分页取到了数据，如果有数据，就进行修改
-        System.out.println("adPassSIZE-->" + passList.size());
+        //判断广告id的集合长度是否大于0，即是否分页取到了数据，如果有数据，就进行修改
         if (passIntegerList.size() > 0) {
             System.out.println("adPass-------------------------");
             advertisementMapper.adPass(passIntegerList);
         }
+        //修改显示过的广告
         List<Advertisement> notPassList = new ArrayList<Advertisement>();
-        //判断是不是第一次修改，若不是则修改已经显示过的广告
+        //判断是否是第一页分页，这么做是因为如果不判断的话，修改让广告显示后又马上改回来了，广告状态没变化
+        //例如第一次修改让广告显示后是111 000 000，如果不判断又会修改为000 000 000，这样就死循环了
+        if(page == 1 ){
+            //取出当前所有的已显示广告信息
+            notPassList = advertisementMapper.selectByStatus(1);
+            //判断是否已显示的广告信息数量大于每页显示个数
+            //例如111 000 000 11，如果是就会修改最后的一个1，
+            //如果不大于每页显示个数，则是 111 000 000 00，此时就不用进行修改，否则改了就死循环
+            if(notPassList.size() > size){
+                //如果是就改第二页分页的数据
+                PageHelper.startPage(2,size);
+                notPassList = advertisementMapper.selectByStatus(1);
+            }else{
+                //如果不是就重新给集合实例化，目的是为了清空上面取的所有的已显示广告信息
+                notPassList = new ArrayList<Advertisement>();
+            }
+        }
+        //判断page是否大于1，如果不判断也会死循环
+        //例如第一次修改后是111 000 000，如果不判断就改会修改成000 000 000，死循环
+        //判断后是从第二页开始修改  111 111 000，修改完才是000 111 000
         if (page - 1 > 0) {
             //先通过分页取得要修改的广告信息集合,取得上一次已经显示过的广告信息
-            PageHelper.startPage(1, 5);
+            PageHelper.startPage(1, size);
             notPassList = advertisementMapper.selectByStatus(1);
         }
             //通过遍历取得广告的id
-            List<Integer> notPassIntegerList = new ArrayList<Integer>();
-            for (Advertisement ad : notPassList) {
-                notPassIntegerList.add(ad.getId());
-            }
-        System.out.println("notPassSize-->" + notPassList.size());
+        List<Integer> notPassIntegerList = new ArrayList<Integer>();
+        for (Advertisement ad : notPassList) {
+            notPassIntegerList.add(ad.getId());
+        }
         //判断广告id的集合是否为空，即是否分页取到了数据，如果有数据，就进行修改
         if (notPassIntegerList.size() > 0) {
             System.out.println("Notpass---------------------");

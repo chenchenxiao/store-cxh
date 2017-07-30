@@ -135,10 +135,10 @@ public class AdvertisementController extends BaseAdminController<Advertisement,L
     @Scheduled(cron = "0/20 * * * * ?")
     public void quartzUpdate(){
         page++;
-        Long aLong = advertisementService.comparePage(page);
+        Long aLong = advertisementService.comparePage(page,5);
         if(aLong < page){
             this.page = 1;
         }
-        advertisementService.quartzUpdate(page);
+        advertisementService.quartzUpdate(page,5);
     }
 }

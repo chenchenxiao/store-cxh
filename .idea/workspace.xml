@@ -2,43 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="16eb459e-2a9b-44da-87fc-4ffc62eba7af" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/webapp/resources/images/test.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/webapp/resources/images/test2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__com_github_abel533_mapper_2_3_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/admin/adList.jsp" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_apache_catalina_com_springsource_org_apache_catalina_6_0_16.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/.idea/artifacts/store_cxh_war_exploded.xml" afterPath="$PROJECT_DIR$/../store-cxh/.idea/artifacts/store_cxh_war_exploded.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../store-cxh/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/pom.xml" afterPath="$PROJECT_DIR$/../store-cxh/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/been/PageBean.java" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/been/PageBean.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/controller/TestController.java" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/controller/TestController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/controller/admin/AdminController.java" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/controller/admin/AdminController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/controller/admin/AdvertisementController.java" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/controller/admin/AdvertisementController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/controller/admin/UserController.java" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/controller/admin/UserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/AdminMapper.java" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/AdminMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/AdminMapper.xml" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/AdminMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/AdvertisementMapper.java" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/AdvertisementMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/AdvertisementMapper.xml" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/AdvertisementMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/AdminService.java" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/AdminService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/AdvertisementService.java" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/AdvertisementService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/impl/AdminServiceImpl.java" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/impl/AdminServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/impl/AdvertisementServiceImpl.java" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/impl/AdvertisementServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/test/BaseMapperTest.java" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/test/BaseMapperTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/util/BaseMapper.java" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/util/BaseMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/resources/applicationContext.xml" afterPath="$PROJECT_DIR$/../store-cxh/src/main/resources/applicationContext.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/resources/mybatis-conf.xml" afterPath="$PROJECT_DIR$/../store-cxh/src/main/resources/mybatis-conf.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/resources/springmvc.xml" afterPath="$PROJECT_DIR$/../store-cxh/src/main/resources/springmvc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/admin/left.jsp" afterPath="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/admin/left.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/advertisement/adSaveUI.jsp" afterPath="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/advertisement/adSaveUI.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/advertisement/advertisementList.jsp" afterPath="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/advertisement/advertisementList.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/cart/cart.jsp" afterPath="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/cart/cart.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/user/left.jsp" afterPath="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/user/left.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/webapp/header.jsp" afterPath="$PROJECT_DIR$/../store-cxh/src/main/webapp/header.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/../store-cxh/src/main/webapp/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/webapp/resources/css/style.css" afterPath="$PROJECT_DIR$/../store-cxh/src/main/webapp/resources/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/webapp/show.jsp" afterPath="$PROJECT_DIR$/../store-cxh/src/main/webapp/show.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/store-cxh.iml" afterPath="$PROJECT_DIR$/../store-cxh/store-cxh.iml" />
     </list>
     <ignored path="$PROJECT_DIR$/../store-cxh/out/" />
     <ignored path="$PROJECT_DIR$/../store-cxh/target/" />
@@ -59,7 +26,7 @@
         <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/show.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
-              <caret line="7" column="10" lean-forward="true" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+              <caret line="7" column="10" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="7" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -70,16 +37,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1530">
               <caret line="76" column="21" lean-forward="true" selection-start-line="76" selection-start-column="21" selection-end-line="76" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PageBean.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/been/PageBean.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="46" column="8" lean-forward="false" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -126,18 +83,18 @@
       <file leaf-file-name="AdvertisementServiceImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/impl/AdvertisementServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="52">
-              <caret line="130" column="3" lean-forward="true" selection-start-line="130" selection-start-column="3" selection-end-line="130" selection-end-column="3" />
+            <state relative-caret-position="402">
+              <caret line="108" column="0" lean-forward="true" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1418#1424#0" expanded="true" />
                 <element signature="e#2650#2659#0" expanded="true" />
                 <element signature="e#2843#2844#0" expanded="true" />
-                <element signature="e#3349#3364#0" expanded="true" />
-                <element signature="e#3772#3787#0" expanded="true" />
-                <element signature="e#3960#3969#0" expanded="true" />
-                <element signature="e#4413#4428#0" expanded="true" />
-                <element signature="e#4745#4754#0" expanded="true" />
+                <element signature="e#3365#3380#0" expanded="true" />
+                <element signature="e#3948#3963#0" expanded="true" />
+                <element signature="e#4245#4254#0" expanded="true" />
+                <element signature="e#4657#4672#0" expanded="true" />
+                <element signature="e#5834#5843#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -156,8 +113,8 @@
       <file leaf-file-name="AdvertisementController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/controller/admin/AdvertisementController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="458">
-              <caret line="141" column="48" lean-forward="false" selection-start-line="141" selection-start-column="48" selection-end-line="141" selection-end-column="48" />
+            <state relative-caret-position="373">
+              <caret line="137" column="60" lean-forward="false" selection-start-line="137" selection-start-column="60" selection-end-line="137" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -168,8 +125,8 @@
       <file leaf-file-name="AdvertisementService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/AdvertisementService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+            <state relative-caret-position="249">
+              <caret line="28" column="47" lean-forward="false" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -189,7 +146,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>淘淘</find>
       <find>返回</find>
       <find>cart.</find>
       <find>去</find>
@@ -219,6 +175,7 @@
       <find>slider1</find>
       <find>首页</find>
       <find>继续</find>
+      <find>5</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -238,6 +195,7 @@
       <replace>${pageContext.request.contextPath}/resources/css/</replace>
       <replace>cartItems.</replace>
       <replace>src=&quot;${pageContext.request.contextPath}/resources/img</replace>
+      <replace>size</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -1745,7 +1703,7 @@
       <workItem from="1500711719437" duration="3067000" />
       <workItem from="1500714939156" duration="141565000" />
       <workItem from="1501055102569" duration="14767000" />
-      <workItem from="1501079979468" duration="108946000" />
+      <workItem from="1501079979468" duration="115903000" />
     </task>
     <task id="LOCAL-00001" summary="项目搭好环境，前台改了一点，登录注册页面的模板初步修改好了">
       <created>1499617418865</created>
@@ -1901,7 +1859,14 @@
       <option name="project" value="LOCAL" />
       <updated>1501255592811</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="实现了管理员对用户上传的广告信息的管理，在定时更新广告信息时遇到了问题，卡了很久">
+      <created>1501346226910</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1501346226910</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1937,7 +1902,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="595603000" />
+    <option name="totallyTimeSpent" value="602560000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1956,7 +1921,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32359308" sideWeight="0.5298507" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289183" sideWeight="0.49784714" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.66558444" sideWeight="0.5063966" order="8" side_tool="true" content_ui="tabs" x="22" y="401" width="1876" height="237" />
+      <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.07251082" sideWeight="0.75319827" order="8" side_tool="true" content_ui="tabs" x="22" y="401" width="1876" height="237" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1966,12 +1931,12 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3524229" sideWeight="0.4913886" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289183" sideWeight="0.49784714" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.10927153" sideWeight="0.25672767" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3030303" sideWeight="0.2468017" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32819384" sideWeight="0.49784714" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.66558444" sideWeight="0.4936034" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.66558444" sideWeight="0.4936034" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28918323" sideWeight="0.43595263" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32929516" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -2047,7 +2012,8 @@
     <MESSAGE value="初步实现了订单模块，写得比较简单，没有收货地址，怕实现后没时间做别的，就初步这样完成，后面有时间再改" />
     <MESSAGE value="实现了管理员多对多查询查看用户订单及订单明细，解决了后台管理员登录拦截的问题" />
     <MESSAGE value="实现了用户广告模块的crud，分页和查询，发现之前的通用mapper的bug并没有解决，又出现了" />
-    <option name="LAST_COMMIT_MESSAGE" value="实现了用户广告模块的crud，分页和查询，发现之前的通用mapper的bug并没有解决，又出现了" />
+    <MESSAGE value="实现了管理员对用户上传的广告信息的管理，在定时更新广告信息时遇到了问题，卡了很久" />
+    <option name="LAST_COMMIT_MESSAGE" value="实现了管理员对用户上传的广告信息的管理，在定时更新广告信息时遇到了问题，卡了很久" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2355,30 +2321,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/admin/adList.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="498">
-          <caret line="170" column="55" lean-forward="true" selection-start-line="170" selection-start-column="55" selection-end-line="170" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/show.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="7" column="10" lean-forward="true" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/advertisement/advertisementList.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="186" column="41" lean-forward="true" selection-start-line="186" selection-start-column="41" selection-end-line="186" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/impl/AdminServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
@@ -2472,38 +2414,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/AdvertisementService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/controller/admin/AdvertisementController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="141" column="48" lean-forward="false" selection-start-line="141" selection-start-column="48" selection-end-line="141" selection-end-column="48" />
+        <state relative-caret-position="373">
+          <caret line="137" column="60" lean-forward="false" selection-start-line="137" selection-start-column="60" selection-end-line="137" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/AdvertisementService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="28" column="47" lean-forward="false" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/advertisement/advertisementList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1001">
+          <caret line="179" column="17" lean-forward="false" selection-start-line="179" selection-start-column="17" selection-end-line="179" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/admin/adList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="170" column="55" lean-forward="true" selection-start-line="170" selection-start-column="55" selection-end-line="170" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/show.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="7" column="10" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="7" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/impl/AdvertisementServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="130" column="3" lean-forward="true" selection-start-line="130" selection-start-column="3" selection-end-line="130" selection-end-column="3" />
+        <state relative-caret-position="402">
+          <caret line="108" column="0" lean-forward="true" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1418#1424#0" expanded="true" />
             <element signature="e#2650#2659#0" expanded="true" />
             <element signature="e#2843#2844#0" expanded="true" />
-            <element signature="e#3349#3364#0" expanded="true" />
-            <element signature="e#3772#3787#0" expanded="true" />
-            <element signature="e#3960#3969#0" expanded="true" />
-            <element signature="e#4413#4428#0" expanded="true" />
-            <element signature="e#4745#4754#0" expanded="true" />
+            <element signature="e#3365#3380#0" expanded="true" />
+            <element signature="e#3948#3963#0" expanded="true" />
+            <element signature="e#4245#4254#0" expanded="true" />
+            <element signature="e#4657#4672#0" expanded="true" />
+            <element signature="e#5834#5843#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -26,8 +26,8 @@ public interface AdvertisementService {
 
     List<Advertisement> selectByStatus();
 
-    void quartzUpdate(Integer page);
+    void quartzUpdate(Integer page,Integer size);
 
-    Long comparePage(Integer page);
+    Long comparePage(Integer page,Integer size);
 
 }
