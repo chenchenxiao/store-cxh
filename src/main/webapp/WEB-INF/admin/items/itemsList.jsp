@@ -194,65 +194,11 @@
     </script>
 </c:if>
 
-<script type="text/javascript">
-    // 广告弹出框
-    $(".delban").click(function(){
-        $(".banDel").show();
-    });
-    $(".close").click(function(){
-        $(".banDel").hide();
-    });
-    $(".no").click(function(){
-        $(".banDel").hide();
-    });
-    // 广告弹出框 end
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/admin/js/itemsList.js">
+
 </script>
 
 <script type="text/javascript">
-    var checkResult = true;
-    $("#cancelAll").hide()
-    function showPage(num){
-        //1 修改隐藏域的值
-        document.getElementById("pageNum").value = num;
-        //2 提交表单
-        $(".list_form").submit();
-    }
-
-    $("#showSize").change(function () {
-        $(".list_form").submit();
-    })
-
-    $("#checkAll").click(function () {
-        $('input:checkbox').each(function() {
-            $(this).prop('checked', true);
-        });
-        $("#cancelAll").show()
-        $(this).hide()
-    })
-
-    $("#cancelAll").click(function () {
-        $('input:checkbox').each(function() {
-            $(this).prop('checked', false);
-        });
-        $("#checkAll").show()
-        $(this).hide()
-    })
-    $("#deleteByIds").click(function () {
-        $(".deleteIds_form").submit();
-    })
-    function deleteById(){
-        var itemsId = $("#itemId").val();
-        $("#realId").val(itemsId)
-        $("#deleteOne_form").submit();
-    }
-
-    $("#preDate").blur(function () {
-        $(".list_form").submit();
-    })
-    $("#lastDate").blur(function () {
-        $(".list_form").submit();
-    })
-    var expResult = false;
     $("#excelExport").click(function () {
         var val = $("input:checkbox[name='ids']:checked").length > 0
         if(!val){
@@ -265,7 +211,6 @@
         $(".deleteIds_form").attr("action","${pageContext.request.contextPath}/admin/items/exportExcel");
         $(".deleteIds_form").submit();
     })
-
     $("#itemsFile").change(function () {
         var option={
             type:'POST',

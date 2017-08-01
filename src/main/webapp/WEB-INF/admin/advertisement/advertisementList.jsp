@@ -171,38 +171,5 @@
         })
     </script>
 </c:if>
-
-<script type="text/javascript">
-    function showPage(num){
-        //1 修改隐藏域的值
-        document.getElementById("pageNum").value = num;
-        //2 提交表单
-        $(".list_form").submit();
-    }
-
-    $("#showSize").change(function () {
-        $(".list_form").submit();
-    })
-
-    $("#deleteByIds").click(function () {
-        $(".delete_form").submit();
-    })
-
-    $("#cancelAll").hide()
-    $("#checkAll").click(function () {
-        $('input:checkbox').each(function() {
-            $(this).prop('checked', true);
-        });
-        $("#cancelAll").show()
-        $(this).hide()
-    })
-
-    $("#cancelAll").click(function () {
-        $('input:checkbox').each(function() {
-            $(this).prop('checked', false);
-        });
-        $("#checkAll").show()
-        $(this).hide()
-    })
-</script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/admin/js/advertisementList.js"></script>
 </html>

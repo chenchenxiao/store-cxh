@@ -20,6 +20,7 @@ public interface AdminMapper extends BaseMapper<Admin> {
     //多对多查询用户的订单和订单的商品信息
     User selectOrders(@Param("userId") Integer userId);
 
+    //根据查询条件查询广告信息
     List<Advertisement> adList(String searchText);
 
 }

@@ -58,8 +58,8 @@
           <element id="library" level="project" name="Maven: javax.servlet.jsp:jsp-api:2.1" />
           <element id="library" level="project" name="Maven: javax.servlet.jsp.jstl:jstl-api:1.2" />
           <element id="library" level="project" name="Maven: org.apache.commons:commons-lang3:3.3.2" />
-          <element id="library" level="project" name="Maven: commons-beanutils:commons-beanutils:1.9.2" />
-          <element id="library" level="project" name="Maven: commons-collections:commons-collections:3.2.1" />
+          <element id="library" level="project" name="Maven: commons-beanutils:commons-beanutils:1.9.3" />
+          <element id="library" level="project" name="Maven: commons-collections:commons-collections:3.2.2" />
           <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.9" />
           <element id="library" level="project" name="Maven: com.google.guava:guava:18.0" />
           <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.3.1" />
@@ -84,6 +84,15 @@
           <element id="library" level="project" name="Maven: org.apache.poi:poi-scratchpad:3.9" />
           <element id="library" level="project" name="Maven: org.apache.xmlbeans:xmlbeans:2.6.0" />
           <element id="library" level="project" name="Maven: stax:stax-api:1.0.1" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-core:3.0.2" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-analyzers:3.0.2" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-highlighter:3.0.2" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-memory:3.0.2" />
+          <element id="library" level="project" name="Maven: com.janeluo:ikanalyzer:2012_u6" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-queryparser:4.7.2" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-queries:4.7.2" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-sandbox:4.7.2" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-analyzers-common:4.7.2" />
         </element>
       </element>
       <element id="directory" name="META-INF">

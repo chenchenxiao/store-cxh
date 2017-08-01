@@ -22,6 +22,7 @@ public class BaseMapperTest {
     @Test
     public void baseMapperTest(){
         ApplicationContext application = new ClassPathXmlApplicationContext("classpath:applicationContext.xml");
+
         UserMapper userMapper = application.getBean(UserMapper.class);
         OrderDetailsMapper orderDetailsMapper = application.getBean(OrderDetailsMapper.class);
         OrdersMapper orderMapper = application.getBean(OrdersMapper.class);

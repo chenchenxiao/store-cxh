@@ -180,7 +180,6 @@
 
 <!-- 购物车相关业务 -->
 <script type="text/javascript">
-
     $(".increment").click(function(){//＋
         var val = $(".quantity-text").val()
         var _thisInput = $(this).siblings("input");

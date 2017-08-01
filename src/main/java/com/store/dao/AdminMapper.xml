@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.store.dao.AdminMapper">
+    <!--查找订单resultmap-->
     <resultMap id="selectOrdersResultMap" type="com.store.model.User">
         <id column="user_id" property="id"/>
         <collection property="ordersList" ofType="com.store.model.Orders">
@@ -20,6 +21,7 @@
             </collection>
         </collection>
     </resultMap>
+
     <select id="userList" resultType="com.store.model.User">
         select * from store_user
         <if test="searchText != null">
@@ -41,17 +43,19 @@
     </select>
 
     <select id="selectOrders" resultMap="selectOrdersResultMap">
-        select o.user_id,o.o_id,od.items_id,od.items_number,od.money,od.cost,i.title,i.name ,i.photo
+       	select o.user_id,o.o_id,od.items_id,od.items_number,od.money,od.cost,i.title,i.name ,i.photo
         FROM
-        store_orders o,
-        store_orderdetails od,
+        store_orders o
+        LEFT JOIN
+        store_orderdetails od
+        on
+        o.o_id = od.orders_id
+        LEFT JOIN
         store_items i
+        on
+        od.items_id = i.id
         where
         o.user_id = #{userId}
-        and
-        o.o_id = od.orders_id
-        and
-        od.items_id = i.id
     </select>
 
 

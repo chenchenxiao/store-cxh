@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.store.dao.CartMapper">
+    <!--查找购物车及购物车商品和商品详情-->
     <resultMap id="showCartResultMap" type="com.store.model.Cart">
         <id column="cart_id" property="id"/>
         <result column="user_id" property="userId"/>
@@ -29,7 +30,7 @@
             </association>
         </collection>
     </resultMap>
-
+    <!--查找购物车商品-->
     <resultMap id="getCartItemsResultMap" type="com.store.model.Cart">
         <id column="c_id" property="id" />
         <result column="user_id" property="userId" />
@@ -51,15 +52,17 @@
         select
         cart.*,cartitems.*,items.*
         FROM
-        store_cart cart,
-        store_cartitems cartitems,
+        store_cart cart
+        LEFT JOIN
+        store_cartitems cartitems
+        ON
+        cart.c_id = cartitems.cart_id
+        LEFT JOIN
         store_items items
+        ON
+        cartitems.items_id = items.id
         where
         cart.user_id = #{id}
-        and
-        cart.c_id = cartitems.cart_id
-        and
-        cartitems.items_id = items.id
     </select>
 
     <select id="getCartById" parameterType="Integer" resultMap="getCartItemsResultMap">

@@ -40,29 +40,30 @@
 
 
     <select id="showCart" parameterType="Integer" resultMap="showCartResultMap">
+
         select
         orders.*,details.*,items.*
         FROM
-        store_orders orders,
-        store_orderdetails details,
+        store_orders orders
+        LEFT JOIN
+        store_orderdetails details
+        on orders.o_id = details.orders_id
+        LEFT JOIN
         store_items items
-        where
-        orders.user_id = #{id}
-        and
-        orders.o_id = details.orders_id
-        and
-        details.items_id = items.id
+        on details.items_id = items.id
+        where orders.user_id = #{id}
     </select>
     <select id="getDetailsList" parameterType="String" resultMap="getDetailsResultMap">
         select
         orders.*,details.money,details.items_number,details.cost
         FROM
-        store_orders orders,
+        store_orders orders
+		left join
         store_orderdetails details
-        where
-        orders.o_id = #{id}
-        and
+        on
         orders.o_id = details.orders_id
+        where
+		orders.o_id = #{id}
     </select>
 
     <update id="updatePayment" parameterType="String">

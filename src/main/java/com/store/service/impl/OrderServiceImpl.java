@@ -40,8 +40,6 @@ public class OrderServiceImpl implements OrderService {
         List<CartItems> cartItemsList = cartItemsMapper.selectCartitemsList(list,cartId);
          //保存订单明细的集合
         List<OrderDetails> orderDetailsList = new ArrayList<OrderDetails>();
-        //订单明细表对象
-        OrderDetails orderDetails = new OrderDetails();
         //订单总金额
         Float payment = Float.valueOf(0);
         //生成订单号
@@ -49,6 +47,8 @@ public class OrderServiceImpl implements OrderService {
         System.out.println("-->" + cartItemsList);
         //给订单明细表各个值赋值
         for(int i = 0;i < cartItemsList.size();i++){
+            //订单明细表对象
+            OrderDetails orderDetails = new OrderDetails();
             orderDetails.setItemsNumber(cartItemsList.get(i).getItemsNumber());
             orderDetails.setMoney(cartItemsList.get(i).getMoney());
             orderDetails.setOrdersId(ordersId);

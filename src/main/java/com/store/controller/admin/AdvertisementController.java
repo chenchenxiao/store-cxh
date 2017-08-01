@@ -2,11 +2,15 @@ package com.store.controller.admin;
 
 import com.store.been.AjaxResult;
 import com.store.been.PageBean;
+import com.store.dao.LuceneDao;
 import com.store.model.Advertisement;
 import com.store.model.Items;
+import com.store.model.ItemsCustom;
 import com.store.model.User;
 import com.store.service.AdvertisementService;
 import com.store.util.FileUploadUtil;
+import com.store.util.LuceneUtil;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Controller;
@@ -122,9 +126,11 @@ public class AdvertisementController extends BaseAdminController<Advertisement,L
         return TEMPLATE_PATH + "adSaveUI";
     }
 
-    //商城首页显示广告
+    //商城首页，要显示广告信息，同时把数据库的商品数据存入lucene索引库
     @RequestMapping("indexAd")
-    public String indexAd(Model model){
+    public String indexAd(Model model) throws Exception {
+        //把数据库的商品数据存入lucene索引库
+        advertisementService.addToLucene();
         List<Advertisement> advertisementList = advertisementService.selectByStatus();
         model.addAttribute("adList",advertisementList);
         //热销商品
@@ -140,7 +146,7 @@ public class AdvertisementController extends BaseAdminController<Advertisement,L
 
     private int page;       //定时更新时开始分页的页数
 
-    //定时更新数据库的广告数据，即更新显示状态
+    //每隔一小时更新数据库的广告数据，即更新显示状态
     @Scheduled(cron = "0 0 */1 * * ?")
     public void quartzUpdate(){
         page++;
@@ -151,5 +157,12 @@ public class AdvertisementController extends BaseAdminController<Advertisement,L
             this.page = 1;
         }
         advertisementService.quartzUpdate(page,5);
+    }
+
+    @RequestMapping("testLucene")
+    public void testLucene() throws Exception {
+        LuceneDao luceneDao = new LuceneDao();
+        List<ItemsCustom> list = luceneDao.findAllByKeywords("服装");
+        System.out.println("LIST--》" + list.toString());
     }
 }

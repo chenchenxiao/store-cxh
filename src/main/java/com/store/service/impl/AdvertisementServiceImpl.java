@@ -5,8 +5,10 @@ import com.github.pagehelper.PageInfo;
 import com.store.been.PageBean;
 import com.store.dao.AdvertisementMapper;
 import com.store.dao.ItemsMapper;
+import com.store.dao.LuceneDao;
 import com.store.model.Advertisement;
 import com.store.model.Items;
+import com.store.model.ItemsCustom;
 import com.store.model.User;
 import com.store.service.AdvertisementService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -173,6 +175,34 @@ public class AdvertisementServiceImpl implements AdvertisementService {
     //查询热销商品
     public List<Items> selectHotSell(String type) {
         return advertisementMapper.selectHotSell(type);
+    }
+
+    //将数据存入索引库
+    public void addToLucene() throws Exception {
+        List<Items> itemsList;
+        List<ItemsCustom> itemsCustomList = new ArrayList<ItemsCustom>();
+        ItemsCustom itemsCustom;
+        LuceneDao luceneDao;
+        //先判断索引库中是否已经存了数据，如果已经存了就不用存
+        System.out.println("--->" + LuceneDao.isIndexNull());
+//        if(LuceneDao.isIndexNull()){
+            luceneDao = new LuceneDao();
+            itemsList = itemsMapper.selectAll();
+            //通过遍历将查询到的Items集合中的数据填入ItemsCustom中
+            for(int i = 0;i < itemsList.size();i++){
+                itemsCustom = new ItemsCustom();
+                itemsCustom.setId(itemsList.get(i).getId());
+                itemsCustom.setName(itemsList.get(i).getName());
+                itemsCustom.setTitle(itemsList.get(i).getTitle());
+                itemsCustom.setType(itemsList.get(i).getType());
+                itemsCustom.setPhoto(itemsList.get(i).getPhoto());
+                itemsCustom.setPrice(itemsList.get(i).getPrice());
+                itemsCustomList.add(itemsCustom);
+            }
+            //执行添加多条数据操作
+              System.out.println("realList-->" + itemsCustomList);
+              luceneDao.addList(itemsCustomList);
+//        }
     }
 }
 

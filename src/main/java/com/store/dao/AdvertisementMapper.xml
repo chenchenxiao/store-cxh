@@ -78,7 +78,8 @@
         select
         o.items_number,i.id,i.name,i.title,i.price,i.photo,count(items_id) count
         FROM
-        store_items i LEFT JOIN
+        store_items i
+        LEFT JOIN
         store_orderdetails o
         on i.id = o.items_id
         <if test="type != null">

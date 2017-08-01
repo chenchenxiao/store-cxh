@@ -33,32 +33,33 @@
     <script src="${pageContext.request.contextPath}/resources/js/messenger/messenger.min.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/messenger/messenger-theme-future.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/messenger/messenger.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/admin/js/items.js"></script>
 
-    <script type="text/javascript">
-        jQuery(document).ready(function($) {
-            $(".scroll").click(function(event){
-                event.preventDefault();
-                $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-            });
-        });
-    </script>
+    <%--<script type="text/javascript">--%>
+        <%--jQuery(document).ready(function($) {--%>
+            <%--$(".scroll").click(function(event){--%>
+                <%--event.preventDefault();--%>
+                <%--$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);--%>
+            <%--});--%>
+        <%--});--%>
+    <%--</script>--%>
 
-    <script>$(document).ready(function(c) {
-        $('.alert-close').on('click', function(c){
-            $('.message').fadeOut('slow', function(c){
-                $('.message').remove();
-            });
-        });
-    });
-    </script>
-    <script>$(document).ready(function(c) {
-        $('.alert-close1').on('click', function(c){
-            $('.message1').fadeOut('slow', function(c){
-                $('.message1').remove();
-            });
-        });
-    });
-    </script>
+    <%--<script>$(document).ready(function(c) {--%>
+        <%--$('.alert-close').on('click', function(c){--%>
+            <%--$('.message').fadeOut('slow', function(c){--%>
+                <%--$('.message').remove();--%>
+            <%--});--%>
+        <%--});--%>
+    <%--});--%>
+    <%--</script>--%>
+    <%--<script>$(document).ready(function(c) {--%>
+        <%--$('.alert-close1').on('click', function(c){--%>
+            <%--$('.message1').fadeOut('slow', function(c){--%>
+                <%--$('.message1').remove();--%>
+            <%--});--%>
+        <%--});--%>
+    <%--});--%>
+    <%--</script>--%>
     <c:if test="${result!=null}">
         <script>
             $().ready(function(){
@@ -138,184 +139,14 @@
             </div>
             <div class="clearfix"> </div>
             <div class="content-top-in">
-                <%--<div class="col-md-4 top-single">--%>
-                    <%--<div class="col-md">--%>
-                        <%--<img  src="${pageContext.request.contextPath}/resources/images/pic8.jpg" alt="" />--%>
-                        <%--<div class="top-content">--%>
-                            <%--<h5>Mascot Kitty - White</h5>--%>
-                            <%--<div class="white">--%>
-                                <%--<a href="#" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">ADD TO CART</a>--%>
-                                <%--<p class="dollar"><span class="in-dollar">$</span><span>2</span><span>0</span></p>--%>
-                                <%--<div class="clearfix"></div>--%>
-                            <%--</div>--%>
-                        <%--</div>--%>
-                    <%--</div>--%>
-                <%--</div>--%>
-                <%--<div class="col-md-4 top-single">--%>
-                    <%--<div class="col-md">--%>
-                        <%--<img  src="${pageContext.request.contextPath}/resources/images/pic9.jpg" alt="" />--%>
-                        <%--<div class="top-content">--%>
-                            <%--<h5>Mascot Kitty - White</h5>--%>
-                            <%--<div class="white">--%>
-                                <%--<a href="#" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">ADD TO CART</a>--%>
-                                <%--<p class="dollar"><span class="in-dollar">$</span><span>2</span><span>0</span></p>--%>
-                                <%--<div class="clearfix"></div>--%>
-                            <%--</div>--%>
-                        <%--</div>--%>
-                    <%--</div>--%>
-                <%--</div>--%>
-                <%--<div class="col-md-4 top-single-in">--%>
-                    <%--<div class="col-md">--%>
-                        <%--<img  src="${pageContext.request.contextPath}/resources/images/pic10.jpg" alt="" />--%>
-                        <%--<div class="top-content">--%>
-                            <%--<h5>Mascot Kitty - White</h5>--%>
-                            <%--<div class="white">--%>
-                                <%--<a href="#" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">ADD TO CART</a>--%>
-                                <%--<p class="dollar"><span class="in-dollar">$</span><span>2</span><span>0</span></p>--%>
-                                <%--<div class="clearfix"></div>--%>
-                            <%--</div>--%>
-                        <%--</div>--%>
-                    <%--</div>--%>
-                <%--</div>--%>
-
                 <div class="clearfix"></div>
             </div>
         </div>
-        <%--<div class="col-md-3">--%>
-            <%--<div class="single-bottom">--%>
-                <%--<h4>Categories</h4>--%>
-                <%--<ul>--%>
-                    <%--<li><a href="#"><i> </i>Fusce feugiat</a></li>--%>
-                    <%--<li><a href="#"><i> </i>Mascot Kitty</a></li>--%>
-                    <%--<li><a href="#"><i> </i>Fusce feugiat</a></li>--%>
-                    <%--<li><a href="#"><i> </i>Mascot Kitty</a></li>--%>
-                    <%--<li><a href="#"><i> </i>Fusce feugiat</a></li>--%>
-                <%--</ul>--%>
-            <%--</div>--%>
-            <%--<div class="single-bottom">--%>
-                <%--<h4>Product Categories</h4>--%>
-                <%--<ul>--%>
-                    <%--<li><a href="#"><i> </i>feugiat(5)</a></li>--%>
-                    <%--<li><a href="#"><i> </i>Fusce (4)</a></li>--%>
-                    <%--<li><a href="#"><i> </i> feugiat (4)</a></li>--%>
-                    <%--<li><a href="#"><i> </i>Fusce (4)</a></li>--%>
-                    <%--<li><a href="#"><i> </i> feugiat(2)</a></li>--%>
-                <%--</ul>--%>
-            <%--</div>--%>
-            <%--<div class="single-bottom">--%>
-                <%--<h4>Product Categories</h4>--%>
-                <%--<div class="product">--%>
-                    <%--<img class="img-responsive fashion" src="${pageContext.request.contextPath}/resources/images/st1.jpg" alt="">--%>
-                    <%--<div class="grid-product">--%>
-                        <%--<a href="#" class="elit">Consectetuer adipiscing elit</a>--%>
-                        <%--<span class="price price-in"><small>$500.00</small> $400.00</span>--%>
-                    <%--</div>--%>
-                    <%--<div class="clearfix"> </div>--%>
-                <%--</div>--%>
-                <%--<div class="product">--%>
-                    <%--<img class="img-responsive fashion" src="${pageContext.request.contextPath}/resources/images/st2.jpg" alt="">--%>
-                    <%--<div class="grid-product">--%>
-                        <%--<a href="#" class="elit">Consectetuer adipiscing elit</a>--%>
-                        <%--<span class="price price-in"><small>$500.00</small> $400.00</span>--%>
-                    <%--</div>--%>
-                    <%--<div class="clearfix"> </div>--%>
-                <%--</div>--%>
-                <%--<div class="product">--%>
-                    <%--<img class="img-responsive fashion" src="${pageContext.request.contextPath}/resources/images/st3.jpg" alt="">--%>
-                    <%--<div class="grid-product">--%>
-                        <%--<a href="#" class="elit">Consectetuer adipiscing elit</a>--%>
-                        <%--<span class="price price-in"><small>$500.00</small> $400.00</span>--%>
-                    <%--</div>--%>
-                    <%--<div class="clearfix"> </div>--%>
-                <%--</div>--%>
-            <%--</div>--%>
-        <%--</div>--%>
         <div class="clearfix"> </div>
     </div>
 </div>
 <!---->
-<div class="footer">
-    <div class="footer-top">
-        <div class="container">
-            <div class="col-md-4 footer-in">
-                <h4><i> </i>Suspendisse sed</h4>
-                <p>Aliquam dignissim porttitor tortor non fermentum. Curabitur in magna lectus. Duis sed eros diam. Lorem ipsum dolor sit amet, consectetur.</p>
-            </div>
-            <div class="col-md-4 footer-in">
-                <h4><i class="cross"> </i>Suspendisse sed</h4>
-                <p>Aliquam dignissim porttitor tortor non fermentum. Curabitur in magna lectus. Duis sed eros diam. Lorem ipsum dolor sit amet, consectetur.</p>
-            </div>
-            <div class="col-md-4 footer-in">
-                <h4><i class="down"> </i>Suspendisse sed</h4>
-                <p>Aliquam dignissim porttitor tortor non fermentum. Curabitur in magna lectus. Duis sed eros diam. Lorem ipsum dolor sit amet, consectetur.</p>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-    </div>
-    <!---->
-    <div class="footer-middle">
-        <div class="container">
-            <div class="footer-middle-in">
-                <h6>About us</h6>
-                <p>Suspendisse sed accumsan risus. Curabitur rhoncus, elit vel tincidunt elementum, nunc urna tristique nisi, in interdum libero magna tristique ante. adipiscing varius. Vestibulum dolor lorem.</p>
-            </div>
-            <div class="footer-middle-in">
-                <h6>Information</h6>
-                <ul>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Delivery Information</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
-                </ul>
-            </div>
-            <div class="footer-middle-in">
-                <h6>Customer Service</h6>
-                <ul>
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="#">Returns</a></li>
-                    <li><a href="#">Site Map</a></li>
-                </ul>
-            </div>
-            <div class="footer-middle-in">
-                <h6>My Account</h6>
-                <ul>
-                    <li><a href="account.html">My Account</a></li>
-                    <li><a href="#">Order History</a></li>
-                    <li><a href="wishlist.html">Wish List</a></li>
-                    <li><a href="#">Newsletter</a></li>
-                </ul>
-            </div>
-            <div class="footer-middle-in">
-                <h6>Extras</h6>
-                <ul>
-                    <li><a href="#">Brands</a></li>
-                    <li><a href="#">Gift Vouchers</a></li>
-                    <li><a href="#">Affiliates</a></li>
-                    <li><a href="#">Specials</a></li>
-                </ul>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-    </div>
-    <p class="footer-class">Copyright &copy; 2015.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            /*
-             var defaults = {
-             containerID: 'toTop', // fading element id
-             containerHoverID: 'toTopHover', // fading element hover id
-             scrollSpeed: 1200,
-             easingType: 'linear'
-             };
-             */
 
-            $().UItoTop({ easingType: 'easeOutQuart' });
-
-        });
-    </script>
-    <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
-
-</div>
 
 </body>
 </html>
