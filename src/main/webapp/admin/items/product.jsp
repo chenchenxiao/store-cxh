@@ -71,6 +71,25 @@
 <body>
 <!--页面顶部 -->
 <%@include file="/header.jsp"%>
+<div class="header-bottom-in">
+    <div class="container">
+        <div class="header-bottom-on">
+            <%--<p class="wel"><a href="#">Welcome visitor you can login or create an account.</a></p>--%>
+            <div class="header-can">
+                <div class="search">
+                    <form action="${pageContext.request.contextPath}/admin/items/showTypeItems" method="post">
+                        <input type="text" value="" name="searchText" placeholder="站内搜索" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '';}" >
+                        <input type="submit" value="">
+                    </form>
+                </div>
+
+                <div class="clearfix">
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
 <div class="container">
     <div class="products">
         <h2 class=" products-in">商品列表</h2>
@@ -79,7 +98,7 @@
                 <input type="hidden" value="${type}" name="type">
                 <div class=" top-products">
                     <c:if test="${PageBean.recordCount == 0}">
-                        <h4>还没有该类型的商品，去逛逛别的吧</h4>
+                        <h4>找不到相关的宝贝，去逛逛别的吧</h4>
                     </c:if>
                     <c:forEach items="${PageBean.recordList}" var="items" varStatus="status">
                       <div class="col-md-3 md-col">

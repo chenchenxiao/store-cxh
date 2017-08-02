@@ -105,7 +105,7 @@ public class LuceneTest {
 
     @Test
     public void findAllByKeywords() throws Exception{
-        String keywords = "类型";
+        String keywords = "大闸蟹";
         List<ItemsCustom> articleList = new ArrayList<ItemsCustom>();
         QueryParser queryParser = new MultiFieldQueryParser(LuceneUtil.getVersion(),new String[]{"type","id","title","name"},LuceneUtil.getAnalyzer());
         Query query = queryParser.parse(keywords);
@@ -205,7 +205,6 @@ public class LuceneTest {
 
     @Test
     public void findAll() throws IOException {
-
         //建立索引搜索，指定索引目录
         IndexSearcher searcher = new IndexSearcher(LuceneUtil.getDirectory(), true);
         //获取最大文档数量
@@ -215,26 +214,28 @@ public class LuceneTest {
 
     @Test
     public void testDao(){
-        System.out.println(LuceneDao.isIndexNull());
+        System.out.println(new LuceneDao().isIndexNull());
     }
 
     @Test
-    public void testLIst(){
-        ApplicationContext application = new ClassPathXmlApplicationContext("classpath:applicationContext.xml");
-        ItemsMapper itemsMapper = application.getBean(ItemsMapper.class);
-        List<Items> itemsList = itemsMapper.selectAll();
-        ItemsCustom itemsCustom  = new ItemsCustom();
-        List<ItemsCustom> itemsCustomList = new ArrayList<ItemsCustom>();
-        for(int i = 0;i < itemsList.size();i++){
-            itemsCustom.setId(itemsList.get(i).getId());
-            itemsCustom.setName(itemsList.get(i).getName());
-            itemsCustom.setTitle(itemsList.get(i).getTitle());
-            itemsCustom.setType(itemsList.get(i).getType());
-            itemsCustom.setPhoto(itemsList.get(i).getPhoto());
-            itemsCustom.setPrice(itemsList.get(i).getPrice());
-            System.out.println("--》!!" + itemsCustom);
-            itemsCustomList.add(itemsCustom);
-        }
-        System.out.println(itemsCustomList);
+    public void update() throws Exception{
+        ItemsCustom itemsCustom = new ItemsCustom();
+        itemsCustom.setId(49);
+        itemsCustom.setTitle("修改Lucene");
+        itemsCustom.setType("修改Lucene");
+        itemsCustom.setName("修改Lucene");
+        itemsCustom.setUid(53);
+        itemsCustom.setPhoto("修改Lucene");
+        itemsCustom.setPrice(1F);
+        //将javabean转成document对象
+        Document document = LuceneUtil.javabean2document(itemsCustom);
+        IndexWriter indexWriter = new IndexWriter(LuceneUtil.getDirectory(),LuceneUtil.getAnalyzer(),LuceneUtil.getMaxFieldLength());
+		/*
+		 * 参数一：term表示需要更新的document对象，id表示document对象中的id属性
+		 * 参数二：新的document对象
+		 */
+        indexWriter.updateDocument(new Term("id",itemsCustom.getId().toString()),document);//核心
+        indexWriter.close();
     }
+
 }

@@ -11,6 +11,7 @@ import com.store.model.Items;
 import com.store.model.ItemsCustom;
 import com.store.model.User;
 import com.store.service.AdvertisementService;
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -40,7 +41,7 @@ public class AdvertisementServiceImpl implements AdvertisementService {
         //把分页出来的数据放入pageBean
         pageBean.setRecordList(list);
         //取分页信息
-        PageInfo<User> pageInfo = new PageInfo<User>(list);
+        PageInfo<Advertisement> pageInfo = new PageInfo<Advertisement>(list);
         pageBean.init((int) pageInfo.getTotal(), list);
         return pageBean;
     }
@@ -179,19 +180,21 @@ public class AdvertisementServiceImpl implements AdvertisementService {
 
     //将数据存入索引库
     public void addToLucene() throws Exception {
+        //存放Items的集合
         List<Items> itemsList;
+        //存放ItemsCustom的集合
         List<ItemsCustom> itemsCustomList = new ArrayList<ItemsCustom>();
         ItemsCustom itemsCustom;
-        LuceneDao luceneDao;
+        LuceneDao luceneDao = new LuceneDao();
         //先判断索引库中是否已经存了数据，如果已经存了就不用存
-        System.out.println("--->" + LuceneDao.isIndexNull());
-//        if(LuceneDao.isIndexNull()){
-            luceneDao = new LuceneDao();
+        Boolean flag = luceneDao.isIndexNull();
+        if(flag){
             itemsList = itemsMapper.selectAll();
             //通过遍历将查询到的Items集合中的数据填入ItemsCustom中
             for(int i = 0;i < itemsList.size();i++){
                 itemsCustom = new ItemsCustom();
                 itemsCustom.setId(itemsList.get(i).getId());
+                itemsCustom.setUid(itemsList.get(i).getUid());
                 itemsCustom.setName(itemsList.get(i).getName());
                 itemsCustom.setTitle(itemsList.get(i).getTitle());
                 itemsCustom.setType(itemsList.get(i).getType());
@@ -202,7 +205,7 @@ public class AdvertisementServiceImpl implements AdvertisementService {
             //执行添加多条数据操作
               System.out.println("realList-->" + itemsCustomList);
               luceneDao.addList(itemsCustomList);
-//        }
+        }
     }
 }
 

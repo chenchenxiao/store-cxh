@@ -3,10 +3,7 @@ package com.store.service.impl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.store.been.PageBean;
-import com.store.dao.CartItemsMapper;
-import com.store.dao.CartMapper;
-import com.store.dao.ItemsMapper;
-import com.store.dao.OrderDetailsMapper;
+import com.store.dao.*;
 import com.store.model.*;
 import com.store.service.ItemsService;
 import com.store.util.ExcelUtil;
@@ -39,10 +36,21 @@ public class ItemsServiceImpl implements ItemsService {
     @Autowired
     private CartMapper cartMapper;
     //用户增添商品
-    public void save(Items items){
+    public void save(Items items) throws Exception {
         items.setAddDate(new Date());
         items.setUpdateDate(new Date());
-        itemsMappers.insert(items);
+        //取得插入数据库后商品的主键
+        Integer id = itemsMappers.saveOne(items);
+        //给ItemsCustom赋值
+        ItemsCustom itemsCustom = new ItemsCustom();
+        itemsCustom.setId(id);
+        itemsCustom.setUid(items.getUid());
+        itemsCustom.setTitle(items.getTitle());
+        itemsCustom.setType(items.getType());
+        itemsCustom.setPrice(items.getPrice());
+        itemsCustom.setName(items.getName());
+        itemsCustom.setPhoto(items.getPhoto());
+        new LuceneDao().add(itemsCustom);
     }
 
     //用户查看自己添加的商品
@@ -88,7 +96,7 @@ public class ItemsServiceImpl implements ItemsService {
     }
 
     //用户修改商品信息
-    public void update(Items items) {
+    public void update(Items items) throws Exception {
         //修改商品的修改日期
         items.setUpdateDate(new Date());
         //修改购物车对应商品的价格,购物车的总金额在展示购物车的时候修改，如果在这里修改会比较麻烦
@@ -118,7 +126,7 @@ public class ItemsServiceImpl implements ItemsService {
     }
 
     //用户批量删除商品信息
-    public void delete(Integer[] ids) {
+    public void delete(Integer[] ids) throws Exception {
         List<Integer> list = new ArrayList<Integer>();
         //把数组的值通过循环赋给list，mapper传参list
         for(int id:ids){
@@ -129,6 +137,12 @@ public class ItemsServiceImpl implements ItemsService {
 
     //用户删除单个商品的信息
     public void deleteOne(Integer id){
+        try {
+            System.out.println("delete");
+            new LuceneDao().deleteOne(id);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         itemsMappers.deleteByPrimaryKey(id);
     }
 
@@ -191,16 +205,13 @@ public class ItemsServiceImpl implements ItemsService {
         }
     }
     //取得指定类型的商品信息
-    public PageBean showTypeItems(String type,PageBean pageBean) {
-        PageHelper.startPage(pageBean.getPage(),pageBean.getSize());
-        List list = itemsMappers.selectTypeItems(type);
-        //把分页出来的数据放入pageBean
-        System.out.println("list-->" + list.size());
-        pageBean.setRecordList(list);
-        //取分页信息
-        PageInfo<User> pageInfo = new PageInfo<User>(list);
-        pageBean.init((int) pageInfo.getTotal(),list);
-        return pageBean;
+    public PageBean showTypeItems(String type,PageBean pageBean) throws Exception {
+
+        LuceneDao luceneDao = new LuceneDao();
+        if(type != null){
+            pageBean.setSearchText(type);
+        }
+        return  luceneDao.findAllByKeywords(pageBean);
     }
     //取得指定导出的商品集合
     public List<Items> expList(Integer[] ids) {
@@ -210,5 +221,12 @@ public class ItemsServiceImpl implements ItemsService {
             list.add(id);
         }
         return itemsMappers.selectListByIds(list);
+    }
+    //根据商品id查找对应用户的商品
+    public List<Items> selectUserItems(Integer id) {
+        System.out.println("id????????" + id);
+        PageHelper.startPage(1,3);
+        List<Items> itemsList = itemsMappers.selectUserItems(id);
+        return itemsList;
     }
 }

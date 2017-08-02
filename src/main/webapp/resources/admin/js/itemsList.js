@@ -50,11 +50,7 @@ $("#deleteByIds").click(function () {
     }
     $(".deleteIds_form").submit();
 })
-function deleteById(){
-    var itemsId = $("#itemId").val();
-    $("#realId").val(itemsId)
-    $("#deleteOne_form").submit();
-}
+
 
 $("#preDate").blur(function () {
     if($(this).val().length > 0){

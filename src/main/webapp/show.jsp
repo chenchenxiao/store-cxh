@@ -81,6 +81,25 @@
 <body>
 <!--页面顶部 -->
 <%@include file="header.jsp"%>
+<div class="header-bottom-in">
+    <div class="container">
+        <div class="header-bottom-on">
+            <%--<p class="wel"><a href="#">Welcome visitor you can login or create an account.</a></p>--%>
+            <div class="header-can">
+                <div class="search">
+                    <form action="${pageContext.request.contextPath}/admin/items/showTypeItems" method="post">
+                        <input type="text" value="" name="searchText" placeholder="站内搜索" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '';}" >
+                        <input type="submit" value="">
+                    </form>
+                </div>
+
+                <div class="clearfix">
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
 <div class="copyrights">Collect from <a href="http://www.cssmoban.com/"  title="网站模板">网站模板</a></div>
 <div class="banner-mat">
     <div class="container">
@@ -293,4 +312,26 @@
 </div>
 <!---->
 </body>
+<c:if test="${result!=null}">
+    <script>
+        $().ready(function(){
+            alert("找不到相关的宝贝")
+            var success=${result.success};
+            var msg='${result.msg}';
+            var type="error";
+            if(success=true){
+                type="success"
+            }
+            Messenger.options = {
+                extraClasses: 'messenger-fixed messenger-on-top messenger-on-right',
+                theme: 'future'
+            }
+            $.globalMessenger().post({
+                message:"提示："+ msg,
+                type: type,
+                showCloseButton: true
+            })
+        })
+    </script>
+</c:if>
 </html>

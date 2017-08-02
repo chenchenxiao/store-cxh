@@ -86,7 +86,7 @@
             AND
             i.type = #{type}
         </if>
-        GROUP BY items_number
+        GROUP BY items_number DESC
         ORDER BY count desc
         limit 0,4
     </select>

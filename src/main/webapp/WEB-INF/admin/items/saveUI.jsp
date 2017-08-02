@@ -92,8 +92,8 @@
                                 </div>
 
                                 <div >
-                                    <textarea id="editor" name="details">${item.details}</textarea>
                                     <label for="editor">商品详情</label>
+                                    <textarea id="editor" name="details">${item.details}</textarea>
                                 </div>
 
                             </div>
@@ -142,7 +142,7 @@
                 title: {
                     required:'请填写商品的标题',
                     minlength: "标题的最小长度为2",
-                    maxlength: "标题的最大长度为2"
+                    maxlength: "标题的最大长度为11"
                 },
             }
         });

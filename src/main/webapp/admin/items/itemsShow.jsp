@@ -138,6 +138,27 @@
                 </div>
             </div>
             <div class="clearfix"> </div>
+            掌柜推荐
+            <div class="content-top-in">
+                <c:forEach items="${userItems}" var="items" varStatus="status">
+                    <div class="col-md-4 top-single-in">
+                        <div class="col-md">
+                            <img height="218px" width="250px" src="${pageContext.request.contextPath}/resources/file/items/${items.photo}" alt="" />
+                            <div class="top-content">
+                                <h5>${items.name}</h5>
+                                <div class="white">
+                                    <a href="${pageContext.request.contextPath}/admin/cart/addToCart?itemsId=${items.id}" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">加入购物车</a>
+                                    <p class="dollar"><span class="in-dollar">$</span><span>${items.price}</span></p>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </c:forEach>
+
+                <div class="clearfix"></div>
+            </div>
+        </div>
             <div class="content-top-in">
                 <div class="clearfix"></div>
             </div>

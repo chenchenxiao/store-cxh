@@ -89,24 +89,5 @@
             </div>
         </div>
     </div>
-    <div class="header-bottom-in">
-        <div class="container">
-            <div class="header-bottom-on">
-                <%--<p class="wel"><a href="#">Welcome visitor you can login or create an account.</a></p>--%>
-                <div class="header-can">
-                    <div class="search">
-                        <form>
-                            <input type="text" value=""  placeholder="搜索" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '';}" >
-                            <input type="submit" value="">
-                        </form>
-                    </div>
-
-                    <div class="clearfix">
-                    </div>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-    </div>
 </div>
 

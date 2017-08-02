@@ -18,6 +18,15 @@ public class ItemsCustom {
    private String type;
    private Float price;
    private String photo;
+   private Integer uid;
+
+    public Integer getUid() {
+        return uid;
+    }
+
+    public void setUid(Integer uid) {
+        this.uid = uid;
+    }
 
     public ItemsCustom() {
     }

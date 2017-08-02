@@ -3,10 +3,6 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-    <properties>
-        <property name="dialectClass" value="aode.kq.dialect.MySql5Dialect"/>
-    </properties>
-
     <!-- 配置mybatis的缓存，延迟加载等等一系列属性 -->
     <settings>
 
@@ -70,9 +66,7 @@
 
     </settings>
 
-    <typeAliases>
-        <package name="aode.kq.model"/>
-    </typeAliases>
+
 
     <!-- 分页插件 -->
     <plugins>
@@ -81,12 +75,6 @@
             <property name="supportMethodsArguments" value="true"/>
             <property name="returnPageInfo" value="check"/>
             <property name="params" value="count=countSql"/>
-        </plugin>
-        <plugin interceptor="com.github.abel533.mapperhelper.MapperInterceptor">
-            <!-- 主键自增回写方法,默认值MYSQL,详细说明请看文档 -->
-            <property name="IDENTITY" value="MYSQL" />
-            <!-- 通用Mapper接口，多个通用接口用逗号隔开 -->
-            <property name="mappers" value="com.github.abel533.mapper.Mapper" />
         </plugin>
     </plugins>
 

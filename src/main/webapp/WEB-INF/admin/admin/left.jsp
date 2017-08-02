@@ -54,27 +54,6 @@
         </dl>
         <dl class="system_log">
             <dt>
-                <img class="icon1" src="${pageContext.request.contextPath}/resources/img/coin05.png"/>
-                <img class="icon2" src="${pageContext.request.contextPath}/resources/img/coin06.png"/>
-                公共管理
-                <img class="icon3"src="${pageContext.request.contextPath}/resources/img/coin19.png"/>
-                <img class="icon4"src="${pageContext.request.contextPath}/resources/img/coin20.png"/>
-            </dt>
-            <dd>
-                <img class="coin11" src="${pageContext.request.contextPath}/resources/img/coin111.png"/>
-                <img class="coin22" src="${pageContext.request.contextPath}/resources/img/coin222.png"/>
-                <a class="cks" href="../banner.html" target="main">广告管理</a>
-                <img class="icon5" src="${pageContext.request.contextPath}/resources/img/coin21.png"/>
-            </dd>
-            <dd>
-                <img class="coin11" src="${pageContext.request.contextPath}/resources/img/coin111.png"/>
-                <img class="coin22" src="${pageContext.request.contextPath}/resources/img/coin222.png"/>
-                <a class="cks" href="../opinion.html" target="main">意见管理</a>
-                <img class="icon5" src="${pageContext.request.contextPath}/resources/img/coin21.png"/>
-            </dd>
-        </dl>
-        <dl class="system_log">
-            <dt>
                 <img class="icon1" src="${pageContext.request.contextPath}/resources/img/coin07.png"/>
                 <img class="icon2" src="${pageContext.request.contextPath}/resources/img/coin08.png"/>
                 用户管理
@@ -90,21 +69,6 @@
         </dl>
         <dl class="system_log">
             <dt>
-                <img class="icon1" src="${pageContext.request.contextPath}/resources/img/coin10.png"/>
-                <img class="icon2" src="${pageContext.request.contextPath}/resources/img/coin09.png"/>
-                行家管理
-                <img class="icon3" src="${pageContext.request.contextPath}/resources/img/coin19.png"/>
-                <img class="icon4" src="${pageContext.request.contextPath}/resources/img/coin20.png"/>
-            </dt>
-            <dd>
-                <img class="coin11" src="${pageContext.request.contextPath}/resources/img/coin111.png"/>
-                <img class="coin22" src="${pageContext.request.contextPath}/resources/img/coin222.png"/>
-                <a href="../connoisseur.html" target="main" class="cks">行家管理</a>
-                <img class="icon5" src="${pageContext.request.contextPath}/resources/img/coin21.png"/>
-            </dd>
-        </dl>
-        <dl class="system_log">
-            <dt>
                 <img class="icon1" src="${pageContext.request.contextPath}/resources/img/coin11.png"/>
                 <img class="icon2" src="${pageContext.request.contextPath}/resources/img/coin12.png"/>
                 广告管理
@@ -115,51 +79,6 @@
                 <img class="coin11" src="${pageContext.request.contextPath}/resources/img/coin111.png"/>
                 <img class="coin22" src="${pageContext.request.contextPath}/resources/img/coin222.png"/>
                 <a href="${pageContext.request.contextPath}/admin/admin/showAd" target="main" class="cks">广告管理</a>
-                <img class="icon5" src="${pageContext.request.contextPath}/resources/img/coin21.png"/>
-            </dd>
-        </dl>
-        <dl class="system_log">
-            <dt>
-                <img class="icon1" src="${pageContext.request.contextPath}/resources/img/coin14.png"/>
-                <img class="icon2" src="${pageContext.request.contextPath}/resources/img/coin13.png"/>
-                我的收藏
-                <img class="icon3"  src="${pageContext.request.contextPath}/resources/img/coin19.png"/>
-                <img class="icon4"  src="${pageContext.request.contextPath}/resources/img/coin20.png"/>
-            </dt>
-            <dd>
-                <img class="coin11" src="${pageContext.request.contextPath}/resources/img/coin111.png"/>
-                <img class="coin22" src="${pageContext.request.contextPath}/resources/img/coin222.png"/>
-                <a href="../wish.html" target="main" class="cks">我的收藏</a>
-                <img class="icon5" src="${pageContext.request.contextPath}/resources/img/coin21.png"/>
-            </dd>
-        </dl>
-        <dl class="system_log">
-            <dt>
-                <img class="icon1" src="${pageContext.request.contextPath}/resources/img/coin15.png"/>
-                <img class="icon2" src="${pageContext.request.contextPath}/resources/img/coin16.png"/>
-                约见管理
-                <img class="icon3" src="${pageContext.request.contextPath}/resources/img/coin19.png"/>
-                <img class="icon4" src="${pageContext.request.contextPath}/resources/img/coin20.png"/>
-            </dt>
-            <dd>
-                <img class="coin11" src="${pageContext.request.contextPath}/resources/img/coin111.png"/>
-                <img class="coin22" src="${pageContext.request.contextPath}/resources/img/coin222.png"/>
-                <a href="../appointment.html" target="main" class="cks">约见管理</a>
-                <img class="icon5" src="${pageContext.request.contextPath}/resources/img/coin21.png"/>
-            </dd>
-        </dl>
-        <dl class="system_log">
-            <dt>
-                <img class="icon1" src="${pageContext.request.contextPath}/resources/img/coin17.png"/>
-                <img class="icon2" src="${pageContext.request.contextPath}/resources/img/coin18.png"/>
-                我的购物车
-                <img class="icon3" src="${pageContext.request.contextPath}/resources/img/coin19.png"/>
-                <img class="icon4" src="${pageContext.request.contextPath}/resources/img/coin20.png"/>
-            </dt>
-            <dd>
-                <img class="coin11" src="${pageContext.request.contextPath}/resources/img/coin111.png"/>
-                <img class="coin22" src="${pageContext.request.contextPath}/resources/img/coin222.png"/>
-                <a href="${pageContext.request.contextPath}/admin/cart/showCart/${sessionScope.loginUser.id}" target="main" class="cks">我的购物车</a>
                 <img class="icon5" src="${pageContext.request.contextPath}/resources/img/coin21.png"/>
             </dd>
         </dl>

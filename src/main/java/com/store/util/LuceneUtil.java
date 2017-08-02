@@ -104,10 +104,6 @@ public class LuceneUtil {
         for(java.lang.reflect.Field reflectField : reflectFields){
             reflectField.setAccessible(true);
             String name = reflectField.getName();//id/title/content
-            System.out.println("type" + reflectField.getType().getSimpleName() );
-            System.out.println("name-->" + name);
-            System.out.println("documemt" + document);
-            System.out.println("documemtgetName" + document.get(name));
             String value = document.get(name).toString();//1/培训/传智是一家培训机构
             BeanUtils.setProperty(obj,name,value);//封装javabean对应的属性中去，通过setXxx()方法
         }

@@ -31,9 +31,6 @@
             <span><a href="show.jsp">首页</a>&nbsp;-&nbsp;-</span>&nbsp;我的商品
         </div>
     </div>
-    <form action="${pageContext.request.contextPath}/admin/items/deleteOne" method="post" id="deleteOne_form">
-        <input type="hidden" id="realId" name="id">
-    </form>
     <div class="page">
         <!-- user页面样式 -->
         <div class="connoisseur">
@@ -111,10 +108,13 @@
                                         dateStyle="default"/>
                                 </td>
                                 <td>${item.title}</td>
-                                <td><a href="${pageContext.request.contextPath}/admin/items/updateUI/${item.id}">
+                                <td>
+                                     <a href="${pageContext.request.contextPath}/admin/items/updateUI/${item.id}">
                                         <img class="operation" src="${pageContext.request.contextPath}/resources/img/update.png">
+                                     </a>
+                                     <a href="${pageContext.request.contextPath}/admin/items/deleteOne?id=${item.id}" onclick="return confirm('你确定删除该信息吗?');">
+                                        <img class="operation delban"  src="${pageContext.request.contextPath}/resources/img/delete.png">
                                     </a>
-                                    <img class="operation delban"   src="${pageContext.request.contextPath}/resources/img/delete.png">
                                 </td>
                             </tr>
                         </c:forEach>
@@ -158,17 +158,6 @@
 
 
 <!-- 删除弹出框 -->
-<div class="banDel">
-    <div class="delete">
-        <div class="close">
-            <a><img src="img/shanchu.png" /></a>
-        </div>
-        <p class="delP1">你确定要删除此条记录吗？</p>
-        <p class="delP2">
-            <a href="javascript:void(0)" class="ok no"  onclick="deleteById()">确定</a><a class="ok no">取消</a>
-        </p>
-    </div>
-</div>
 <!-- 删除弹出框  end-->
 </body>
 

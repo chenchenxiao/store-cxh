@@ -1,5 +1,6 @@
 package com.store.dao;
 
+import com.store.been.PageBean;
 import com.store.model.ItemsCustom;
 import com.store.util.LuceneUtil;
 import org.apache.lucene.document.Document;
@@ -25,14 +26,14 @@ import java.util.List;
  */
 public class LuceneDao {
 
-    //根据关键字查询
-    public List<ItemsCustom> findAllByKeywords(String keywords) throws Exception{
+    //根据关键字查询,分页
+    public PageBean findAllByKeywords(PageBean pageBean) throws Exception{
         //创建用于存查找出来的数据的list
         List<ItemsCustom> itemsCustomList = new ArrayList<ItemsCustom>();
-        //分词器版本，要查询的条件，使用第三方分词器IKAnalyzer
+        //分词器版本，要查询的字段，使用第三方分词器IKAnalyzer
         QueryParser queryParser = new MultiFieldQueryParser(LuceneUtil.getVersion(),new String[]{"type","title","name"},LuceneUtil.getAnalyzer());
         //创建封装查询关键字的对象
-        Query query = queryParser.parse(keywords);
+        Query query = queryParser.parse(pageBean.getSearchText());
         //创建IndexSearcher对象
         IndexSearcher indexSearcher = new IndexSearcher(LuceneUtil.getDirectory());
         //查询，每次只取查到的前100条数据
@@ -44,7 +45,11 @@ public class LuceneDao {
         Scorer scorer = new QueryScorer(query);
         //高亮对象
         Highlighter highlighter = new Highlighter(formatter,scorer);
-        for(int i=0;i<topDocs.scoreDocs.length;i++){
+        //搜索多少条记录，如果当前开始的条数大于总条数，则取总条数
+        Integer size = pageBean.getSize();
+        Integer start = (pageBean.getPage() - 1) * size;
+        int middle = Math.min(start + size,topDocs.totalHits);
+        for(int i=start;i<middle;i++){
             //取查询后的单条数据
             ScoreDoc scoreDoc = topDocs.scoreDocs[i];
             int no = scoreDoc.doc;
@@ -67,20 +72,41 @@ public class LuceneDao {
             //把javabean填入list集合
             itemsCustomList.add(itemsCustom);
         }
-        for(ItemsCustom a : itemsCustomList){
-            System.out.println( a );
-        }
-        return itemsCustomList;
+        pageBean.init(topDocs.totalHits,itemsCustomList);
+        return pageBean.init(topDocs.totalHits,itemsCustomList);
     }
 
     //根据id从索引库删除对应数据
-    public void delete(Integer id) throws Exception{
+    public void deleteOne(Integer id) throws Exception{
+        System.out.println("OK?");
         //创建IndexWriter对象，第一个参数是lucene索引库最终对应于硬盘中的目录，
         // 第二个是分词器
         // 第三个是最多将稳步拆分成出多少词汇
         IndexWriter indexWriter = new IndexWriter(LuceneUtil.getDirectory(),LuceneUtil.getAnalyzer(),LuceneUtil.getMaxFieldLength());
         //执行删除操作
         indexWriter.deleteDocuments(new Term("id",id.toString()));//核心
+        indexWriter.close();
+    }
+    //批量删除索引库的数据
+    public void deleteByIds(Integer[] ids) throws Exception {
+        //创建IndexWriter对象，第一个参数是lucene索引库最终对应于硬盘中的目录，
+        // 第二个是分词器
+        // 第三个是最多将稳步拆分成出多少词汇
+        IndexWriter indexWriter = new IndexWriter(LuceneUtil.getDirectory(),LuceneUtil.getAnalyzer(),LuceneUtil.getMaxFieldLength());
+        //通过遍历删除数据
+        for(Integer id:ids){
+            indexWriter.deleteDocuments(new Term("id",id.toString()));//核心
+        }
+        indexWriter.close();
+    }
+    //删除索引库的所有数据
+    public void deleteAll() throws Exception {
+        //创建IndexWriter对象，第一个参数是lucene索引库最终对应于硬盘中的目录，
+        // 第二个是分词器
+        // 第三个是最多将稳步拆分成出多少词汇
+        IndexWriter indexWriter = new IndexWriter(LuceneUtil.getDirectory(),LuceneUtil.getAnalyzer(),LuceneUtil.getMaxFieldLength());
+        //执行删除操作
+        indexWriter.deleteAll();
         indexWriter.close();
     }
 
@@ -123,9 +149,6 @@ public class LuceneDao {
     public void update(ItemsCustom itemsCustom) throws Exception{
         //将javabean转成document对象
         Document document = LuceneUtil.javabean2document(itemsCustom);
-        if (IndexWriter.isLocked(LuceneUtil.getDirectory())) {
-            IndexWriter.unlock(LuceneUtil.getDirectory());
-        }
         IndexWriter indexWriter = new IndexWriter(LuceneUtil.getDirectory(),LuceneUtil.getAnalyzer(),LuceneUtil.getMaxFieldLength());
 		/*
 		 * 参数一：term表示需要更新的document对象，id表示document对象中的id属性
@@ -136,14 +159,17 @@ public class LuceneDao {
     }
 
     //判断索引库是否已经存在数据的方法
-    public static  Boolean isIndexNull(){
+    public Boolean isIndexNull(){
         Directory directory  = LuceneUtil.getDirectory();
         //建立索引搜索，指定索引目录
         Integer number = 0;
         try {
+            String[] strings = directory.listAll();
+            System.out.println("strings" + strings.toString());
             //判断是否存在文件，如果不存在则说明没有数据
             if(!directory.fileExists("_0.cfs")){
-                System.out.println("true???" + directory.fileExists("_0.cfs"));
+                System.out.println(strings.toString());
+                System.out.println("directory.fileExists(\"_0.cfs\")???" + directory.fileExists("_0.cfs"));
                 return true;
             }
             IndexSearcher searcher = new IndexSearcher(directory, true);

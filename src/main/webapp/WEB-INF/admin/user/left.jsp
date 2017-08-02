@@ -54,57 +54,6 @@
         </dl>
         <dl class="system_log">
             <dt>
-                <img class="icon1" src="${pageContext.request.contextPath}/resources/img/coin05.png"/>
-                <img class="icon2" src="${pageContext.request.contextPath}/resources/img/coin06.png"/>
-                公共管理
-                <img class="icon3"src="${pageContext.request.contextPath}/resources/img/coin19.png"/>
-                <img class="icon4"src="${pageContext.request.contextPath}/resources/img/coin20.png"/>
-            </dt>
-            <dd>
-                <img class="coin11" src="${pageContext.request.contextPath}/resources/img/coin111.png"/>
-                <img class="coin22" src="${pageContext.request.contextPath}/resources/img/coin222.png"/>
-                <a class="cks" href="../banner.html" target="main">广告管理</a>
-                <img class="icon5" src="${pageContext.request.contextPath}/resources/img/coin21.png"/>
-            </dd>
-            <dd>
-                <img class="coin11" src="${pageContext.request.contextPath}/resources/img/coin111.png"/>
-                <img class="coin22" src="${pageContext.request.contextPath}/resources/img/coin222.png"/>
-                <a class="cks" href="../opinion.html" target="main">意见管理</a>
-                <img class="icon5" src="${pageContext.request.contextPath}/resources/img/coin21.png"/>
-            </dd>
-        </dl>
-        <dl class="system_log">
-            <dt>
-                <img class="icon1" src="${pageContext.request.contextPath}/resources/img/coin07.png"/>
-                <img class="icon2" src="${pageContext.request.contextPath}/resources/img/coin08.png"/>
-                会员管理
-                <img class="icon3" src="${pageContext.request.contextPath}/resources/img/coin19.png"/>
-                <img class="icon4" src="${pageContext.request.contextPath}/resources/img/coin20.png"/>
-            </dt>
-            <dd>
-                <img class="coin11" src="${pageContext.request.contextPath}/resources/img/coin111.png"/>
-                <img class="coin22" src="${pageContext.request.contextPath}/resources/img/coin222.png"/>
-                <a href="../vip.html" target="main" class="cks">会员管理</a>
-                <img class="icon5" src="${pageContext.request.contextPath}/resources/img/coin21.png"/>
-            </dd>
-        </dl>
-        <dl class="system_log">
-            <dt>
-                <img class="icon1" src="${pageContext.request.contextPath}/resources/img/coin10.png"/>
-                <img class="icon2" src="${pageContext.request.contextPath}/resources/img/coin09.png"/>
-                行家管理
-                <img class="icon3" src="${pageContext.request.contextPath}/resources/img/coin19.png"/>
-                <img class="icon4" src="${pageContext.request.contextPath}/resources/img/coin20.png"/>
-            </dt>
-            <dd>
-                <img class="coin11" src="${pageContext.request.contextPath}/resources/img/coin111.png"/>
-                <img class="coin22" src="${pageContext.request.contextPath}/resources/img/coin222.png"/>
-                <a href="../connoisseur.html" target="main" class="cks">行家管理</a>
-                <img class="icon5" src="${pageContext.request.contextPath}/resources/img/coin21.png"/>
-            </dd>
-        </dl>
-        <dl class="system_log">
-            <dt>
                 <img class="icon1" src="${pageContext.request.contextPath}/resources/img/coin11.png"/>
                 <img class="icon2" src="${pageContext.request.contextPath}/resources/img/coin12.png"/>
                 我的广告

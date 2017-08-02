@@ -129,7 +129,6 @@ public class AdvertisementController extends BaseAdminController<Advertisement,L
     //商城首页，要显示广告信息，同时把数据库的商品数据存入lucene索引库
     @RequestMapping("indexAd")
     public String indexAd(Model model) throws Exception {
-        //把数据库的商品数据存入lucene索引库
         advertisementService.addToLucene();
         List<Advertisement> advertisementList = advertisementService.selectByStatus();
         model.addAttribute("adList",advertisementList);
@@ -158,11 +157,12 @@ public class AdvertisementController extends BaseAdminController<Advertisement,L
         }
         advertisementService.quartzUpdate(page,5);
     }
-
-    @RequestMapping("testLucene")
+    //定时更新索引库的数据
+    @Scheduled(cron = "0 0/59 * * * ? ")
     public void testLucene() throws Exception {
         LuceneDao luceneDao = new LuceneDao();
-        List<ItemsCustom> list = luceneDao.findAllByKeywords("服装");
-        System.out.println("LIST--》" + list.toString());
+        luceneDao.deleteAll();
+        System.out.println("LIST--》" + luceneDao.isIndexNull());
+        advertisementService.addToLucene();
     }
 }

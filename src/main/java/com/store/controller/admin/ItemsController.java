@@ -71,7 +71,7 @@ public class ItemsController extends BaseAdminController<Items,Long>{
 
     //用户增添商品
     @RequestMapping("save")
-    public String save(@Valid Items items, BindingResult bindingResult, RedirectAttributes redirectAttributes, MultipartFile picture){
+    public String save(@Valid Items items, BindingResult bindingResult, RedirectAttributes redirectAttributes, MultipartFile picture) throws Exception {
         if(picture.getOriginalFilename().length() > 0){
             //判断上传的照片的类型是否符合要求
             if(!photoExt.contains(FileUploadUtil.getFileExt(picture.getOriginalFilename()))) {
@@ -108,7 +108,7 @@ public class ItemsController extends BaseAdminController<Items,Long>{
 
     //用户批量删除商品
     @RequestMapping("deleteByIds")
-    public String deleteByIds(Integer[] ids){
+    public String deleteByIds(Integer[] ids) throws Exception {
         itemsService.delete(ids);
         return REDIRECT_URL + "itemsList";
     }
@@ -167,10 +167,15 @@ public class ItemsController extends BaseAdminController<Items,Long>{
 
     //用户查看指定类型的商品
     @RequestMapping("showTypeItems")
-    public String showTypeItems(String type,Model model,PageBean pageBean) throws Exception {
-//        String realType = new String(type.getBytes("ISO-8859-1"), "utf-8");
+    public String showTypeItems(String type,Model model,PageBean pageBean,RedirectAttributes redirectAttributes) throws Exception {
         System.out.println("type-->" + type);
-//        System.out.println("reatype-->" + realType);
+        System.out.println("searchtext-->" + pageBean.getSearchText());
+        if(type == null){
+            if(pageBean.getSearchText() == null || pageBean.getSearchText().equals("")){
+                redirectAttributes.addFlashAttribute("result",new AjaxResult(false,"没有找到符相关宝贝"));
+                return "redirect:/admin/advertisement/indexAd";
+            }
+        }
         model.addAttribute("PageBean",itemsService.showTypeItems(type,pageBean));
         model.addAttribute("type",type);        //把type的值传到前台，这里不在前台用pagebean取是因为如果在前台取的话将是取到一个数组，而不是字符串
         return "admin/items/product";
@@ -180,6 +185,7 @@ public class ItemsController extends BaseAdminController<Items,Long>{
     @RequestMapping("viewItems")
     public String viewItems(Integer id,Model model){
         System.out.println("id" + id);
+        model.addAttribute("userItems",itemsService.selectUserItems(id));
         model.addAttribute("items",itemsService.showOneItems(id));
         return "admin/items/itemsShow";
     }
