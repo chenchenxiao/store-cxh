@@ -152,14 +152,14 @@
                 "data":{"phoneNumber":$('#newPhoneNumber').val()},
                 "type":"POST",
                 "success":function(data){
-                    if(data.result){
+                    if(data.success){
                         $(".newPhoneTip").text("");
                         // $("#name").parent().next("div").css("color",'white');
                         phoneResult = true;
                         checkRepeatResult = true;
                         return;
                     }else{
-                        $(".newPhoneTip").text("该手机号已被注册");
+                        $(".newPhoneTip").text(data.msg);
                         $(".newPhoneTip").css("color",'red');
                         phoneResult = false;
                         checkRepeatResult = false;

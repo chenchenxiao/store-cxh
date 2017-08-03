@@ -167,16 +167,19 @@ public class LuceneDao {
             String[] strings = directory.listAll();
             System.out.println("strings" + strings.toString());
             //判断是否存在文件，如果不存在则说明没有数据
-            if(!directory.fileExists("_0.cfs")){
-                System.out.println(strings.toString());
-                System.out.println("directory.fileExists(\"_0.cfs\")???" + directory.fileExists("_0.cfs"));
-                return true;
+//            if(!directory.fileExists("_0.cfs")){
+//                System.out.println(strings.toString());
+//                System.out.println("directory.fileExists(\"_0.cfs\")???" + directory.fileExists("_0.cfs"));
+//                return true;
+//            }
+            if(strings.length > 2){
+                IndexSearcher searcher = new IndexSearcher(directory, true);
+                number = searcher.maxDoc();
+                return number > 0 ? false:true;
             }
-            IndexSearcher searcher = new IndexSearcher(directory, true);
-            number = searcher.maxDoc();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return number < 1 ? true:false;
+        return true;
     }
 }

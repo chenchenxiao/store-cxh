@@ -41,7 +41,7 @@
         <div class="logD logDtip">
             <p class="p1">登录</p>
             <a href="${pageContext.request.contextPath}/admin/user/findPassword.jsp" class="p2"> 忘记密码</a>
-            <a href="${pageContext.request.contextPath}/userRegist.jsp" class="p2"> 免费注册&nbsp;&nbsp;&nbsp;</a>
+            <a href="${pageContext.request.contextPath}/admin/user/userRegist.jsp" class="p2"> 免费注册&nbsp;&nbsp;&nbsp;</a>
 
         </div>
         <!-- 输入框 -->

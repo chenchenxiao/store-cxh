@@ -20,6 +20,9 @@ public interface UserService {
      void update(User user);
      //用户找回密码时根据用户名校验是否存在该用户
      User checkUser(String condition);
-
+     //校验用户输入的邮箱是不是真实可用的
+     Boolean emailValidate(String emailNumber);
+     //校验用户输入的电话号码是不是真实可用的
+     Boolean phoneValidate(String phoneNumber);
 
 }

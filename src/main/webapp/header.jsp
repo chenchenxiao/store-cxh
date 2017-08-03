@@ -19,7 +19,7 @@
                     <ul class="icon1 sub-icon1" >
                         <c:if test="${sessionScope.loginUser == null}">
                             <li  ><a href="${pageContext.request.contextPath}/admin/user/loginUI.jsp">你好，请先登录</a></li>|
-                            <li  ><a href="${pageContext.request.contextPath}/userRegist.jsp">免费注册</a></li>|
+                            <li  ><a href="${pageContext.request.contextPath}/admin/user/userRegist.jsp">免费注册</a></li>|
                         </c:if>
                         <c:if test="${sessionScope.loginUser != null}">
                             <li  ><a href="#">欢迎您，${sessionScope.loginUser.name}</a></li>|
@@ -27,45 +27,7 @@
                         </c:if>
                         <li><a href="#" onclick="go()">我的商城</a></li>
                         <li><a href="${pageContext.request.contextPath}/admin/cart/showCart/${sessionScope.loginUser.id}" target="_blank" >我的购物车</a></li>
-                        <li><div class="cart">
-                            <a href="#" class="cart-in"> </a>
-                            <span> 0</span>
-                        </div>
-                            <ul class="sub-icon1 list">
-                                <h3>最近加入的宝贝</h3>
-                                <div class="shopping_cart">
-                                    <div class="cart_box">
-                                        <div class="message">
-                                            <div class="alert-close"> </div>
-                                            <div class="list_img"><img src="${pageContext.request.contextPath}/resources/images/14.jpg" class="img-responsive" alt=""></div>
-                                            <div class="list_desc"><h4><a href="#">velit esse molestie</a></h4>1 x<span class="actual">
-		                             $12.00</span></div>
-                                            <div class="clearfix">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="cart_box1">
-                                        <div class="message1">
-                                            <div class="alert-close1"> </div>
-                                            <div class="list_img"><img src="${pageContext.request.contextPath}/resources/images/15.jpg" class="img-responsive" alt=""></div>
-                                            <div class="list_desc"><h4><a href="#">velit esse molestie</a></h4>1 x<span class="actual">
-		                             $12.00</span></div>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="total">
-                                    <div class="total_left">CartSubtotal : </div>
-                                    <div class="total_right">$250.00</div>
-                                    <div class="clearfix"> </div>
-                                </div>
-                                <div class="login_buttons">
-                                    <div class="check_button"><a href="checkout.html">Check out</a></div>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div class="clearfix"></div>
-                            </ul>
-                        </li>
+
                     </ul>
                 </div>
                 <div class="clearfix"> </div>

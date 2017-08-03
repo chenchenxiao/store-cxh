@@ -56,17 +56,17 @@ $(function(){
             accountResult = false;
         }else{
             $.ajax({
-                "url":"admin/user/checkRepeat",
+                "url":"/checkRepeat",
                 "data":{"account":$('#account').val()},
                 "type":"POST",
                 "success":function(data){
-                    if(data.result){
+                    if(data.success){
                         $("#account").parent().next("div").text("");
                         // $("#name").parent().next("div").css("color",'white');
                         accountResult = true;
                         return;
                     }else{
-                        $("#account").parent().next("div").text("该用户名已被注册");
+                        $("#account").parent().next("div").text(data.msg);
                         $("#account").parent().next("div").css("color",'red');
                         accountResult = false;
                         return;
@@ -134,17 +134,17 @@ $(function(){
             phoneResult = false;
         }else{
             $.ajax({
-                "url":"admin/user/checkRepeat",
+                "url":"/checkRepeat",
                 "data":{"phoneNumber":$('#phoneNumber').val()},
                 "type":"POST",
                 "success":function(data){
-                    if(data.result){
+                    if(data.success){
                         $("#phoneNumber").parent().next("div").text("");
                         // $("#name").parent().next("div").css("color",'white');
                         phoneResult = true;
                         return;
                     }else{
-                        $("#phoneNumber").parent().next("div").text("该手机号已被注册");
+                        $("#phoneNumber").parent().next("div").text(data.msg);
                         $("#phoneNumber").parent().next("div").css("color",'red');
                         phoneResult = false;
                         return;
@@ -211,7 +211,7 @@ $(function(){
         var result;
         alert("成功发送信息")
         $.ajax({
-            "url":"admin/user/checkPhone",
+            "url":"/checkPhone",
             "data":{"phoneNumber":$('#phoneNumber').val()},
             "type":"POST",
             "success":function(data){

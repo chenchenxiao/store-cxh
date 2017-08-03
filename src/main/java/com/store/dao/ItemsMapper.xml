@@ -78,9 +78,9 @@
         select * from
         store_items
         where uid =
-        (select id FROM store_items where id = 53)
+        (select uid FROM store_items where id = #{id})
         AND
         type =
-        (select type FROM store_items where id = 53)
+        (select type FROM store_items where id = #{id})
     </select>
 </mapper>

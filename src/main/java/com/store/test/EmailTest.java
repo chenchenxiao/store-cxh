@@ -68,6 +68,6 @@ public class EmailTest {
 
     @Test
     public void test3(){
-//        MailUtils.send("1972713011@qq.com");
+        MailUtils.send("1972713011@qq.com");
     }
 }

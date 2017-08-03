@@ -1,31 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="16eb459e-2a9b-44da-87fc-4ffc62eba7af" name="Default" comment="">
+    <list default="true" id="16eb459e-2a9b-44da-87fc-4ffc62eba7af" name="Default" comment="学习了webService，做了简单的发布服务demo，在用户注册和修改信息时调用了验证手机号归属地和邮箱是否正确的服务">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__com_sun_xml_bind_jaxb_core_2_2_11.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__com_sun_xml_bind_jaxb_impl_2_2_11.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_apache_cxf_cxf_core_3_1_6.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_apache_cxf_cxf_rt_bindings_soap_3_1_6.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_apache_cxf_cxf_rt_bindings_xml_3_1_6.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_apache_cxf_cxf_rt_databinding_jaxb_3_1_6.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_apache_cxf_cxf_rt_frontend_jaxws_3_1_6.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_apache_cxf_cxf_rt_frontend_simple_3_1_6.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_apache_cxf_cxf_rt_transports_http_3_1_6.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_apache_cxf_cxf_rt_ws_addr_3_1_6.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_apache_cxf_cxf_rt_ws_policy_3_1_6.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_apache_cxf_cxf_rt_wsdl_3_1_6.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_apache_neethi_neethi_3_0_3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_apache_ws_xmlschema_xmlschema_core_2_2_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_codehaus_woodstox_woodstox_core_asl_4_4_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_ow2_asm_asm_5_0_4.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__wsdl4j_wsdl4j_1_6_3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__xml_resolver_xml_resolver_1_2.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/test/wsTest/WebServieWeatherTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/test/wsTest/emailValidate.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/test/wsTest/phoneTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/weather/ArrayOfString.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/weather/DataSet.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/weather/GetRegionCountry.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/weather/GetRegionCountryResponse.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/weather/GetRegionDataset.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/weather/GetRegionDatasetResponse.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/weather/GetRegionProvince.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/weather/GetRegionProvinceResponse.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/weather/GetSupportCityDataset.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/weather/GetSupportCityDatasetResponse.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/weather/GetSupportCityString.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/weather/GetSupportCityStringResponse.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/weather/GetWeather.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/weather/GetWeatherResponse.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/weather/ObjectFactory.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/weather/WeatherWS.asmx.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/weather/WeatherWS.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/weather/WeatherWSSoap.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/weather/package-info.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/ws/cxf/HelloWorld.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/ws/cxf/HelloWorldImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/ws/cxf/WebServiceTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/ws/emailValidate/ObjectFactory.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/ws/emailValidate/ValidateEmailAddress.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/ws/emailValidate/ValidateEmailAddressPro.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/ws/emailValidate/ValidateEmailAddressProResponse.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/ws/emailValidate/ValidateEmailAddressResponse.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/ws/emailValidate/ValidateEmailWebService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/ws/emailValidate/ValidateEmailWebServiceSoap.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/ws/emailValidate/package-info.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/ws/helloWorld/HelloWorld.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/ws/helloWorld/HelloWorldImplService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/ws/helloWorld/ObjectFactory.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/ws/helloWorld/Say.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/ws/helloWorld/SayResponse.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/ws/helloWorld/package-info.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/phone/ArrayOfString.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/phone/GetDatabaseInfo.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/phone/GetDatabaseInfoResponse.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/phone/GetMobileCodeInfo.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/phone/GetMobileCodeInfoResponse.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/phone/MobileCodeWS.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/phone/MobileCodeWSSoap.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/phone/ObjectFactory.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/phone/package-info.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/400.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/404.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/500.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/webapp/admin/user/userRegist.jsp" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../store-cxh/src/main/webapp/userRegist.jsp" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/.idea/artifacts/store_cxh_war_exploded.xml" afterPath="$PROJECT_DIR$/../store-cxh/.idea/artifacts/store_cxh_war_exploded.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../store-cxh/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/pom.xml" afterPath="$PROJECT_DIR$/../store-cxh/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/controller/admin/AdvertisementController.java" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/controller/admin/AdvertisementController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/controller/admin/ItemsController.java" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/controller/admin/ItemsController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/AdvertisementMapper.xml" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/AdvertisementMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/ItemsMapper.java" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/ItemsMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/controller/admin/UserController.java" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/controller/admin/UserController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/ItemsMapper.xml" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/ItemsMapper.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/LuceneDao.java" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/LuceneDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/model/ItemsCustom.java" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/model/ItemsCustom.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/ItemsService.java" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/ItemsService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/impl/AdvertisementServiceImpl.java" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/impl/AdvertisementServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/UserService.java" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/UserService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/impl/ItemsServiceImpl.java" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/impl/ItemsServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/test/LuceneTest.java" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/test/LuceneTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/util/LuceneUtil.java" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/util/LuceneUtil.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/impl/UserServiceImpl.java" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/impl/UserServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/test/EmailTest.java" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/test/EmailTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/resources/applicationContext.xml" afterPath="$PROJECT_DIR$/../store-cxh/src/main/resources/applicationContext.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/resources/mybatis-conf.xml" afterPath="$PROJECT_DIR$/../store-cxh/src/main/resources/mybatis-conf.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/admin/left.jsp" afterPath="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/admin/left.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/items/itemsList.jsp" afterPath="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/items/itemsList.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/items/saveUI.jsp" afterPath="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/items/saveUI.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/user/left.jsp" afterPath="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/user/left.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/webapp/admin/items/itemsShow.jsp" afterPath="$PROJECT_DIR$/../store-cxh/src/main/webapp/admin/items/itemsShow.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/webapp/admin/items/product.jsp" afterPath="$PROJECT_DIR$/../store-cxh/src/main/webapp/admin/items/product.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/user/updateEmailUI.jsp" afterPath="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/user/updateEmailUI.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/user/updatePhoneUI.jsp" afterPath="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/user/updatePhoneUI.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/user/updateUI.jsp" afterPath="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/user/updateUI.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/web.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/webapp/admin/user/loginUI.jsp" afterPath="$PROJECT_DIR$/../store-cxh/src/main/webapp/admin/user/loginUI.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/webapp/header.jsp" afterPath="$PROJECT_DIR$/../store-cxh/src/main/webapp/header.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/webapp/resources/admin/js/itemsList.js" afterPath="$PROJECT_DIR$/../store-cxh/src/main/webapp/resources/admin/js/itemsList.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/webapp/show.jsp" afterPath="$PROJECT_DIR$/../store-cxh/src/main/webapp/show.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/webapp/resources/js/index.js" afterPath="$PROJECT_DIR$/../store-cxh/src/main/webapp/resources/js/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/store-cxh.iml" afterPath="$PROJECT_DIR$/../store-cxh/store-cxh.iml" />
     </list>
     <ignored path="$PROJECT_DIR$/../store-cxh/out/" />
     <ignored path="$PROJECT_DIR$/../store-cxh/target/" />
@@ -42,111 +110,45 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AdvertisementServiceImpl.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/impl/AdvertisementServiceImpl.java">
+      <file leaf-file-name="EmailTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/test/EmailTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="175" column="12" lean-forward="true" selection-start-line="175" selection-start-column="12" selection-end-line="175" selection-end-column="12" />
+            <state relative-caret-position="436">
+              <caret line="70" column="23" lean-forward="false" selection-start-line="70" selection-start-column="23" selection-end-line="70" selection-end-column="23" />
               <folding>
-                <element signature="e#1553#1568#0" expanded="true" />
-                <element signature="e#6674#6687#0" expanded="true" />
+                <element signature="e#1904#1905#0" expanded="true" />
+                <element signature="e#1955#1956#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="product.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/admin/items/product.jsp">
+      <file leaf-file-name="updateUI.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/user/updateUI.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="100" column="36" lean-forward="false" selection-start-line="100" selection-start-column="36" selection-end-line="100" selection-end-column="36" />
+            <state relative-caret-position="510">
+              <caret line="89" column="21" lean-forward="false" selection-start-line="89" selection-start-column="21" selection-end-line="89" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ItemsController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/controller/admin/ItemsController.java">
+      <file leaf-file-name="securityUI.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/user/securityUI.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="176" column="13" lean-forward="true" selection-start-line="176" selection-start-column="13" selection-end-line="176" selection-end-column="13" />
+            <state relative-caret-position="-870">
+              <caret line="16" column="9" lean-forward="false" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LuceneTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/test/LuceneTest.java">
+      <file leaf-file-name="updateEmailUI.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/user/updateEmailUI.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
-              <caret line="107" column="32" lean-forward="true" selection-start-line="107" selection-start-column="32" selection-end-line="107" selection-end-column="32" />
-              <folding>
-                <element signature="e#3931#3944#0" expanded="true" />
-                <element signature="e#6506#6516#0" expanded="true" />
-                <element signature="e#7075#7083#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="show.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/show.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="317" column="27" lean-forward="false" selection-start-line="317" selection-start-column="27" selection-end-line="317" selection-end-column="27" />
+            <state relative-caret-position="459">
+              <caret line="169" column="20" lean-forward="true" selection-start-line="169" selection-start-column="20" selection-end-line="169" selection-end-column="20" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LuceneDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/LuceneDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9">
-              <caret line="77" column="0" lean-forward="true" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#980#993#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ItemsMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/ItemsMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="68" column="0" lean-forward="true" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
-              <folding>
-                <marker date="1501657723375" expanded="true" signature="2259:2353" ph="select FROM store_items" />
-                <marker date="1501657723375" expanded="true" signature="2775:2998" ph="insert into store_items... " />
-                <marker date="1501657723375" expanded="true" signature="3116:3300" ph="select * fro... store_items" />
-                <marker date="1501657723375" expanded="true" signature="3179:3219" ph="select id FR... store_items" />
-                <marker date="1501657723375" expanded="true" signature="3257:3299" ph="select type store_items" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdvertisementController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/controller/admin/AdvertisementController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-67">
-              <caret line="158" column="5" lean-forward="true" selection-start-line="158" selection-start-column="5" selection-end-line="158" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ItemsServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/impl/ItemsServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="59">
-              <caret line="136" column="0" lean-forward="true" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
-              <folding>
-                <element signature="e#4657#4658#0" expanded="true" />
-                <element signature="e#4715#4716#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -165,14 +167,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>search</find>
-      <find>我的</find>
-      <find>+</find>
-      <find>添加</find>
-      <find>用户</find>
-      <find>this.uid</find>
-      <find>img</find>
-      <find>通用</find>
       <find>slider1</find>
       <find>首页</find>
       <find>继续</find>
@@ -195,6 +189,14 @@
       <find>view</find>
       <find>delete</find>
       <find>还</find>
+      <find>0</find>
+      <find>||</find>
+      <find>getHello</find>
+      <find>getSupport</find>
+      <find>gw</find>
+      <find>index</find>
+      <find>成功</find>
+      <find>#newEm</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -216,6 +218,7 @@
       <replace>src=&quot;${pageContext.request.contextPath}/resources/img</replace>
       <replace>size</replace>
       <replace>语言</replace>
+      <replace>store</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -229,57 +232,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/controller/admin/OrderDetailsController.java" />
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/controller/admin/UserController.java" />
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/CartItemsMapper.xml" />
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/CartMapper.java" />
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/controller/admin/OrdersController.java" />
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/impl/CartServiceImpl.java" />
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/model/Cart.java" />
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/webapp/resources/admin/javascripts/items.js" />
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/webapp/resources/admin/javascripts/findPassword.js" />
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/webapp/admin/user/findPassword.jsp" />
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/webapp/resources/admin/js/adList.js" />
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/admin/adList.jsp" />
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/webapp/resources/admin/js/advertisementList.js" />
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/advertisement/advertisementList.jsp" />
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/webapp/resources/admin/js/adSave.js" />
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/advertisement/adSaveUI.jsp" />
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/webapp/resources/admin/js/cart.js" />
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/cart/cart.jsp" />
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/OrdersMapper.xml" />
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/CartMapper.xml" />
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/util/Lucene.java" />
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/model/Article.java" />
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/AdminMapper.java" />
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/AdminMapper.xml" />
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/AdvertisementService.java" />
-        <option value="$PROJECT_DIR$/../store-cxh/pom.xml" />
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/test/BaseMapperTest.java" />
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/impl/OrderServiceImpl.java" />
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/model/ItemsCustom.java" />
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/impl/AdvertisementServiceImpl.java" />
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/webapp/resources/admin/js/itemsList.js" />
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/items/itemsList.jsp" />
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/AdvertisementMapper.xml" />
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/webapp/header.jsp" />
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/admin/left.jsp" />
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/user/left.jsp" />
         <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/ItemsMapper.java" />
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/resources/applicationContext.xml" />
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/resources/mybatis-conf.xml" />
         <option value="$PROJECT_DIR$/../store-cxh/src/main/webapp/admin/items/itemsShow.jsp" />
         <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/ItemsService.java" />
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/ItemsMapper.xml" />
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/LuceneDao.java" />
         <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/controller/admin/ItemsController.java" />
         <option value="$PROJECT_DIR$/../store-cxh/src/main/webapp/show.jsp" />
         <option value="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/items/saveUI.jsp" />
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/impl/ItemsServiceImpl.java" />
         <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/test/LuceneTest.java" />
         <option value="$PROJECT_DIR$/../store-cxh/src/main/webapp/admin/items/product.jsp" />
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/controller/admin/AdvertisementController.java" />
         <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/util/LuceneUtil.java" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/resources/mybatis-conf.xml" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/ItemsMapper.xml" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/webapp/header.jsp" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/impl/ItemsServiceImpl.java" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/LuceneDao.java" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/controller/admin/AdvertisementController.java" />
+        <option value="$PROJECT_DIR$/../store-cxh/pom.xml" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/cxf/HelloWorld.java" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/cxf/impl/HelloWorldImpl.java" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/cxf/test/wbTest.java" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/cxf/test/WebServiceTest.java" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/test/cxf/test/WebServiceTest.java" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/cxf/WebServiceTest.java" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/test/cxf/HelloWorld.java" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/test/cxf/HelloWorldImpl.java" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/weather/WeatherWS.asmx.xml" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/ws/HelloWorld.java" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/test/cxf/WebServiceTest.java" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/weather/WebServieWeatherTest.java" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/weather/GetWeatherResponse.java" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/weather/WeatherWSSoap.java" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/test/WebServieWeatherTest.java" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/phone/package-info.java" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/test/phoneTest.java" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/ws/emailValidate/ValidateEmailWebServiceSoap.java" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/ws/helloWorld/ObjectFactory.java" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/test/wsTest/WebServieWeatherTest.java" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/test/wsTest/emailValidate.java" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/test/wsTest/phoneTest.java" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/impl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/UserService.java" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/ws/WebServiceTest.java" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/resources/applicationContext.xml" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/ws/cxf/WebServiceTest.java" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/webapp/resources/js/index.js" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/controller/admin/UserController.java" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/webapp/admin/user/userRegist.jsp" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/user/updateUI.jsp" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/user/updatePhoneUI.jsp" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/user/updateEmailUI.jsp" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/test/EmailTest.java" />
       </list>
     </option>
   </component>
@@ -347,7 +350,102 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="store-cxh">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="store-cxh">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src/main">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="webapp">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="store-cxh">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src/main">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="webapp">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="WEB-INF">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="store-cxh">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src/main">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="webapp">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="WEB-INF">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="admin">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="store-cxh">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src/main">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -502,63 +600,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="items" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="store-cxh" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="store-cxh" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="store-cxh" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="store-cxh" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="items" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -605,12 +647,94 @@
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="store-cxh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="store-cxh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="store" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="util" />
+              <option name="myItemId" value="ws" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="store-cxh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="store-cxh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="store" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ws" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cxf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="store-cxh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="store-cxh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="store" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -644,317 +768,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="store-cxh" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="store-cxh" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="store" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="store-cxh" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="store-cxh" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="store" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="impl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="store-cxh" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="store-cxh" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="store" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="store-cxh" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="store-cxh" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="store" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="store-cxh" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="store-cxh" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="store" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dao" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="store-cxh" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="store-cxh" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="store" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="store-cxh" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="store-cxh" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="store" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="store-cxh">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="store-cxh">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src/main">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="webapp">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="store-cxh">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src/main">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="webapp">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="WEB-INF">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="store-cxh">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src/main">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="webapp">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="WEB-INF">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="admin">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="store-cxh">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src/main">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -968,30 +783,30 @@
     <property name="project.structure.side.proportion" value="0.19009216" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.store.service.impl" />
-      <recent name="com.store.service" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="I:\store-cxh\src\main\webapp\admin\user" />
+      <recent name="I:\store-cxh\src\main\java\com\store" />
+      <recent name="I:\store-cxh\src\main\webapp\resources\admin\js" />
+      <recent name="I:\store-cxh\src\main\webapp\WEB-INF\admin\advertisement" />
+      <recent name="I:\store-cxh\src\main\webapp\WEB-INF\admin" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="I:\store-cxh\src\main\java\com\store\util" />
-      <recent name="I:\store-cxh\src\main\webapp\resources\images" />
-      <recent name="I:\store-cxh\src\main\webapp\WEB-INF\admin\admin" />
-      <recent name="I:\store-cxh\src\main\webapp\WEB-INF\admin\user" />
-      <recent name="I:\store-cxh\src\main\webapp" />
+      <recent name="I:\store-cxh\src\main\java\com\store\ws" />
+      <recent name="I:\store-cxh\src\main\java\com\store\ws\helloWorld" />
+      <recent name="I:\store-cxh\src\main\java\com\store\ws\emailValidate" />
+      <recent name="I:\store-cxh\src\main\java\phone" />
+      <recent name="I:\store-cxh\src\main\java\com\store" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.store.test" />
       <recent name="com.store.interceptors" />
       <recent name="com.store.service.impl" />
       <recent name="com.store.service" />
       <recent name="com.store.dao" />
-      <recent name="com.store.util" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="I:\store-cxh\src\main\webapp\resources\admin\js" />
-      <recent name="I:\store-cxh\src\main\webapp\WEB-INF\admin\advertisement" />
-      <recent name="I:\store-cxh\src\main\webapp\WEB-INF\admin" />
-      <recent name="I:\store-cxh\src\main\webapp\WEB-INF\admin\items" />
-      <recent name="I:\store-cxh\src\main\webapp\WEB-INF\admin\orders" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.store.service.impl" />
+      <recent name="com.store.service" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1006,20 +821,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.LuceneTest.findAllByKeywords">
-    <configuration default="false" name="LuceneTest.addList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.EmailTest.test3">
+    <configuration default="false" name="WebServieWeatherTest.testWeather" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.store.test.*" />
+          <option name="PATTERN" value="com.store.test.wsTest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="store-cxh" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.store.test" />
-      <option name="MAIN_CLASS_NAME" value="com.store.test.LuceneTest" />
-      <option name="METHOD_NAME" value="addList" />
+      <option name="PACKAGE_NAME" value="com.store.test.wsTest" />
+      <option name="MAIN_CLASS_NAME" value="com.store.test.wsTest.WebServieWeatherTest" />
+      <option name="METHOD_NAME" value="testWeather" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -1033,19 +848,39 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="LuceneTest.delete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="WebServieWeatherTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.store.test.*" />
+          <option name="PATTERN" value="com.store.test.wsTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.store.test.wsTest.WebServieWeatherTest" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../store-cxh" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="store-cxh" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="phoneTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.store.test.wsTest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="store-cxh" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.store.test" />
-      <option name="MAIN_CLASS_NAME" value="com.store.test.LuceneTest" />
-      <option name="METHOD_NAME" value="delete" />
+      <option name="PACKAGE_NAME" value="com.store.test.wsTest" />
+      <option name="MAIN_CLASS_NAME" value="com.store.test.wsTest.phoneTest" />
+      <option name="METHOD_NAME" value="test" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -1059,19 +894,19 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="LuceneTest.testLIst" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="emailValidate.emailValidateTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.store.test.*" />
+          <option name="PATTERN" value="com.store.test.wsTest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="store-cxh" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.store.test" />
-      <option name="MAIN_CLASS_NAME" value="com.store.test.LuceneTest" />
-      <option name="METHOD_NAME" value="testLIst" />
+      <option name="PACKAGE_NAME" value="com.store.test.wsTest" />
+      <option name="MAIN_CLASS_NAME" value="com.store.test.wsTest.emailValidate" />
+      <option name="METHOD_NAME" value="emailValidateTest" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -1085,7 +920,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="LuceneTest.update" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="EmailTest.test3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.store.test.*" />
@@ -1096,34 +931,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.store.test" />
-      <option name="MAIN_CLASS_NAME" value="com.store.test.LuceneTest" />
-      <option name="METHOD_NAME" value="update" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="LuceneTest.findAllByKeywords" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.store.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="store-cxh" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.store.test" />
-      <option name="MAIN_CLASS_NAME" value="com.store.test.LuceneTest" />
-      <option name="METHOD_NAME" value="findAllByKeywords" />
+      <option name="MAIN_CLASS_NAME" value="com.store.test.EmailTest" />
+      <option name="METHOD_NAME" value="test3" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -1666,19 +1475,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Tomcat Server.store-cxh" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.LuceneTest.addList" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.LuceneTest.delete" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.LuceneTest.testLIst" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.LuceneTest.update" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.LuceneTest.findAllByKeywords" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.WebServieWeatherTest.testWeather" />
+      <item index="2" class="java.lang.String" itemvalue="Application.WebServieWeatherTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.phoneTest.test" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.emailValidate.emailValidateTest" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.EmailTest.test3" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.LuceneTest.findAllByKeywords" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.LuceneTest.update" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.LuceneTest.delete" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.LuceneTest.testLIst" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.LuceneTest.addList" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.EmailTest.test3" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.phoneTest.test" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.emailValidate.emailValidateTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.WebServieWeatherTest.testWeather" />
+        <item index="4" class="java.lang.String" itemvalue="Application.WebServieWeatherTest" />
       </list>
     </recent_temporary>
   </component>
@@ -1709,7 +1518,8 @@
       <workItem from="1501586720894" duration="414000" />
       <workItem from="1501587462959" duration="1888000" />
       <workItem from="1501589925795" duration="913000" />
-      <workItem from="1501591271016" duration="36031000" />
+      <workItem from="1501591271016" duration="58928000" />
+      <workItem from="1501738907282" duration="6560000" />
     </task>
     <task id="LOCAL-00001" summary="项目搭好环境，前台改了一点，登录注册页面的模板初步修改好了">
       <created>1499617418865</created>
@@ -1893,43 +1703,50 @@
       <option name="project" value="LOCAL" />
       <updated>1501602923276</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="实现了lucene的应用，使用定时器定时更新索引库的数据">
+      <created>1501660876356</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1501660876356</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="LuceneTest_delete - 2017.08.01 at 23h 58m 48s.xml">
-      <configuration name="LuceneTest.delete" configurationId="JUnit" />
+    <history-entry file="EmailTest_test3 - 2017.08.03 at 15h 23m 48s.xml">
+      <configuration name="EmailTest.test3" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LuceneTest_delete - 2017.08.02 at 08h 08m 51s.xml">
-      <configuration name="LuceneTest.delete" configurationId="JUnit" />
+    <history-entry file="emailValidate_emailValidateTest - 2017.08.03 at 14h 08m 30s.xml">
+      <configuration name="emailValidate.emailValidateTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LuceneTest_findAllByKeywords - 2017.08.02 at 10h 15m 36s.xml">
-      <configuration name="LuceneTest.findAllByKeywords" configurationId="JUnit" />
+    <history-entry file="emailValidate_emailValidateTest - 2017.08.03 at 14h 09m 13s.xml">
+      <configuration name="emailValidate.emailValidateTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LuceneTest_findAllByKeywords - 2017.08.02 at 10h 15m 50s.xml">
-      <configuration name="LuceneTest.findAllByKeywords" configurationId="JUnit" />
+    <history-entry file="phoneTest_test - 2017.08.03 at 14h 16m 43s.xml">
+      <configuration name="phoneTest.test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LuceneTest_findAllByKeywords - 2017.08.02 at 10h 29m 32s.xml">
-      <configuration name="LuceneTest.findAllByKeywords" configurationId="JUnit" />
+    <history-entry file="phoneTest_test - 2017.08.03 at 14h 17m 10s.xml">
+      <configuration name="phoneTest.test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LuceneTest_findAllByKeywords - 2017.08.02 at 10h 36m 20s.xml">
-      <configuration name="LuceneTest.findAllByKeywords" configurationId="JUnit" />
+    <history-entry file="phoneTest_test - 2017.08.03 at 14h 17m 32s.xml">
+      <configuration name="phoneTest.test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LuceneTest_findAllByKeywords - 2017.08.02 at 15h 52m 14s.xml">
-      <configuration name="LuceneTest.findAllByKeywords" configurationId="JUnit" />
+    <history-entry file="phoneTest_test - 2017.08.03 at 14h 18m 06s.xml">
+      <configuration name="phoneTest.test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LuceneTest_update - 2017.08.02 at 09h 35m 15s.xml">
-      <configuration name="LuceneTest.update" configurationId="JUnit" />
+    <history-entry file="phoneTest_test - 2017.08.03 at 14h 18m 21s.xml">
+      <configuration name="phoneTest.test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LuceneTest_update - 2017.08.02 at 09h 58m 42s.xml">
-      <configuration name="LuceneTest.update" configurationId="JUnit" />
+    <history-entry file="phoneTest_test - 2017.08.03 at 14h 18m 54s.xml">
+      <configuration name="phoneTest.test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LuceneTest_update - 2017.08.02 at 10h 14m 18s.xml">
-      <configuration name="LuceneTest.update" configurationId="JUnit" />
+    <history-entry file="phoneTest_test - 2017.08.03 at 14h 43m 02s.xml">
+      <configuration name="phoneTest.test" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="706212000" />
+    <option name="totallyTimeSpent" value="735669000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1948,7 +1765,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4099783" sideWeight="0.5192308" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289183" sideWeight="0.49784714" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="JRebel Executor" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.46521738" sideWeight="0.9107906" order="8" side_tool="true" content_ui="tabs" x="22" y="401" width="1876" height="237" />
+      <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28586957" sideWeight="0.33974358" order="8" side_tool="true" content_ui="tabs" x="22" y="401" width="1876" height="237" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1958,17 +1775,17 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6717391" sideWeight="0.47435898" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289183" sideWeight="0.49784714" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46521738" sideWeight="0.0892094" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826087" sideWeight="0.0982906" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32819384" sideWeight="0.49784714" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4512987" sideWeight="0.48933902" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19782609" sideWeight="0.6682692" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14673913" sideWeight="0.6602564" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32929516" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel remote servers log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3554084" sideWeight="0.14424112" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24946581" sideWeight="0.8726655" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25213677" sideWeight="0.8726655" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33102345" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23519914" sideWeight="0.12733446" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -2015,7 +1832,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="实现了用户登录的拦截" />
     <MESSAGE value="实现了上传头像和预览图片的功能，时间主要都花在前台了，一开始出了bug是因为js文件没引入，后面是因为在显示图片的时候出现了问题" />
     <MESSAGE value="解决了上传图片时存在的一点问题，补充了修改图片时的短信验证" />
     <MESSAGE value="实现了邮箱验证，前台写的东西比较多，考虑的情况有多种，所以花的时间比较长，用户模块初步完成，有待补充和改善" />
@@ -2040,7 +1856,8 @@
     <MESSAGE value="修改了更新广告数据处代码，还是存在问题，没找到解决方案" />
     <MESSAGE value="实现了首页热销商品和推荐商品的展示，修了一个bug" />
     <MESSAGE value="学习了lucene，写好了操作索引库的dao，实现了增添数据到索引库，在这个过程中遇到了很多问题" />
-    <option name="LAST_COMMIT_MESSAGE" value="学习了lucene，写好了操作索引库的dao，实现了增添数据到索引库，在这个过程中遇到了很多问题" />
+    <MESSAGE value="实现了lucene的应用，使用定时器定时更新索引库的数据" />
+    <option name="LAST_COMMIT_MESSAGE" value="实现了lucene的应用，使用定时器定时更新索引库的数据" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2061,208 +1878,143 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/OrderDetailsMapper.xml">
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/weather.java" />
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/ws/cxf/HelloWorldImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/ws/cxf/HelloWorld.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/ws/ObjectFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="49" column="25" lean-forward="true" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/weather/WeatherWS.asmx.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="11" column="31" lean-forward="false" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/javax/xml/ws/Service.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="118" column="28" lean-forward="false" selection-start-line="118" selection-start-column="28" selection-end-line="118" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/javax/xml/ws/spi/ServiceDelegate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="84" column="26" lean-forward="false" selection-start-line="84" selection-start-column="26" selection-end-line="84" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/weather/WeatherWS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/weather/ArrayOfString.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="34" column="13" lean-forward="false" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/weather/GetRegionDatasetResponse.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1500882710975" expanded="true" signature="286:366" ph="UPDATE store... " />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/AdminMapper.java">
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/weather/GetSupportCityString.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="23" column="34" lean-forward="true" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/controller/admin/AdminController.java">
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/weather/GetWeather.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$MAVEN_REPOSITORY$/com/janeluo/ikanalyzer/2012_u6/ikanalyzer-2012_u6.pom">
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/weather/GetRegionDataset.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="837">
-          <caret line="106" column="40" lean-forward="true" selection-start-line="106" selection-start-column="40" selection-end-line="106" selection-end-column="40" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/lucene/lucene-core/3.0.2/lucene-core-3.0.2.jar!/org/apache/lucene/analysis/Analyzer.class">
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/weather/GetRegionProvince.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/weather/DataSet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/weather/GetSupportCityStringResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/weather/ObjectFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/weather/GetWeatherResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="53" column="28" lean-forward="true" selection-start-line="53" selection-start-column="28" selection-end-line="53" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/weather/WeatherWSSoap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2880">
+          <caret line="102" column="120" lean-forward="false" selection-start-line="102" selection-start-column="120" selection-end-line="102" selection-end-column="120" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="395" column="16" lean-forward="false" selection-start-line="395" selection-start-column="16" selection-end-line="395" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/lucene/lucene-core/3.0.2/lucene-core-3.0.2.jar!/org/apache/lucene/index/IndexWriter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="270" column="39" lean-forward="true" selection-start-line="270" selection-start-column="39" selection-end-line="270" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/impl/CartServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="866">
-          <caret line="79" column="22" lean-forward="true" selection-start-line="79" selection-start-column="22" selection-end-line="79" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/impl/OrderDetailsServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="18" column="8" lean-forward="true" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/impl/OrderServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89">
-          <caret line="45" column="55" lean-forward="false" selection-start-line="45" selection-start-column="55" selection-end-line="45" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/test/BaseMapperTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="47" column="5" lean-forward="false" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/model/ItemsCustom.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="22" column="29" lean-forward="false" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
-          <folding>
-            <element signature="e#502#503#0" expanded="true" />
-            <element signature="e#541#542#0" expanded="true" />
-            <element signature="e#571#572#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/4.1.1.RELEASE/spring-core-4.1.1.RELEASE.jar!/org/springframework/cglib/proxy/MethodProxy.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="104" column="0" lean-forward="false" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/4.1.1.RELEASE/spring-aop-4.1.1.RELEASE.jar!/org/springframework/aop/framework/CglibAopProxy.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="415" column="0" lean-forward="false" selection-start-line="415" selection-start-column="0" selection-end-line="415" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/github/pagehelper/pagehelper/4.1.3/pagehelper-4.1.3.jar!/com/github/pagehelper/PageInfo.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/been/PageBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="45" column="16" lean-forward="true" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/tk/mybatis/mapper/3.3.4/mapper-3.3.4-sources.jar!/tk/mybatis/mapper/common/base/insert/InsertMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/CartItemsMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="22" column="22" lean-forward="true" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
-          <folding>
-            <marker date="1501402312109" expanded="true" signature="540:642" ph="update store... " />
-            <marker date="1501402312109" expanded="true" signature="744:955" ph="select * FRO... store_cartitems" />
-            <marker date="1501402312109" expanded="true" signature="1013:1221" ph="delete FROM " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/CartMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="48" column="13" lean-forward="true" selection-start-line="46" selection-start-column="3" selection-end-line="48" selection-end-column="13" />
-          <folding>
-            <marker date="1501488889169" expanded="true" signature="2506:2557" ph="insert into store_cart... " />
-            <marker date="1501488889169" expanded="true" signature="2662:2977" ph="select cart.... store_cart" />
-            <marker date="1501488889169" expanded="true" signature="3089:3337" ph="select cart.... store_cart" />
-            <marker date="1501488889169" expanded="true" signature="3452:3648" ph="select cart.... store_cart" />
-            <marker date="1501488889169" expanded="true" signature="3740:3841" ph="update store... " />
-            <marker date="1501488889169" expanded="true" signature="3927:3987" ph="SELECT * FRO... store_cart" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/AdminMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="870">
-          <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-          <folding>
-            <marker date="1501574650500" expanded="true" signature="1971:2301" ph="select o.use... store_orders" />
-            <marker date="1501574650500" expanded="true" signature="1971:2310" ph="select o.use... store_orders" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/resources/css/css.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="120" column="1" lean-forward="false" selection-start-line="120" selection-start-column="1" selection-end-line="120" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/resources/admin/js/itemsList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/model/Items.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="30" column="28" lean-forward="false" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/product.jsp">
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/phone/package-info.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -2270,246 +2022,268 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/header.jsp">
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/ws/emailValidate/ValidateEmailWebServiceSoap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="80" column="24" lean-forward="true" selection-start-line="80" selection-start-column="24" selection-end-line="80" selection-end-column="94" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/AdvertisementService.java">
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/ws/helloWorld/package-info.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11">
-          <caret line="18" column="12" lean-forward="true" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/AdvertisementMapper.xml">
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/ws/helloWorld/SayResponse.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="86" column="28" lean-forward="true" selection-start-line="86" selection-start-column="28" selection-end-line="86" selection-end-column="28" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/ws/helloWorld/Say.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/ws/helloWorld/HelloWorld.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/ws/helloWorld/HelloWorldImplService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/ws/helloWorld/ObjectFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="11" column="33" lean-forward="true" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/test/wsTest/WebServieWeatherTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
           <folding>
-            <marker date="1501653394085" expanded="true" signature="865:929" ph="delete from " />
-            <marker date="1501653394085" expanded="true" signature="1049:1123" ph="select * FRO... store_advertisement" />
-            <marker date="1501653394085" expanded="true" signature="1220:1698" ph="update store... " />
-            <marker date="1501653394085" expanded="true" signature="2301:2672" ph="select o.ite... " />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/user/left.jsp">
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/test/wsTest/phoneTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1572">
-          <caret line="53" column="13" lean-forward="false" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
+        <state relative-caret-position="288">
+          <caret line="17" column="32" lean-forward="false" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/test/wsTest/emailValidate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="14" column="74" lean-forward="true" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="74" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="80" column="32" lean-forward="false" selection-start-line="80" selection-start-column="32" selection-end-line="80" selection-end-column="32" />
+          <folding>
+            <element signature="e#1790#1791#0" expanded="true" />
+            <element signature="e#1844#1845#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="25" column="47" lean-forward="false" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/admin/left.jsp">
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/user/show.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="43" column="16" lean-forward="true" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
+        <state relative-caret-position="-312">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/CartMapper.java">
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/admin/user/loginUI.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        <state relative-caret-position="-900">
+          <caret line="12" column="21" lean-forward="true" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/CartService.java">
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/resources/js/imagezoom.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/ws/HelloWorldImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/ws/HelloWorld.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/ws/WebServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/ws/cxf/WebServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="5" column="30" lean-forward="true" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+          <folding>
+            <element signature="e#443#444#0" expanded="true" />
+            <element signature="e#505#506#0" expanded="true" />
+            <element signature="e#564#565#0" expanded="true" />
+            <element signature="e#632#633#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/resources/applicationContext.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="79" column="55" lean-forward="false" selection-start-line="79" selection-start-column="49" selection-end-line="79" selection-end-column="55" />
+        <state relative-caret-position="90">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/resources/mybatis-conf.xml">
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/resources/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="78" column="14" lean-forward="true" selection-start-line="78" selection-start-column="14" selection-end-line="78" selection-end-column="14" />
+        <state relative-caret-position="450">
+          <caret line="15" column="6" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="309" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/resources/css/style.css">
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/admin/user/userRegist.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="1679" column="1" lean-forward="false" selection-start-line="1679" selection-start-column="1" selection-end-line="1679" selection-end-column="1" />
+        <state relative-caret-position="174">
+          <caret line="166" column="13" lean-forward="true" selection-start-line="166" selection-start-column="13" selection-end-line="166" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/ItemsMapper.java">
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/been/AjaxResult.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="17" column="19" lean-forward="false" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+        <state relative-caret-position="-161">
+          <caret line="53" column="45" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="53" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/ItemsService.java">
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/admin/user/findPassword.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="507">
-          <caret line="36" column="16" lean-forward="false" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
+        <state relative-caret-position="1049">
+          <caret line="191" column="29" lean-forward="true" selection-start-line="191" selection-start-column="29" selection-end-line="191" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/ItemsMapper.xml">
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/user/updatePhoneUI.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="68" column="0" lean-forward="true" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+        <state relative-caret-position="1830">
+          <caret line="164" column="50" lean-forward="true" selection-start-line="164" selection-start-column="50" selection-end-line="164" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/controller/admin/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="65">
+          <caret line="267" column="33" lean-forward="true" selection-start-line="267" selection-start-column="33" selection-end-line="267" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/util/MailUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-265">
+          <caret line="22" column="60" lean-forward="false" selection-start-line="22" selection-start-column="60" selection-end-line="22" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/test/EmailTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="436">
+          <caret line="70" column="23" lean-forward="false" selection-start-line="70" selection-start-column="23" selection-end-line="70" selection-end-column="23" />
           <folding>
-            <marker date="1501657723375" expanded="true" signature="2259:2353" ph="select FROM store_items" />
-            <marker date="1501657723375" expanded="true" signature="2775:2998" ph="insert into store_items... " />
-            <marker date="1501657723375" expanded="true" signature="3116:3300" ph="select * fro... store_items" />
-            <marker date="1501657723375" expanded="true" signature="3179:3219" ph="select id FR... store_items" />
-            <marker date="1501657723375" expanded="true" signature="3257:3299" ph="select type store_items" />
+            <element signature="e#1904#1905#0" expanded="true" />
+            <element signature="e#1955#1956#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/lucene/lucene-core/3.0.2/lucene-core-3.0.2.jar!/org/apache/lucene/store/Directory.class">
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/user/updateUI.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="19" column="29" lean-forward="false" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+        <state relative-caret-position="510">
+          <caret line="89" column="21" lean-forward="false" selection-start-line="89" selection-start-column="21" selection-end-line="89" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/admin/items/itemsShow.jsp">
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/user/securityUI.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="140" column="16" lean-forward="true" selection-start-line="140" selection-start-column="16" selection-end-line="140" selection-end-column="16" />
+        <state relative-caret-position="-870">
+          <caret line="16" column="9" lean-forward="false" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/items/itemsList.jsp">
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/user/updateEmailUI.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1268">
-          <caret line="110" column="36" lean-forward="true" selection-start-line="110" selection-start-column="36" selection-end-line="110" selection-end-column="36" />
+        <state relative-caret-position="459">
+          <caret line="169" column="20" lean-forward="true" selection-start-line="169" selection-start-column="20" selection-end-line="169" selection-end-column="20" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/items/saveUI.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="93" column="38" lean-forward="true" selection-start-line="93" selection-start-column="38" selection-end-line="93" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/show.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="317" column="27" lean-forward="false" selection-start-line="317" selection-start-column="27" selection-end-line="317" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/java/io/PrintStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="803" column="16" lean-forward="false" selection-start-line="803" selection-start-column="16" selection-end-line="803" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/impl/ItemsServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="59">
-          <caret line="136" column="0" lean-forward="true" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
-          <folding>
-            <element signature="e#4657#4658#0" expanded="true" />
-            <element signature="e#4715#4716#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/test/LuceneTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="107" column="32" lean-forward="true" selection-start-line="107" selection-start-column="32" selection-end-line="107" selection-end-column="32" />
-          <folding>
-            <element signature="e#3931#3944#0" expanded="true" />
-            <element signature="e#6506#6516#0" expanded="true" />
-            <element signature="e#7075#7083#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/LuceneDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9">
-          <caret line="77" column="0" lean-forward="true" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#980#993#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/admin/items/product.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="100" column="36" lean-forward="false" selection-start-line="100" selection-start-column="36" selection-end-line="100" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/controller/admin/ItemsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="176" column="13" lean-forward="true" selection-start-line="176" selection-start-column="13" selection-end-line="176" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/controller/admin/AdvertisementController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-67">
-          <caret line="158" column="5" lean-forward="true" selection-start-line="158" selection-start-column="5" selection-end-line="158" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/util/LuceneUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="105" column="67" lean-forward="false" selection-start-line="105" selection-start-column="67" selection-end-line="105" selection-end-column="67" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3957#3967#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/impl/AdvertisementServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="175" column="12" lean-forward="true" selection-start-line="175" selection-start-column="12" selection-end-line="175" selection-end-column="12" />
-          <folding>
-            <element signature="e#1553#1568#0" expanded="true" />
-            <element signature="e#6674#6687#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

@@ -137,9 +137,9 @@ public class ItemsServiceImpl implements ItemsService {
 
     //用户删除单个商品的信息
     public void deleteOne(Integer id){
+        LuceneDao luceneDao = new LuceneDao();
         try {
-            System.out.println("delete");
-            new LuceneDao().deleteOne(id);
+            luceneDao.deleteOne(id);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -206,7 +206,14 @@ public class ItemsServiceImpl implements ItemsService {
     }
     //取得指定类型的商品信息
     public PageBean showTypeItems(String type,PageBean pageBean) throws Exception {
-
+//        PageHelper.startPage(pageBean.getPage(),pageBean.getSize());
+//        List list = itemsMappers.selectTypeItems(type);
+//        //把分页出来的数据放入pageBean
+//        System.out.println("list-->" + list.size());
+//        pageBean.setRecordList(list);
+//        //取分页信息
+//        PageInfo<Items> pageInfo = new PageInfo<Items>(list);
+//        pageBean.init((int) pageInfo.getTotal(),list);
         LuceneDao luceneDao = new LuceneDao();
         if(type != null){
             pageBean.setSearchText(type);
@@ -224,9 +231,8 @@ public class ItemsServiceImpl implements ItemsService {
     }
     //根据商品id查找对应用户的商品
     public List<Items> selectUserItems(Integer id) {
-        System.out.println("id????????" + id);
         PageHelper.startPage(1,3);
         List<Items> itemsList = itemsMappers.selectUserItems(id);
-        return itemsList;
+        return null;
     }
 }

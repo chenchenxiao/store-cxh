@@ -146,6 +146,10 @@
             $(".newEmailTip").css("color",'red');
             return;
         }
+        if(!emailResult){
+            alert("请输入正确的邮箱号")
+            return;
+        }
         $.ajax({
             "url":"${pageContext.request.contextPath}/admin/user/checkEmail",
             "data":{"email":$('#newEmail').val()},
@@ -159,18 +163,22 @@
         });
     });
     $("#newEmail").blur(function () {
+        if($("#newEmail").val().length == 0){
+            return;
+        }
+        $(".newEmailTip").text("");
             $.ajax({
                 "url":"${pageContext.request.contextPath}/admin/user/checkRepeat",
                 "data":{"email":$('#newEmail').val()},
                 "type":"POST",
                 "success":function(data){
-                    if(data.result){
+                    if(data.success){
                         $(".newEmailTip").text("");
                         // $("#name").parent().next("div").css("color",'white');
                         emailResult = true;
                         return;
                     }else{
-                        $(".newEmailTip").text("该邮箱已被注册");
+                        $(".newEmailTip").text(data.msg);
                         $(".newEmailTip").css("color",'red');
                         emailResult = false;
                         return;
@@ -183,8 +191,8 @@
     $("#newSubmit").click(function () {
 
         if($("#newEmail").val().length == 0){
-            $(".newCheckCodeTip").text("请填写验证码");
-            $(".newCheckCodeTip ").css("color",'red');
+            $(".newEmailTip").text("请先输入邮箱号码");
+            $(".newEmailTip ").css("color",'red');
             return;
         }
         if($("#newCheckCode").val() != checkResult){

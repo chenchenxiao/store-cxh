@@ -1,29 +1,26 @@
 package com.store.controller.admin;
 
 import com.store.been.AjaxResult;
-import com.store.model.Mail;
 import com.store.model.User;
 import com.store.service.UserService;
 import com.store.util.CheckNumberUtil;
 import com.store.util.FileUploadUtil;
 import com.store.util.MailUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.io.*;
-import java.util.UUID;
-import org.apache.commons.mail.EmailException;
+
 /**
  * Created by 陈晓海 on 2017/7/8.
  * 用户控制器
@@ -35,19 +32,36 @@ public class UserController extends BaseAdminController<User,Long> {
     private UserService userService;
 
     //校验用户名或手机号是否已被注册
+    @ResponseBody
     @RequestMapping("checkRepeat")
-    public void checkRepeat(User user,PrintWriter outs){
-        System.out.println("user-___->" + user);
-        //如果已被注册就返回false，否则返回true；
-        if(userService.checkRepeat(user) > 0){
-            System.out.println("boolean-->" + false);
-            outs.print("{\"result\":"+false+"}");
-            outs.close();
-        }else{
-            System.out.println("boolean-->" + true);
-            outs.print("{\"result\":"+true+"}");
-            outs.close();
+    public AjaxResult checkRepeat(User user){
+        //校验邮箱
+        if(user.getEmail() != null){
+            //校验邮箱是否真实存在
+            if(!userService.emailValidate(user.getEmail())){
+                return new AjaxResult(false,"找不到该邮箱号，请正确输入");
+            }
+            //校验邮箱是否已被注册
+            if(userService.checkRepeat(user) > 0){
+                return new AjaxResult(false,"该邮箱已被注册，请重新输入");
+            }
         }
+        //校验手机号码
+        if(user.getPhoneNumber() != null){
+            //校验手机号码是否真实存在
+            if(!userService.phoneValidate(user.getPhoneNumber())){
+                return new AjaxResult(false,"该手机号不存在或已过期，请重新输入");
+            }
+            //校验手机号是否已被注册
+            if(userService.checkRepeat(user) > 0){
+                return new AjaxResult(false,"该手机号已被注册，请重新输入");
+            }
+        }
+        //校验用户名是否已被注册
+       if(userService.checkRepeat(user) > 0){
+            return new AjaxResult(false,"该账户已被注册，请重新输入");
+       }
+        return new AjaxResult(true,"");
     }
 
     //获取手机验证码
@@ -71,7 +85,7 @@ public class UserController extends BaseAdminController<User,Long> {
         if(bindingResult.hasErrors()){
             model.addAttribute("result",new AjaxResult(true,"格式填写错误"));
             System.out.println("格式填写错误");
-            return "userRegist";
+            return "admin/user/userRegist";
         }else if(userService.checkRepeat(user) > 0) {       //防止表单重复提交
             model.addAttribute("result",new AjaxResult(false,"该用户已被注册！"));
             return "admin/user/loginUI";

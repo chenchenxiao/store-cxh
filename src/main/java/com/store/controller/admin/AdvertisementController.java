@@ -157,12 +157,20 @@ public class AdvertisementController extends BaseAdminController<Advertisement,L
         }
         advertisementService.quartzUpdate(page,5);
     }
+
     //定时更新索引库的数据
     @Scheduled(cron = "0 0/59 * * * ? ")
-    public void testLucene() throws Exception {
+    public void luceneUpdate() throws Exception {
         LuceneDao luceneDao = new LuceneDao();
         luceneDao.deleteAll();
         System.out.println("LIST--》" + luceneDao.isIndexNull());
         advertisementService.addToLucene();
+    }
+
+    @RequestMapping("testLucene")
+    public void testLucene() throws Exception {
+        LuceneDao luceneDao = new LuceneDao();
+        luceneDao.deleteAll();
+        System.out.println("delete");
     }
 }

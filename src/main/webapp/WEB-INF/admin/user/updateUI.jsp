@@ -153,12 +153,12 @@
             "data":{"account":$('#account').val()},
             "type":"POST",
             "success":function(data){
-                if(data.result){
+                if(data.success){
                     $(".tips").text("");
                     // $("#name").parent().next("div").css("color",'white');
                     accountResult = true;
                 }else{
-                    $(".tips").text("该用户名已被注册");
+                    $(".tips").text(data.msg);
                     $(".tips").css("color",'red');
                     accountResult = false;
                 }
