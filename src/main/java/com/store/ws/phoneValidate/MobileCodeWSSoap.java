@@ -1,5 +1,5 @@
 
-package phone;
+package com.store.ws.phoneValidate;
 
 import javax.jws.WebMethod;
 import javax.jws.WebParam;

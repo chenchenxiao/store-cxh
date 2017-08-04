@@ -1,5 +1,5 @@
 
-package phone;
+package com.store.ws.phoneValidate;
 
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlElementDecl;
@@ -60,7 +60,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link GetDatabaseInfo }
-     * 
+     *
      */
     public GetDatabaseInfo createGetDatabaseInfo() {
         return new GetDatabaseInfo();

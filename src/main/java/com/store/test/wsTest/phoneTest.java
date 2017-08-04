@@ -1,8 +1,9 @@
 package com.store.test.wsTest;
 
+import com.store.ws.phoneValidate.MobileCodeWS;
+import com.store.ws.phoneValidate.MobileCodeWSSoap;
 import org.junit.Test;
-import phone.MobileCodeWS;
-import phone.MobileCodeWSSoap;
+
 
 /**
  * Created by 陈晓海 on 2017/8/3.

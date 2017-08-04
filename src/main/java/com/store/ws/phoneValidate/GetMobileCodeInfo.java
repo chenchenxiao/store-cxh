@@ -1,5 +1,5 @@
 
-package com.store.weather;
+package com.store.ws.phoneValidate;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -17,8 +17,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="theCityCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="theUserID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="mobileCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="userID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -29,61 +29,61 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "theCityCode",
-    "theUserID"
+    "mobileCode",
+    "userID"
 })
-@XmlRootElement(name = "getWeather")
-public class GetWeather {
+@XmlRootElement(name = "getMobileCodeInfo")
+public class GetMobileCodeInfo {
 
-    protected String theCityCode;
-    protected String theUserID;
+    protected String mobileCode;
+    protected String userID;
 
     /**
-     * ��ȡtheCityCode���Ե�ֵ��
+     * ��ȡmobileCode���Ե�ֵ��
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getTheCityCode() {
-        return theCityCode;
+    public String getMobileCode() {
+        return mobileCode;
     }
 
     /**
-     * ����theCityCode���Ե�ֵ��
+     * ����mobileCode���Ե�ֵ��
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setTheCityCode(String value) {
-        this.theCityCode = value;
+    public void setMobileCode(String value) {
+        this.mobileCode = value;
     }
 
     /**
-     * ��ȡtheUserID���Ե�ֵ��
+     * ��ȡuserID���Ե�ֵ��
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getTheUserID() {
-        return theUserID;
+    public String getUserID() {
+        return userID;
     }
 
     /**
-     * ����theUserID���Ե�ֵ��
+     * ����userID���Ե�ֵ��
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setTheUserID(String value) {
-        this.theUserID = value;
+    public void setUserID(String value) {
+        this.userID = value;
     }
 
 }

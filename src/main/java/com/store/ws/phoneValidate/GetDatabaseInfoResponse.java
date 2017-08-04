@@ -1,5 +1,5 @@
 
-package com.store.weather;
+package com.store.ws.phoneValidate;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -17,7 +17,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="getRegionProvinceResult" type="{http://WebXml.com.cn/}ArrayOfString" minOccurs="0"/>
+ *         &lt;element name="getDatabaseInfoResult" type="{http://WebXml.com.cn/}ArrayOfString" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -28,35 +28,35 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "getRegionProvinceResult"
+    "getDatabaseInfoResult"
 })
-@XmlRootElement(name = "getRegionProvinceResponse")
-public class GetRegionProvinceResponse {
+@XmlRootElement(name = "getDatabaseInfoResponse")
+public class GetDatabaseInfoResponse {
 
-    protected ArrayOfString getRegionProvinceResult;
+    protected ArrayOfString getDatabaseInfoResult;
 
     /**
-     * ��ȡgetRegionProvinceResult���Ե�ֵ��
+     * ��ȡgetDatabaseInfoResult���Ե�ֵ��
      * 
      * @return
      *     possible object is
      *     {@link ArrayOfString }
      *     
      */
-    public ArrayOfString getGetRegionProvinceResult() {
-        return getRegionProvinceResult;
+    public ArrayOfString getGetDatabaseInfoResult() {
+        return getDatabaseInfoResult;
     }
 
     /**
-     * ����getRegionProvinceResult���Ե�ֵ��
+     * ����getDatabaseInfoResult���Ե�ֵ��
      * 
      * @param value
      *     allowed object is
      *     {@link ArrayOfString }
      *     
      */
-    public void setGetRegionProvinceResult(ArrayOfString value) {
-        this.getRegionProvinceResult = value;
+    public void setGetDatabaseInfoResult(ArrayOfString value) {
+        this.getDatabaseInfoResult = value;
     }
 
 }

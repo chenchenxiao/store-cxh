@@ -10,6 +10,8 @@ import com.store.model.User;
 import com.store.service.AdvertisementService;
 import com.store.util.FileUploadUtil;
 import com.store.util.LuceneUtil;
+import org.apache.lucene.index.IndexWriter;
+import org.apache.lucene.index.Term;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -18,6 +20,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -173,4 +176,5 @@ public class AdvertisementController extends BaseAdminController<Advertisement,L
         luceneDao.deleteAll();
         System.out.println("delete");
     }
+
 }

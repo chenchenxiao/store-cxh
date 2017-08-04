@@ -1,5 +1,5 @@
 
-package com.store.weather;
+package com.store.ws.phoneValidate;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -25,8 +25,8 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
-@XmlRootElement(name = "getRegionDataset")
-public class GetRegionDataset {
+@XmlRootElement(name = "getDatabaseInfo")
+public class GetDatabaseInfo {
 
 
 }

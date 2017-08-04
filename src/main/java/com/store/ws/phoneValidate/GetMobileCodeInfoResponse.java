@@ -1,5 +1,5 @@
 
-package com.store.weather;
+package com.store.ws.phoneValidate;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -17,7 +17,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="theRegionCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="getMobileCodeInfoResult" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -28,35 +28,35 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "theRegionCode"
+    "getMobileCodeInfoResult"
 })
-@XmlRootElement(name = "getSupportCityDataset")
-public class GetSupportCityDataset {
+@XmlRootElement(name = "getMobileCodeInfoResponse")
+public class GetMobileCodeInfoResponse {
 
-    protected String theRegionCode;
+    protected String getMobileCodeInfoResult;
 
     /**
-     * ��ȡtheRegionCode���Ե�ֵ��
+     * ��ȡgetMobileCodeInfoResult���Ե�ֵ��
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getTheRegionCode() {
-        return theRegionCode;
+    public String getGetMobileCodeInfoResult() {
+        return getMobileCodeInfoResult;
     }
 
     /**
-     * ����theRegionCode���Ե�ֵ��
+     * ����getMobileCodeInfoResult���Ե�ֵ��
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setTheRegionCode(String value) {
-        this.theRegionCode = value;
+    public void setGetMobileCodeInfoResult(String value) {
+        this.getMobileCodeInfoResult = value;
     }
 
 }

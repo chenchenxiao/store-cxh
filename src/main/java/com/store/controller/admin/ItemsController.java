@@ -121,8 +121,7 @@ public class ItemsController extends BaseAdminController<Items,Long>{
 
     //用户导出商品信息
     @RequestMapping("exportExcel")
-    public void exportExcel( @RequestParam("ids") Integer[] ids,HttpServletResponse response, HttpSession session) throws Exception {
-        User user = (User) session.getAttribute("loginUser");
+    public void exportExcel( @RequestParam("ids") Integer[] ids,HttpServletResponse response) throws Exception {
         System.out.println(ids);
         List<Items> list = itemsService.expList(ids);
         response.setContentType("application/x-excel");

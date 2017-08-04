@@ -76,7 +76,7 @@
 
     <select id="selectHotSell" resultType="com.store.model.Items">
         select
-        o.items_number,i.id,i.name,i.title,i.price,i.photo,count(items_id) count
+        o.items_number,i.id,i.name,i.title,i.price,i.photo,count(DISTINCT items_id) count
         FROM
         store_items i
         LEFT JOIN

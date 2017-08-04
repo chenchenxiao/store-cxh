@@ -8,10 +8,10 @@ import com.store.service.UserService;
 import com.store.util.Md5Util;
 import com.store.ws.emailValidate.ValidateEmailWebService;
 import com.store.ws.emailValidate.ValidateEmailWebServiceSoap;
+import com.store.ws.phoneValidate.MobileCodeWS;
+import com.store.ws.phoneValidate.MobileCodeWSSoap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import phone.MobileCodeWS;
-import phone.MobileCodeWSSoap;
 import sun.security.provider.MD5;
 
 /**
