@@ -5,13 +5,14 @@ import org.hibernate.validator.constraints.Length;
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Created by 陈晓海 on 2017/8/1.
  *
  */
-public class ItemsCustom {
+public class ItemsCustom implements Serializable {
    private Integer id;
    private String name;
    private String title;

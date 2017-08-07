@@ -3,13 +3,14 @@ package com.store.model;
 import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.Table;
+import java.io.Serializable;
 
 /**
  * Created by 陈晓海 on 2017/7/28.
  * 广告实体类
  */
 @Table(name = "store_advertisement")
-public class Advertisement {
+public class Advertisement implements Serializable{
     private Integer id;                 //id
 
     public Advertisement(Integer userId) {

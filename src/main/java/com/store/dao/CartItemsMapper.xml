@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.store.dao.CartItemsMapper">
+    <!--配置redis二级缓存 -->
+    <cache eviction="LRU" type="com.store.cache.RedisCache" />
     <delete id="deleteByIds" parameterType="java.util.List">
         delete FROM
         store_cartitems

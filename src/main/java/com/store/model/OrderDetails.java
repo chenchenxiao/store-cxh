@@ -4,13 +4,14 @@ import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import java.io.Serializable;
 
 /**
  * Created by 陈晓海 on 2017/7/22.
  * 订单明细POJO
  */
 @Table(name = "store_orderdetails")
-public class OrderDetails {
+public class OrderDetails implements Serializable {
     @Id
     @Column(name = "od_id")
     private Integer id;             //订单明细的id

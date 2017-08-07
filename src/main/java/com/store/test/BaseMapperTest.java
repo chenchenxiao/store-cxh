@@ -43,8 +43,10 @@ public class BaseMapperTest {
 //        Cart cart = new Cart();
 //        cart.setPayment((float) 0);
 //        cart.setUserId(47);
-        String str = "/admin/admin/userList";
-        System.out.println(str.substring(str.indexOf("/"),str.lastIndexOf("/")));
+//        String str = "/admin/admin/userList";
+//        System.out.println(str.substring(str.indexOf("/"),str.lastIndexOf("/")));
+        User user = userMapper.selectByPrimaryKey(56);
+        System.out.println(user);
     }
     public void testQuart(){
         System.out.println("aaa");

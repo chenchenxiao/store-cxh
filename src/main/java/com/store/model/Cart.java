@@ -1,5 +1,6 @@
 package com.store.model;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -10,7 +11,7 @@ import javax.persistence.Transient;
  * Created by 陈晓海 on 2017/7/25.
  */
 @Table(name = "store_cart")
-public class Cart {
+public class Cart implements Serializable{
     @Override
     public String toString() {
         return "Cart{" +

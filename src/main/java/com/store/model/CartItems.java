@@ -1,5 +1,6 @@
 package com.store.model;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -12,7 +13,7 @@ import javax.persistence.Transient;
  * 订单明细POJO
  */
 @Table(name = "store_cartitems")
-public class CartItems {
+public class CartItems implements Serializable{
     @Id
     @Column(name = "cit_id")
     private Integer id;             //购物车商品明细id

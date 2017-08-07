@@ -2,12 +2,13 @@ package com.store.model;
 
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.io.Serializable;
 
 /**
  * Created by 陈晓海 on 2017/7/27.
  */
 @Table(name = "store_admin")
-public class Admin {
+public class Admin implements Serializable{
     @Id
     private Integer id;
 

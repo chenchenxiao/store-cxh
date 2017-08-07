@@ -9,6 +9,7 @@ import javax.persistence.Transient;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -16,7 +17,7 @@ import java.util.Date;
  * 商品实体类
  */
 @Table(name = "store_items")
-public class Items {
+public class Items implements Serializable {
     @Id
     private Integer id;     //商品的id
     @Column(name = "uid")

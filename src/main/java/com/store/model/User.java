@@ -1,5 +1,6 @@
 package com.store.model;
 
+import java.io.Serializable;
 import java.util.List;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
@@ -15,7 +16,7 @@ import javax.validation.constraints.Pattern;
  * 用户实体类
  */
 @Table(name = "store_user")
-public class User {
+public class User implements Serializable {
     public User() {
     }
     @Id

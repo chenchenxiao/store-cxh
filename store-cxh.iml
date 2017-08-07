@@ -158,5 +158,10 @@
     <orderEntry type="library" name="Maven: org.codehaus.woodstox:woodstox-core-asl:4.4.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.ws.xmlschema:xmlschema-core:2.2.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.cxf:cxf-rt-transports-http:3.1.6" level="project" />
+    <orderEntry type="library" name="Maven: redis.clients:jedis:2.9.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.commons:commons-pool2:2.4.2" level="project" />
+    <orderEntry type="library" name="Maven: commons-pool:commons-pool:1.6" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.data:spring-data-redis:1.6.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.mybatis:mybatis-ehcache:1.0.0" level="project" />
   </component>
 </module>
