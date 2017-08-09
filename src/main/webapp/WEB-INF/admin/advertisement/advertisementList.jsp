@@ -42,7 +42,7 @@
                     <input type="hidden" id="pageNum" name="page" value="1">
                     <input type="hidden" name="uid" value="${sessionScope.loginUser.id}"/>
                     <div class="cfD">
-                        <a class="btn btn-sm btn-primary-outline pull-right" href="${pageContext.request.contextPath}/admin/advertisement/adSaveUI/" >
+                        <a class="btn btn-sm btn-primary-outline pull-right" href="${pageContext.request.contextPath}/admin/advertisement/adSaveUI" >
                             <i class="icon-plus"></i>添加
                         </a>
                     </div>

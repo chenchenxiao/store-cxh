@@ -21,6 +21,6 @@ public interface AdminMapper extends BaseMapper<Admin> {
     User selectOrders(@Param("userId") Integer userId);
 
     //根据查询条件查询广告信息
-    List<Advertisement> adList(String searchText);
+    List<Advertisement> adList(@Param("searchText") String searchText);
 
 }

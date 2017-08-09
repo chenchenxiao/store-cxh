@@ -30,9 +30,9 @@
 
     <context:component-scan base-package="com.store"/>
 
-    <!-- 第一步：配置数据源 -->
     <context:property-placeholder location="classpath:jdbc.properties" />
     <context:property-placeholder location="classpath:redis.properties" />
+    <!-- 第一步：配置数据源 -->
     <!-- redis数据源 -->
     <bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig">
         <!-- 最大连接数 -->
@@ -62,6 +62,13 @@
           class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"
           p:host-name="192.168.216.132" p:port="6379"
           p:pool-config-ref="poolConfig" />
+
+    <bean id="jedisPool" class="redis.clients.jedis.JedisPool"
+          destroy-method="close">
+        <constructor-arg name="poolConfig" ref="poolConfig" />
+        <constructor-arg name="host" value="192.168.216.132" />
+        <constructor-arg name="port" value="6379" />
+    </bean>
     <!-- 使用中间类解决RedisCache.jedisConnectionFactory的静态注入，从而使MyBatis实现第三方缓存 -->
     <bean id="redisCacheTransfer" class="com.store.cache.RedisCache">
         <property name="jedisConnectionFactory" ref="jedisConnectionFactory" />
@@ -87,9 +94,11 @@
         <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
         <property name="minEvictableIdleTimeMillis" value="${ds.minEvictableIdleTimeMillis}"/>
 
-        <property name="validationQuery" value="SELECT 'x'"/>
+        <!--<property name="validationQuery" value="SELECT 'x'"/>-->
+        <property name="validationQuery" value="SELECT 1" />
         <property name="testWhileIdle" value="true"/>
-        <property name="testOnBorrow" value="false"/>
+        <property name="testOnBorrow" value="true"/>
+        <!--<property name="testOnBorrow" value="false"/>-->
         <property name="testOnReturn" value="false"/>
 
         <!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
@@ -125,7 +134,7 @@
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
         <property name="properties">
             <value>
-                mappers=tk.mybatis.mapper.common.Mapper
+                mappers=com.store.util.BaseMapper
             </value>
         </property>
     </bean>

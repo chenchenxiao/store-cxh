@@ -6,6 +6,7 @@ import com.store.service.UserService;
 import com.store.util.CheckNumberUtil;
 import com.store.util.FileUploadUtil;
 import com.store.util.MailUtils;
+import com.store.util.SendPhoneMsgUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -64,14 +65,14 @@ public class UserController extends BaseAdminController<User,Long> {
         return new AjaxResult(true,"");
     }
 
+
     //获取手机验证码
     @RequestMapping("checkPhone")
     public void phoneCheck(String phoneNumber,PrintWriter outs) throws IOException {
-        System.out.println("phoneNumber-->" + phoneNumber);
         //获取验证码
         String checkNumber = CheckNumberUtil.getCheckNumber();
         //发送手机短信
-//        SendPhoneMsgUtil.sendMsg(phoneNumber,checkNumber);
+        SendPhoneMsgUtil.sendMsg(phoneNumber,checkNumber);
         System.out.println("发送完短信了");
         //返回验证码
         outs.print("{\"result\":"+checkNumber+"}");
@@ -86,10 +87,11 @@ public class UserController extends BaseAdminController<User,Long> {
             model.addAttribute("result",new AjaxResult(true,"格式填写错误"));
             System.out.println("格式填写错误");
             return "admin/user/userRegist";
-        }else if(userService.checkRepeat(user) > 0) {       //防止表单重复提交
+        }else if(userService.checkRepeat(user) > 0) {       //后台校验用户名，手机是否可用
             model.addAttribute("result",new AjaxResult(false,"该用户已被注册！"));
             return "admin/user/loginUI";
         }else{
+            //如果都可以则增添用户
             userService.addUser(user);
             model.addAttribute("result",new AjaxResult(true,"注册成功,请登录"));
             return "admin/user/loginUI";
@@ -102,6 +104,7 @@ public class UserController extends BaseAdminController<User,Long> {
         //根据密码和用户名查找对应的用户信息
         User loginUser = userService.login(user);
         User preUser = (User) session.getAttribute("loginUser");
+        //防止用户重复登录
         if(preUser!=null){
             model.addAttribute("result", new AjaxResult(false, "您已登录，请不要重复登录"));
             return "admin/user/loginUI";
@@ -169,7 +172,7 @@ public class UserController extends BaseAdminController<User,Long> {
                     userService.update(user);
                     session.setAttribute("loginUser",user);     //重新给session域的loginUser赋值
                     redirectAttributes.addFlashAttribute("result",new AjaxResult(true,"操作成功"));
-                    return  "redirect:/admin/user/index";
+                    return  REDIRECT_URL + "updateUI/" + user.getId();
 
             }else if(user.getAccount()!=null && userService.checkAccount(user.getAccount()) > 0 ){      //判断用户名是否重复注册
                      redirectAttributes.addFlashAttribute("result",new AjaxResult(false,"该账户已被使用，请重新注册"));
@@ -184,7 +187,7 @@ public class UserController extends BaseAdminController<User,Long> {
                     }
                     //修改信息
                     userService.update(user);
-                    return "redirect:/admin/user/index";
+                    return REDIRECT_URL + "updateUI/" + user.getId();
             }
         }catch (Exception e){
             e.printStackTrace();
@@ -204,7 +207,7 @@ public class UserController extends BaseAdminController<User,Long> {
             outs.close();
         }
         //查看的图片的名称
-        String photoName = FileUploadUtil.uploadUserPhoto(pictures,FileUploadUtil.USER_PATH);
+        String photoName = FileUploadUtil.uploadUserPhoto(pictures,FileUploadUtil.PREVIEW_PATH);
         outs.print("{\"showResult\":\""+ photoName +"\"}");
         outs.close();
     }
@@ -222,7 +225,7 @@ public class UserController extends BaseAdminController<User,Long> {
             String email = user.getEmail().replace(user.getEmail().substring(3, 7), "****");
             model.addAttribute("email",email);
         }
-        //保存邮箱和手机号，在修改页面时发生校验码要用到
+        //保存邮箱和手机号，在修改页面时发送校验码要用到
         model.addAttribute("user",user);
         model.addAttribute("phone",phone);
         return TEMPLATE_PATH + "securityUI";
@@ -255,7 +258,7 @@ public class UserController extends BaseAdminController<User,Long> {
         //若没被注册过就重新把ID值set进去，再修改
         user.setId(id);
         userService.update(user);
-        return "redirect:/admin/user/index";
+        return REDIRECT_URL + "securityUI/" + id;
     }
 
     //跳转到绑定邮箱页面
@@ -302,4 +305,9 @@ public class UserController extends BaseAdminController<User,Long> {
         return TEMPLATE_PATH + "left";
     }
 
+    @RequestMapping("checkPhoneCode")
+    @ResponseBody
+    public AjaxResult  checkPhoneCode(String phoneCode){
+        return new AjaxResult(true,"etst");
+    }
 }

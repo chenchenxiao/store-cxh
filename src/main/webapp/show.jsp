@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--<%--%>
-    <%--//页面每隔30秒自动刷新一遍--%>
-    <%--response.setHeader("refresh" , "30" );--%>
+<%
+    //页面每隔30秒自动刷新一遍
+    response.setHeader("refresh" , "3600" );
 
-<%--%>--%>
+%>
 <%--
   Created by IntelliJ IDEA.
   User: ${陈晓海}
@@ -16,7 +16,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>在线商城</title>
+    <title>Store</title>
     <link href="${pageContext.request.contextPath}/resources/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="${pageContext.request.contextPath}/resources/js/jquery.min.js"></script>
@@ -88,7 +88,7 @@
             <div class="header-can">
                 <div class="search">
                     <form action="${pageContext.request.contextPath}/admin/items/showTypeItems" method="post">
-                        <input type="text" value="" name="searchText" placeholder="站内搜索" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '';}" >
+                        <input type="text" value="" name="searchText" placeholder="搜索" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '';}" >
                         <input type="submit" value="">
                     </form>
                 </div>
@@ -100,7 +100,6 @@
         </div>
     </div>
 </div>
-<div class="copyrights">Collect from <a href="http://www.cssmoban.com/"  title="网站模板">网站模板</a></div>
 <div class="banner-mat">
     <div class="container">
         <div class="banner">

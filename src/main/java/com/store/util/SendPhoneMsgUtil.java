@@ -9,7 +9,7 @@ import java.io.IOException;
 
 /**7ca438f945aba774a409
  * Created by 陈晓海 on 2017/7/8.
- * 发送手机短信工具类ae06696acdbcb78b92e3
+ * 发送手机短信工具类
  */
 public class SendPhoneMsgUtil {
 
@@ -17,7 +17,7 @@ public class SendPhoneMsgUtil {
         HttpClient client = new HttpClient();
         PostMethod post = new PostMethod("http://gbk.sms.webchinese.cn");
         post.addRequestHeader("Content-Type","application/x-www-form-urlencoded;charset=gbk");//在头文件中设置转码
-        NameValuePair[] data ={ new NameValuePair("Uid", "chenxiaohai"),new NameValuePair("Key", "ae06696acdbcb78b92e3"),new NameValuePair("smsMob",phoneNumber),new NameValuePair("smsText","您在海哥的商城申请了注册用户，检验码是"+ checkNumber)};
+        NameValuePair[] data ={ new NameValuePair("Uid", "chenxiaohai"),new NameValuePair("Key", "ae06696acdbcb78b92e3"),new NameValuePair("smsMob",phoneNumber),new NameValuePair("smsText","您在Store申请了注册用户，检验码是"+ checkNumber)};
         post.setRequestBody(data);
 
         client.executeMethod(post);

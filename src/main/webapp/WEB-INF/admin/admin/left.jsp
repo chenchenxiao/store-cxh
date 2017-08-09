@@ -35,25 +35,6 @@
         <%--</dl>--%>
         <dl class="system_log">
             <dt>
-                <img class="icon1" src="${pageContext.request.contextPath}/resources/img/coin03.png"/>
-                <img class="icon2" src="${pageContext.request.contextPath}/resources/img/coin04.png"/>
-                     我的商品
-                <img class="icon3" src="${pageContext.request.contextPath}/resources/img/coin19.png"/>
-                <img class="icon4"src="${pageContext.request.contextPath}/resources/img/coin20.png"/>
-            </dt>
-            <dd>
-                <img class="coin11" src="${pageContext.request.contextPath}/resources/img/coin111.png"/>
-                <img class="coin22" src="${pageContext.request.contextPath}/resources/img/coin222.png"/>
-                <a class="cks" href="${pageContext.request.contextPath}/admin/items/itemsList"
-                        <c:if test="${sessionScope.loginUser != null}"> target="main"</c:if>
-                        <c:if test="${sessionScope.loginUser == null}"> target="_top"</c:if>>
-                    我的商品
-                </a>
-                <img class="icon5" src="${pageContext.request.contextPath}/resources/img/coin21.png"/>
-            </dd>
-        </dl>
-        <dl class="system_log">
-            <dt>
                 <img class="icon1" src="${pageContext.request.contextPath}/resources/img/coin07.png"/>
                 <img class="icon2" src="${pageContext.request.contextPath}/resources/img/coin08.png"/>
                 用户管理
@@ -83,26 +64,6 @@
             </dd>
         </dl>
         <dl class="system_log">
-            <dt>
-                <img class="icon1" src="${pageContext.request.contextPath}/resources/img/coinL1.png"/>
-                <img class="icon2" src="${pageContext.request.contextPath}/resources/img/coinL2.png"/> 我的账户
-                <img class="icon3" src="${pageContext.request.contextPath}/resources/img/coin19.png"/>
-                <img class="icon4" src="${pageContext.request.contextPath}/resources/img/coin20.png"/>
-            </dt>
-            <dd>
-                <img class="coin11" src="${pageContext.request.contextPath}/resources/img/coin111.png"/>
-                <img class="coin22" src="${pageContext.request.contextPath}/resources/img/coin222.png"/>
-                <a href="${pageContext.request.contextPath}/admin/user/updateUI/${sessionScope.loginUser.id}"
-                   target="main" class="cks">个人资料</a>
-                <img class="icon5" src="${pageContext.request.contextPath}/resources/img/coin21.png"/>
-            </dd>
-            <dd>
-                <img class="coin11" src="${pageContext.request.contextPath}/resources/img/coin111.png"/>
-                <img class="coin22" src="${pageContext.request.contextPath}/resources/img/coin222.png"/>
-                <a href="${pageContext.request.contextPath}/admin/user/securityUI/${sessionScope.loginUser.id}"
-                   target="main" class="cks">安全设置</a>
-                <img class="icon5" src="${pageContext.request.contextPath}/resources/img/coin21.png"/>
-            </dd>
             <dd>
                 <img class="coin11" src="${pageContext.request.contextPath}/resources/img/coin111.png"/>
                 <img class="coin22" src="${pageContext.request.contextPath}/resources/img/coin222.png"/>

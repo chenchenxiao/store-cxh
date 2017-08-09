@@ -38,10 +38,10 @@ public class AdminServiceImpl implements AdminService {
         if("".equals(pageBean.getSearchText())){
             pageBean.setSearchText(null);
         }
-        PageHelper.startPage(pageBean.getPage(),pageBean.getSize());
         if(pageBean.getSearchText() != null && pageBean.getSearchText() != ""){
             pageBean.setSearchText("%" + pageBean.getSearchText() + "%");
         }
+        PageHelper.startPage(pageBean.getPage(),pageBean.getSize());
         List list = adminMapper.userList(pageBean.getSearchText());
         //把分页出来的数据放入pageBean
         pageBean.setRecordList(list);
@@ -54,6 +54,10 @@ public class AdminServiceImpl implements AdminService {
     //根据id查询用户订单所有订单
     public List<Orders> showOrder(Integer userId) {
         User user = adminMapper.selectOrders(userId);
+        //如果该用户没有创建过定单就返回null
+        if(user == null){
+            return null;
+        }
         //返回用户的订单集合
         return user.getOrdersList();
     }
@@ -64,7 +68,8 @@ public class AdminServiceImpl implements AdminService {
             pageBean.setSearchText(null);
         }
         if(pageBean.getSearchText() != null && pageBean.getSearchText() != ""){
-            pageBean.setSearchText("%" + pageBean.getSearchText() + "%");
+            String searchText = "%" + pageBean.getSearchText() + "%";
+            pageBean.setSearchText(searchText);
         }
         PageHelper.startPage(pageBean.getPage(),pageBean.getSize());
         List list = adminMapper.adList(pageBean.getSearchText());
@@ -78,6 +83,7 @@ public class AdminServiceImpl implements AdminService {
 
     //修改广告状态
     public void adPass(Integer[] ids) {
+        //把需要修改的商品的id遍历放入list集合
         List<Integer> list = new ArrayList<Integer>();
         for(Integer id:ids){
             list.add(id);
@@ -86,6 +92,7 @@ public class AdminServiceImpl implements AdminService {
     }
     //修改广告状态
     public void notPass(Integer[] ids) {
+        //取得要修改的广告的id
         List<Integer> list = new ArrayList<Integer>();
         for(Integer id:ids){
             list.add(id);

@@ -106,12 +106,12 @@
         checkResult = result;
     }
     function getCode() {
+        alert("成功发送信息！")
         $.ajax({
             "url":"${pageContext.request.contextPath}/admin/user/checkPhone",
             "data":{"phoneNumber":$('#oldPhoneNumber').val()},
             "type":"POST",
             "success":function(data){
-                alert(data.result)
                 // $("#RealCheckNumber").val(data.result)
                 getcheckVal(data.result)
             },
@@ -125,11 +125,11 @@
             return;
         }
         $.ajax({
+            alert("成功发送信息！")
             "url":"${pageContext.request.contextPath}/admin/user/checkPhone",
             "data":{"phoneNumber":$('#newPhoneNumber').val()},
             "type":"POST",
             "success":function(data){
-                alert(data.result)
                 // $("#RealCheckNumber").val(data.result)
                 getcheckVal(data.result)
             },
@@ -147,6 +147,7 @@
             $(this).parent().next("div").css("color",'red');
             phoneResult = false;
         }else{
+            alert("成功发送信息！")
             $.ajax({
                 "url":"${pageContext.request.contextPath}/admin/user/checkRepeat",
                 "data":{"phoneNumber":$('#newPhoneNumber').val()},

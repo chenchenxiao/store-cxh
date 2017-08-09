@@ -28,7 +28,7 @@
     <div class="pageTop">
         <div class="page">
             <img src="${pageContext.request.contextPath}/resources/img/coin02.png" />
-            <span><a href="show.jsp">首页</a>&nbsp;-&nbsp;-</span>&nbsp;我的商品
+            <span><a href="javascript:void(0)">我的商品</a>
         </div>
     </div>
     <div class="page">
@@ -74,6 +74,7 @@
                         <tr>
 
                             <td width="150px" class="tdColor tdC">商品名称</td>
+                            <td width="150px" class="tdColor tdC">图片</td>
                             <td width="130px" class="tdColor">商品价格</td>
                             <td width="130px" class="tdColor">商品库存量</td>
                             <td width="130px" class="tdColor">商品类型</td>
@@ -93,6 +94,7 @@
                                     </label>
                                     ${item.name}
                                 </td>
+                                <td><img width="52" height="52" src="${pageContext.request.contextPath}/resources/file/items/${item.photo}"</td>
                                 <td>${item.price}</td>
                                 <td>${item.number}</td>
                                 <td>${item.type}</td>
@@ -142,10 +144,12 @@
                             <a href="javascript:void(0)" onclick="showPage(${PageBean.page+1})">[下一页]</a>&nbsp;&nbsp;
                             <a href="javascript:void(0)" onclick="showPage(${PageBean.pageCount})">[尾页]</a>&nbsp;&nbsp;
                         </c:if>
-                    </span
-                        <span>第${PageBean.page}/
-                            ${pageBean.pageCount}页
                     </span>
+                        <c:if test="${PageBean.recordList[0] != null}">
+                            <span>第${PageBean.page}/
+                                ${pageBean.pageCount}页
+                            </span>
+                        </c:if>
                     </div>
                 </div>
             </form>

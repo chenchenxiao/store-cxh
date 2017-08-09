@@ -27,6 +27,7 @@ public class BaseMapperTest {
         OrderDetailsMapper orderDetailsMapper = application.getBean(OrderDetailsMapper.class);
         OrdersMapper orderMapper = application.getBean(OrdersMapper.class);
         CartMapper cartMapper = application.getBean(CartMapper.class);
+        AdvertisementMapper advertisementMapper = application.getBean(AdvertisementMapper.class);
 //        userMapper.selectOne(new User(1,"1",null,null));
 //        userMapper.selectById(1);
 //        userMapper.selectByPrimaryKey(1);
@@ -45,8 +46,12 @@ public class BaseMapperTest {
 //        cart.setUserId(47);
 //        String str = "/admin/admin/userList";
 //        System.out.println(str.substring(str.indexOf("/"),str.lastIndexOf("/")));
-        User user = userMapper.selectByPrimaryKey(56);
-        System.out.println(user);
+//        User user = userMapper.selectByPrimaryKey(56);
+//        System.out.println(user);
+
+        System.out.println(advertisementMapper.selectHotSell("服装").get(0));
+        System.out.println("--------");
+        System.out.println(advertisementMapper.selectHotSell("美食").get(0));
     }
     public void testQuart(){
         System.out.println("aaa");

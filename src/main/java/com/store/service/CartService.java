@@ -8,7 +8,6 @@ import com.store.model.Cart;
 public interface CartService {
     //添加商品到购物车
     void addToCart(Integer itemsId,Integer userId);
-
     //根据用户的id取得购物车信息
     Cart showCart(Integer id);
 }

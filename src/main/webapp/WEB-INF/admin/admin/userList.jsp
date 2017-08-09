@@ -42,7 +42,7 @@
                     <input type="hidden" id="pageNum" name="page" value="1">
                     <input type="hidden" name="uid" value="${sessionScope.loginUser.id}"/>
                     <div>
-                        <input class="userinput" type="text" name="searchText" placeholder="输入查询条件" value=" "/>&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;
+                        <input class="userinput" type="text" name="searchText" placeholder="输入查询条件" value=""/>&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;
                         <button class="btn btn-sm btn-primary-outline" id="search">查询</button>  </div>
                     <div>
                         显示<select name="size" id="showSize">
@@ -95,10 +95,14 @@
                             <a href="javascript:void(0)" onclick="showPage(${PageBean.page+1})">[下一页]</a>&nbsp;&nbsp;
                             <a href="javascript:void(0)" onclick="showPage(${PageBean.pageCount})">[尾页]</a>&nbsp;&nbsp;
                         </c:if>
-                    </span
-                        <span>第${PageBean.page}/
-                            ${pageBean.pageCount}页
                     </span>
+                        <c:if test="${PageBean.recordList[0] != null}">
+                            <span>
+                                第${PageBean.page}/
+                                ${pageBean.pageCount}页
+
+                             </span>
+                        </c:if>
                     </div>
                 </div>
             </form>

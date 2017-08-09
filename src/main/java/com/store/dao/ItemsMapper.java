@@ -17,4 +17,6 @@ public interface ItemsMapper extends BaseMapper<Items> {
     Integer saveOne(Items items);
     //根据商品id查找对应用户的商品
     List<Items> selectUserItems(@Param("id") Integer id);
+    //根据用户id查找商品
+    List<Items> selectByUid(@Param("id") Integer id);
 }

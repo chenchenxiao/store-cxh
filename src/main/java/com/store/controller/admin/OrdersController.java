@@ -34,6 +34,7 @@ public class OrdersController extends BaseAdminController<Orders,Long>{
         return "redirect:/admin/cart/showCart/" + user.getId();
     }
 
+    //确认订单
     @RequestMapping("affirmOrder")
     public String affirmOrder(Integer[] itemIds,Integer cartId,Model model){
         List<CartItems> list = orderService.showCartItems(itemIds,cartId);

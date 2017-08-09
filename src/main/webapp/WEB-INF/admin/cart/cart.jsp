@@ -70,6 +70,9 @@
                 <input type="hidden" name="userId" value="${cart.userId}"/>
                 <input type="hidden" name="cartId" id="cartId" value="${cart.id}"/>
                 <c:set var="totalPrice" value="0"></c:set>
+                <c:if test="${cart.cartItemsList[0] == null}">
+                    <h3><a href="${pageContext.request.contextPath}/admin/advertisement/indexAd">你的购物车空空如也，快去逛逛吧</a></h3>
+                </c:if>
                 <c:forEach items="${cart.cartItemsList}" var="cartItems" varStatus="status">
                     <%--<c:set var="totalPrice"  value="${ totalPrice + (cartItems.items.price * cartItems.itemsNumber)}"/>--%>
                     <div id="product_11345721" data-bind="rowid:1" class="item item_selected ">
@@ -86,7 +89,7 @@
                                 <div class="p-name">
                                     <a style="text-decoration: none" href="${pageContext.request.contextPath}/admin/items/viewItems?id=${cartItems.items.id}"  clstag="clickcart|keycount|xincart|productnamelink" target="_blank">
                                         标题&nbsp;&nbsp;&nbsp;&nbsp;
-                                        ${cartItems.title}测试测试测试
+                                        ${cartItems.title}
                                     </a>
                                     <span class="promise411 promise411_11345721" id="promise411_11345721"></span>
                                 </div>
@@ -118,10 +121,8 @@
             </form>
             </div><!-- product-list结束 -->
             <div class="cart-toolbar clearfix">
-                <c:if test="${cart == null}">
-                    <h3><a href="${pageContext.request.contextPath}/show.jsp">你的购物车空空如也，快去逛逛吧</a></h3>
-                </c:if>
-                <c:if test="${cart != null}">
+
+                <c:if test="${cart.cartItemsList[0] != null}">
 
                     <div class="total fr">
                         <p><span class="totalSkuPrice">¥<fmt:formatNumber value="${cart.payment }" maxFractionDigits="2" minFractionDigits="2" groupingUsed="true"/></span>总计：</p>
@@ -155,8 +156,8 @@
                   </span>
                     </div>
                     <div class="total fr">
-                        总计（不含运费）：
                         <c:if test="${cart.payment > 0}">
+                            总计（不含运费）：
                             <span class="totalSkuPrice">¥<fmt:formatNumber value="${cart.payment }" maxFractionDigits="2" minFractionDigits="2" groupingUsed="true"/></span>
                         </c:if>
                         <c:if test="${cart == null}">

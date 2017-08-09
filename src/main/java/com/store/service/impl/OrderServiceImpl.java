@@ -1,10 +1,7 @@
 package com.store.service.impl;
 
 import com.store.dao.*;
-import com.store.model.Cart;
-import com.store.model.CartItems;
-import com.store.model.Orders;
-import com.store.model.OrderDetails;
+import com.store.model.*;
 import com.store.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,13 +28,15 @@ public class OrderServiceImpl implements OrderService {
     //创建订单，返回订单号
     public String creatOrders(Integer[] itemIds, Integer userId, Integer cartId) {
         //保存商品id的集合
-        List<Integer> list = new ArrayList<Integer>();
+        List<Integer> idList = new ArrayList<Integer>();
         //把数组的值通过循环赋给list
         for(int id:itemIds){
-             list.add(id);
+            idList.add(id);
         }
+        //根据购物车商品的ID数组取得商品
+        List<Items> itemsList = itemsMapper.selectListByIds(idList);
         //取得购物车所选择的商品
-        List<CartItems> cartItemsList = cartItemsMapper.selectCartitemsList(list,cartId);
+        List<CartItems> cartItemsList = cartItemsMapper.selectCartitemsList(idList,cartId);
          //保存订单明细的集合
         List<OrderDetails> orderDetailsList = new ArrayList<OrderDetails>();
         //订单总金额
@@ -56,18 +55,22 @@ public class OrderServiceImpl implements OrderService {
             orderDetails.setCost(cartItemsList.get(i).getCost());
             orderDetailsList.add(orderDetails);
             payment += cartItemsList.get(i).getCost();
+            //修改商品的库存量
+            itemsList.get(i).setNumber(itemsList.get(i).getNumber() - orderDetails.getItemsNumber());
+            //修改商品库存量
+            itemsMapper.updateByPrimaryKey(itemsList.get(i));
         }
         //创建订单
         ordersMapper.insertSelective(new Orders(ordersId,userId,payment));
         //把订单明细表保存到数据库
         orderDetailsMapper.insertList(orderDetailsList);
         //删除购物车中对应的商品
-        cartItemsMapper.deleteByIds(list);
+        cartItemsMapper.deleteByIds(idList);
         //清空购物车商品的总价
         Cart cart = cartMapper.selectById(cartId);
         cart.setPayment(0f);
         cart.setId(cartId);
-        System.out.println("cartId---》" + cart);
+        //把购物车商品总价改为0
         cartMapper.updatePayment(cart);
         return ordersId;
     }

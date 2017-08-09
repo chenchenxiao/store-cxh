@@ -1,9 +1,7 @@
 package com.store.test;
 
-import com.store.dao.ItemsMapper;
+import com.store.been.PageBean;
 import com.store.dao.LuceneDao;
-import com.store.dao.UserMapper;
-import com.store.model.Article;
 import com.store.model.Items;
 import com.store.model.ItemsCustom;
 import com.store.model.User;
@@ -11,9 +9,6 @@ import com.store.util.LuceneUtil;
 
 import java.io.IOException;
 import java.io.StringReader;
-import java.lang.reflect.Field;
-import java.lang.reflect.ParameterizedType;
-import java.lang.reflect.Type;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -21,10 +16,8 @@ import java.util.Date;
 import java.util.List;
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.TokenStream;
-import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.analysis.tokenattributes.TermAttribute;
 import org.apache.lucene.document.Document;
-import org.apache.lucene.index.IndexReader;
 import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.Term;
 import org.apache.lucene.queryParser.MultiFieldQueryParser;
@@ -35,8 +28,6 @@ import org.apache.lucene.search.ScoreDoc;
 import org.apache.lucene.search.TopDocs;
 import org.apache.lucene.search.highlight.*;
 import org.junit.Test;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.wltea.analyzer.lucene.IKAnalyzer;
 
 /**
@@ -44,18 +35,17 @@ import org.wltea.analyzer.lucene.IKAnalyzer;
  */
 public class LuceneTest {
 
-   @Test
-    public void add() throws Exception{
-        Article article = new Article(1,"编程","java是一门语言");
-        Document document = LuceneUtil.javabean2document(article);
-        IndexWriter indexWriter = new IndexWriter(LuceneUtil.getDirectory(),LuceneUtil.getAnalyzer(),LuceneUtil.getMaxFieldLength());
-        indexWriter.addDocument(document);//核心
-        //合并cfs文件
-//        indexWriter.optimize();
-        //每隔2个文件合并一次cfs文件
-        indexWriter.setMergeFactor(2);
-        indexWriter.close();
-    }
+//    public void add() throws Exception{
+//        Article article = new Article(1,"编程","java是一门语言");
+//        Document document = LuceneUtil.javabean2document(article);
+//        IndexWriter indexWriter = new IndexWriter(LuceneUtil.getDirectory(),LuceneUtil.getAnalyzer(),LuceneUtil.getMaxFieldLength());
+//        indexWriter.addDocument(document);//核心
+//        //合并cfs文件
+////        indexWriter.optimize();
+//        //每隔2个文件合并一次cfs文件
+//        indexWriter.setMergeFactor(2);
+//        indexWriter.close();
+//    }
 
     @Test
     public void addItems() throws Exception{
@@ -84,28 +74,28 @@ public class LuceneTest {
     }
 
 
-    @Test
-    public void addAll() throws Exception{
-        IndexWriter indexWriter = new IndexWriter(LuceneUtil.getDirectory(),LuceneUtil.getAnalyzer(),LuceneUtil.getMaxFieldLength());
-
-        Article article1 = new Article(1,"编程","c是一门语言");
-        Document document1 = LuceneUtil.javabean2document(article1);
-        indexWriter.addDocument(document1);
-
-        Article article2 = new Article(2,"语言","java是一门语言");
-        Document document2 = LuceneUtil.javabean2document(article2);
-        indexWriter.addDocument(document2);
-
-        Article article3 = new Article(3,"语言","php是一门语言");
-        Document document3 = LuceneUtil.javabean2document(article3);
-        indexWriter.addDocument(document3);
-
-        indexWriter.close();
-    }
+//    @Test
+//    public void addAll() throws Exception{
+//        IndexWriter indexWriter = new IndexWriter(LuceneUtil.getDirectory(),LuceneUtil.getAnalyzer(),LuceneUtil.getMaxFieldLength());
+//
+//        Article article1 = new Article(1,"编程","c是一门语言");
+//        Document document1 = LuceneUtil.javabean2document(article1);
+//        indexWriter.addDocument(document1);
+//
+//        Article article2 = new Article(2,"语言","java是一门语言");
+//        Document document2 = LuceneUtil.javabean2document(article2);
+//        indexWriter.addDocument(document2);
+//
+//        Article article3 = new Article(3,"语言","php是一门语言");
+//        Document document3 = LuceneUtil.javabean2document(article3);
+//        indexWriter.addDocument(document3);
+//
+//        indexWriter.close();
+//    }
 
     @Test
     public void findAllByKeywords() throws Exception{
-        String keywords = "大闸蟹";
+        String keywords = "服装";
         List<ItemsCustom> articleList = new ArrayList<ItemsCustom>();
         QueryParser queryParser = new MultiFieldQueryParser(LuceneUtil.getVersion(),new String[]{"type","id","title","name"},LuceneUtil.getAnalyzer());
         Query query = queryParser.parse(keywords);
@@ -137,6 +127,7 @@ public class LuceneTest {
             ItemsCustom article = (ItemsCustom)LuceneUtil.document2javabean(document,ItemsCustom.class);
             articleList.add(article);
         }
+        System.out.println(articleList.size());
         for(ItemsCustom a : articleList){
             System.out.println( a );
         }
@@ -152,16 +143,16 @@ public class LuceneTest {
     }
 
 
-    @Test
-    public void test() throws Exception {
-        Article article = new Article(1,"测试","就是测试一下而已");
-        Document document = LuceneUtil.javabean2document(article);
-
-        Article article2 = (Article) LuceneUtil.document2javabean(document,Article.class);
-        System.out.println(article2);
-
-        testAnalyzer(new IKAnalyzer(),"传智播客说我们的首都是北京呀");
-    }
+//    @Test
+//    public void test() throws Exception {
+//        Article article = new Article(1,"测试","就是测试一下而已");
+//        Document document = LuceneUtil.javabean2document(article);
+//
+//        Article article2 = (Article) LuceneUtil.document2javabean(document,Article.class);
+//        System.out.println(article2);
+//
+//        testAnalyzer(new IKAnalyzer(),"传智播客说我们的首都是北京呀");
+//    }
 
     @Test
     public void testDate() throws ParseException {
@@ -213,8 +204,11 @@ public class LuceneTest {
     }
 
     @Test
-    public void testDao(){
-        System.out.println(new LuceneDao().isIndexNull());
+    public void testDao() throws Exception {
+        PageBean pageBean = new PageBean();
+        pageBean.setSearchText("服装");
+        PageBean pageBean1=  new LuceneDao().findAllByKeywords(pageBean);
+        System.out.println(pageBean1.getRecordList().toString());
     }
 
     @Test
@@ -237,5 +231,7 @@ public class LuceneTest {
         indexWriter.updateDocument(new Term("id",itemsCustom.getId().toString()),document);//核心
         indexWriter.close();
     }
+
+
 
 }

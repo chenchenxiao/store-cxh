@@ -131,7 +131,7 @@
         var accountResult;
         var passwordResult;
         var configResult;
-        var phoneResult = false;
+        var phoneResult;
         var codeResult;
         var numberResult;
         var nameResult;
@@ -143,7 +143,7 @@
         })
         $("#name").focus(function(){
             if($(this).val().length==0){
-                $(this).parent().next("div").text("支持中文，英文的组合");
+                $(this).parent().next("div").text("仅支持中文");
             }
         })
         $("#password").focus(function(){
@@ -255,11 +255,12 @@
                 $(this).parent().next("div").text("");
                 $(this).parent().next("div").css("color",'#ccc');
                 phoneResult = false;
-            }else if($(this).val().substr(0,3)!=138&&$(this).val().substr(0,3)!=177&&$(this).val().substr(0,3)!=189&&$(this).val().substr(0,3)!=139&&$(this).val().substr(0,3)!=158&&$(this).val().substr(0,3)!=188&&$(this).val().substr(0,3)!=157&&$(this).val().substr(0,3)!=134||$(this).val().length!=11){
+            }else if($(this).val().substr(0,3)!=138&&$(this).val().substr(0,3)!=132&&$(this).val().substr(0,3)!=177&&$(this).val().substr(0,3)!=189&&$(this).val().substr(0,3)!=139&&$(this).val().substr(0,3)!=158&&$(this).val().substr(0,3)!=188&&$(this).val().substr(0,3)!=157&&$(this).val().substr(0,3)!=134||$(this).val().length!=11){
                 $(this).parent().next("div").text("手机号格式不正确");
                 $(this).parent().next("div").css("color",'red');
                 phoneResult = false;
             }else{
+                alert("成功发送信息！")
                 $.ajax({
                     "url":"${pageContext.request.contextPath}/admin/user/checkRepeat",
                     "data":{"phoneNumber":$('#phoneNumber').val()},
@@ -327,14 +328,6 @@
 
 //  获取手机验证码
         $("#btn-phoneCheck").click(function(){
-            // var countdown = 60;
-            // setTimeout(function() {
-            //         alert("!!!!!");
-            //         $("#btn-phoneCheck").text("重新发送(" + countdown + ")");
-            //         countdown--;  }
-            //     ,1000)
-// //        function checkPhone(){
-//         time();
             var result;
             if(!phoneResult){
                alert("请输入正确的手机号码")
@@ -345,19 +338,6 @@
                 "data":{"phoneNumber":$('#phoneNumber').val()},
                 "type":"POST",
                 "success":function(data){
-                    // if(data.result.eq($("#checkNumber").val())){
-                    //     $("#checkNumber").parent().next("div").text("输入正确");
-                    //     $("#checkNumber").parent().next("div").css("color",'green');
-                    //     result = true;
-                    //     // return;
-                    // }else{
-                    //
-                    //     $("#checkNumber").parent().next("div").text("验证码不正确或已过期，请重新获取");
-                    //     $("#checkNumber").parent().next("div").css("color",'red');
-                    //     result = false;
-                    //     // return;
-                    // }
-                    alert(data.result)
                     // $("#RealCheckNumber").val(data.result)
                     getcheckVal(data.result)
                 },
@@ -367,7 +347,14 @@
         })
 //	提交按钮
         $("#submit_btn").click(function(e){
-            alert(!(accountResult && passwordResult && configResult && phoneResult && codeResult && numberResult))
+            if($("#account").val().length>0 && $("#account").val().length<4) {
+                $("#account").parent().next("div").text("长度只能在4-20个字符之间");
+                $("#account").parent().next("div").css("color", 'red');
+            }
+            if(!/^[\u4e00-\u9fa5]+$/.test($("#name").val())||$("#name").val().length < 2){
+                $("#name").parent().next("div").text("姓名只能是2个以上的中文字符");
+                $("#name").parent().next("div").css("color",'red');
+            }
             for(var j=0 ;j<6;j++){
                 if($('input').eq(j).val().length==0){
                     $('input').eq(j).focus();
@@ -392,6 +379,7 @@
             if($("#checkCode").val().toUpperCase()!=$("#code").text().toUpperCase()){
                 return;
             }
+
             if($("#checkNumber").val() != checkResult){
                 $(".check").text("验证码不正确或已超时，请重新获取");
                 $(".check").css("color",'red');
@@ -399,19 +387,11 @@
             }else{
                 $(".check").css("color",'red');
             }
-            // //手机验证码输入不正确
-            // if(checkResult != $("#checkNumber").val()){
-            //         $(".check").text("验证码不正确或已超时，请重新获取");
-            //         $(".check").css("color",'red');
-            //     return;
-            // }
+
             if(!(accountResult && passwordResult && configResult && phoneResult && codeResult && nameResult)){
                 return;
             }
-            // stuList.push(new Student($('input').eq(0).val(),$('input').eq(1).val(),$('input').eq(3).val(),stuList.length+1));
-            // localStorage.setItem('stuList',JSON.stringify(stuList));
-            // alert("注册成功");
-            // window.open("userlist.html","_blank");
+
             else{
                 $(".add_form").submit();
             }

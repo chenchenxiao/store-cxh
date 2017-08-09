@@ -69,6 +69,7 @@ public class AdvertisementController extends BaseAdminController<Advertisement,L
         User user = (User) session.getAttribute("loginUser");
         //根据用户id取得对应的商品集合
         List<Items> itemsList = advertisementService.showAllItems(user.getId());
+        System.out.println(itemsList.size());
         //查询用户所有的商品，用来显示在多选框上
         model.addAttribute("itemsList",itemsList);
         return TEMPLATE_PATH + "adSaveUI";
@@ -132,17 +133,37 @@ public class AdvertisementController extends BaseAdminController<Advertisement,L
     //商城首页，要显示广告信息，同时把数据库的商品数据存入lucene索引库
     @RequestMapping("indexAd")
     public String indexAd(Model model) throws Exception {
-        advertisementService.addToLucene();
         List<Advertisement> advertisementList = advertisementService.selectByStatus();
         model.addAttribute("adList",advertisementList);
         //热销商品
         model.addAttribute("hotSellList",advertisementService.selectHotSell(null));
         //推荐商品
-        model.addAttribute("clothes",advertisementService.selectHotSell("服装").get(0));
-        model.addAttribute("food",advertisementService.selectHotSell("美食").get(0));
-        model.addAttribute("notebook",advertisementService.selectHotSell("笔记本").get(0));
-        model.addAttribute("sports",advertisementService.selectHotSell("运动").get(0));
-        model.addAttribute("home",advertisementService.selectHotSell("家居").get(0));
+        List<Items> clothesList = advertisementService.selectHotSell("服装");
+        List<Items> foodList = advertisementService.selectHotSell("美食");
+        List<Items> notebookList = advertisementService.selectHotSell("笔记本");
+        List<Items> sportsList = advertisementService.selectHotSell("运动");
+        List<Items> homeList = advertisementService.selectHotSell("家居");
+        //判断取得的集合中是否存在数据，如果有就取第一个
+        if(clothesList.size() > 0){
+            model.addAttribute("clothes",clothesList.get(0));
+            System.out.println(clothesList.get(0));
+        }
+        if(foodList.size() > 0){
+            model.addAttribute("food",foodList.get(0));
+            System.out.println(foodList.get(0));
+        }
+        if(notebookList.size() > 0){
+            model.addAttribute("notebook",notebookList.get(0));
+            System.out.println(notebookList.get(0));
+        }
+        if(sportsList.size() > 0){
+            model.addAttribute("sports",sportsList.get(0));
+            System.out.println(sportsList.get(0));
+        }
+        if(homeList.size() > 0){
+            model.addAttribute("home",homeList.get(0));
+            System.out.println(homeList.get(0));
+        }
         return "/show";
     }
 
@@ -158,17 +179,10 @@ public class AdvertisementController extends BaseAdminController<Advertisement,L
         if(aLong < page){
             this.page = 1;
         }
+        //执行更新操作
         advertisementService.quartzUpdate(page,5);
     }
 
-    //定时更新索引库的数据
-    @Scheduled(cron = "0 0/59 * * * ? ")
-    public void luceneUpdate() throws Exception {
-        LuceneDao luceneDao = new LuceneDao();
-        luceneDao.deleteAll();
-        System.out.println("LIST--》" + luceneDao.isIndexNull());
-        advertisementService.addToLucene();
-    }
 
     @RequestMapping("testLucene")
     public void testLucene() throws Exception {

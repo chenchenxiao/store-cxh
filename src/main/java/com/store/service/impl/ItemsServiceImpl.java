@@ -97,6 +97,7 @@ public class ItemsServiceImpl implements ItemsService {
 
     //用户修改商品信息
     public void update(Items items) throws Exception {
+        ItemsCustom itemsCustom = new ItemsCustom();
         //修改商品的修改日期
         items.setUpdateDate(new Date());
         //修改购物车对应商品的价格,购物车的总金额在展示购物车的时候修改，如果在这里修改会比较麻烦
@@ -114,10 +115,20 @@ public class ItemsServiceImpl implements ItemsService {
             //如果商品照片不为空说明重新上传了图片，所以购物车商品也要修改图片
             if(items.getPhoto() != null){
                 list.get(i).setPhoto(items.getPhoto());
+                itemsCustom.setPhoto(items.getPhoto());
             }
             cartItemsMapper.updateByPrimaryKey(list.get(i));
         }
         itemsMappers.updateByPrimaryKeySelective(items);
+        //同步更新索引库
+        List<Items> itemsList = itemsMappers.selectAll();
+        LuceneDao luceneDao = new LuceneDao();
+        try {
+            luceneDao.deleteAll();
+            luceneDao.addToLucene(itemsList);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     //用户查看商品时取得商品信息
@@ -133,17 +144,30 @@ public class ItemsServiceImpl implements ItemsService {
             list.add(id);
         }
         itemsMappers.deleteByIds(list);
+        //同步更新索引库
+        List<Items> itemsList = itemsMappers.selectAll();
+        LuceneDao luceneDao = new LuceneDao();
+        try {
+            luceneDao.deleteAll();
+            luceneDao.addToLucene(itemsList);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     //用户删除单个商品的信息
     public void deleteOne(Integer id){
+        itemsMappers.deleteByPrimaryKey(id);
+        //同步更新索引库
+        List<Items> list = itemsMappers.selectAll();
         LuceneDao luceneDao = new LuceneDao();
         try {
-            luceneDao.deleteOne(id);
+            luceneDao.deleteAll();
+            luceneDao.addToLucene(list);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        itemsMappers.deleteByPrimaryKey(id);
+
     }
 
     //用户导出商品列表
@@ -170,10 +194,14 @@ public class ItemsServiceImpl implements ItemsService {
             if(sheet.getPhysicalNumberOfRows() > 2){
                 System.out.println("number-->" + sheet.getPhysicalNumberOfRows());
                 Items items = null;
+                Integer itemsId = null;
+                ItemsCustom itemsCustom;
+                LuceneDao luceneDao = new LuceneDao();
                 for(int k = 2; k < sheet.getPhysicalNumberOfRows(); k++){
                     //4、读取单元格
                     Row row = sheet.getRow(k);
                     items = new Items();
+                    itemsCustom = new ItemsCustom();
                     //用户名
                     Cell cell0 = row.getCell(0);
                     items.setName((cell0.getStringCellValue()));
@@ -195,9 +223,21 @@ public class ItemsServiceImpl implements ItemsService {
                     items.setUpdateDate(formatter.parse(cell8.getStringCellValue()));
                     items.setUid(id);
                     System.out.println("items-->" + k);
-                    itemsMappers.insert(items);
+                    //保存到索引库
+                    itemsId = itemsMappers.saveOne(items);
+                    itemsCustom.setId(id);
+                    itemsCustom.setUid(items.getUid());
+                    itemsCustom.setTitle(items.getTitle());
+                    itemsCustom.setType(items.getType());
+                    itemsCustom.setPrice(items.getPrice());
+                    itemsCustom.setName(items.getName());
+                    itemsCustom.setPhoto(items.getPhoto());
+                    luceneDao.add(itemsCustom);
                 }
             }
+            //同步更新索引库
+            List<Items> list = itemsMappers.selectAll();
+            LuceneDao luceneDao = new LuceneDao();
             workbook.close();
             inputStream.close();
         } catch (Exception e) {
@@ -206,14 +246,6 @@ public class ItemsServiceImpl implements ItemsService {
     }
     //取得指定类型的商品信息
     public PageBean showTypeItems(String type,PageBean pageBean) throws Exception {
-//        PageHelper.startPage(pageBean.getPage(),pageBean.getSize());
-//        List list = itemsMappers.selectTypeItems(type);
-//        //把分页出来的数据放入pageBean
-//        System.out.println("list-->" + list.size());
-//        pageBean.setRecordList(list);
-//        //取分页信息
-//        PageInfo<Items> pageInfo = new PageInfo<Items>(list);
-//        pageBean.init((int) pageInfo.getTotal(),list);
         LuceneDao luceneDao = new LuceneDao();
         if(type != null){
             pageBean.setSearchText(type);
@@ -233,6 +265,6 @@ public class ItemsServiceImpl implements ItemsService {
     public List<Items> selectUserItems(Integer id) {
         PageHelper.startPage(1,3);
         List<Items> itemsList = itemsMappers.selectUserItems(id);
-        return null;
+        return itemsList;
     }
 }

@@ -110,13 +110,13 @@
     function getcheckVal(result){
         checkResult = result;
     }
+    alert("成功发送信息！")
     $("#btn-oldEmail").click(function () {
         $.ajax({
             "url":"${pageContext.request.contextPath}/admin/user/checkEmail",
             "data":{"email":$('#oldEmail').val()},
             "type":"POST",
             "success":function(data){
-                alert(data.result)
                 // $("#RealCheckNumber").val(data.result)
                 getcheckVal(data.result)
             },
@@ -150,12 +150,12 @@
             alert("请输入正确的邮箱号")
             return;
         }
+        alert("成功发送信息！")
         $.ajax({
             "url":"${pageContext.request.contextPath}/admin/user/checkEmail",
             "data":{"email":$('#newEmail').val()},
             "type":"POST",
             "success":function(data){
-                alert(data.result)
                 // $("#RealCheckNumber").val(data.result)
                 getcheckVal(data.result)
             },

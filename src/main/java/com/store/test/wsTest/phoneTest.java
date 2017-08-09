@@ -15,7 +15,7 @@ public class phoneTest {
     @Test
     public void test(){
         //如果找不到就会返回  没有此号记录
-        String mobileCodeInfo = mobileCodeWSSoap.getMobileCodeInfo("13414057676", "");
+        String mobileCodeInfo = mobileCodeWSSoap.getMobileCodeInfo("13884512388", "");
         System.out.println(mobileCodeInfo);
     }
 }

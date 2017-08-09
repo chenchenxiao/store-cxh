@@ -64,7 +64,7 @@ public class ItemsController extends BaseAdminController<Items,Long>{
             outs.close();
         }
         //获取图片名称，返回后显示
-        String photoName = FileUploadUtil.uploadUserPhoto(picture, FileUploadUtil.ITEMS_PATH);
+        String photoName = FileUploadUtil.uploadUserPhoto(picture, FileUploadUtil.PREVIEW_PATH);
         outs.print("{\"showResult\":\""+ photoName +"\"}");
         outs.close();
     }
@@ -122,11 +122,12 @@ public class ItemsController extends BaseAdminController<Items,Long>{
     //用户导出商品信息
     @RequestMapping("exportExcel")
     public void exportExcel( @RequestParam("ids") Integer[] ids,HttpServletResponse response) throws Exception {
-        System.out.println(ids);
+        //取得选择导出的商品的信息
         List<Items> list = itemsService.expList(ids);
         response.setContentType("application/x-excel");
         response.setHeader("Content-Disposition", "attachment;filename=" + new String("商品列表.xls".getBytes(), "ISO-8859-1"));
         ServletOutputStream outputStream = response.getOutputStream();
+        //导出
         itemsService.exportExcel(list,outputStream);
         if(outputStream != null){
             outputStream.close();
@@ -143,6 +144,7 @@ public class ItemsController extends BaseAdminController<Items,Long>{
             return REDIRECT_URL + "itemsList";
         }
         User user = (User) session.getAttribute("loginUser");
+        //导入到数据库
         itemsService.importExcel(itemsFile,user.getId());
         return REDIRECT_URL + "itemsList";
     }
@@ -167,11 +169,9 @@ public class ItemsController extends BaseAdminController<Items,Long>{
     //用户查看指定类型的商品
     @RequestMapping("showTypeItems")
     public String showTypeItems(String type,Model model,PageBean pageBean,RedirectAttributes redirectAttributes) throws Exception {
-        System.out.println("type-->" + type);
-        System.out.println("searchtext-->" + pageBean.getSearchText());
         if(type == null){
             if(pageBean.getSearchText() == null || pageBean.getSearchText().equals("")){
-                redirectAttributes.addFlashAttribute("result",new AjaxResult(false,"没有找到符相关宝贝"));
+                redirectAttributes.addFlashAttribute("result",new AjaxResult(false,"没有找到相关宝贝"));
                 return "redirect:/admin/advertisement/indexAd";
             }
         }
@@ -183,7 +183,6 @@ public class ItemsController extends BaseAdminController<Items,Long>{
     //用户查看商品详情
     @RequestMapping("viewItems")
     public String viewItems(Integer id,Model model){
-        System.out.println("id" + id);
         model.addAttribute("userItems",itemsService.selectUserItems(id));
         model.addAttribute("items",itemsService.showOneItems(id));
         return "admin/items/itemsShow";

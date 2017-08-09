@@ -32,6 +32,4 @@ public interface AdvertisementService {
     Long comparePage(Integer page,Integer size);
     //查询热销商品
     List<Items> selectHotSell(String type);
-    //将数据存入索引库
-    void addToLucene() throws Exception;
 }

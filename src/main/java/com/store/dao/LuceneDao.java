@@ -1,6 +1,7 @@
 package com.store.dao;
 
 import com.store.been.PageBean;
+import com.store.model.Items;
 import com.store.model.ItemsCustom;
 import com.store.util.LuceneUtil;
 import org.apache.lucene.document.Document;
@@ -78,14 +79,15 @@ public class LuceneDao {
 
     //根据id从索引库删除对应数据
     public void deleteOne(Integer id) throws Exception{
-        System.out.println("OK?");
+        System.out.println("id--------------------" + id);
         //创建IndexWriter对象，第一个参数是lucene索引库最终对应于硬盘中的目录，
         // 第二个是分词器
         // 第三个是最多将稳步拆分成出多少词汇
+        Term term = new Term("id",id.toString());
+        System.out.println("term-----" + term);
         IndexWriter indexWriter = new IndexWriter(LuceneUtil.getDirectory(),LuceneUtil.getAnalyzer(),LuceneUtil.getMaxFieldLength());
         //执行删除操作
-        indexWriter.deleteDocuments(new Term("id",id.toString()));//核心
-        indexWriter.close();
+        indexWriter.deleteDocuments(term);//核心
     }
     //批量删除索引库的数据
     public void deleteByIds(Integer[] ids) throws Exception {
@@ -158,28 +160,29 @@ public class LuceneDao {
         indexWriter.close();
     }
 
-    //判断索引库是否已经存在数据的方法
-    public Boolean isIndexNull(){
-        Directory directory  = LuceneUtil.getDirectory();
-        //建立索引搜索，指定索引目录
-        Integer number = 0;
-        try {
-            String[] strings = directory.listAll();
-            System.out.println("strings" + strings.toString());
-            //判断是否存在文件，如果不存在则说明没有数据
-//            if(!directory.fileExists("_0.cfs")){
-//                System.out.println(strings.toString());
-//                System.out.println("directory.fileExists(\"_0.cfs\")???" + directory.fileExists("_0.cfs"));
-//                return true;
-//            }
-            if(strings.length > 2){
-                IndexSearcher searcher = new IndexSearcher(directory, true);
-                number = searcher.maxDoc();
-                return number > 0 ? false:true;
+    //将数据存入索引库
+    public void addToLucene(List<Items> itemsList) throws Exception {
+        //存放ItemsCustom的集合
+        List<ItemsCustom> itemsCustomList = new ArrayList<ItemsCustom>();
+        ItemsCustom itemsCustom;
+        //先判断索引库中是否已经存了数据，如果已经存了就不用存
+        //判断取得的商品集合的size是否大于0，即是否存在商品
+        if(itemsList.size() > 0){
+            //通过遍历将查询到的Items集合中的数据填入ItemsCustom中
+            for(int i = 0;i < itemsList.size();i++){
+                itemsCustom = new ItemsCustom();
+                itemsCustom.setId(itemsList.get(i).getId());
+                itemsCustom.setUid(itemsList.get(i).getUid());
+                itemsCustom.setName(itemsList.get(i).getName());
+                itemsCustom.setTitle(itemsList.get(i).getTitle());
+                itemsCustom.setType(itemsList.get(i).getType());
+                itemsCustom.setPhoto(itemsList.get(i).getPhoto());
+                itemsCustom.setPrice(itemsList.get(i).getPrice());
+                itemsCustomList.add(itemsCustom);
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+            //执行添加多条数据操作
+            System.out.println("realList-->" + itemsCustomList);
+           addList(itemsCustomList);
         }
-        return true;
     }
 }

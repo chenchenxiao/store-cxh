@@ -26,7 +26,7 @@
     <div class="leftsidebar_box">
         <a href="${pageContext.request.contextPath}/admin/advertisement/indexAd" target="_top">
             <div class="line">
-                <img src="${pageContext.request.contextPath}/resources/img/coin01.png"/>&nbsp;&nbsp;首页
+                <img src="${pageContext.request.contextPath}/resources/img/coin01.png"/>&nbsp;&nbsp;商城首页
             </div>
         </a>
         <%--<dl class="system_log">--%>
@@ -67,36 +67,6 @@
                         <c:if test="${sessionScope.loginUser != null}"> target="main"</c:if>
                         <c:if test="${sessionScope.loginUser == null}"> target="_top"</c:if>
                     class="cks">我的广告</a>
-                <img class="icon5" src="${pageContext.request.contextPath}/resources/img/coin21.png"/>
-            </dd>
-        </dl>
-        <dl class="system_log">
-            <dt>
-                <img class="icon1" src="${pageContext.request.contextPath}/resources/img/coin14.png"/>
-                <img class="icon2" src="${pageContext.request.contextPath}/resources/img/coin13.png"/>
-                我的收藏
-                <img class="icon3"  src="${pageContext.request.contextPath}/resources/img/coin19.png"/>
-                <img class="icon4"  src="${pageContext.request.contextPath}/resources/img/coin20.png"/>
-            </dt>
-            <dd>
-                <img class="coin11" src="${pageContext.request.contextPath}/resources/img/coin111.png"/>
-                <img class="coin22" src="${pageContext.request.contextPath}/resources/img/coin222.png"/>
-                <a href="../wish.html" target="main" class="cks">我的收藏</a>
-                <img class="icon5" src="${pageContext.request.contextPath}/resources/img/coin21.png"/>
-            </dd>
-        </dl>
-        <dl class="system_log">
-            <dt>
-                <img class="icon1" src="${pageContext.request.contextPath}/resources/img/coin15.png"/>
-                <img class="icon2" src="${pageContext.request.contextPath}/resources/img/coin16.png"/>
-                约见管理
-                <img class="icon3" src="${pageContext.request.contextPath}/resources/img/coin19.png"/>
-                <img class="icon4" src="${pageContext.request.contextPath}/resources/img/coin20.png"/>
-            </dt>
-            <dd>
-                <img class="coin11" src="${pageContext.request.contextPath}/resources/img/coin111.png"/>
-                <img class="coin22" src="${pageContext.request.contextPath}/resources/img/coin222.png"/>
-                <a href="../appointment.html" target="main" class="cks">约见管理</a>
                 <img class="icon5" src="${pageContext.request.contextPath}/resources/img/coin21.png"/>
             </dd>
         </dl>

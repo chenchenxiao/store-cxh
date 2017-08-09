@@ -159,7 +159,6 @@
             "type":"POST",
             "success":function(data){
                if(data.result == false){
-                   alert("false")
                     $(".conditionTip").text("该账户不存在，请重新输入 ")
                     $(".conditionTip").css("color",'red');
                     conditionResult = false;
@@ -180,12 +179,12 @@
         }
     })
     $("#btn-emailCheck").click(function () {
+        alert("成功发送信息！")
         $.ajax({
             "url":"${pageContext.request.contextPath}/admin/user/checkEmail",
             "data":{"email":$('#email').val()},
             "type":"POST",
             "success":function(data){
-                alert("checkEmail--》" + data.result)
                 // $("#RealCheckNumber").val(data.result)
                 getcheckVal(data.result)
             },
@@ -193,12 +192,12 @@
         });
     })
     $("#btn-phoneCheck").click(function () {
+        alert("成功发送信息！")
         $.ajax({
             "url":"${pageContext.request.contextPath}/admin/user/checkPhone",
             "data":{"phoneNumber":$('#phoneNumber').val()},
             "type":"POST",
             "success":function(data){
-                alert("checkPhone-->" + data.result)
                 // $("#RealCheckNumber").val(data.result)
                 getcheckVal(data.result)
             },

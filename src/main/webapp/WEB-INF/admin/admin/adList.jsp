@@ -28,7 +28,7 @@
     <div class="pageTop">
         <div class="page">
             <img src="${pageContext.request.contextPath}/resources/img/coin02.png" />
-            <span><a href="show.jsp">首页</a>&nbsp;-&nbsp;-</span>&nbsp;用户订单列表
+            <span><a href="javascript:void(0)">广告列表</a></span>&nbsp;
         </div>
     </div>
     <form action="${pageContext.request.contextPath}/admin/items/deleteOne" method="post" id="deleteOne_form">
@@ -38,7 +38,7 @@
         <!-- user页面样式 -->
         <div class="connoisseur">
             <div class="conform">
-                <form action="${pageContext.request.contextPath}/admin/admin/showAllAd" class="list_form" method="post" enctype="multipart/form-data">
+                <form action="${pageContext.request.contextPath}/admin/admin/showAd" class="list_form" method="post" enctype="multipart/form-data">
                     <input type="hidden" id="pageNum" name="page" value="1">
                     <input type="hidden" name="uid" value="${sessionScope.loginUser.id}"/>
                     <div class="cfD">
@@ -47,7 +47,7 @@
                         </a>
                     </div>
                     <div>
-                        <input class="userinput" type="text" name="searchText" placeholder="输入查询条件" value=" "/>&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;
+                        <input class="userinput" type="text" name="searchText" placeholder="输入查询条件" value=""/>&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;
                         <button class="btn btn-sm btn-primary-outline" id="search">查询</button>  </div>
                     <div>
                         显示<select name="size" id="showSize">

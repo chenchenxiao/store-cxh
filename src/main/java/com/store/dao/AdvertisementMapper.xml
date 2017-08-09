@@ -77,7 +77,7 @@
     </update>
 
 
-    <select id="selectHotSell" resultType="com.store.model.Items">
+    <select id="selectHotSell" resultType="com.store.model.Items" useCache="false">
         select
         o.items_number,i.id,i.name,i.title,i.price,i.photo,count(DISTINCT items_id) count
         FROM
@@ -86,7 +86,7 @@
         store_orderdetails o
         on i.id = o.items_id
         <if test="type != null">
-            AND
+            where
             i.type = #{type}
         </if>
         GROUP BY items_number DESC

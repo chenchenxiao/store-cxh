@@ -31,10 +31,8 @@
 <div id="pageAll">
     <div class="pageTop">
         <div class="page">
-            <img src="${pageContext.request.contextPath}/resources/img/coin02.png" /><span><a href="${pageContext.request.contextPath}/admin/user/index">首页</a>&nbsp;-&nbsp;<a
-                href="${pageContext.request.contextPath}/admin/items/itemsList">我的商品</a>&nbsp;-</span>&nbsp;
-
-
+            <img src="${pageContext.request.contextPath}/resources/img/coin02.png" />
+            <a href="${pageContext.request.contextPath}/admin/items/itemsList">我的商品</a>&nbsp;-</span>&nbsp;
         </div>
     </div>
     <div class="col-md-12">
@@ -168,7 +166,7 @@
                     getcheckVal(data.showResult);
                     return;
                 }
-                var path = "${pageContext.request.contextPath }/resources/file/items/"+data.showResult;
+                var path = "${pageContext.request.contextPath }/resources/file/preview/"+data.showResult;
                 $(".photoTip").text("");
                 $("#photo").attr("src",path);
                 photoResult = true;

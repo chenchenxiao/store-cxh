@@ -28,7 +28,7 @@
     <div class="pageTop">
         <div class="page">
             <img src="${pageContext.request.contextPath}/resources/img/coin02.png" />
-            <span><a href="show.jsp">首页</a>&nbsp;-&nbsp;-</span>&nbsp;用户订单列表
+            <span><a href="${pageContext.request.contextPath}/admin/admin/userList">用户订单列表</a></span>&nbsp;
         </div>
     </div>
     <form action="${pageContext.request.contextPath}/admin/items/deleteOne" method="post" id="deleteOne_form">
@@ -37,6 +37,9 @@
     <div class="page">
         <!-- user页面样式 -->
         <div class="connoisseur">
+            <c:if test="${ordersList == null}">
+                该用户没有购买过商品
+            </c:if>
             <c:forEach items="${ordersList}" var="orders" varStatus="status">
                 <!-- user 表格 显示 -->
                         <div class="conShow">
@@ -67,29 +70,6 @@
                             </table>
                             <div class="expTip"></div>
             </c:forEach>
-                            <!--分页 -->
-                    <%--<div class="paging">--%>
-                        <%--<span>--%>
-                            <%--<c:if test="${PageBean.page > 1}">--%>
-                                <%--<a href="javascript:void(0)" onclick="showPage(1)">[首页]</a>&nbsp;&nbsp;--%>
-                                <%--<a href="javascript:void(0)" onclick="showPage(${PageBean.page - 1})">[上一页]</a>&nbsp;&nbsp;--%>
-                            <%--</c:if>--%>
-                        <%--&lt;%&ndash;动态显示条 &ndash;%&gt;--%>
-                            <%--<c:forEach begin = "${PageBean.beginPageIndex}" end = "${PageBean.endPageIndex}" var="num">--%>
-                                <%--<a href="javascript:void(0)" onclick="showPage(${num})">--%>
-                                        <%--${num}</a>&nbsp;&nbsp;--%>
-                            <%--</c:forEach>--%>
-                            <%--<c:if test = "${PageBean.page < PageBean.pageCount}">--%>
-                                <%--<a href="javascript:void(0)" onclick="showPage(${PageBean.page+1})">[下一页]</a>&nbsp;&nbsp;--%>
-                                <%--<a href="javascript:void(0)" onclick="showPage(${PageBean.pageCount})">[尾页]</a>&nbsp;&nbsp;--%>
-                            <%--</c:if>--%>
-                        <%--</span>--%>
-                                <%--<span>第${PageBean.page}/--%>
-                                <%--${pageBean.pageCount}页--%>
-                        <%--</span>--%>
-                            <%--</div>--%>
-                    <%--</div>--%>
-            <!-- user 表格 显示 end-->
         </div>
         <!-- user页面样式end -->
     </div>

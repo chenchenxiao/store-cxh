@@ -183,7 +183,6 @@
     })
 
     $("#pictures").change(function () {
-        alert("session" )
         var option={
             //$.ajax({
             type:'POST',
@@ -191,7 +190,6 @@
             dataType:'json',
             //data:$('#regist_form').serialize(),
             success:function(data){
-                alert("!!" + data.showResult)
                 //把json格式的字符串转换成json对象
                 //var jsonObj = $.parseJSON(data);
                 //返回服务器图片路径，把图片路径设置给img标签
@@ -202,9 +200,7 @@
                     photoResult = false;
                     return;
                 }
-                alert("data.showResult-->" + data.showResult )
-                var path = "${pageContext.request.contextPath }/resources/file/user/"+data.showResult;
-                alert("path" + path)
+                var path = "${pageContext.request.contextPath }/resources/file/preview/"+data.showResult;
                 $(".photoTip").text("");
                 $("#photo").attr("src",path);
                 photoResult = true;
@@ -220,13 +216,12 @@
     }
     $("#btn-phoneCheck").click(function(){
         var result;
-        alert("成功发送信息")
+        alert("成功发送信息！")
         $.ajax({
             "url":"${pageContext.request.contextPath}/admin/user/checkPhone",
             "data":{"phoneNumber":$('#phoneNumber').val()},
             "type":"POST",
             "success":function(data){
-                alert(data.result)
                 // $("#RealCheckNumber").val(data.result)
                 getcheckVal(data.result)
             },
@@ -237,17 +232,6 @@
     $("#checkCode").click(function () {
         $(".tip").text("");
     })
-//    $("#checkCode").blur(function () {
-//        if($(this).val() != checkResult){
-//            $(".check").text("???测试测试");
-//            $(".check").css("color",'red');
-//            numberResult = false;
-//        }else{
-//            $(".check").text("");
-//            numberResult = true;
-//        }
-//
-//    })
 </script>
 
 </body>

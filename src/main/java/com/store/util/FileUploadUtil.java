@@ -37,6 +37,10 @@ public class FileUploadUtil {
     public final static String ITEMS_PATH = "/resources/file/items/";
 
     /**
+     * 预览的商品图片的保存位置
+     */
+    public final static String PREVIEW_PATH = "/resources/file/preview/";
+    /**
      * 首页广告图片的保存位置
      */
     public final static String ADVERTISEMENT_PATH = "/resources/file/advertisement/";

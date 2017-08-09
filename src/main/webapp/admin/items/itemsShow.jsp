@@ -130,6 +130,9 @@
                         <c:if test="${sessionScope.loginUser.id != items.uid}">
                             <a href="${pageContext.request.contextPath}/admin/cart/addToCart?itemsId=${items.id}" class="hvr-shutter-in-vertical cart-to">加入购物车</a>
                         </c:if>
+                        <c:if test="${sessionScope.loginUser.id == items.uid}">
+                            <a href="javascript:void(0)" class="hvr-shutter-in-vertical cart-to">你的商品</a>
+                        </c:if>
                         <div class="clearfix"></div>
                     </div>
                     <h5>库存量&nbsp;&nbsp;&nbsp;&nbsp;${items.number}</h5>
@@ -147,7 +150,7 @@
                             <div class="top-content">
                                 <h5>${items.name}</h5>
                                 <div class="white">
-                                    <a href="${pageContext.request.contextPath}/admin/cart/addToCart?itemsId=${items.id}" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">加入购物车</a>
+                                    <a href="${pageContext.request.contextPath}/admin/items/viewItems?id=${items.id}" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">查看详情</a>
                                     <p class="dollar"><span class="in-dollar">$</span><span>${items.price}</span></p>
                                     <div class="clearfix"></div>
                                 </div>

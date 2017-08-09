@@ -48,9 +48,7 @@ public class AdvertisementServiceImpl implements AdvertisementService {
 
     //根据用户id查找用户所有的商品
     public List<Items> showAllItems(Integer userId) {
-        Items items = new Items();
-        items.setUid(userId);
-        return itemsMapper.select(items);
+        return itemsMapper.selectByUid(userId);
     }
 
     //根据用户id查找
@@ -60,7 +58,9 @@ public class AdvertisementServiceImpl implements AdvertisementService {
 
     //添加
     public void add(Advertisement advertisement) {
+        //取得广告所选择的商品
         Items items = itemsMapper.selectByPrimaryKey(advertisement.getItemsId());
+        //给广告的信息设值
         advertisement.setItemsName(items.getName());
         advertisement.setUserId(items.getUid());
         advertisement.setStatus(0);
@@ -69,6 +69,7 @@ public class AdvertisementServiceImpl implements AdvertisementService {
 
     //修改
     public void update(Advertisement advertisement) {
+        //取得广告所选择的商品
         Items items = itemsMapper.selectByPrimaryKey(advertisement.getItemsId());
         advertisement.setItemsName(items.getName());
         advertisementMapper.updateAd(advertisement);
@@ -82,6 +83,7 @@ public class AdvertisementServiceImpl implements AdvertisementService {
     //批量删除
     public void deleteByIds(Integer[] ids) {
         List<Integer> list = new ArrayList<Integer>();
+        //通过遍历把要修改的商品的id设值到list集合中
         for (int i : ids) {
             list.add(i);
         }
@@ -106,7 +108,6 @@ public class AdvertisementServiceImpl implements AdvertisementService {
         List<Advertisement> list = advertisementMapper.selectByStatus(null);
         //取分页信息
         PageInfo<Advertisement> pageInfo = new PageInfo<Advertisement>(list);
-        System.out.println("compare-------------------" + (pageInfo.getTotal() + size - 1) / size);
         return (pageInfo.getTotal() + size - 1) / size;
     }
 
@@ -176,36 +177,6 @@ public class AdvertisementServiceImpl implements AdvertisementService {
     //查询热销商品
     public List<Items> selectHotSell(String type) {
         return advertisementMapper.selectHotSell(type);
-    }
-
-    //将数据存入索引库
-    public void addToLucene() throws Exception {
-        //存放Items的集合
-        List<Items> itemsList;
-        //存放ItemsCustom的集合
-        List<ItemsCustom> itemsCustomList = new ArrayList<ItemsCustom>();
-        ItemsCustom itemsCustom;
-        LuceneDao luceneDao = new LuceneDao();
-        //先判断索引库中是否已经存了数据，如果已经存了就不用存
-        Boolean flag = luceneDao.isIndexNull();
-        if(flag){
-            itemsList = itemsMapper.selectAll();
-            //通过遍历将查询到的Items集合中的数据填入ItemsCustom中
-            for(int i = 0;i < itemsList.size();i++){
-                itemsCustom = new ItemsCustom();
-                itemsCustom.setId(itemsList.get(i).getId());
-                itemsCustom.setUid(itemsList.get(i).getUid());
-                itemsCustom.setName(itemsList.get(i).getName());
-                itemsCustom.setTitle(itemsList.get(i).getTitle());
-                itemsCustom.setType(itemsList.get(i).getType());
-                itemsCustom.setPhoto(itemsList.get(i).getPhoto());
-                itemsCustom.setPrice(itemsList.get(i).getPrice());
-                itemsCustomList.add(itemsCustom);
-            }
-            //执行添加多条数据操作
-              System.out.println("realList-->" + itemsCustomList);
-              luceneDao.addList(itemsCustomList);
-        }
     }
 }
 
