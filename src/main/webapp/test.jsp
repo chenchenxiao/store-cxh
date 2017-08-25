@@ -26,6 +26,8 @@
     <input type="file" name="excelFile">
     <input type="submit" value="SUBMIT">
 </form>
+
+<img src="192.168.216.132/images/test.jpg">
 </body>
 <script type="text/javascript">
     $("#bton").click(function () {

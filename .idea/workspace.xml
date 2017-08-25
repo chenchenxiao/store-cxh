@@ -2,85 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="16eb459e-2a9b-44da-87fc-4ffc62eba7af" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__com_carrotsearch_hppc_0_5_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__com_google_protobuf_protobuf_java_2_5_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__com_googlecode_concurrentlinkedhashmap_concurrentlinkedhashmap_lru_1_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__com_spatial4j_spatial4j_0_4_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__commons_cli_commons_cli_1_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__commons_configuration_commons_configuration_1_6.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__commons_lang_commons_lang_2_6.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_antlr_antlr_runtime_3_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_apache_hadoop_hadoop_annotations_2_2_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_apache_hadoop_hadoop_auth_2_2_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_apache_hadoop_hadoop_common_2_2_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_apache_hadoop_hadoop_hdfs_2_2_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_3_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_apache_httpcomponents_httpmime_4_3_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_apache_lucene_lucene_analyzers_kuromoji_4_10_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_apache_lucene_lucene_analyzers_phonetic_4_10_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_apache_lucene_lucene_expressions_4_10_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_apache_lucene_lucene_grouping_4_10_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_apache_lucene_lucene_join_4_10_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_apache_lucene_lucene_misc_4_10_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_apache_lucene_lucene_queries_4_10_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_apache_lucene_lucene_spatial_4_10_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_apache_lucene_lucene_suggest_4_10_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_apache_shiro_shiro_core_1_2_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_apache_shiro_shiro_ehcache_1_2_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_apache_shiro_shiro_spring_1_2_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_apache_shiro_shiro_web_1_2_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_apache_solr_solr_4_10_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_apache_solr_solr_core_4_10_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_apache_solr_solr_solrj_4_10_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_apache_zookeeper_zookeeper_3_4_6.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_codehaus_woodstox_wstx_asl_3_2_7.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_eclipse_jetty_jetty_continuation_8_1_10_v20130312.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_eclipse_jetty_jetty_deploy_8_1_10_v20130312.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_eclipse_jetty_jetty_http_8_1_10_v20130312.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_eclipse_jetty_jetty_io_8_1_10_v20130312.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_eclipse_jetty_jetty_jmx_8_1_10_v20130312.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_eclipse_jetty_jetty_security_8_1_10_v20130312.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_eclipse_jetty_jetty_server_8_1_10_v20130312.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_eclipse_jetty_jetty_servlet_8_1_10_v20130312.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_eclipse_jetty_jetty_util_8_1_10_v20130312.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_eclipse_jetty_jetty_webapp_8_1_10_v20130312.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_eclipse_jetty_jetty_xml_8_1_10_v20130312.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_eclipse_jetty_orbit_javax_servlet_3_0_0_v201112011016.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_noggit_noggit_0_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_ow2_asm_asm_commons_4_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_restlet_jee_org_restlet_2_1_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_restlet_jee_org_restlet_ext_servlet_2_1_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/Realm/ShiroRealm.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/been/TaotaoResult.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/controller/admin/SearchController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/SearchDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/impl/SearchDaoImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/SolrSearchService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/impl/SolrSearchServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/test/SolrTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/util/ExceptionUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/resources/applicationContext-shiro.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/webapp/list.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/webapp/login.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/webapp/success.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/webapp/unauthorized.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__commons_net_commons_net_3_3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/util/FtpUtil.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/.idea/artifacts/store_cxh_war_exploded.xml" afterPath="$PROJECT_DIR$/../store-cxh/.idea/artifacts/store_cxh_war_exploded.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../store-cxh/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/pom.xml" afterPath="$PROJECT_DIR$/../store-cxh/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/controller/TestController.java" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/controller/TestController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/interceptors/LoginInterceptor.java" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/interceptors/LoginInterceptor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/model/Items.java" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/model/Items.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/test/PathTest.java" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/test/PathTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/test/jedTest.java" afterPath="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/test/jedTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/resources/applicationContext.xml" afterPath="$PROJECT_DIR$/../store-cxh/src/main/resources/applicationContext.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/resources/springmvc.xml" afterPath="$PROJECT_DIR$/../store-cxh/src/main/resources/springmvc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/user/updateEmailUI.jsp" afterPath="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/user/updateEmailUI.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/user/updatePhoneUI.jsp" afterPath="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/user/updatePhoneUI.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/webapp/admin/user/userRegist.jsp" afterPath="$PROJECT_DIR$/../store-cxh/src/main/webapp/admin/user/userRegist.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/src/main/webapp/test.jsp" afterPath="$PROJECT_DIR$/../store-cxh/src/main/webapp/test.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../store-cxh/store-cxh.iml" afterPath="$PROJECT_DIR$/../store-cxh/store-cxh.iml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_apache_lucene_lucene_queries_4_7_2.xml" afterPath="$PROJECT_DIR$/../store-cxh/.idea/libraries/Maven__org_apache_lucene_lucene_codecs_4_10_3.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/../store-cxh/out/" />
     <ignored path="$PROJECT_DIR$/../store-cxh/target/" />
@@ -97,116 +25,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TestController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/controller/TestController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="54" lean-forward="true" selection-start-line="6" selection-start-column="54" selection-end-line="6" selection-end-column="54" />
-              <folding>
-                <marker date="1503388448005" expanded="true" signature="1694:2595" ph="//..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../store-cxh/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
-              <caret line="455" column="17" lean-forward="true" selection-start-line="455" selection-start-column="17" selection-end-line="455" selection-end-column="17" />
+            <state relative-caret-position="191">
+              <caret line="493" column="41" lean-forward="false" selection-start-line="493" selection-start-column="41" selection-end-line="493" selection-end-column="41" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="web.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/web.xml">
+      <file leaf-file-name="FtpUtil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/util/FtpUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="37" column="19" lean-forward="true" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
+            <state relative-caret-position="340">
+              <caret line="97" column="13" lean-forward="true" selection-start-line="96" selection-start-column="35" selection-end-line="97" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ShiroRealm.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/Realm/ShiroRealm.java">
+      <file leaf-file-name="test.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/test.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="7" column="3" lean-forward="false" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SolrTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/test/SolrTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="2" column="24" lean-forward="false" selection-start-line="2" selection-start-column="24" selection-end-line="5" selection-end-column="48" />
+            <state relative-caret-position="420">
+              <caret line="26" column="40" lean-forward="true" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SearchDaoImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/impl/SearchDaoImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="14" selection-end-column="47" />
-              <folding>
-                <marker date="1503236969735" expanded="true" signature="662:2208" ph="//..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SolrSearchServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/impl/SolrSearchServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-621">
-              <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SolrSearchService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/SolrSearchService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="12" column="48" lean-forward="false" selection-start-line="12" selection-start-column="48" selection-end-line="14" selection-end-column="56" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1503209781802" expanded="true" signature="258:384" ph="//..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SearchDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/SearchDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="2" column="31" lean-forward="false" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SearchController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/controller/admin/SearchController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="7" column="58" lean-forward="false" selection-start-line="7" selection-start-column="58" selection-end-line="7" selection-end-column="58" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1503212618369" expanded="true" signature="1278:1283" ph="//..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -226,7 +70,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>0</find>
       <find>||</find>
       <find>getHello</find>
       <find>getSupport</find>
@@ -256,6 +99,7 @@
       <find>alert</find>
       <find>ALERT</find>
       <find>applica</find>
+      <find>defau</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -291,8 +135,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/test/LuceneTest.java" />
-        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/util/LuceneUtil.java" />
         <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/AdvertisementService.java" />
         <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/LuceneDao.java" />
         <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/impl/ItemsServiceImpl.java" />
@@ -337,11 +179,13 @@
         <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/controller/admin/SearchController.java" />
         <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/impl/SolrSearchServiceImpl.java" />
         <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/SearchDao.java" />
-        <option value="$PROJECT_DIR$/../store-cxh/pom.xml" />
         <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/service/SolrSearchService.java" />
         <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/dao/impl/SearchDaoImpl.java" />
         <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/test/SolrTest.java" />
         <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/controller/TestController.java" />
+        <option value="$PROJECT_DIR$/../store-cxh/pom.xml" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/java/com/store/util/FtpUtil.java" />
+        <option value="$PROJECT_DIR$/../store-cxh/src/main/webapp/test.jsp" />
       </list>
     </option>
   </component>
@@ -511,16 +355,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="store-cxh" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="store-cxh" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -643,7 +477,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Realm" />
+              <option name="myItemId" value="util" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -673,37 +507,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="interceptors" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="store-cxh" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="store-cxh" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="store" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
+              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -724,9 +528,12 @@
     <property name="project.structure.side.proportion" value="0.19009216" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.store.service.impl" />
-      <recent name="com.store.service" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="I:\store-cxh\src\main\java\com\store\util" />
+      <recent name="I:\store-cxh\src\main\webapp\admin\user" />
+      <recent name="I:\store-cxh\src\main\java\com\store" />
+      <recent name="I:\store-cxh\src\main\webapp\resources\admin\js" />
+      <recent name="I:\store-cxh\src\main\webapp\WEB-INF\admin\advertisement" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="I:\store-cxh\src\main\webapp" />
@@ -742,12 +549,9 @@
       <recent name="com.store.service" />
       <recent name="com.store.dao" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="I:\store-cxh\src\main\webapp\admin\user" />
-      <recent name="I:\store-cxh\src\main\java\com\store" />
-      <recent name="I:\store-cxh\src\main\webapp\resources\admin\js" />
-      <recent name="I:\store-cxh\src\main\webapp\WEB-INF\admin\advertisement" />
-      <recent name="I:\store-cxh\src\main\webapp\WEB-INF\admin" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.store.service.impl" />
+      <recent name="com.store.service" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -762,33 +566,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.jedTest.testJedisPool">
-    <configuration default="false" name="LuceneTest.findAllByKeywords" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.store.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="store-cxh" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.store.test" />
-      <option name="MAIN_CLASS_NAME" value="com.store.test.LuceneTest" />
-      <option name="METHOD_NAME" value="findAllByKeywords" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Tomcat Server.store-cxh">
     <configuration default="false" name="LuceneTest.testDao" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -875,6 +653,26 @@
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="com.store.Realm.ShiroRealm" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../store-cxh" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="store-cxh" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="FtpUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.store.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.store.util.FtpUtil" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../store-cxh" />
@@ -1416,19 +1214,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Tomcat Server.store-cxh" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.LuceneTest.findAllByKeywords" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.LuceneTest.testDao" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.SolrTest.testAdd" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.jedTest.testJedisPool" />
-      <item index="5" class="java.lang.String" itemvalue="Application.ShiroRealm" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.LuceneTest.testDao" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.SolrTest.testAdd" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.jedTest.testJedisPool" />
+      <item index="4" class="java.lang.String" itemvalue="Application.ShiroRealm" />
+      <item index="5" class="java.lang.String" itemvalue="Application.FtpUtil" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.jedTest.testJedisPool" />
-        <item index="1" class="java.lang.String" itemvalue="Application.ShiroRealm" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.SolrTest.testAdd" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.LuceneTest.testDao" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.LuceneTest.findAllByKeywords" />
+        <item index="0" class="java.lang.String" itemvalue="Application.FtpUtil" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.jedTest.testJedisPool" />
+        <item index="2" class="java.lang.String" itemvalue="Application.ShiroRealm" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.SolrTest.testAdd" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.LuceneTest.testDao" />
       </list>
     </recent_temporary>
   </component>
@@ -1465,7 +1263,7 @@
       <workItem from="1502875937463" duration="13978000" />
       <workItem from="1502949439770" duration="5728000" />
       <workItem from="1503157800681" duration="51013000" />
-      <workItem from="1503488265601" duration="7701000" />
+      <workItem from="1503488265601" duration="10306000" />
     </task>
     <task id="LOCAL-00001" summary="项目搭好环境，前台改了一点，登录注册页面的模板初步修改好了">
       <created>1499617418865</created>
@@ -1684,7 +1482,14 @@
       <option name="project" value="LOCAL" />
       <updated>1502286314478</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="学了shiro和solr，还没用到项目中">
+      <created>1503626127237</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1503626127237</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1720,7 +1525,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="895804000" />
+    <option name="totallyTimeSpent" value="898409000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1739,7 +1544,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7813853" sideWeight="0.5405117" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289183" sideWeight="0.49784714" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905984" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36038962" sideWeight="0.67332757" order="8" side_tool="true" content_ui="tabs" x="22" y="401" width="1876" height="237" />
+      <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23809524" sideWeight="0.48557693" order="8" side_tool="true" content_ui="tabs" x="22" y="401" width="1876" height="237" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1747,15 +1552,15 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28030303" sideWeight="0.45948827" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27952328" sideWeight="0.45948827" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289183" sideWeight="0.49784714" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36754966" sideWeight="0.32667246" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3672806" sideWeight="0.32667246" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32819384" sideWeight="0.49784714" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29112554" sideWeight="0.48507464" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13976164" sideWeight="0.7193745" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23809524" sideWeight="0.5144231" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32929516" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel remote servers log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35536295" sideWeight="0.14424112" order="14" side_tool="false" content_ui="tabs" />
@@ -1859,8 +1664,16 @@
           </properties>
           <option name="timeStamp" value="36" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/util/FtpUtil.java</url>
+          <line>93</line>
+          <properties class="com.store.util.FtpUtil" method="downloadFile">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="45" />
+      <option name="time" value="46" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1869,20 +1682,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/admin/items/product.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="13" column="16" lean-forward="false" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/advertisement/advertisementList.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1800">
-          <caret line="48" column="25" lean-forward="true" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/admin/advertisement/adSaveUI.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -2235,7 +2034,7 @@
         <state relative-caret-position="-621">
           <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2297,18 +2096,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/pom.xml">
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="455" column="17" lean-forward="true" selection-start-line="455" selection-start-column="17" selection-end-line="455" selection-end-column="17" />
+        <state relative-caret-position="300">
+          <caret line="40" column="20" lean-forward="true" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/WEB-INF/web.xml">
+    <entry file="file://$PROJECT_DIR$/../store-cxh/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="37" column="19" lean-forward="true" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
+        <state relative-caret-position="191">
+          <caret line="493" column="41" lean-forward="false" selection-start-line="493" selection-start-column="41" selection-end-line="493" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/java/com/store/util/FtpUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="97" column="13" lean-forward="true" selection-start-line="96" selection-start-column="35" selection-end-line="97" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../store-cxh/src/main/webapp/test.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="26" column="40" lean-forward="true" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
           <folding />
         </state>
       </provider>
