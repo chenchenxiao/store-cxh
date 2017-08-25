@@ -16,4 +16,6 @@ public class PathTest {
         String real = phone.replace(sub,"****");
         System.out.println(real);
     }
+
+
 }

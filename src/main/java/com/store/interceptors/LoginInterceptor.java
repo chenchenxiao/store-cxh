@@ -52,9 +52,9 @@ public class LoginInterceptor implements HandlerInterceptor {
         String adminUrl = url.substring(url.indexOf("/"),12);
         System.out.println(adminUrl);
         //判断是否是管理员后台管理的地址
-        if("/admin/admin".equals(adminUrl)){
-            return true;
-        }
+//        if("/admin/admin".equals(adminUrl)){
+//            return true;
+//        }
         if(excludeUrls.contains(url)){
             System.out.println(url);
             System.out.println("通过了拦截器");

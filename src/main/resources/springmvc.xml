@@ -57,6 +57,7 @@
         <!--用户登录拦截器 -->
         <mvc:interceptor>
             <mvc:mapping path="/admin/**" />
+            <mvc:exclude-mapping path="/admin/admin/*"/>
             <bean class="com.store.interceptors.LoginInterceptor">
                 <!--管理员的地址前缀-->
                 <property name="adminPrefix">

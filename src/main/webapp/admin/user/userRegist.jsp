@@ -250,17 +250,21 @@
             }
         })
 //	手机号
+        var mesgr = /^(((13[0-9]{1})|(14[0-9]{1})|(17[0]{1})|(15[0-3]{1})|(15[5-9]{1})|(18[0-9]{1}))+\d{8})$/;
         $("#phoneNumber").blur(function(){
             if($(this).val().length==0){
                 $(this).parent().next("div").text("");
                 $(this).parent().next("div").css("color",'#ccc');
                 phoneResult = false;
-            }else if($(this).val().substr(0,3)!=138&&$(this).val().substr(0,3)!=132&&$(this).val().substr(0,3)!=177&&$(this).val().substr(0,3)!=189&&$(this).val().substr(0,3)!=139&&$(this).val().substr(0,3)!=158&&$(this).val().substr(0,3)!=188&&$(this).val().substr(0,3)!=157&&$(this).val().substr(0,3)!=134||$(this).val().length!=11){
-                $(this).parent().next("div").text("手机号格式不正确");
-                $(this).parent().next("div").css("color",'red');
-                phoneResult = false;
+            }
+            //
+//            else if($(this).val().substr(0,3)!=138&&$(this).val().substr(0,3)!=132&&$(this).val().substr(0,3)!=177&&$(this).val().substr(0,3)!=189&&$(this).val().substr(0,3)!=139&&$(this).val().substr(0,3)!=158&&$(this).val().substr(0,3)!=188&&$(this).val().substr(0,3)!=157&&$(this).val().substr(0,3)!=134||$(this).val().length!=11){
+               else if(!mesgr.test($(this).val())){
+                 $(this).parent().next("div").text("手机号格式不正确");
+                    $(this).parent().next("div").css("color",'red');
+                    phoneResult = false;
+
             }else{
-                alert("成功发送信息！")
                 $.ajax({
                     "url":"${pageContext.request.contextPath}/admin/user/checkRepeat",
                     "data":{"phoneNumber":$('#phoneNumber').val()},

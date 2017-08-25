@@ -23,6 +23,8 @@ public class jedTest{
             jedis.set("name", "lisi");
             jedis.set("name2", "test2");
             String name = jedis.get("name");
+            jedis.expire("name",5);
+            System.out.println(jedis.exists("name2"));
             System.out.println(name);
         } catch (Exception ex) {
             ex.printStackTrace();

@@ -110,8 +110,8 @@
     function getcheckVal(result){
         checkResult = result;
     }
-    alert("成功发送信息！")
     $("#btn-oldEmail").click(function () {
+        alert("成功发送信息！")
         $.ajax({
             "url":"${pageContext.request.contextPath}/admin/user/checkEmail",
             "data":{"email":$('#oldEmail').val()},

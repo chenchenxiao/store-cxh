@@ -147,7 +147,6 @@
             $(this).parent().next("div").css("color",'red');
             phoneResult = false;
         }else{
-            alert("成功发送信息！")
             $.ajax({
                 "url":"${pageContext.request.contextPath}/admin/user/checkRepeat",
                 "data":{"phoneNumber":$('#newPhoneNumber').val()},
